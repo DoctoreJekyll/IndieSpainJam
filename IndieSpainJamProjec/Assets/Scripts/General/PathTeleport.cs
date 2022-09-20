@@ -30,7 +30,9 @@ public class PathTeleport : MonoBehaviour
         GameStateManager.instance.currentGameState = GameStateManager.GameState.EVENT;//Cambia el estado de juego a evento
         SpriteRenderer spTemp = playerGO.GetComponent<SpriteRenderer>();//Pillo el sprite del jugador
         spTemp.enabled = false;
+        
         yield return new WaitForSeconds(2f);
+        
         playerGO.transform.position = pointB.position;//Muevo el jugador a la posicion B
         spTemp.enabled = true;
         GameStateManager.instance.currentGameState = GameStateManager.GameState.GAMEPLAY;

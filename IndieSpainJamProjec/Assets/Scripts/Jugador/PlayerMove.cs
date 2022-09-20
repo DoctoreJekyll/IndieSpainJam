@@ -37,16 +37,23 @@ public class PlayerMove : MonoBehaviour
         inputMovement = Input.GetAxisRaw("Horizontal");
         rb2d.velocity = new Vector2(inputMovement * moveSpeed, rb2d.velocity.y);
     }
+    
 
+    [HideInInspector] public bool isFacingRigth;
+    [HideInInspector] public bool isFacingLeft;
     private void Flip()
     {
         if (inputMovement > 0)
         {
             spriteRenderer.flipX = false;
+            isFacingRigth = true;
+            isFacingLeft = false;
         }
         else if (inputMovement < 0)
         {
             spriteRenderer.flipX = true;
+            isFacingLeft = true;
+            isFacingRigth = false;
         }
     }
     
