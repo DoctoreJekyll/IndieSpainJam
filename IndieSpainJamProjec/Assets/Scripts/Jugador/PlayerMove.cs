@@ -22,7 +22,15 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        PlayerMovement();
+        if (GameStateManager.instance.currentGameState == GameStateManager.GameState.GAMEPLAY)
+        {
+            PlayerMovement();
+        }
+        else
+        {
+            rb2d.velocity = Vector2.zero;//Ñapa porque a veces si saltas encima del teleport e igual para otros eventos el pj sigue con su velocidad
+        }
+
     }
     public void PlayerMovement()
     {

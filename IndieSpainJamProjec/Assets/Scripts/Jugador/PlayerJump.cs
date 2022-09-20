@@ -22,9 +22,15 @@ public class PlayerJump : MonoBehaviour
 
     private void Update()
     {
+        
         IsOnFloor();
-        CoyoteTimeImprove();
-        Jump();
+        
+        if (GameStateManager.instance.currentGameState == GameStateManager.GameState.GAMEPLAY)
+        {
+            CoyoteTimeImprove();
+            Jump();
+        }
+
     }
 
     private void IsOnFloor()
