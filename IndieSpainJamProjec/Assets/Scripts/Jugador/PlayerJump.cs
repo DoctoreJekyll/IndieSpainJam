@@ -9,8 +9,8 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] private Rigidbody2D rb2d;
     
     [Header("Jump Stuffs")]
-    public float jumpForce;
-    public bool canJump;
+    [SerializeField] private float jumpForce;
+    private bool canJump;
     [SerializeField] private bool isOnFloor;
     [SerializeField] private GameObject pointToCheckFloor;
     [SerializeField] private Vector2 boxCheckSize;
@@ -50,8 +50,7 @@ public class PlayerJump : MonoBehaviour
         }
 
     }
-    
-    
+
     private void CoyoteTimeImprove()
     {
         if (isOnFloor)
