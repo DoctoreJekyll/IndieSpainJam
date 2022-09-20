@@ -22,48 +22,47 @@ public class PlayerJump : MonoBehaviour
 
     private void Update()
     {
+        IsOnFloor();
         CoyoteTimeImprove();
         Jump();
+    }
+
+    private void IsOnFloor()
+    {
+        isOnFloor = Physics2D.OverlapBox(pointToCheckFloor.transform.position, boxCheckSize, 0, floorLayer);
     }
     
     private void Jump()
     {
-        isOnFloor = Physics2D.OverlapBox(pointToCheckFloor.transform.position, boxCheckSize, 0, floorLayer);
-
-        if (playerCanJump)
+        
+        if (coyoteTime > 0f)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 rb2d.velocity = new Vector2(rb2d.velocity.x, 0);
                 rb2d.velocity += Vector2.up * jumpForce;
             }
+
+            if (Input.GetKeyUp((KeyCode.Space)))
+            {
+                coyoteTime = 0f;
+            }
         }
 
     }
-
-
-    public bool playerCanJump;
-    //Creamos una variable float para marcar el tiempo que tenemos para saltar y la ponemos a 0 cada vez que estmos en el suelo, si NO estamos en el suelo sumamos un contador de tiempo, ese contador ser� el tiempo
-    //que tendremos para saltar aunque no estemos en el suelo para dar esa buena sensaci�n de coyotito, ta weno.
+    
+    
     private void CoyoteTimeImprove()
     {
         if (isOnFloor)
         {
-            coyoteTime = 0;
+            coyoteTime = timeToDoCoyote;
         }
         else
         {
-            coyoteTime += Time.deltaTime;
+            coyoteTime -= Time.deltaTime;
         }
 
-        if (isOnFloor || (coyoteTime < timeToDoCoyote))
-        {
-            playerCanJump = true;
-        }
-        else
-        {
-            playerCanJump = false;
-        }
 
     }
     
