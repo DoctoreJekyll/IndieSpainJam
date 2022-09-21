@@ -52,15 +52,22 @@ public class ImproveMove : MonoBehaviour
     {
 	    if (_moveInput > 0)
 	    {
-		    _spriteRenderer.flipX = false;
+		    /*
+		    spriteRenderer.flipX = false;
 		    isFacingRigth = true;
-		    isFacingLeft = false;
+		    isFacingLeft = false;*/
+
+		    transform.localScale = new Vector3(1f, 1f, 1f);
+
 	    }
 	    else if (_moveInput < 0)
 	    {
-		    _spriteRenderer.flipX = true;
+		    /*
+		    spriteRenderer.flipX = true;
 		    isFacingLeft = true;
-		    isFacingRigth = false;
+		    isFacingRigth = false;*/
+            
+		    transform.localScale = new Vector3(-1f, 1f, 1f);
 	    }
     }
     
