@@ -11,7 +11,7 @@ public class PlayerJump : MonoBehaviour
     [Header("Jump Stuffs")]
     [SerializeField] private float jumpForce;
     private bool canJump;
-    [SerializeField] private bool isOnFloor;
+    public bool isOnFloor;
     [SerializeField] private GameObject pointToCheckFloor;
     [SerializeField] private Vector2 boxCheckSize;
     [SerializeField] private LayerMask floorLayer;

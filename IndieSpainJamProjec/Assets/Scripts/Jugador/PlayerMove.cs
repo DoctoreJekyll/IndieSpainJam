@@ -32,12 +32,12 @@ public class PlayerMove : MonoBehaviour
         }
 
     }
-    public void PlayerMovement()
+    private void PlayerMovement()
     {
         inputMovement = Input.GetAxisRaw("Horizontal");
         rb2d.velocity = new Vector2(inputMovement * moveSpeed, rb2d.velocity.y);
     }
-    
+
 
     [HideInInspector] public bool isFacingRigth;
     [HideInInspector] public bool isFacingLeft;
