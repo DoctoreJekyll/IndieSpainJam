@@ -4,10 +4,29 @@ using UnityEngine;
 public class PlayerStatesManager : MonoBehaviour
 {
 
+    [Header("Players")]
     [SerializeField] private GameObject waterPlayer;
     [SerializeField] private GameObject icePlayer;
     [SerializeField] private GameObject gasPlayer;
+
+    [Header("Temperature")] 
+    [SerializeField] private float maxTemperature;
+    [SerializeField] private float minTemperature;
     
+    [Header("Controller")]
+    [SerializeField] private TempManager _tempManager;
+
+
+    [Header("Test")]
+    [SerializeField] private Transform lakituTransform;
+    private Vector2 playerPos;
+
+    
+    private void Awake()
+    {
+        _tempManager = FindObjectOfType<TempManager>();
+    }
+
     public enum  PlayerStates
     {
         WATER,
@@ -19,26 +38,37 @@ public class PlayerStatesManager : MonoBehaviour
 
     private void Update()
     {
-        ChangePlayersWithKey();
+        ChangePlayersWithTemp();
         SwitchBetweenPlayers();
+        
+        
+        
     }
 
-    private void ChangePlayersWithKey()
+    private void ChangePlayersWithTemp()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+        if (_tempManager.temperatura <= 0)
         {
-            playerState = PlayerStates.WATER;
-        }
-        
-        if (Input.GetKeyDown(KeyCode.K))
-        {
+            Debug.Log("hielo noeke");
             playerState = PlayerStates.ICE;
         }
-        
-        if (Input.GetKeyDown(KeyCode.L))
+
+        if (_tempManager.temperatura >= 100)
         {
             playerState = PlayerStates.GAS;
         }
+
+        if (playerState == PlayerStates.ICE && _tempManager.temperatura >= minTemperature)
+        {
+            playerState = PlayerStates.WATER;
+        }
+
+        if (playerState == PlayerStates.GAS && _tempManager.temperatura <= maxTemperature)
+        {
+            playerState = PlayerStates.WATER;
+        }
+
+
     }
 
     private void SwitchBetweenPlayers()
@@ -46,17 +76,27 @@ public class PlayerStatesManager : MonoBehaviour
         switch (playerState)
         {
             case PlayerStates.WATER:
-                DesactivateAllObj();
+                //DesactivateAllObj();
+                waterPlayer.gameObject.transform.position = lakituTransform.position;
                 waterPlayer.gameObject.SetActive(true);
+                icePlayer.gameObject.SetActive(false);
+                gasPlayer.gameObject.SetActive(false);
                 break;
                 
             case  PlayerStates.ICE:
-                DesactivateAllObj();
+                //DesactivateAllObj();
+                icePlayer.gameObject.transform.position = lakituTransform.position;
                 icePlayer.gameObject.SetActive(true);
+                waterPlayer.gameObject.SetActive(false);
+                gasPlayer.gameObject.SetActive(false);
                 break;
             
             case  PlayerStates.GAS:
-                Debug.Log("Plof");
+                //DesactivateAllObj();
+                gasPlayer.gameObject.transform.position = lakituTransform.position;
+                gasPlayer.gameObject.SetActive(true);
+                icePlayer.gameObject.SetActive(false);
+                waterPlayer.gameObject.SetActive(false);
                 break;
             
             default:
@@ -67,9 +107,8 @@ public class PlayerStatesManager : MonoBehaviour
 
     private void DesactivateAllObj()
     {
-        waterPlayer.gameObject.SetActive(false);
-        icePlayer.gameObject.SetActive(false);
-        //Gas
+        
+
     }
     
 }

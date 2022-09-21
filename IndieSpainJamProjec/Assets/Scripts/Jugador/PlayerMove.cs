@@ -45,15 +45,22 @@ public class PlayerMove : MonoBehaviour
     {
         if (inputMovement > 0)
         {
+            /*
             spriteRenderer.flipX = false;
             isFacingRigth = true;
-            isFacingLeft = false;
+            isFacingLeft = false;*/
+
+            transform.localScale = new Vector3(1f, 1f, 1f);
+
         }
         else if (inputMovement < 0)
         {
+            /*
             spriteRenderer.flipX = true;
             isFacingLeft = true;
-            isFacingRigth = false;
+            isFacingRigth = false;*/
+            
+            transform.localScale = new Vector3(-1f, 1f, 1f);
         }
     }
     

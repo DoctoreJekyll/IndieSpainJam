@@ -28,25 +28,8 @@ public class ActivateInteractable : MonoBehaviour
 
     private void ActivateInteractableBox()//Por ahora se activan asi, más adelante lo ideal es activarlo con las animaciones, es más cómodo y queda mejor, ya tocaremos esto
     {
-        StartCoroutine(ActivateBoxObjs());
+        
     }
 
-    private IEnumerator ActivateBoxObjs()//Esto se a ciencia cierta de que hay una forma mejor de hacerlo pero no se me ocurre ahora, perdón.
-    {
-        if (_spriteRenderer.flipX == false)
-        {
-            activRigth.SetActive(true);
-            yield return new WaitForSeconds(0.1f);
-            activRigth.SetActive(false);
-            activLeft.SetActive(false);
-        }
-        else
-        {
-            activLeft.SetActive(true);
-            yield return new WaitForSeconds(0.1f);
-            activLeft.SetActive(false);
-            activRigth.SetActive(false);
-        }
-    }
 
 }
