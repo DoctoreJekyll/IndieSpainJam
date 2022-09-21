@@ -21,7 +21,7 @@ public class LevelKey : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Lakitu");
         playerPositionList = new List<Transform>();
     }
 
@@ -31,7 +31,7 @@ public class LevelKey : MonoBehaviour
         {
             keyObtained = true;
             followingPlayer = true;
-            player.GetComponentInParent<PlayerKeyChecker>().hasKey = true;
+            collision.GetComponentInParent<PlayerKeyChecker>().hasKey = true;
         }
     }
 
