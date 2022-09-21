@@ -31,7 +31,7 @@ public class LevelKey : MonoBehaviour
         {
             keyObtained = true;
             followingPlayer = true;
-            player.GetComponent<PlayerKeyChecker>().hasKey = true;
+            player.GetComponentInParent<PlayerKeyChecker>().hasKey = true;
         }
     }
 
@@ -53,7 +53,7 @@ public class LevelKey : MonoBehaviour
             //Si hay al menos una posición en al lista el jugador se ha movido, movemos la llave hasta la siguiente posición
             if (playerPositionList.Count > 0)
                 transform.position = Vector3.Lerp(transform.position, playerPositionList[0].transform.position, followSpeed * Time.deltaTime);
-            else
+            else if(lastPosition != null)
                 transform.position = Vector3.Lerp(transform.position, lastPosition.position, followSpeed * Time.deltaTime);
         }
     }

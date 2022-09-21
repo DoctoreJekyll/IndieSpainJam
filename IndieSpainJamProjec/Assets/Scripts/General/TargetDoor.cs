@@ -6,12 +6,12 @@ using UnityEngine;
 public class TargetDoor : MonoBehaviour
 {
     [Header("[References]")]
-    public GameObject player;
+    public PlayerKeyChecker keyChecker;
 
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        keyChecker = GameObject.FindGameObjectWithTag("Player").GetComponentInParent<PlayerKeyChecker>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,7 +22,7 @@ public class TargetDoor : MonoBehaviour
 
     private void CheckPlayerKey()
     {
-        if (player.GetComponent<PlayerKeyChecker>().Check_PlayerHasKey() == true)
+        if (keyChecker.Check_PlayerHasKey() == true)
             LevelManager.instance.LevelCompleted();
     }
 
