@@ -77,7 +77,7 @@ public class PlayerStatesManager : MonoBehaviour
         {
             case PlayerStates.WATER:
                 //DesactivateAllObj();
-                waterPlayer.gameObject.transform.position = lakituTransform.position;
+                //waterPlayer.gameObject.transform.position = lakituTransform.position;
                 waterPlayer.gameObject.SetActive(true);
                 icePlayer.gameObject.SetActive(false);
                 gasPlayer.gameObject.SetActive(false);
