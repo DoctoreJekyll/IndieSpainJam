@@ -6,6 +6,7 @@ using UnityEngine;
 public class ActivateInteractable : MonoBehaviour
 {
 
+    // ESTE SCRIPT ACTUALMENTE ESTA DEPRECATED PERO LO MANTENGO POR AHORA
     private SpriteRenderer _spriteRenderer;
     [SerializeField] private GameObject activRigth;
     [SerializeField] private GameObject activLeft;

@@ -2176,7 +2176,6 @@ GameObject:
   - component: {fileID: 1186395688}
   - component: {fileID: 1186395687}
   - component: {fileID: 1186395691}
-  - component: {fileID: 1186395682}
   - component: {fileID: 1186395690}
   m_Layer: 7
   m_Name: IcePlayer
@@ -2202,20 +2201,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1186395682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1186395680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 652b3460adf8c034e8e73169aae5774c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activRigth: {fileID: 0}
-  activLeft: {fileID: 0}
 --- !u!50 &1186395687
 Rigidbody2D:
   serializedVersion: 4
@@ -3685,7 +3670,6 @@ GameObject:
   - component: {fileID: 2081953797}
   - component: {fileID: 2081953796}
   - component: {fileID: 2081953795}
-  - component: {fileID: 2081953799}
   m_Layer: 4
   m_Name: WaterPlayer
   m_TagString: Player
@@ -3860,20 +3844,6 @@ MonoBehaviour:
   moveSpeed: 5
   isFacingRigth: 0
   isFacingLeft: 0
---- !u!114 &2081953799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2081953790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 652b3460adf8c034e8e73169aae5774c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activRigth: {fileID: 23047091}
-  activLeft: {fileID: 0}
 --- !u!114 &3056718398566405604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4800,7 +4770,6 @@ GameObject:
   - component: {fileID: 7050621011128825715}
   - component: {fileID: 7050621011128825714}
   - component: {fileID: 7050621011128825726}
-  - component: {fileID: 7050621011128825727}
   m_Layer: 8
   m_Name: Player_Gas
   m_TagString: Player
@@ -4823,20 +4792,6 @@ MonoBehaviour:
   rb: {fileID: 7050621011128825714}
   elevationForce: 2.5
   moveSpeed: 2.5
---- !u!114 &7050621011128825727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7050621011128825717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 652b3460adf8c034e8e73169aae5774c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activRigth: {fileID: 0}
-  activLeft: {fileID: 0}
 --- !u!1 &7596035882149823168
 GameObject:
   m_ObjectHideFlags: 0

@@ -34,12 +34,13 @@ public class ImproveMove : MonoBehaviour
 
     private void Run()
     {
+	    //Calcula la direccion y la velocidad
 	    float targetSpeed = _moveInput * moveSpeed;
-
+		//Diferencia entre vel actual y la deseada
 	    float sppedDif = targetSpeed - rb2d.velocity.x;
-
+		//Cambia el ratio de acelerar segun estamos acelerando o decelerando(creo que esta segunda palabra me la he inventado)
 	    float accelRate = (Math.Abs(targetSpeed) > 0.01f) ? runAcceleration : runDecceleration;
-
+		//Aplica aceleracion a la speedDif en resumen
 	    float movement = (float)(Math.Pow(Math.Abs(sppedDif) * accelRate, velPower) * Math.Sign(sppedDif));
 	    
 	    rb2d.AddForce(movement * Vector2.right);

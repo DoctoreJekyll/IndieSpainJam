@@ -11,35 +11,15 @@ public class Interactable : MonoBehaviour
     [SerializeField] private LayerMask layers;
     [SerializeField] private float range;
 
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        
-        Debug.Log("Is Triggered");
-        if (col.gameObject.CompareTag("Enemy"))
-        {
-            Debug.Log("Enemy is damaged!");
-        }
-
-        if (col.gameObject.CompareTag("Activable"))
-        {
-            Debug.Log("Activable is activable");
-        }
-        
-        //Activate obj to need activate
-        //Dodamage if is necesary
-    }
-
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))//TODO hay que meter todo esta funcionalidad dentro del animation
         {
             DetectStuffs();
         }
     }
 
-
-    //Aqui en el animator llamamos a este método que terminare en su momento, no se si en este script o en otro, la cosa es que
-    //esto activara un detector y si da true llamamos a segun que cosas.
+    
     private void DetectStuffs()//Podemos llamar también esto al atacar y generará un bool si colisiona con un enemigo
     {
         Collider2D[] hitSomething = Physics2D.OverlapCircleAll(transform.position, range, layers);
@@ -47,9 +27,8 @@ public class Interactable : MonoBehaviour
         foreach (Collider2D enemy in hitSomething)
         {
             Debug.Log("Hit that enemy" + enemy.name);
-            //Do stuffs en este caso hacer daño al enemigo o activable segun el layer
-            //Hay que darle una vuelta a esto para que puediera ser funcional tanto con enemigos como con activables
-            //En cualquier caso llamariamos a las interfaces
+            //Creamos la interfaz/objeto, si existe llamamos a su metodo/contrato establecido que en función de lo que sea hará una cosa u otra
+            //Es decir, el doactivate del enemigo no hara lo mismo que el de una palanca pero ese no es el problema del player
             IActivable interactable = enemy.GetComponent<IActivable>();
             if (interactable == null)
             {
