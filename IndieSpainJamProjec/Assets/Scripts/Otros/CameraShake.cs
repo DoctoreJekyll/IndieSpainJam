@@ -5,7 +5,7 @@ using UnityEngine;
 //Clase que se encarga de producir un shake a la cámara
 public class CameraShake : MonoBehaviour
 {
-    public enum ShakeMagnitude { NULL, SMALL, NORMAL, BIG, HUGE }
+    public enum ShakeMagnitude { NULL, SMALL, MEDIUM, BIG, HUGE }
     public static CameraShake instance;
 
     [Header("[References]")]
@@ -46,7 +46,7 @@ public class CameraShake : MonoBehaviour
             case ShakeMagnitude.SMALL:
                 magnitude = smallMagnitude;
                 break;
-            case ShakeMagnitude.NORMAL:
+            case ShakeMagnitude.MEDIUM:
                 magnitude = normalMagnitude;
                 break;
             case ShakeMagnitude.BIG:

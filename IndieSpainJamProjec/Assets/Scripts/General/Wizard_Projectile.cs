@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Clase que se encarga de mover el proyectil de forma constante y de comprobar
+//si ha impactado con algo y actuar en consecuencia
 public class Wizard_Projectile : MonoBehaviour
 {
     public enum ProjectileType { FIRE, ICE }

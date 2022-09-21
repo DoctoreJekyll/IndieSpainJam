@@ -32,6 +32,7 @@ public class LevelKey : MonoBehaviour
             keyObtained = true;
             followingPlayer = true;
             player.GetComponent<PlayerKeyChecker>().hasKey = true;
+            TimeImpact.instance.ImpactTime(TimeImpact.SlowMagnitude.MEDIUM);
         }
     }
 
