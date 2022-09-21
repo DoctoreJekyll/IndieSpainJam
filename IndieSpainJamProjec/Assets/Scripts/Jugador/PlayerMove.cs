@@ -28,7 +28,7 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-            rb2d.velocity = Vector2.zero;//Ñapa porque a veces si saltas encima del teleport e igual para otros eventos el pj sigue con su velocidad
+            rb2d.velocity = Vector2.zero;//Ñapa porque a veces si saltas encima del teleport e igual para otros eventos el pj sigue con su velocidad, esto lo soluciona por ahora
         }
 
     }
