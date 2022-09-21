@@ -22,13 +22,9 @@ public class TargetDoor : MonoBehaviour
 
     private void CheckPlayerKey()
     {
-        if(player.GetComponent<PlayerKeyChecker>().Check_PlayerHasKey() == true)
-            LevelCompleted();
+        if (player.GetComponent<PlayerKeyChecker>().Check_PlayerHasKey() == true)
+            LevelManager.instance.LevelCompleted();
     }
 
-    private void LevelCompleted()
-    {
-        GameStateManager.instance.SetGameState(GameStateManager.GameState.EVENT);
-        Debug.Log("Level Completed");
-    }
+
 }
