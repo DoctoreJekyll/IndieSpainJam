@@ -6,13 +6,13 @@ using UnityEngine;
 public class ActivateInteractable : MonoBehaviour
 {
 
-    private PlayerMove playerMove;
+    private SpriteRenderer _spriteRenderer;
     [SerializeField] private GameObject activRigth;
     [SerializeField] private GameObject activLeft;
 
     private void Awake()
     {
-        playerMove = GetComponent<PlayerMove>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -33,7 +33,7 @@ public class ActivateInteractable : MonoBehaviour
 
     private IEnumerator ActivateBoxObjs()//Esto se a ciencia cierta de que hay una forma mejor de hacerlo pero no se me ocurre ahora, perdón.
     {
-        if (playerMove.isFacingRigth == true)
+        if (_spriteRenderer.flipX == false)
         {
             activRigth.SetActive(true);
             yield return new WaitForSeconds(0.1f);

@@ -7,10 +7,10 @@ public class ImproveMove : MonoBehaviour
 {
 	private float _moveInput;
 	private Rigidbody2D rb2d;
+	private SpriteRenderer _spriteRenderer;
 
 	[Header("Run")] 
 	public float moveSpeed;
-	public float runMaxSpeed; //Target speed we want the player to reach.
 	public float runAcceleration; //Time (approx.) time we want it to take for the player to accelerate from 0 to the runMaxSpeed.
 	public float runDecceleration; //Time (approx.) we want it to take for the player to accelerate from runMaxSpeed to 0.
 	public float velPower;
@@ -18,11 +18,13 @@ public class ImproveMove : MonoBehaviour
 	private void Awake()
 	{
 		rb2d = GetComponent<Rigidbody2D>();
+		_spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 
 	private void Update()
     {
 	    _moveInput = Input.GetAxisRaw("Horizontal");
+	    Flip();
     }
 
     // Update is called once per frame
@@ -44,5 +46,22 @@ public class ImproveMove : MonoBehaviour
 	    rb2d.AddForce(movement * Vector2.right);
     }
     
+    [HideInInspector] public bool isFacingRigth;
+    [HideInInspector] public bool isFacingLeft;
+    private void Flip()
+    {
+	    if (_moveInput > 0)
+	    {
+		    _spriteRenderer.flipX = false;
+		    isFacingRigth = true;
+		    isFacingLeft = false;
+	    }
+	    else if (_moveInput < 0)
+	    {
+		    _spriteRenderer.flipX = true;
+		    isFacingLeft = true;
+		    isFacingRigth = false;
+	    }
+    }
     
 }
