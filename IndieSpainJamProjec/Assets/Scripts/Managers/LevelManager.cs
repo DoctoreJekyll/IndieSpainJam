@@ -28,6 +28,8 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        initialDoor = GameObject.FindGameObjectWithTag("Initial Door");
         PrepareLevel();
     }
 
