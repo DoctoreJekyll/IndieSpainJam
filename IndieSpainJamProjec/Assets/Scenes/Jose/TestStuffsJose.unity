@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 14432855}
   - component: {fileID: 14432854}
+  - component: {fileID: 14432856}
   m_Layer: 0
   m_Name: GameStateTemp
   m_TagString: Untagged
@@ -168,6 +169,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &14432856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14432853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a54f10849f60cf44805a7841a0f4b97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &23047091
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,7 +193,7 @@ GameObject:
   - component: {fileID: 23047093}
   - component: {fileID: 23047094}
   - component: {fileID: 23047095}
-  m_Layer: 6
+  m_Layer: 4
   m_Name: InteractableR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -673,7 +686,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 144823451}
-  m_Layer: 6
+  m_Layer: 4
   m_Name: Interactable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2019,7 +2032,6 @@ GameObject:
   - component: {fileID: 1186395689}
   - component: {fileID: 1186395688}
   - component: {fileID: 1186395687}
-  - component: {fileID: 1186395686}
   - component: {fileID: 1186395685}
   - component: {fileID: 1186395682}
   - component: {fileID: 1186395690}
@@ -2029,7 +2041,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1186395681
 Transform:
   m_ObjectHideFlags: 0
@@ -2076,19 +2088,6 @@ MonoBehaviour:
   moveSpeed: 2
   isFacingRigth: 0
   isFacingLeft: 0
---- !u!114 &1186395686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1186395680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14adcd5d83d33ce449e1959b5e7889a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerState: 0
 --- !u!50 &1186395687
 Rigidbody2D:
   serializedVersion: 4
@@ -2250,7 +2249,7 @@ GameObject:
   - component: {fileID: 1283070995}
   - component: {fileID: 1283070996}
   - component: {fileID: 1283070997}
-  m_Layer: 6
+  m_Layer: 4
   m_Name: InteractableL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3069,7 +3068,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1755775298}
-  m_Layer: 6
+  m_Layer: 4
   m_Name: CheckFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3300,18 +3299,17 @@ GameObject:
   - component: {fileID: 2081953791}
   - component: {fileID: 2081953794}
   - component: {fileID: 2081953793}
-  - component: {fileID: 2081953798}
   - component: {fileID: 2081953797}
   - component: {fileID: 2081953796}
   - component: {fileID: 2081953795}
   - component: {fileID: 2081953799}
-  m_Layer: 6
+  m_Layer: 4
   m_Name: WaterPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &2081953791
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3479,19 +3477,6 @@ MonoBehaviour:
   moveSpeed: 5
   isFacingRigth: 0
   isFacingLeft: 0
---- !u!114 &2081953798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2081953790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14adcd5d83d33ce449e1959b5e7889a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerState: 0
 --- !u!114 &2081953799
 MonoBehaviour:
   m_ObjectHideFlags: 0
