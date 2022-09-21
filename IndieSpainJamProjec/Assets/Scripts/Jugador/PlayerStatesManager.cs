@@ -50,21 +50,25 @@ public class PlayerStatesManager : MonoBehaviour
         if (_tempManager.temperatura <= 0)
         {
             Debug.Log("hielo noeke");
+            icePlayer.gameObject.transform.position = lakituTransform.position;
             playerState = PlayerStates.ICE;
         }
 
         if (_tempManager.temperatura >= 100)
         {
+            gasPlayer.gameObject.transform.position = lakituTransform.position;
             playerState = PlayerStates.GAS;
         }
 
         if (playerState == PlayerStates.ICE && _tempManager.temperatura >= minTemperature)
         {
+            waterPlayer.gameObject.transform.position = lakituTransform.position;
             playerState = PlayerStates.WATER;
         }
 
         if (playerState == PlayerStates.GAS && _tempManager.temperatura <= maxTemperature)
         {
+            waterPlayer.gameObject.transform.position = lakituTransform.position;
             playerState = PlayerStates.WATER;
         }
 
@@ -85,7 +89,7 @@ public class PlayerStatesManager : MonoBehaviour
                 
             case  PlayerStates.ICE:
                 //DesactivateAllObj();
-                icePlayer.gameObject.transform.position = lakituTransform.position;
+                
                 icePlayer.gameObject.SetActive(true);
                 waterPlayer.gameObject.SetActive(false);
                 gasPlayer.gameObject.SetActive(false);
@@ -93,7 +97,7 @@ public class PlayerStatesManager : MonoBehaviour
             
             case  PlayerStates.GAS:
                 //DesactivateAllObj();
-                gasPlayer.gameObject.transform.position = lakituTransform.position;
+                //gasPlayer.gameObject.transform.position = lakituTransform.position;
                 gasPlayer.gameObject.SetActive(true);
                 icePlayer.gameObject.SetActive(false);
                 waterPlayer.gameObject.SetActive(false);
