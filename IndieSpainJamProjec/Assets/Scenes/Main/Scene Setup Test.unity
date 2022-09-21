@@ -144,6 +144,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IcePlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 2753466387212805032, guid: 9b53ba24ab3f6114e9a5d8873abfb6be, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2753466387212805033, guid: 9b53ba24ab3f6114e9a5d8873abfb6be, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -301,6 +305,10 @@ PrefabInstance:
     - target: {fileID: 2744635405776823006, guid: eed935234c33a0a459d7a49ee40d6108, type: 3}
       propertyPath: m_Name
       value: Player_Gas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2744635405776823006, guid: eed935234c33a0a459d7a49ee40d6108, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eed935234c33a0a459d7a49ee40d6108, type: 3}
