@@ -40,35 +40,29 @@ public class PlayerStatesManager : MonoBehaviour
     {
         ChangePlayersWithTemp();
         SwitchBetweenPlayers();
-        
-        
-        
     }
+    
 
     private void ChangePlayersWithTemp()
     {
-        if (_tempManager.temperatura <= 0)
+        if (_tempManager.temperatura <= 1)
         {
-            Debug.Log("hielo noeke");
-            icePlayer.gameObject.transform.position = lakituTransform.position;
+            Debug.Log("hielitos");
             playerState = PlayerStates.ICE;
         }
 
         if (_tempManager.temperatura >= 100)
         {
-            gasPlayer.gameObject.transform.position = lakituTransform.position;
             playerState = PlayerStates.GAS;
         }
 
         if (playerState == PlayerStates.ICE && _tempManager.temperatura >= minTemperature)
         {
-            waterPlayer.gameObject.transform.position = lakituTransform.position;
             playerState = PlayerStates.WATER;
         }
 
         if (playerState == PlayerStates.GAS && _tempManager.temperatura <= maxTemperature)
         {
-            waterPlayer.gameObject.transform.position = lakituTransform.position;
             playerState = PlayerStates.WATER;
         }
 
@@ -80,24 +74,18 @@ public class PlayerStatesManager : MonoBehaviour
         switch (playerState)
         {
             case PlayerStates.WATER:
-                //DesactivateAllObj();
-                //waterPlayer.gameObject.transform.position = lakituTransform.position;
                 waterPlayer.gameObject.SetActive(true);
                 icePlayer.gameObject.SetActive(false);
                 gasPlayer.gameObject.SetActive(false);
                 break;
                 
             case  PlayerStates.ICE:
-                //DesactivateAllObj();
-                
                 icePlayer.gameObject.SetActive(true);
                 waterPlayer.gameObject.SetActive(false);
                 gasPlayer.gameObject.SetActive(false);
                 break;
             
             case  PlayerStates.GAS:
-                //DesactivateAllObj();
-                //gasPlayer.gameObject.transform.position = lakituTransform.position;
                 gasPlayer.gameObject.SetActive(true);
                 icePlayer.gameObject.SetActive(false);
                 waterPlayer.gameObject.SetActive(false);
@@ -109,10 +97,11 @@ public class PlayerStatesManager : MonoBehaviour
         }
     }
 
-    private void DesactivateAllObj()
-    {
-        
 
+    private void ActivateOnLastPos(GameObject gameObjToActivate, GameObject objToGetPos)
+    {
+        gameObjToActivate.transform.position = objToGetPos.transform.position;
     }
+    
     
 }
