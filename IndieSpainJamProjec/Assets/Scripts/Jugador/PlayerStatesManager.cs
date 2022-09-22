@@ -47,7 +47,6 @@ public class PlayerStatesManager : MonoBehaviour
     {
         if (_tempManager.temperatura <= 1)
         {
-            Debug.Log("hielitos");
             playerState = PlayerStates.ICE;
         }
 
