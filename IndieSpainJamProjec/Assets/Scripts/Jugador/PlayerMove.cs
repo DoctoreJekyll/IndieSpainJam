@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
@@ -8,6 +9,8 @@ public class PlayerMove : MonoBehaviour
 
     [Header("Movement Stuff")]
     public float moveSpeed;
+    public float maxMoveSpeed;
+    public float moveSpeedWhenSpikes;
 
     private void Awake()
     {
@@ -67,5 +70,20 @@ public class PlayerMove : MonoBehaviour
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
     }
-    
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.layer == 3)
+        {
+            moveSpeed = moveSpeedWhenSpikes;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.layer == 3)
+        {
+            moveSpeed = maxMoveSpeed;
+        }
+    }
 }
