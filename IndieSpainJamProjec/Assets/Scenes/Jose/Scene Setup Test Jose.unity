@@ -274,7 +274,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2753466387212805032, guid: 9b53ba24ab3f6114e9a5d8873abfb6be, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2753466387212805033, guid: 9b53ba24ab3f6114e9a5d8873abfb6be, type: 3}
       propertyPath: m_RootOrder
@@ -318,6 +318,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2753466387212805033, guid: 9b53ba24ab3f6114e9a5d8873abfb6be, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753466387212805039, guid: 9b53ba24ab3f6114e9a5d8873abfb6be, type: 3}
+      propertyPath: m_SleepingMode
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -555,6 +559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a042a174e7e2a40a0364c2b0e14299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  airController: {fileID: 1963698613}
 --- !u!61 &840993336
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -935,6 +940,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaterPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 7889176567560976979, guid: 5248b53f3621c114d835b3cd2b89100a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5248b53f3621c114d835b3cd2b89100a, type: 3}
 --- !u!4 &1245860202 stripped
@@ -1107,6 +1116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a042a174e7e2a40a0364c2b0e14299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  airController: {fileID: 1963698613}
 --- !u!61 &1712280373
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1167,7 +1177,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1712280371}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.5, y: -7.73, z: 0}
+  m_LocalPosition: {x: -7.5, y: -5.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1229,6 +1239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a042a174e7e2a40a0364c2b0e14299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  airController: {fileID: 1963698613}
 --- !u!61 &1875452395
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1289,7 +1300,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1875452393}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.26, y: -7.76, z: 0}
+  m_LocalPosition: {x: -7.51, y: -7.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1592,6 +1603,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lakituTransform: {fileID: 61666737}
+--- !u!114 &1963698613 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2753466387212805026, guid: 9b53ba24ab3f6114e9a5d8873abfb6be, type: 3}
+  m_PrefabInstance: {fileID: 415344229}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963698605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a5d34efc6232fb4d9255e2a303d554b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1963698618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12285,7 +12307,7 @@ MonoBehaviour:
   minTemperature: 25
   _tempManager: {fileID: 0}
   lakituTransform: {fileID: 61666737}
-  playerState: 0
+  playerState: 1
 --- !u!114 &6843588171541889584
 MonoBehaviour:
   m_ObjectHideFlags: 0
