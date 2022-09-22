@@ -10,7 +10,7 @@ public class AirController : MonoBehaviour
     [SerializeField] private Vector2 boxCheckSize;
     [SerializeField] private LayerMask floorLayer;
     
-    private bool isOnFloor;
+    [SerializeField] private bool isOnFloor;
     private bool isOnAir;
     private Rigidbody2D rb2d;
     [SerializeField] private float fallSpeed;
@@ -48,11 +48,12 @@ public class AirController : MonoBehaviour
 
     public bool IsOnAir()
     {
+        
         if (isOnFloor)
         {
+            Debug.Log("Tocando suelo");
             return false;
         }
-
         return true;
     }
     
