@@ -259,9 +259,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bddd787259ab19e449ad09cd6236f40a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  maxMoveSpeed: 5
-  moveSpeedWhenSpikes: 2.5
+  moveSpeed: 6
+  maxMoveSpeed: 6
+  moveSpeedWhenSpikes: 3
   isFacingRigth: 0
   isFacingLeft: 0
 --- !u!114 &949313492406139812
@@ -298,8 +298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f7f175bcfc35a54d810195c8df68fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallMultiplier: 2.5
-  lowJumpMultiplier: 2
+  fallMultiplier: 4.5
+  lowJumpMultiplier: 2.5
 --- !u!114 &6942122755549526422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,7 +575,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5071361911287893615
 Transform:
   m_ObjectHideFlags: 0
@@ -584,7 +584,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5071361911287893612}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.47, z: 0}
+  m_LocalPosition: {x: 0.07, y: -0.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -695,7 +695,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.009668589, y: 0}
+  m_Offset: {x: 0.03331089, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -706,7 +706,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9497237, y: 1}
+  m_Size: {x: 1.2807178, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &5071361911497448258
 Rigidbody2D:
@@ -761,7 +761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMoveScript: {fileID: 5071361911497448270}
   pointToCheckFloor: {fileID: 5071361911287893612}
-  boxCheckSize: {x: 1, y: 0.5}
+  boxCheckSize: {x: 1.3, y: 0.5}
   floorLayer:
     serializedVersion: 2
     m_Bits: 1536

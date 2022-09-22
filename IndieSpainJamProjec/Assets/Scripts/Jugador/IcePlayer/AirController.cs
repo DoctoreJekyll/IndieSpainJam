@@ -33,7 +33,7 @@ public class AirController : MonoBehaviour
 
         if (isOnFloor == false)
         {
-            rb2d.velocity = new Vector2(0f, rb2d.velocity.y);
+            rb2d.velocity = new Vector2(0.75f, rb2d.velocity.y);
             rb2d.velocity += Vector2.up * (Physics2D.gravity.y * (fallSpeed - 1) * Time.deltaTime);
         }
         else
