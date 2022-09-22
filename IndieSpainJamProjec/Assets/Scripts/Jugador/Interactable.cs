@@ -8,12 +8,13 @@ public class Interactable : MonoBehaviour
     //Esto es otra opción pero no me acaba de convencer.
     //TODO cosa de activar cosas
 
-    [SerializeField] private LayerMask layers;
+    [SerializeField] private LayerMask interactableLayers;
     [SerializeField] private float range;
+    public KeyCode attackKey;
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))//TODO hay que meter todo esta funcionalidad dentro del animation
+        if (Input.GetKeyDown(attackKey))//TODO hay que meter todo esta funcionalidad dentro del animation
         {
             DetectStuffs();
         }
@@ -22,7 +23,7 @@ public class Interactable : MonoBehaviour
     
     private void DetectStuffs()//Podemos llamar también esto al atacar y generará un bool si colisiona con un enemigo
     {
-        Collider2D[] hitSomething = Physics2D.OverlapCircleAll(transform.position, range, layers);
+        Collider2D[] hitSomething = Physics2D.OverlapCircleAll(transform.position, range, interactableLayers);
 
         foreach (Collider2D enemy in hitSomething)
         {
