@@ -29,7 +29,7 @@ public class BreakableGameObject : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("Player") && col.gameObject.layer == layerWhoBrokeTheObj)
+        if (col.gameObject.CompareTag("Player") && col.gameObject.layer == 7)
         {
 
             if (col.gameObject.GetComponent<Rigidbody2D>().velocity.y < 0)
