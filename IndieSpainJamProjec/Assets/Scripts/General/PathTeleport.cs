@@ -6,11 +6,18 @@ public class PathTeleport : MonoBehaviour
 {
 
     [Header("Transform")]
-    [SerializeField] private Transform pointA;
-    [SerializeField] private Transform pointB;
+    [SerializeField] private Transform destination;
 
     [Header(("Player"))]
     private GameObject playerGO;
+
+    enum Points
+    {
+        POINTA,
+        POINTB
+    }
+
+    [SerializeField] private Points _points = Points.POINTA;
 
     private void Awake()
     {
@@ -32,8 +39,28 @@ public class PathTeleport : MonoBehaviour
         spTemp.enabled = false;
         
         yield return new WaitForSeconds(2f);
+
+
+        if (_points == Points.POINTA)
+        {
+            Debug.Log("izq");
+            Vector3 sumDestination = new Vector3(1, 0f, 0f);
+            Vector3 newDestination = destination.position + sumDestination;
+            playerGO.transform.position = newDestination;
+            
+        }else if (_points == Points.POINTB)
+        {
+            Debug.Log("derecha");
+            Vector3 sumDestination = new Vector3(-1f, 0f, 0f);
+            Vector3 newDestination = destination.position + sumDestination;
+            playerGO.transform.position = newDestination;
+            
+        }
         
-        playerGO.transform.position = pointB.position;//Muevo el jugador a la posicion B
+
+
+        
+
         spTemp.enabled = true;
         GameStateManager.instance.currentGameState = GameStateManager.GameState.GAMEPLAY;
     }
