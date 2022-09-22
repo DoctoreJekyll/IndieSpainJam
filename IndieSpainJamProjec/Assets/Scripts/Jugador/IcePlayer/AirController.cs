@@ -25,7 +25,6 @@ public class AirController : MonoBehaviour
         IsOnFloorCheck();
         StopMovementController();
         
-        Debug.Log(IsOnAir());
     }
 
     private void StopMovementController()

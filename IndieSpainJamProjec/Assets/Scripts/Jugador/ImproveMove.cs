@@ -24,12 +24,23 @@ public class ImproveMove : MonoBehaviour
 	private void Update()
     {
 	    _moveInput = Input.GetAxisRaw("Horizontal");
-	    Flip();
+	    if (GameStateManager.instance.currentGameState == GameStateManager.GameState.GAMEPLAY)
+	    {
+		    Flip();
+	    } 
+
     }
 	
     private void FixedUpdate()
     {
-	    Run();
+	    if (GameStateManager.instance.currentGameState == GameStateManager.GameState.GAMEPLAY)
+	    {
+		    Run();
+	    }    
+	    else
+	    {
+		    rb2d.velocity = new Vector2(0f, rb2d.velocity.y);//Ñapa temporal
+	    }
     }
 
     private void Run()

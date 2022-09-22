@@ -6,6 +6,8 @@ using UnityEngine;
 public class BreakableGameObject : MonoBehaviour
 {
 
+    [SerializeField] private LayerMask layerWhoBrokeTheObj;
+    
     //TE RECORDAREMOS CON ODIO E IRA
     // private void OnTriggerEnter2D(Collider2D col)
     // {
@@ -27,7 +29,7 @@ public class BreakableGameObject : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("Player"))
+        if (col.gameObject.CompareTag("Player") && col.gameObject.layer == layerWhoBrokeTheObj)
         {
 
             if (col.gameObject.GetComponent<Rigidbody2D>().velocity.y < 0)
