@@ -42,7 +42,6 @@ public class LevelManager : MonoBehaviour
 
     public void PlayerDeath()
     {
-        GameStateManager.instance.SetGameState(GameStateManager.GameState.EVENT);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
