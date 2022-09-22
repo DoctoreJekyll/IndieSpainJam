@@ -24,7 +24,7 @@ public class TempChanger : MonoBehaviour
         if(collision.tag == "Player")
         {
             float potencia = 1 / Vector3.Distance(this.transform.position, collision.transform.position);
-            Debug.Log(potencia);
+            //Debug.Log(potencia);
             mgr.cambiaTemperatura(temperatura, (intensidad + (potencia * 0.5f)));
         }
     }
