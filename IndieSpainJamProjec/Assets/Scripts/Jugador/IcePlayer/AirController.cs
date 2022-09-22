@@ -11,6 +11,7 @@ public class AirController : MonoBehaviour
     [SerializeField] private LayerMask floorLayer;
     
     private bool isOnFloor;
+    private bool isOnAir;
     private Rigidbody2D rb2d;
     [SerializeField] private float fallSpeed;
 
@@ -43,6 +44,16 @@ public class AirController : MonoBehaviour
     private void IsOnFloorCheck()
     {
         isOnFloor = Physics2D.OverlapBox(pointToCheckFloor.transform.position, boxCheckSize, 0, floorLayer);
+    }
+
+    public bool IsOnAir()
+    {
+        if (isOnFloor)
+        {
+            return false;
+        }
+
+        return true;
     }
     
     private void OnDrawGizmos()
