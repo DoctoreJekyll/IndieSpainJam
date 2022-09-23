@@ -13,6 +13,9 @@ public class LevelManager : MonoBehaviour
     public GameObject player;
     public GameObject initialDoor;
 
+    [Header("[Configuration]")]
+    public KeyCode resetKey;
+
 
     private void Awake()
     {
@@ -26,6 +29,7 @@ public class LevelManager : MonoBehaviour
             instance = this;
     }
 
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -33,6 +37,14 @@ public class LevelManager : MonoBehaviour
         PrepareLevel();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(resetKey))
+        {
+            PlayerDeath player = GameObject.FindObjectOfType<PlayerDeath>();
+            player.OnDeath();
+        }
+    }
 
     public void PrepareLevel()
     {

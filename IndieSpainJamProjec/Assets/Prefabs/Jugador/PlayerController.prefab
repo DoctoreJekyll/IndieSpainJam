@@ -328,6 +328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 0}
   timeUntilSceneReset: 1.5
+  dead: 0
 --- !u!70 &6942122753949294222
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -337,11 +338,11 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 949313492406137950}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c5e875dc74c592b43ad19960f7a6b3e6, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.11}
   m_Size: {x: 1.09, y: 1.45}
   m_Direction: 0
 --- !u!1 &4516566115410517157
@@ -587,12 +588,12 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 5062530320714785641}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c5e875dc74c592b43ad19960f7a6b3e6, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.09, y: 1.45}
+  m_Size: {x: 1.09, y: 1.03}
   m_Direction: 0
 --- !u!1 &5071361911287893612
 GameObject:
@@ -829,6 +830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 0}
   timeUntilSceneReset: 1.5
+  dead: 0
 --- !u!70 &6942122753949294221
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -838,11 +840,11 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 5071361911497448261}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c5e875dc74c592b43ad19960f7a6b3e6, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.11}
   m_Size: {x: 1.09, y: 1.45}
   m_Direction: 0
 --- !u!1 &8646428556176670515
