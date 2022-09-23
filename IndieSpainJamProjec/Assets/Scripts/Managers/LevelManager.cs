@@ -65,7 +65,9 @@ public class LevelManager : MonoBehaviour
 
         IEnumerator Coroutine_NextLevel()
         {
-            yield return new WaitForSeconds(2);
+            LevelTransitionCanvas.instance.Play_Transition_In();
+            yield return new WaitForSeconds(4);
+
             SceneManager.LoadScene(nextLevelScene);
         }
     }
