@@ -45,22 +45,22 @@ public class PlayerStatesManager : MonoBehaviour
 
     private void ChangePlayersWithTemp()
     {
-        if (_tempManager.temperatura <= 1)
+        if (_tempManager.currentTemp <= 1)
         {
             playerState = PlayerStates.ICE;
         }
 
-        if (_tempManager.temperatura >= 100)
+        if (_tempManager.currentTemp >= 100)
         {
             playerState = PlayerStates.GAS;
         }
 
-        if (playerState == PlayerStates.ICE && _tempManager.temperatura >= minTemperature)
+        if (playerState == PlayerStates.ICE && _tempManager.currentTemp >= minTemperature)
         {
             playerState = PlayerStates.WATER;
         }
 
-        if (playerState == PlayerStates.GAS && _tempManager.temperatura <= maxTemperature)
+        if (playerState == PlayerStates.GAS && _tempManager.currentTemp <= maxTemperature)
         {
             playerState = PlayerStates.WATER;
         }

@@ -17605,12 +17605,17 @@ PrefabInstance:
     - target: {fileID: 4427554595163555195, guid: dd4e1d080d8b3ba4a9d3f5ac479b5c25, type: 3}
       propertyPath: temptext
       value: 
-      objectReference: {fileID: 7833406790746514023}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427554595163555195, guid: dd4e1d080d8b3ba4a9d3f5ac479b5c25, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4427554595163555195, guid: dd4e1d080d8b3ba4a9d3f5ac479b5c25, type: 3}
       propertyPath: termometro
       value: 
-      objectReference: {fileID: 7833406790674736055}
-    m_RemovedComponents: []
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4427554595163555195, guid: dd4e1d080d8b3ba4a9d3f5ac479b5c25, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dd4e1d080d8b3ba4a9d3f5ac479b5c25, type: 3}
 --- !u!4 &6481847450075221732
 Transform:
@@ -20551,28 +20556,6 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
---- !u!114 &7833406790674736055 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3953252926787801632, guid: ea62a2587ac08cd4e8ebf5ed46f01f41, type: 3}
-  m_PrefabInstance: {fileID: 6514772895073907095}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7833406790746514023 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3953252926858531824, guid: ea62a2587ac08cd4e8ebf5ed46f01f41, type: 3}
-  m_PrefabInstance: {fileID: 6514772895073907095}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &7911143333305396979
 PrefabInstance:
   m_ObjectHideFlags: 0

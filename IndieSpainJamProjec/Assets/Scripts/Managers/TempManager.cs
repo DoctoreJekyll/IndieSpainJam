@@ -6,45 +6,73 @@ using UnityEngine.UI;
 
 public class TempManager : MonoBehaviour
 {
-    public float temperatura;
+    [Header("[References]")]
+    public Image tempFiller;
     public TextMeshProUGUI temptext;
-    public Slider termometro;
+    public Animator termAnimator;
+
+    [Header("[Configuration]")]
+    public float initialTemp;
+
+    [Header("[Values]")]
+    public float currentTemp;
+    
+
+
     // Start is called before the first frame update
     void Start()
     {
-        //test
-        temperatura = 30f;
-        temptext.text = temperatura.ToString("F2");
-        termometro.value = (int)temperatura;
+        currentTemp = initialTemp;
+        temptext.text = currentTemp.ToString("F0") + "º";
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void ModifyTemperature(float modificador,float intensidad)
     {
-        if(temperatura <= 0f)
+        if(currentTemp >= 0f && currentTemp <= 100f)
         {
-            temperatura = 0.01f;
+            currentTemp = currentTemp + ((modificador * intensidad) * Time.deltaTime);
         }
-        else if(temperatura >= 101f)
+
+        if (currentTemp > 100f)
+            currentTemp = 100f;
+
+        if (currentTemp < 0f)
+            currentTemp = 0f;
+
+        temptext.text = currentTemp.ToString("F0") +"º";
+        tempFiller.rectTransform.localScale = new Vector3(tempFiller.rectTransform.localScale.x, currentTemp / 100, tempFiller.rectTransform.localScale.z);
+
+        Debug.Log("Modificando");
+        CheckTermAnimation();
+    }
+
+
+    private void CheckTermAnimation()
+    {
+        //Si la temperatura es normal, detenemos las animaciones
+        if (currentTemp > 25 && currentTemp < 75) 
         {
-            temperatura = 100.00f;
+            termAnimator.SetBool("IDLE", true);
+            termAnimator.SetBool("SHAKE", false);
+            termAnimator.SetBool("POP", false);
         }
-        if (Input.GetKey(KeyCode.O))
+
+        //Si la temperatura está cerca de que cambie el estado del jugador, hace la animación de shake
+        if ((currentTemp < 20 && currentTemp > 1) || (currentTemp > 80 && currentTemp <= 99))
         {
-            cambiaTemperatura(-5f, 5f);
+            termAnimator.SetBool("IDLE", false);
+            termAnimator.SetBool("SHAKE", true);
+            termAnimator.SetBool("POP", false);
         }
-        else if (Input.GetKey(KeyCode.P))
+
+        //Si la temperatura ha llegado a un extremo, hace la animación de pop
+        if(currentTemp >= 100 || currentTemp <= 0)
         {
-            cambiaTemperatura(5f, 5f);
+            termAnimator.SetBool("IDLE", false);
+            termAnimator.SetBool("SHAKE", false);
+            termAnimator.SetBool("POP", true);
         }
     }
-    public void cambiaTemperatura(float modificador,float intensidad)
-    {
-        if(temperatura > 0f && temperatura < 101f)
-        {
-            temperatura = temperatura + ((modificador * intensidad) * Time.deltaTime);
-        }
-        temptext.text = temperatura.ToString("F2");
-        termometro.value = (int)temperatura;
-    }
+
 }

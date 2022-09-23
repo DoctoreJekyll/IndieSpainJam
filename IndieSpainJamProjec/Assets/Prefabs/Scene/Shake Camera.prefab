@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 4427554595163555138}
   - component: {fileID: 4427554595163555143}
   - component: {fileID: 4427554595163555142}
-  - component: {fileID: 4427554595163555195}
   - component: {fileID: 4427554595163555194}
   m_Layer: 0
   m_Name: Main Camera
@@ -171,21 +170,6 @@ MonoBehaviour:
   normalMagnitude: 0.12
   bigMagnitude: 0.35
   hugeMagnitude: 0.6
---- !u!114 &4427554595163555195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4427554595163555139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1eed64e6920c7d148a1cad75a4654a50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  temperatura: 0
-  temptext: {fileID: 0}
-  termometro: {fileID: 0}
 --- !u!114 &4427554595163555194
 MonoBehaviour:
   m_ObjectHideFlags: 0

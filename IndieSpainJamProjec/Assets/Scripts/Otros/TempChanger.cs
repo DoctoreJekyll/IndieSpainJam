@@ -6,17 +6,13 @@ public class TempChanger : MonoBehaviour
 {
     public int temperatura;
     public int intensidad;
-    TempManager mgr;
+    TempManager tempManager;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        mgr = Camera.main.GetComponent<TempManager>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        tempManager = GameObject.FindGameObjectWithTag("Temp Manager").GetComponent<TempManager>();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -24,8 +20,7 @@ public class TempChanger : MonoBehaviour
         if(collision.tag == "Player")
         {
             float potencia = 1 / Vector3.Distance(this.transform.position, collision.transform.position);
-            //Debug.Log(potencia);
-            mgr.cambiaTemperatura(temperatura, (intensidad + (potencia * 0.5f)));
+            tempManager.ModifyTemperature(temperatura, (intensidad + (potencia * 0.5f)));
         }
     }
 }
