@@ -11,6 +11,11 @@ public class PathTeleport : MonoBehaviour
     [Header(("Player"))]
     private GameObject playerGO;
 
+    [Header("Sounds")] 
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip goInClip;
+    [SerializeField] private AudioClip travelClip;
+
     enum Points
     {
         POINTA,
@@ -38,7 +43,11 @@ public class PathTeleport : MonoBehaviour
         SpriteRenderer spTemp = playerGO.GetComponent<SpriteRenderer>();//Pillo el sprite del jugador
         spTemp.enabled = false;
         
-        yield return new WaitForSeconds(2f);
+        _audioSource.PlayOneShot(goInClip);
+        yield return new WaitForSeconds(goInClip.length);
+        _audioSource.PlayOneShot(travelClip);
+        yield return new WaitForSeconds(travelClip.length);
+        _audioSource.PlayOneShot(goInClip);
 
 
         if (_points == Points.POINTA)

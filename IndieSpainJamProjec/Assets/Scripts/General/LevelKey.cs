@@ -18,9 +18,11 @@ public class LevelKey : MonoBehaviour
     private Transform lastPosition;
     public List<Transform> playerPositionList;
 
+    private AudioSource _audioSource;
 
     private void Start()
     {
+        _audioSource.GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Lakitu");
         playerPositionList = new List<Transform>();
     }
@@ -32,6 +34,7 @@ public class LevelKey : MonoBehaviour
             keyObtained = true;
             followingPlayer = true;
             collision.GetComponentInParent<PlayerKeyChecker>().hasKey = true;
+            _audioSource.PlayOneShot(_audioSource.clip);
         }
     }
 

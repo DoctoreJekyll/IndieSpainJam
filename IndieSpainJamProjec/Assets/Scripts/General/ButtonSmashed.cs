@@ -15,9 +15,12 @@ public class ButtonSmashed : MonoBehaviour
     [Header("Events to start")]
     [SerializeField] private UnityEvent buttonEvent;
 
+    private AudioSource _audioSource;
+
     private void Start()
     {
         buttonIsUsed = false;
+        _audioSource.GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -25,6 +28,7 @@ public class ButtonSmashed : MonoBehaviour
         if (!buttonIsUsed && CheckIfIcePlayerIsOn())
         {
             Debug.Log("Call the action");
+            _audioSource.PlayOneShot(_audioSource.clip);
             buttonEvent.Invoke();
             buttonIsUsed = true;
         }

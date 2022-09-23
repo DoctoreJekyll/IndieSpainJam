@@ -17,11 +17,6 @@ public class PlayerStatesManager : MonoBehaviour
     [SerializeField] private TempManager _tempManager;
 
 
-    [Header("Test")]
-    [SerializeField] private Transform lakituTransform;
-    private Vector2 playerPos;
-
-    
     private void Awake()
     {
         _tempManager = FindObjectOfType<TempManager>();
@@ -95,12 +90,7 @@ public class PlayerStatesManager : MonoBehaviour
 
         }
     }
-
-
-    private void ActivateOnLastPos(GameObject gameObjToActivate, GameObject objToGetPos)
-    {
-        gameObjToActivate.transform.position = objToGetPos.transform.position;
-    }
+    
     
     
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 using Random = System.Random;
 
 public class ChatBubble : MonoBehaviour
@@ -21,6 +22,8 @@ public class ChatBubble : MonoBehaviour
 
     [Header("Sounds")] 
     [SerializeField] private AudioClip _clip;
+    [SerializeField] private AudioClip dialogueOnClip;
+    [SerializeField] private AudioClip dialogueOffClip;
     private AudioSource _audioSource;
 
     private void Awake()
@@ -31,7 +34,13 @@ public class ChatBubble : MonoBehaviour
 
     private void OnEnable()
     {
+        _audioSource.PlayOneShot(dialogueOnClip);
         StartCoroutine(ShowText());
+    }
+
+    private void OnDisable()
+    {
+        _audioSource.PlayOneShot(dialogueOffClip);
     }
 
     private void Update()

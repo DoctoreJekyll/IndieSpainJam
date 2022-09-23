@@ -8,9 +8,11 @@ public class TargetDoor : MonoBehaviour
     [Header("[References]")]
     public PlayerKeyChecker keyChecker;
 
+    private AudioSource _audioSource;
 
     private void Start()
     {
+        _audioSource.GetComponent<AudioSource>();
         keyChecker = GameObject.FindGameObjectWithTag("Player").GetComponentInParent<PlayerKeyChecker>();
     }
 
@@ -23,7 +25,11 @@ public class TargetDoor : MonoBehaviour
     private void CheckPlayerKey()
     {
         if (keyChecker.Check_PlayerHasKey() == true)
+        {
             LevelManager.instance.LevelCompleted();
+            _audioSource.PlayOneShot(_audioSource.clip);
+        }
+            
     }
 
 
