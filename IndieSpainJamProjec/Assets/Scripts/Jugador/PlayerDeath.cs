@@ -8,9 +8,6 @@ public class PlayerDeath : MonoBehaviour
     [Header("[References]")]
     public Animator playerAnimator;
 
-    [Header("[Configuration]")]
-    public float timeUntilSceneReset = 1.5f;
-
     [Header("[Values]")]
     public bool dead;
 
@@ -29,7 +26,10 @@ public class PlayerDeath : MonoBehaviour
 
             IEnumerator Coroutine_OnDeath()
             {
-                yield return new WaitForSeconds(timeUntilSceneReset);
+                yield return new WaitForSeconds(0.5f);
+                TransitionCanvas.instance.Play_ScreenTransition_In();
+
+                yield return new WaitForSeconds(1);
                 LevelManager.instance.PlayerDeath();
             }
         }

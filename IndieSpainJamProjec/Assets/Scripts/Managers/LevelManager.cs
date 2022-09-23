@@ -51,6 +51,7 @@ public class LevelManager : MonoBehaviour
     {
         player.transform.position = initialDoor.transform.position;
         GameStateManager.instance.SetGameState(GameStateManager.GameState.GAMEPLAY);
+        TransitionCanvas.instance.Play_LevelTransition_Out();
     }
 
     public void PlayerDeath()
@@ -65,7 +66,7 @@ public class LevelManager : MonoBehaviour
 
         IEnumerator Coroutine_NextLevel()
         {
-            LevelTransitionCanvas.instance.Play_Transition_In();
+            TransitionCanvas.instance.Play_LevelTransition_In();
             yield return new WaitForSeconds(4);
 
             SceneManager.LoadScene(nextLevelScene);
