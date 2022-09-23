@@ -12,7 +12,7 @@ public class TargetDoor : MonoBehaviour
 
     private void Start()
     {
-        _audioSource.GetComponent<AudioSource>();
+        _audioSource = GetComponent<AudioSource>();
         keyChecker = GameObject.FindGameObjectWithTag("Player").GetComponentInParent<PlayerKeyChecker>();
     }
 

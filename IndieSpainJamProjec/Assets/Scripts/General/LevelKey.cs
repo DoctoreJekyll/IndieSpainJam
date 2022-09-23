@@ -22,7 +22,7 @@ public class LevelKey : MonoBehaviour
 
     private void Start()
     {
-        _audioSource.GetComponent<AudioSource>();
+        _audioSource = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Lakitu");
         playerPositionList = new List<Transform>();
     }
