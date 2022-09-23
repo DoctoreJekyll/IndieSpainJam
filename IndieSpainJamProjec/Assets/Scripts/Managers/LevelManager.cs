@@ -51,7 +51,7 @@ public class LevelManager : MonoBehaviour
     {
         player.transform.position = initialDoor.transform.position;
         GameStateManager.instance.SetGameState(GameStateManager.GameState.GAMEPLAY);
-        TransitionCanvas.instance.Play_LevelTransition_Out();
+        //TransitionCanvas.instance.Play_LevelTransition_Out();
     }
 
     public void PlayerDeath()

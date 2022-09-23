@@ -20,7 +20,7 @@ public class TempChanger : MonoBehaviour
     void Start()
     {
 
-        TakeSoundAndGet();
+        //TakeSoundAndGet();
         tempManager = GameObject.FindGameObjectWithTag("Temp Manager").GetComponent<TempManager>();
     }
 

@@ -17,6 +17,7 @@ public class LeverEvents : MonoBehaviour, IActivable
 
     public void DoActivate()
     {
+        CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
         myEvent.Invoke();
         _audioSource.PlayOneShot(leverClip);
     }

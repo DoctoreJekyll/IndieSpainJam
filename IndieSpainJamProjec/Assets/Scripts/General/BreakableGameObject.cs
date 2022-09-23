@@ -47,6 +47,7 @@ public class BreakableGameObject : MonoBehaviour
     
         if (CheckIfIcePlayerIsOn())
         {
+            CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
             this.gameObject.SetActive(false);
         }
     }

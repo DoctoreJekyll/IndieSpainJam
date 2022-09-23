@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class AirController : MonoBehaviour
@@ -24,7 +25,8 @@ public class AirController : MonoBehaviour
     {
         IsOnFloorCheck();
         StopMovementController();
-        
+        CheckIfPlayerIsOnAir();
+
     }
 
     private void StopMovementController()
@@ -45,6 +47,42 @@ public class AirController : MonoBehaviour
     private void IsOnFloorCheck()
     {
         isOnFloor = Physics2D.OverlapBox(pointToCheckFloor.transform.position, boxCheckSize, 0, floorLayer);
+    }
+
+    
+    
+    private void CheckIfPlayerIsOnAir()
+    {
+        if (!isOnFloor)
+        {
+            timeToPush += Time.deltaTime;
+            isOnAirAndPush = true;
+        }
+    }
+
+    private bool isOnAirAndPush;
+    private float timeToPush;
+    
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        
+        if (col.gameObject.layer == 10 && isOnAirAndPush)
+        {
+            if (timeToPush > 0 && timeToPush < 0.5f)
+            {
+                CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
+                Debug.Log("small shake");
+            }
+            else if (timeToPush > 0.5f)
+            {
+                CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.MEDIUM);
+                Debug.Log("medium shake");
+            }
+            
+            isOnAirAndPush = false;
+            timeToPush = 0f;
+        }
+
     }
 
     public bool IsOnAir()
