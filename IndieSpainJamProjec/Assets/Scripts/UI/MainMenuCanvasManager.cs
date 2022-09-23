@@ -14,6 +14,11 @@ public class MainMenuCanvasManager : MonoBehaviour
     public bool levelsPanelOpen;
     public bool creditsPanelOpen;
 
+    [Header("Sounds")] 
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip positiveMenuSound;
+    [SerializeField] private AudioClip negativeMenuSound;
+
     private void Start()
     {
         TransitionCanvas.instance.Play_ScreenTransition_Out();
@@ -34,11 +39,14 @@ public class MainMenuCanvasManager : MonoBehaviour
 
     public void OnClick_Play()
     {
+        _audioSource.PlayOneShot(positiveMenuSound);
         PlayLevel("Level 1");
     }
 
     public void OnClick_Levels()
     {
+        _audioSource.PlayOneShot(positiveMenuSound);
+        
         if(levelsPanelOpen == false)
         {
             levelsPanelOpen = true;
@@ -57,6 +65,8 @@ public class MainMenuCanvasManager : MonoBehaviour
 
     public void OnClick_Credits()
     {
+        _audioSource.PlayOneShot(positiveMenuSound);
+        
         if (creditsPanelOpen == false)
         {
             creditsPanelOpen = true;
@@ -75,6 +85,8 @@ public class MainMenuCanvasManager : MonoBehaviour
 
     public void OnClick_Exit()
     {
+        //Podemos hacer una corutina para que espere a que termine el sonido como en el pausemanager
+        _audioSource.PlayOneShot(negativeMenuSound);
         Application.Quit();
     }
 
