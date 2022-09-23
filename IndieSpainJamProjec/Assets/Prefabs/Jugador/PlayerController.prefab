@@ -327,7 +327,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 0}
-  timeUntilSceneReset: 1.5
   dead: 0
 --- !u!70 &6942122753949294222
 CapsuleCollider2D:
@@ -430,6 +429,7 @@ GameObject:
   - component: {fileID: 5062530320714785634}
   - component: {fileID: 6942122754709383214}
   - component: {fileID: 6942122753949294220}
+  - component: {fileID: 8910540767659509447}
   m_Layer: 8
   m_Name: Player_Gas
   m_TagString: Player
@@ -595,6 +595,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.09, y: 1.03}
   m_Direction: 0
+--- !u!114 &8910540767659509447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5062530320714785641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6404b5bc54d7e46be59c0e3c886669, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAnimator: {fileID: 0}
+  dead: 0
 --- !u!1 &5071361911287893612
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,7 +843,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 0}
-  timeUntilSceneReset: 1.5
   dead: 0
 --- !u!70 &6942122753949294221
 CapsuleCollider2D:

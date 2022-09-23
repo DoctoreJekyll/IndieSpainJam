@@ -17,6 +17,8 @@ public class TransitionCanvas : MonoBehaviour
 
     private void Awake()
     {
+        initialDoor = GameObject.FindGameObjectWithTag("Initial Door");
+        targetDoor = GameObject.FindGameObjectWithTag("Target Door");
         CreateSingleton();
     }
     private void CreateSingleton()
@@ -25,14 +27,7 @@ public class TransitionCanvas : MonoBehaviour
             Destroy(this.gameObject);
         else
             instance = this;
-    }
-
-
-    private void Start()
-    {
-        initialDoor = GameObject.FindGameObjectWithTag("Initial Door");
-        targetDoor = GameObject.FindGameObjectWithTag("Target Door");   
-    }    
+    }   
 
 
     public void Play_ScreenTransition_In()

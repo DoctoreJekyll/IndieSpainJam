@@ -69,7 +69,7 @@ public class CameraShake : MonoBehaviour
             float xOffset = Random.Range(-0.5f, 0.5f) * magnitude;
             float yOffset = Random.Range(-0.5f, 0.5f) * magnitude;
 
-            gameObject.transform.localPosition = new Vector3(xOffset, yOffset, originalPos.z);
+            gameObject.transform.localPosition = new Vector3(gameObject.transform.localPosition.x + xOffset, gameObject.transform.localPosition.y + yOffset, originalPos.z);
             currentTime += Time.unscaledDeltaTime;
             yield return null;
         }

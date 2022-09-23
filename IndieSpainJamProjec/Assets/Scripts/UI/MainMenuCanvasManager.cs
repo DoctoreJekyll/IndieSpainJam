@@ -14,10 +14,27 @@ public class MainMenuCanvasManager : MonoBehaviour
     public bool levelsPanelOpen;
     public bool creditsPanelOpen;
 
+    private void Start()
+    {
+        TransitionCanvas.instance.Play_ScreenTransition_Out();
+    }
+
+    public void PlayLevel(string levelScene)
+    {
+        StartCoroutine(Coroutine_PlayLevel());
+
+        IEnumerator Coroutine_PlayLevel()
+        {
+            TransitionCanvas.instance.Play_ScreenTransition_In();
+            yield return new WaitForSeconds(1);
+
+            SceneManager.LoadScene(levelScene);
+        }
+    }
 
     public void OnClick_Play()
     {
-        SceneManager.LoadScene("Level 1");
+        PlayLevel("Level 1");
     }
 
     public void OnClick_Levels()
@@ -60,5 +77,8 @@ public class MainMenuCanvasManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+
+
 
 }
