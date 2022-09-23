@@ -17,7 +17,7 @@ public class MainMenuCanvasManager : MonoBehaviour
 
     public void OnClick_Play()
     {
-        SceneManager.LoadScene("Level_01");
+        SceneManager.LoadScene("Level 1");
     }
 
     public void OnClick_Levels()

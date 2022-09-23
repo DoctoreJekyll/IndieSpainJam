@@ -15,6 +15,7 @@ public class LevelManager : MonoBehaviour
 
     [Header("[Configuration]")]
     public KeyCode resetKey;
+    public string nextLevelScene;
 
 
     private void Awake()
@@ -60,7 +61,13 @@ public class LevelManager : MonoBehaviour
     public void LevelCompleted()
     {
         GameStateManager.instance.SetGameState(GameStateManager.GameState.EVENT);
-        Debug.Log("Cargar siguiente nivel");
+        StartCoroutine(Coroutine_NextLevel());
+
+        IEnumerator Coroutine_NextLevel()
+        {
+            yield return new WaitForSeconds(2);
+            SceneManager.LoadScene(nextLevelScene);
+        }
     }
     
 }
