@@ -35,6 +35,12 @@ public class PlayerStatesManager : MonoBehaviour
     {
         ChangePlayersWithTemp();
         SwitchBetweenPlayers();
+
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
+        }
+        
     }
     
 

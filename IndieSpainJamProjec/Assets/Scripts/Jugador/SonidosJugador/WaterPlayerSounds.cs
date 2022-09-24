@@ -19,6 +19,7 @@ public class WaterPlayerSounds : MonoBehaviour
 
     private void OnEnable()
     {
+        CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
         _audioSource.PlayOneShot(waterAppearSong);
     }
 

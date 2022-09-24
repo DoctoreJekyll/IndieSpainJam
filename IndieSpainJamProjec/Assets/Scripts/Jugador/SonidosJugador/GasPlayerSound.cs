@@ -16,8 +16,9 @@ public class GasPlayerSound : MonoBehaviour
     private void OnEnable()
     {
         _audioSource.PlayOneShot(gasAppearSong);
+        CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
     }
-    
+
 
     public void LittleMoves()
     {
