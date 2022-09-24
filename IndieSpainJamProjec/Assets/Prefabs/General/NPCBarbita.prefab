@@ -49,10 +49,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgroundSpriteRenderer: {fileID: 2477096098074156969}
   textMeshPro: {fileID: 2477096097773872536}
-  textToSpeech: Con la forma de hielo puedes pulsar botones imbecil
+  textToSpeech: Toss a coin to your programmer desagradecido
   paddingX: 1
   paddingY: 1.25
   _clip: {fileID: 8300000, guid: 7b750994a088b914792be9147d5bdb85, type: 3}
+  dialogueOnClip: {fileID: 0}
+  dialogueOffClip: {fileID: 0}
 --- !u!82 &2477096096615718152
 AudioSource:
   m_ObjectHideFlags: 0

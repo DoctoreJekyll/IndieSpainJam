@@ -40,7 +40,7 @@ public class TempChanger : MonoBehaviour
         if (col.gameObject.CompareTag("Player"))
         {
 
-            _audioSource.volume = 0.5f;
+            _audioSource.volume = 0.2f;
             isPlayerOn = true;
             if (temperatura > 0)
             {
@@ -58,11 +58,11 @@ public class TempChanger : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             isPlayerOn = false;
-            StartCoroutine(TestCoroutine());
+            StartCoroutine(FadeOutVolumeCoroutine());
         }
     }
     
-    private IEnumerator TestCoroutine()
+    private IEnumerator FadeOutVolumeCoroutine()
     {
         yield return new WaitForSeconds(0.1f);
         if (!isPlayerOn)
@@ -76,8 +76,6 @@ public class TempChanger : MonoBehaviour
             }
             //_audioSource.Stop();
         }
-        
-
     }
     
     
