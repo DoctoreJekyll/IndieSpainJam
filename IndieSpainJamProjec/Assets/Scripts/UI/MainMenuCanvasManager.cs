@@ -19,6 +19,11 @@ public class MainMenuCanvasManager : MonoBehaviour
     [SerializeField] private AudioClip positiveMenuSound;
     [SerializeField] private AudioClip negativeMenuSound;
 
+    private void Awake()
+    {
+        Time.timeScale = 1;
+    }
+
     private void Start()
     {
         TransitionCanvas.instance.Play_ScreenTransition_Out();
