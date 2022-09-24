@@ -1578,13 +1578,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1188735891}
     m_Modifications:
+    - target: {fileID: -8710200167810083818, guid: 011a4f7d21d549447a1aae22c964c0a4, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2772204043252374193, guid: 011a4f7d21d549447a1aae22c964c0a4, type: 3}
       propertyPath: m_Name
       value: Target Door
-      objectReference: {fileID: 0}
-    - target: {fileID: 2772204043252374193, guid: 011a4f7d21d549447a1aae22c964c0a4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2772204043252374207, guid: 011a4f7d21d549447a1aae22c964c0a4, type: 3}
       propertyPath: m_RootOrder
