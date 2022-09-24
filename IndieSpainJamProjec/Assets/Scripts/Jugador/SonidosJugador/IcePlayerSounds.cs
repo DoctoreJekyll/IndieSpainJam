@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class IcePlayerSounds : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class IcePlayerSounds : MonoBehaviour
 
     public void IceImpactClip()
     {
+        _audioSource.pitch = Random.Range(0.9f, 1f);
         _audioSource.PlayOneShot(iceImpactClip);
     }
 

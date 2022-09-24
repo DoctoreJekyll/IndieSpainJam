@@ -16,9 +16,12 @@ public class AirController : MonoBehaviour
     private Rigidbody2D rb2d;
     [SerializeField] private float fallSpeed;
 
+
+    private IcePlayerSounds _icePlayerSounds;
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        _icePlayerSounds = GetComponent<IcePlayerSounds>();
     }
 
     private void Update()
@@ -71,11 +74,13 @@ public class AirController : MonoBehaviour
             if (timeToPush > 0 && timeToPush < 0.5f)
             {
                 CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
+                _icePlayerSounds.IceImpactClip();
                 Debug.Log("small shake");
             }
             else if (timeToPush > 0.5f)
             {
                 CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.MEDIUM);
+                _icePlayerSounds.IceImpactClip();
                 Debug.Log("medium shake");
             }
             
