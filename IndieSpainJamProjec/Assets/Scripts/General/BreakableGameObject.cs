@@ -52,7 +52,8 @@ public class BreakableGameObject : MonoBehaviour
     
         if (CheckIfIcePlayerIsOn())
         {
-            CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
+            CinemachineNoise.instance.ShakeCamera(1f,0.25f);
+            //CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
             breakableSpriteRenderLeft.sprite = breakSpriteLeft;
             breakableSpriteRenderRigth.sprite = breakSpriteRigth;
         }

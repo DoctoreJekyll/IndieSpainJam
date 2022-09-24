@@ -29,32 +29,28 @@ public class CinemachineNoise : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+
+        if (shakeTimer > 0f)
         {
-            ShakeCamera(2,1);
+            shakeTimer -= Time.deltaTime;
+            if (shakeTimer <= 0f)
+            {
+                CinemachineBasicMultiChannelPerlin channelPerlin =
+                    _cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+                channelPerlin.m_AmplitudeGain = 0f;
+            }
         }
     }
 
+    private float shakeTimer;
+    
     public void ShakeCamera(float intensity, float time)
     {
-        StartCoroutine(ShakeCoroutine(intensity, time));
-    }
-
-    private IEnumerator ShakeCoroutine(float intensity, float time)
-    {
-        float currenTime = 0;
         CinemachineBasicMultiChannelPerlin channelPerlin =
             _cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        channelPerlin.m_AmplitudeGain = intensity;
+        shakeTimer = time;
         
-        while (currenTime < time)
-        {
-            channelPerlin.m_AmplitudeGain = intensity;
-            currenTime += Time.unscaledTime;
-            yield return null;
-        }
-
-        channelPerlin.m_AmplitudeGain = 0f;
-
     }
-    
+
 }

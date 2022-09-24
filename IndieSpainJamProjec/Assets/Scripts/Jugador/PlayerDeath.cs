@@ -12,14 +12,15 @@ public class PlayerDeath : MonoBehaviour
     public bool dead;
 
 
-    //Detiene al jugador, reproduce la animación de muerte y le dice al GameController que ha muerto
+    //Detiene al jugador, reproduce la animaci?n de muerte y le dice al GameController que ha muerto
     public void OnDeath()
     {
         if(dead == false)
         {
             dead = true;
             GameStateManager.instance.SetGameState(GameStateManager.GameState.EVENT);
-            CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.BIG);
+            //CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.BIG);
+            CinemachineNoise.instance.ShakeCamera(2f,0.5f);
             //playerAnimator.Play("DEATH");
 
             StartCoroutine(Coroutine_OnDeath());
