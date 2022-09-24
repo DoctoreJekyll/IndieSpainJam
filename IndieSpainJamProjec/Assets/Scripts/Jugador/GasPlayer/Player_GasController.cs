@@ -39,11 +39,11 @@ public class Player_GasController : MonoBehaviour
 
         if (inputMovement > 0 || inputMovement < 0)
         {
-            _gasPlayerSound.LittleMoves();
+            //_gasPlayerSound.LittleMoves();
         }
         else
         {
-            _gasPlayerSound.StopMovement();
+            //_gasPlayerSound.StopMovement();
         }
         
     }

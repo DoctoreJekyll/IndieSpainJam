@@ -13,7 +13,6 @@ public class GasPlayerSound : MonoBehaviour
     [SerializeField] private AudioClip gasAppearSong;
     [SerializeField] private AudioClip littleMovesClip;
     
-
     private void OnEnable()
     {
         _audioSource.PlayOneShot(gasAppearSong);
@@ -35,7 +34,9 @@ public class GasPlayerSound : MonoBehaviour
     public void StopMovement()
     {
         _audioSource.loop = false;
-        //_audioSource.Stop();
+        _audioSource.Stop();
+
     }
+    
 
 }
