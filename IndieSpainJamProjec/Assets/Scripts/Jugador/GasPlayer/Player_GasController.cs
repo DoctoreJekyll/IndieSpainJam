@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,14 @@ public class Player_GasController : MonoBehaviour
     public float elevationForce;
     public float moveSpeed;
 
+    [Header("Sounds")] 
+    private GasPlayerSound _gasPlayerSound;
 
+
+    private void Awake()
+    {
+        _gasPlayerSound = GetComponent<GasPlayerSound>();
+    }
 
     private void FixedUpdate()
     {
@@ -28,5 +36,15 @@ public class Player_GasController : MonoBehaviour
     {
         float inputMovement = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(inputMovement * moveSpeed, rb.velocity.y);
+
+        if (inputMovement > 0 || inputMovement < 0)
+        {
+            _gasPlayerSound.LittleMoves();
+        }
+        else
+        {
+            _gasPlayerSound.StopMovement();
+        }
+        
     }
 }

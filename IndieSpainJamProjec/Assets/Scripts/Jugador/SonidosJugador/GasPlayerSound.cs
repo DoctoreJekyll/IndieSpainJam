@@ -19,7 +19,20 @@ public class GasPlayerSound : MonoBehaviour
 
     public void LittleMoves()
     {
-        _audioSource.PlayOneShot(littleMovesClip);
+        //_audioSource.loop = enabled;
+        if (!_audioSource.isPlaying)
+        {
+            _audioSource.pitch = Random.Range(0.9f, 1f);
+            _audioSource.loop = enabled;
+            _audioSource.PlayOneShot(littleMovesClip);
+        }
+
+    }
+
+    public void StopMovement()
+    {
+        _audioSource.loop = false;
+        _audioSource.Stop();
     }
 
 }

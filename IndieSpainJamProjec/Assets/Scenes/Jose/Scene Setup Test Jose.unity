@@ -2840,7 +2840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1533951344498771519, guid: cb19e35a31aa5fc459a31f1c5b8b898f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb19e35a31aa5fc459a31f1c5b8b898f, type: 3}
@@ -13423,6 +13423,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2001299774, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
+      propertyPath: littleMovesClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 90bfa9e29fdb1834d8098ee4186a2f34, type: 3}
+    - target: {fileID: 2001299775, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4516566115410517156, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
       propertyPath: m_RootOrder
       value: 4
