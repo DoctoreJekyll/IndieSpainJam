@@ -8,7 +8,10 @@ public class BreakableGameObject : MonoBehaviour
 
     [SerializeField] private LayerMask layerWhoBrokeTheObj;
     [SerializeField] private float range;
-    
+
+    [SerializeField] private SpriteRenderer breakableSpriteRender;
+    [SerializeField] private Sprite breakSprite;
+
     //TE RECORDAREMOS CON ODIO E IRA
     // private void OnTriggerEnter2D(Collider2D col)
     // {
@@ -48,7 +51,7 @@ public class BreakableGameObject : MonoBehaviour
         if (CheckIfIcePlayerIsOn())
         {
             CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
-            this.gameObject.SetActive(false);
+            breakableSpriteRender.sprite = breakSprite;
         }
     }
     
