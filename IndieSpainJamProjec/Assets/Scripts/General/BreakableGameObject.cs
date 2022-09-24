@@ -9,8 +9,10 @@ public class BreakableGameObject : MonoBehaviour
     [SerializeField] private LayerMask layerWhoBrokeTheObj;
     [SerializeField] private float range;
 
-    [SerializeField] private SpriteRenderer breakableSpriteRender;
-    [SerializeField] private Sprite breakSprite;
+    [SerializeField] private SpriteRenderer breakableSpriteRenderLeft;
+    [SerializeField] private SpriteRenderer breakableSpriteRenderRigth;
+    [SerializeField] private Sprite breakSpriteLeft;
+    [SerializeField] private Sprite breakSpriteRigth;
 
     //TE RECORDAREMOS CON ODIO E IRA
     // private void OnTriggerEnter2D(Collider2D col)
@@ -51,16 +53,20 @@ public class BreakableGameObject : MonoBehaviour
         if (CheckIfIcePlayerIsOn())
         {
             CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
-            breakableSpriteRender.sprite = breakSprite;
+            breakableSpriteRenderLeft.sprite = breakSpriteLeft;
+            breakableSpriteRenderRigth.sprite = breakSpriteRigth;
         }
     }
+
+    public float distanceRay1;
+    public float distanceRay2;
     
     private bool CheckIfIcePlayerIsOn()
     {
         Vector2 rayDir = new Vector2(0, 0.5f);
         Vector2 rayOrigin = transform.position;
-        Vector2 rayOriginLeft = new Vector2(transform.position.x - 0.6f, transform.position.y);
-        Vector2 rayOriginRigth = new Vector2(transform.position.x + 0.6f, transform.position.y);
+        Vector2 rayOriginLeft = new Vector2(transform.position.x + distanceRay1, transform.position.y);
+        Vector2 rayOriginRigth = new Vector2(transform.position.x + distanceRay2, transform.position.y);
         
         RaycastHit2D hitInfo = Physics2D.Raycast(rayOrigin, rayDir, range, layerWhoBrokeTheObj);
         RaycastHit2D hitInfoLeft = Physics2D.Raycast(rayOriginLeft, rayDir, range, layerWhoBrokeTheObj);
