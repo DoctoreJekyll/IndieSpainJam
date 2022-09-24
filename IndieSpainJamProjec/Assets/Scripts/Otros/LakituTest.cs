@@ -19,5 +19,18 @@ public class LakituTest : MonoBehaviour
         {
             transform.position = playerTransform.position;
         }
+
+
+        float inputForCameraTest = Input.GetAxis("Horizontal");
+        if (inputForCameraTest > 0)
+        {
+            transform.localScale = Vector2.right;
+        }
+
+        if (inputForCameraTest < 0)
+        {
+            transform.localScale = Vector2.left;
+        }
+
     }
 }
