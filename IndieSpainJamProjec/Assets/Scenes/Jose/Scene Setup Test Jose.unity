@@ -449,6 +449,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Teleport
       objectReference: {fileID: 0}
+    - target: {fileID: 496514770252599884, guid: a47bc0965c6c7ed42b8990bb2d92e869, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 496514770252599885, guid: a47bc0965c6c7ed42b8990bb2d92e869, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -717,7 +721,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &363296558
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11910,6 +11914,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2477096096615718152, guid: 21dc7f76eb01aaa4fbc843f24695dd1c, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2477096097915320077, guid: 21dc7f76eb01aaa4fbc843f24695dd1c, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -13480,13 +13488,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2001299774, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
-      propertyPath: littleMovesClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 90bfa9e29fdb1834d8098ee4186a2f34, type: 3}
     - target: {fileID: 2001299775, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
       propertyPath: m_Volume
-      value: 0.5
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2001299775, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2001299775, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4516566115410517156, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
       propertyPath: m_RootOrder

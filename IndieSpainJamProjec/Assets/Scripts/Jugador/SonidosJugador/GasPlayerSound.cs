@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GasPlayerSound : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class GasPlayerSound : MonoBehaviour
     {
         _audioSource.PlayOneShot(gasAppearSong);
     }
+    
 
     public void LittleMoves()
     {
@@ -32,7 +35,7 @@ public class GasPlayerSound : MonoBehaviour
     public void StopMovement()
     {
         _audioSource.loop = false;
-        _audioSource.Stop();
+        //_audioSource.Stop();
     }
 
 }
