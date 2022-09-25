@@ -18,14 +18,32 @@ public class IcePlayerSounds : MonoBehaviour
     [Header("Effects")]
     [SerializeField] private GameObject particle;
 
+    
+    private bool checkDead;
+    private PlayerDeath _playerDeath;
+    
     private void OnEnable()
     {
         //CinemachineNoise.instance.ShakeCamera(1f,0.25f);
         CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
         _audioSource.PlayOneShot(iceAppearSong);
         particle.SetActive(true);
+        checkDead = false;
     }
 
+    private void Awake()
+    {
+        _playerDeath = GetComponent<PlayerDeath>();
+    }
+
+    private void Update()
+    {
+        if (_playerDeath.dead == true && checkDead == false)
+        {
+            DeadClip();
+            checkDead = true;
+        }
+    }
 
     public void IceImpactClip()
     {

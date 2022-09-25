@@ -20,11 +20,32 @@ public class WaterPlayerSounds : MonoBehaviour
     [Header("Effects")] 
     [SerializeField] private GameObject particle;
 
+    /// <summary>
+    /// ///Control de daños
+    /// </summary>
+    public PlayerDeath _playerDeath;
+    private bool checkDead;
+    
     private void OnEnable()
     {
-        //CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
         _audioSource.PlayOneShot(waterAppearSong);
         particle.SetActive(true);
+        checkDead = false;
+    }
+
+    private void Start()
+    {
+        CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
+    }
+
+    private void Update()
+    {
+        
+        if (_playerDeath.dead == true && checkDead == false)
+        {
+            DeadSound();
+            checkDead = true;
+        }
     }
 
     public void Step()

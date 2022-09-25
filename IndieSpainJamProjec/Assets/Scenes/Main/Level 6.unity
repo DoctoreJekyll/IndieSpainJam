@@ -256,10 +256,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1271775158210247532, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
-      propertyPath: playerState
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1271775158210247534, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
       propertyPath: m_Name
       value: PlayerController
@@ -308,6 +304,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3389046918888208890, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+      propertyPath: deadClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0dc26d9855aac4842b6c9791bd8e0c02, type: 3}
+    - target: {fileID: 5586403619139100087, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+      propertyPath: deadClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4316c9f2a1895e341b2db811b16f2d6f, type: 3}
+    - target: {fileID: 5586403619139100087, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+      propertyPath: _playerDeath
+      value: 
+      objectReference: {fileID: 1094392276}
+    - target: {fileID: 5586403619139100087, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+      propertyPath: stepClip.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5586403619139100087, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+      propertyPath: stepClip.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 491e217b66623ee4b8d7d2f62dac671d, type: 3}
+    - target: {fileID: 5586403619139100087, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+      propertyPath: stepClip.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 52186bd77454d0343ac83980e1029b2c, type: 3}
+    - target: {fileID: 5586403619139100087, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+      propertyPath: stepClip.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: c6a1a1176c323004a8940c922b1c3a66, type: 3}
+    - target: {fileID: 5586403619139100087, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+      propertyPath: stepClip.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: f5ab086deb2eb1c4dabaa694c175145c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
 --- !u!1 &55144280
@@ -2770,6 +2798,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5339144452193314989, guid: aec4ed060a8f2d14e8eab12737cbe10f, type: 3}
   m_PrefabInstance: {fileID: 1081081754}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1094392276 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3301626312036586405, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+  m_PrefabInstance: {fileID: 54794637}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6404b5bc54d7e46be59c0e3c886669, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1141142023
 PrefabInstance:
   m_ObjectHideFlags: 0
