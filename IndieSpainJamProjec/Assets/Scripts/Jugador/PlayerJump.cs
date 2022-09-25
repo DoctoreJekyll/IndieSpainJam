@@ -21,6 +21,13 @@ public class PlayerJump : MonoBehaviour
     [SerializeField]private float coyoteTime;
     [SerializeField]private float timeToDoCoyote;
 
+    private AudioSource _audioSource;
+
+    private void Start()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
+
     private void Update()
     {
         
@@ -50,6 +57,7 @@ public class PlayerJump : MonoBehaviour
             {
                 rb2d.velocity = new Vector2(rb2d.velocity.x, 0);
                 rb2d.velocity += Vector2.up * jumpForce;
+                
             }
 
             if (Input.GetKeyUp((KeyCode.Space)))

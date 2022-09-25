@@ -634,6 +634,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1930917823, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
+      propertyPath: fallClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 106f4c86aaa1a314a8a91f690b389a88, type: 3}
+    - target: {fileID: 1930917823, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
+      propertyPath: jumpClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 53150230d0e76264396811d1212570e1, type: 3}
     - target: {fileID: 2874555792838505, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
       propertyPath: m_Enabled
       value: 0
