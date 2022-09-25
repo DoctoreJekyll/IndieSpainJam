@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 333369975}
     m_Modifications:
+    - target: {fileID: 58715947355533968, guid: 132e357d603ac88408c4a1741dcd4359, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4069198984724350849, guid: 132e357d603ac88408c4a1741dcd4359, type: 3}
       propertyPath: m_Name
       value: Frost Tile (6)
@@ -195,6 +199,10 @@ PrefabInstance:
     - target: {fileID: 7691636372487557134, guid: 887f0334d4b8bbd46b7fba169f3c08f0, type: 3}
       propertyPath: m_Name
       value: Transition Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7691636372487557134, guid: 887f0334d4b8bbd46b7fba169f3c08f0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7691636372487557135, guid: 887f0334d4b8bbd46b7fba169f3c08f0, type: 3}
       propertyPath: testCamera
@@ -374,6 +382,10 @@ PrefabInstance:
     - target: {fileID: 7707342054566585129, guid: 32e95376d05fdd7498f695844dac97da, type: 3}
       propertyPath: m_Name
       value: Frost Tile (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062680471655260597, guid: 32e95376d05fdd7498f695844dac97da, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32e95376d05fdd7498f695844dac97da, type: 3}
@@ -1196,6 +1208,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Frost Tile (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 1114492953423239870, guid: ff566fd651abb304583cc3123e836b1d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff566fd651abb304583cc3123e836b1d, type: 3}
 --- !u!4 &953601385 stripped
@@ -1315,6 +1331,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Frost Tile (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1114492953423239870, guid: ff566fd651abb304583cc3123e836b1d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff566fd651abb304583cc3123e836b1d, type: 3}
 --- !u!4 &970353921 stripped
@@ -1371,6 +1391,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5142465309001301262, guid: e907bf8fb65980248b96629d022b7ba3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238978991962898005, guid: e907bf8fb65980248b96629d022b7ba3, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6604082368564173708, guid: e907bf8fb65980248b96629d022b7ba3, type: 3}
@@ -1518,6 +1542,10 @@ PrefabInstance:
     - target: {fileID: 2061867760518559073, guid: 99f03aff50f163f4d9419b9680606e31, type: 3}
       propertyPath: m_Name
       value: Hot Tile (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5910880397864649293, guid: 99f03aff50f163f4d9419b9680606e31, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7636935724732354283, guid: 99f03aff50f163f4d9419b9680606e31, type: 3}
       propertyPath: m_RootOrder
@@ -1906,6 +1934,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 333369975}
     m_Modifications:
+    - target: {fileID: 5251935878049947312, guid: 4c669d9cff78d2c41bebe40041afa556, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5251935878049947314, guid: 4c669d9cff78d2c41bebe40041afa556, type: 3}
       propertyPath: m_Name
       value: Frost Tile (4)
@@ -2278,6 +2310,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6498587101748723893, guid: 588292b924e474e42b9997f303e08644, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6498587101748723895, guid: 588292b924e474e42b9997f303e08644, type: 3}
       propertyPath: m_Name
       value: Hot Tile
@@ -2383,6 +2419,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8907067826085404412, guid: 69b9ac3360a3fec4e8b8d8d41cd5e532, type: 3}
+      propertyPath: m_Size.x
+      value: 3.6290321
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907067826085404412, guid: 69b9ac3360a3fec4e8b8d8d41cd5e532, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.03140354
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69b9ac3360a3fec4e8b8d8d41cd5e532, type: 3}
 --- !u!1001 &1844537034
@@ -2439,6 +2483,14 @@ PrefabInstance:
     - target: {fileID: 7707342054566585129, guid: 32e95376d05fdd7498f695844dac97da, type: 3}
       propertyPath: m_Name
       value: Frost Tile (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062680471655260597, guid: 32e95376d05fdd7498f695844dac97da, type: 3}
+      propertyPath: m_Size.x
+      value: 4.6090527
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062680471655260597, guid: 32e95376d05fdd7498f695844dac97da, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.5614085
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32e95376d05fdd7498f695844dac97da, type: 3}
@@ -2639,6 +2691,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 333369975}
     m_Modifications:
+    - target: {fileID: 157808322248284933, guid: a92b1e145ce2f1d4abe37d50fac6d34e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 157808322248284935, guid: a92b1e145ce2f1d4abe37d50fac6d34e, type: 3}
       propertyPath: m_Name
       value: Frost Tile (2)
@@ -2863,6 +2919,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Frost Tile (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1114492953423239870, guid: ff566fd651abb304583cc3123e836b1d, type: 3}
+      propertyPath: m_Size.x
+      value: 8.609362
+      objectReference: {fileID: 0}
+    - target: {fileID: 1114492953423239870, guid: ff566fd651abb304583cc3123e836b1d, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.027123213
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff566fd651abb304583cc3123e836b1d, type: 3}
 --- !u!4 &1986632833 stripped
@@ -2965,6 +3029,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause Menu Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4900334748812604630, guid: 9e093605e5c726b488978b2ee3c39201, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e093605e5c726b488978b2ee3c39201, type: 3}
 --- !u!1001 &2052950469
@@ -3021,6 +3089,10 @@ PrefabInstance:
     - target: {fileID: 1114492953423239868, guid: ff566fd651abb304583cc3123e836b1d, type: 3}
       propertyPath: m_Name
       value: Frost Tile (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1114492953423239870, guid: ff566fd651abb304583cc3123e836b1d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff566fd651abb304583cc3123e836b1d, type: 3}
@@ -3083,6 +3155,10 @@ PrefabInstance:
     - target: {fileID: 1114492953423239868, guid: ff566fd651abb304583cc3123e836b1d, type: 3}
       propertyPath: m_Name
       value: Frost Tile (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1114492953423239870, guid: ff566fd651abb304583cc3123e836b1d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff566fd651abb304583cc3123e836b1d, type: 3}
@@ -13426,6 +13502,10 @@ PrefabInstance:
     - target: {fileID: 3953252926326175541, guid: ea62a2587ac08cd4e8ebf5ed46f01f41, type: 3}
       propertyPath: m_Name
       value: Temperature Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3953252926326175541, guid: ea62a2587ac08cd4e8ebf5ed46f01f41, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3953252926571787976, guid: ea62a2587ac08cd4e8ebf5ed46f01f41, type: 3}
       propertyPath: m_AnchorMax.y

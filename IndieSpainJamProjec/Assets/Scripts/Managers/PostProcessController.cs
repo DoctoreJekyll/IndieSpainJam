@@ -68,7 +68,6 @@ public class PostProcessController : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         
-        
     }
     
 }
