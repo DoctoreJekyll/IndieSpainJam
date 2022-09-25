@@ -10,16 +10,25 @@ public class LeverEvents : MonoBehaviour, IActivable
     private AudioSource _audioSource;
     public AudioClip leverClip;
 
+    private bool isNotActivate;
+
     private void Start()
     {
         _audioSource = GetComponent<AudioSource>();
+        isNotActivate = true;
     }
 
     public void DoActivate()
     {
         //CinemachineNoise.instance.ShakeCamera(1f, 0.25f);
-        CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
-        myEvent.Invoke();
-        _audioSource.PlayOneShot(leverClip);
+        if (isNotActivate)
+        {
+            _audioSource.PlayOneShot(leverClip);
+            Debug.Log("Palanca");
+            CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
+            myEvent.Invoke();
+            isNotActivate = false;
+        }
+ 
     }
 }
