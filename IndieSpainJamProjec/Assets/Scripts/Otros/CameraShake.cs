@@ -74,6 +74,6 @@ public class CameraShake : MonoBehaviour
             yield return null;
         }
 
-        gameObject.transform.localPosition = originalPos;
+        //gameObject.transform.localPosition = originalPos;
     }
 }

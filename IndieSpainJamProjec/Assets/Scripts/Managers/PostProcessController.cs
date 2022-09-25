@@ -51,6 +51,10 @@ public class PostProcessController : MonoBehaviour
         while (_vignette.intensity.value < maxValue)
         {
             _vignette.intensity.value += Time.unscaledDeltaTime * 0.5f;
+
+            if (_vignette.intensity.value > maxValue)
+                _vignette.intensity.value = maxValue;
+
             yield return new WaitForEndOfFrame();
         }
     }

@@ -14,6 +14,8 @@ public class TransitionCanvas : MonoBehaviour
     public GameObject screenTransition, keyTransition;
     private GameObject initialDoor, targetDoor;
 
+    private Vector3 initialDoorPos, targetDoorPos;
+
     public Camera testCamera;
 
 
@@ -21,6 +23,10 @@ public class TransitionCanvas : MonoBehaviour
     {
         initialDoor = GameObject.FindGameObjectWithTag("Initial Door");
         targetDoor = GameObject.FindGameObjectWithTag("Target Door");
+
+        initialDoorPos = Camera.main.WorldToScreenPoint(initialDoor.transform.position);
+        targetDoorPos = Camera.main.WorldToScreenPoint(targetDoor.transform.position);
+
         CreateSingleton();
     }
     private void CreateSingleton()
@@ -30,6 +36,7 @@ public class TransitionCanvas : MonoBehaviour
         else
             instance = this;
     }   
+
 
 
     public void Play_ScreenTransition_In()
@@ -46,14 +53,14 @@ public class TransitionCanvas : MonoBehaviour
 
     public void Play_LevelTransition_In()
     {
-        keyMask.transform.position = Camera.main.WorldToScreenPoint(targetDoor.transform.position);
+        keyMask.transform.position = targetDoorPos;
         levelTransition_Animator.Play("TRANSITION IN");
     }
 
     public void Play_LevelTransition_Out()
     {
         keyTransition.SetActive(true);
-        keyMask.transform.position = Camera.main.WorldToScreenPoint(initialDoor.transform.position);
+        keyMask.transform.position = initialDoorPos;
         levelTransition_Animator.Play("TRANSITION OUT");
     }
 
