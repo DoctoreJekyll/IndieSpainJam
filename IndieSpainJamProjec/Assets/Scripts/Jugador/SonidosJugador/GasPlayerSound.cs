@@ -13,10 +13,14 @@ public class GasPlayerSound : MonoBehaviour
     [SerializeField] private AudioClip gasAppearSong;
     [SerializeField] private AudioClip littleMovesClip;
     
+    [Header("Effects")]
+    [SerializeField] private GameObject particle;
+    
     private void OnEnable()
     {
         _audioSource.PlayOneShot(gasAppearSong);
         CinemachineNoise.instance.ShakeCamera(1f,0.25f);
+        particle.SetActive(true);
         //CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
     }
 

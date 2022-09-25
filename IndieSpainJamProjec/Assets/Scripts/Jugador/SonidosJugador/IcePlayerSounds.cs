@@ -14,12 +14,16 @@ public class IcePlayerSounds : MonoBehaviour
     [SerializeField] private AudioClip iceImpactClip;
     [SerializeField] private AudioClip breakGroundClip;
     [SerializeField] private AudioClip deadClip;
+    
+    [Header("Effects")]
+    [SerializeField] private GameObject particle;
 
     private void OnEnable()
     {
         CinemachineNoise.instance.ShakeCamera(1f,0.25f);
         //CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
         _audioSource.PlayOneShot(iceAppearSong);
+        particle.SetActive(true);
     }
 
 

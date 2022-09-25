@@ -17,10 +17,14 @@ public class WaterPlayerSounds : MonoBehaviour
     [SerializeField] private AudioClip attackClip;
     [SerializeField] private AudioClip deadClip;
 
+    [Header("Effects")] 
+    [SerializeField] private GameObject particle;
+
     private void OnEnable()
     {
         //CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
         _audioSource.PlayOneShot(waterAppearSong);
+        particle.SetActive(true);
     }
 
     public void Step()
