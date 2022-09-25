@@ -12,6 +12,7 @@ public class CinemaCLookPlayer : MonoBehaviour
     private void Awake()
     {
         _cinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();
+        playerTransform = GameObject.FindWithTag("Player").transform;
     }
     
 
