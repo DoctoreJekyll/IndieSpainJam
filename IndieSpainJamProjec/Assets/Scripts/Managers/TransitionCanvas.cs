@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,10 +26,16 @@ public class TransitionCanvas : MonoBehaviour
         targetDoor = GameObject.FindGameObjectWithTag("Target Door");
 
         initialDoorPos = Camera.main.WorldToScreenPoint(initialDoor.transform.position);
-        targetDoorPos = Camera.main.WorldToScreenPoint(targetDoor.transform.position);
+        targetDoorPos = testCamera.WorldToScreenPoint(targetDoor.transform.position);
 
         CreateSingleton();
     }
+
+    private void Start()
+    {
+        StartCoroutine(PatchTransition());
+    }
+
     private void CreateSingleton()
     {
         if (instance != null && instance != this)
@@ -62,6 +69,12 @@ public class TransitionCanvas : MonoBehaviour
         keyTransition.SetActive(true);
         keyMask.transform.position = initialDoorPos;
         levelTransition_Animator.Play("TRANSITION OUT");
+    }
+
+    private IEnumerator PatchTransition()
+    {
+        yield return new WaitForEndOfFrame();
+        testCamera.enabled = false;
     }
 
 }
