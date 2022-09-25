@@ -634,6 +634,7 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< HEAD
     - target: {fileID: 1930917823, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
       propertyPath: fallClip
       value: 
@@ -653,6 +654,31 @@ PrefabInstance:
     - target: {fileID: 3020822783119529807, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
       propertyPath: moveWithTransform
       value: 1
+=======
+    - target: {fileID: 1930917822, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 949313492079698658, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.731
+      objectReference: {fileID: 0}
+    - target: {fileID: 949313492406139812, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
+      propertyPath: boxCheckSize.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 949313492406139812, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
+      propertyPath: boxCheckSize.y
+      value: 0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 949313492406139812, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
+      propertyPath: soundFallCheck.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 949313492406139812, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
+      propertyPath: soundFallCheck.y
+      value: 0.2
+>>>>>>> parent of 023d55d (viñete de los huevete fix)
       objectReference: {fileID: 0}
     - target: {fileID: 4516566115410517156, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
       propertyPath: m_RootOrder
