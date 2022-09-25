@@ -15,7 +15,7 @@ public class AirController : MonoBehaviour
     private bool isOnAir;
     private Rigidbody2D rb2d;
     [SerializeField] private float fallSpeed;
-
+    [SerializeField] private GameObject shadow;
 
     private IcePlayerSounds _icePlayerSounds;
     private void Awake()
@@ -26,6 +26,8 @@ public class AirController : MonoBehaviour
 
     private void Update()
     {
+        shadow.SetActive(isOnFloor);
+        
         IsOnFloorCheck();
         StopMovementController();
         CheckIfPlayerIsOnAir();

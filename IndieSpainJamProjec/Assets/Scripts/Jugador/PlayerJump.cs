@@ -15,6 +15,7 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] private GameObject pointToCheckFloor;
     [SerializeField] private Vector2 boxCheckSize;
     [SerializeField] private LayerMask floorLayer;
+    [SerializeField] private GameObject shadow;
 
     [Header("Coyote Bro")]
     [SerializeField]private float coyoteTime;
@@ -24,6 +25,8 @@ public class PlayerJump : MonoBehaviour
     {
         
         IsOnFloor();
+        
+        shadow.SetActive(isOnFloor);
         
         if (GameStateManager.instance.currentGameState == GameStateManager.GameState.GAMEPLAY)
         {
