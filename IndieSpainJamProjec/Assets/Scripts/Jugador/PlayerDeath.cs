@@ -19,8 +19,8 @@ public class PlayerDeath : MonoBehaviour
         {
             dead = true;
             GameStateManager.instance.SetGameState(GameStateManager.GameState.EVENT);
-            //CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.BIG);
-            CinemachineNoise.instance.ShakeCamera(2f,0.5f);
+            CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.BIG);
+            //CinemachineNoise.instance.ShakeCamera(2f,0.5f);
             //playerAnimator.Play("DEATH");
 
             StartCoroutine(Coroutine_OnDeath());

@@ -17,16 +17,17 @@ public class TransitionCanvas : MonoBehaviour
 
     private Vector3 initialDoorPos, targetDoorPos;
 
-    public Camera testCamera;
+    public Camera auxCamera;
 
 
     private void Awake()
     {
         initialDoor = GameObject.FindGameObjectWithTag("Initial Door");
         targetDoor = GameObject.FindGameObjectWithTag("Target Door");
+        auxCamera = GameObject.FindGameObjectWithTag("Aux Camera").GetComponent<Camera>();
 
         initialDoorPos = Camera.main.WorldToScreenPoint(initialDoor.transform.position);
-        targetDoorPos = testCamera.WorldToScreenPoint(targetDoor.transform.position);
+        targetDoorPos = auxCamera.WorldToScreenPoint(targetDoor.transform.position);
 
         CreateSingleton();
     }
@@ -74,7 +75,7 @@ public class TransitionCanvas : MonoBehaviour
     private IEnumerator PatchTransition()
     {
         yield return new WaitForEndOfFrame();
-        testCamera.enabled = false;
+        auxCamera.enabled = false;
     }
 
 }
