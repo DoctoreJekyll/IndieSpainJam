@@ -2340,6 +2340,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 949313492406139812, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
+      propertyPath: soundFallCheck.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 949313492406139812, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
+      propertyPath: soundFallCheck.y
+      value: 0.12
+      objectReference: {fileID: 0}
     - target: {fileID: 4516566115410517156, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
       propertyPath: m_RootOrder
       value: 4
