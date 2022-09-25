@@ -7,10 +7,15 @@ public class PlayerMove : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private float inputMovement;
 
+    public PlayerJump playerJump;
+    public Animator waterAnimator;
+
     [Header("Movement Stuff")]
     public float moveSpeed;
     public float maxMoveSpeed;
     public float moveSpeedWhenSpikes;
+
+
 
     private void Awake()
     {
@@ -37,12 +42,31 @@ public class PlayerMove : MonoBehaviour
         {
             rb2d.velocity = new Vector2(0f, rb2d.velocity.y);//Ñapa porque a veces si saltas encima del teleport e igual para otros eventos el pj sigue con su velocidad, esto lo soluciona por ahora
         }
-
     }
+
     private void PlayerMovement()
     {
         inputMovement = Input.GetAxisRaw("Horizontal");
         rb2d.velocity = new Vector2(inputMovement * moveSpeed, rb2d.velocity.y);
+
+        if(playerJump.isOnFloor == true)
+        {
+            if(inputMovement != 0)
+            {
+                waterAnimator.SetBool("RUNNING", true);
+                waterAnimator.SetBool("IDLE", false);
+            }
+            else
+            {
+                waterAnimator.SetBool("RUNNING", false);
+                waterAnimator.SetBool("IDLE", true);
+            }
+        }
+        else
+        {
+            waterAnimator.SetBool("RUNNING", false);
+            waterAnimator.SetBool("IDLE", false);
+        }
     }
 
 

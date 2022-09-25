@@ -22,6 +22,7 @@ public class PlayerJump : MonoBehaviour
     [SerializeField]private float timeToDoCoyote;
 
     private WaterPlayerSounds _waterPlayerSounds;
+    public Animator waterAnimator;
 
     private void Start()
     {
@@ -47,6 +48,30 @@ public class PlayerJump : MonoBehaviour
     private void IsOnFloor()
     {
         isOnFloor = Physics2D.OverlapBox(pointToCheckFloor.transform.position, boxCheckSize, 0, floorLayer);
+
+        if(isOnFloor == false)
+        {
+            if(rb2d.velocity.y  > 0)
+            {
+                waterAnimator.SetBool("FALLING", false);
+                waterAnimator.SetBool("JUMPING", true);
+                waterAnimator.SetBool("RUNNING", false);
+                waterAnimator.SetBool("IDLE", false);
+            }
+            else
+            {
+                waterAnimator.SetBool("FALLING", true);
+                waterAnimator.SetBool("JUMPING", false);
+                waterAnimator.SetBool("RUNNING", false);
+                waterAnimator.SetBool("IDLE", false);
+            }
+                
+        }
+        else
+        {
+            waterAnimator.SetBool("FALLING", false);
+            waterAnimator.SetBool("JUMPING", false);
+        }
     }
     
     private void Jump()

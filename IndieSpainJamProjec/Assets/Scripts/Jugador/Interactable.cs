@@ -10,12 +10,17 @@ public class Interactable : MonoBehaviour
 
     [SerializeField] private LayerMask interactableLayers;
     [SerializeField] private float range;
+    public PlayerJump playerJump;
+    public Animator waterAnimator;
     public KeyCode attackKey;
 
     private void Update()
     {
-        if (Input.GetKeyDown(attackKey))//TODO hay que meter todo esta funcionalidad dentro del animation
+        if (Input.GetKeyDown(attackKey) && playerJump.isOnFloor == true)//TODO hay que meter todo esta funcionalidad dentro del animation
         {
+            waterAnimator.Play("IDLE");
+            waterAnimator.Play("INTERACTING");
+
             DetectStuffs();
         }
     }
