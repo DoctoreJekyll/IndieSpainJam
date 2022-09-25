@@ -41,11 +41,13 @@ public class WaterPlayerSounds : MonoBehaviour
 
     public void JumpSound()
     {
+        _audioSource.pitch = Random.Range(0.85f, 1f);
         _audioSource.PlayOneShot(jumpClip);
     }
 
     public void FallSound()
     {
+        _audioSource.pitch = Random.Range(0.85f, 1f);
         _audioSource.PlayOneShot(fallClip);
     }
 

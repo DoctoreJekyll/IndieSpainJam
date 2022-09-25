@@ -634,6 +634,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1930917823, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
+      propertyPath: fallClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4974ddb29b3c7c64ead97f8f742ef625, type: 3}
+    - target: {fileID: 1930917823, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
+      propertyPath: jumpClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5d906b4b8dfda004590feaf3a8e2aadc, type: 3}
+    - target: {fileID: 2688649332484673944, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861518776970154472, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3020822783119529807, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4516566115410517156, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
       propertyPath: m_RootOrder
       value: 6

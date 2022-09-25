@@ -629,8 +629,8 @@ MonoBehaviour:
   _audioSource: {fileID: 1930917822}
   waterAppearSong: {fileID: 8300000, guid: 7b750994a088b914792be9147d5bdb85, type: 3}
   stepClip: []
-  jumpClip: {fileID: 8300000, guid: 53150230d0e76264396811d1212570e1, type: 3}
-  fallClip: {fileID: 8300000, guid: 53150230d0e76264396811d1212570e1, type: 3}
+  jumpClip: {fileID: 8300000, guid: 5d906b4b8dfda004590feaf3a8e2aadc, type: 3}
+  fallClip: {fileID: 8300000, guid: 4974ddb29b3c7c64ead97f8f742ef625, type: 3}
   attackClip: {fileID: 0}
   deadClip: {fileID: 0}
   particle: {fileID: 1987643770284640271}
@@ -1482,6 +1482,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2688649332751440471, guid: b4efc6d3998b04c72ba0a198f22f07ab, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4efc6d3998b04c72ba0a198f22f07ab, type: 3}
 --- !u!4 &2688649332484673950 stripped
@@ -1549,6 +1553,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3020822782123192019, guid: d0714d3e70f1745a2b27eaaff3cd39c5, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0714d3e70f1745a2b27eaaff3cd39c5, type: 3}
 --- !u!1 &3020822783119529804 stripped
@@ -1571,6 +1579,10 @@ PrefabInstance:
     - target: {fileID: 1987643769661287194, guid: 0cabc1c467bd44fd48ac7297221c2362, type: 3}
       propertyPath: m_Name
       value: AguaChispis
+      objectReference: {fileID: 0}
+    - target: {fileID: 2861518778222703357, guid: 0cabc1c467bd44fd48ac7297221c2362, type: 3}
+      propertyPath: playOnAwake
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3305856044050137858, guid: 0cabc1c467bd44fd48ac7297221c2362, type: 3}
       propertyPath: m_RootOrder
