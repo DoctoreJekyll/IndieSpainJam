@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 34030302399466469}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.7639866, y: 6.6852493, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -141,7 +141,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5223994, y: 0.66872716}
+  m_Size: {x: 3.25, y: 0.66872716}
   m_EdgeRadius: 0
 --- !u!50 &34030302399466471
 Rigidbody2D:
@@ -179,13 +179,14 @@ MonoBehaviour:
   layerWhoBrokeTheObj:
     serializedVersion: 2
     m_Bits: 128
-  range: 1.3
+  range: 1.5
   breakableSpriteRenderLeft: {fileID: 34030302399466464}
   breakableSpriteRenderRigth: {fileID: 8900816832398474274}
   breakSpriteLeft: {fileID: 2019775616, guid: 422aec3ff920a8e45bf33377b9ccb92d, type: 3}
-  breakSpriteRigth: {fileID: -822488562, guid: 422aec3ff920a8e45bf33377b9ccb92d, type: 3}
-  distanceRay1: 0.65
-  distanceRay2: 1.4
+  breakSpriteRigth: {fileID: 2019775616, guid: 422aec3ff920a8e45bf33377b9ccb92d, type: 3}
+  collider: {fileID: 34030302399466470}
+  distanceRay1: 0.6
+  distanceRay2: 1.31
 --- !u!1 &6901558099803079918
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,7 +343,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -1678389282, guid: 05b0316a0d10b914cab5ba473f3e67e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

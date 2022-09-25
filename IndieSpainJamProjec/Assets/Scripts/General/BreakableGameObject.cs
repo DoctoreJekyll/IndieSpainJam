@@ -14,6 +14,8 @@ public class BreakableGameObject : MonoBehaviour
     [SerializeField] private Sprite breakSpriteLeft;
     [SerializeField] private Sprite breakSpriteRigth;
 
+    public Collider2D collider;
+
     //TE RECORDAREMOS CON ODIO E IRA
     // private void OnTriggerEnter2D(Collider2D col)
     // {
@@ -56,6 +58,7 @@ public class BreakableGameObject : MonoBehaviour
             //CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
             breakableSpriteRenderLeft.sprite = breakSpriteLeft;
             breakableSpriteRenderRigth.sprite = breakSpriteRigth;
+            collider.enabled = false;
         }
     }
 
@@ -73,6 +76,7 @@ public class BreakableGameObject : MonoBehaviour
         RaycastHit2D hitInfoLeft = Physics2D.Raycast(rayOriginLeft, rayDir, range, layerWhoBrokeTheObj);
         RaycastHit2D hitInfoRight = Physics2D.Raycast(rayOriginRigth, rayDir, range, layerWhoBrokeTheObj);
         Color rayColor = Color.green;
+        
         if (hitInfo == true || hitInfoLeft == true || hitInfoRight == true)
         {
             return true;
