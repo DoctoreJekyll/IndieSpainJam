@@ -11223,6 +11223,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Controller
       objectReference: {fileID: 0}
+    - target: {fileID: 2272629688217748866, guid: 2f6259652e5738641813c79b749e0f18, type: 3}
+      propertyPath: nextLevelScene
+      value: Level 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2272629688217748876, guid: 2f6259652e5738641813c79b749e0f18, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -12741,6 +12745,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 881499071, guid: dd4e1d080d8b3ba4a9d3f5ac479b5c25, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -14.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 881499071, guid: dd4e1d080d8b3ba4a9d3f5ac479b5c25, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.31
+      objectReference: {fileID: 0}
     - target: {fileID: 4427554594513337994, guid: dd4e1d080d8b3ba4a9d3f5ac479b5c25, type: 3}
       propertyPath: m_Name
       value: Shake Camera

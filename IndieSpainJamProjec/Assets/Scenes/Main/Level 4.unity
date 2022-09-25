@@ -2186,6 +2186,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 333369975}
     m_Modifications:
+    - target: {fileID: 7030153353506914865, guid: b999c1e6602632a41937cba916d57bce, type: 3}
+      propertyPath: boxCheckSize.x
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7030153353506914867, guid: b999c1e6602632a41937cba916d57bce, type: 3}
       propertyPath: m_Name
       value: Left Sand Tile
@@ -2251,6 +2255,10 @@ PrefabInstance:
     - target: {fileID: 1889481786467238184, guid: e15c4baabdc4b2d49b714bc90fec7e6b, type: 3}
       propertyPath: m_Name
       value: Right Sand Tile
+      objectReference: {fileID: 0}
+    - target: {fileID: 1889481786467238186, guid: e15c4baabdc4b2d49b714bc90fec7e6b, type: 3}
+      propertyPath: boxCheckSize.x
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 1889481786467238188, guid: e15c4baabdc4b2d49b714bc90fec7e6b, type: 3}
       propertyPath: m_RootOrder
@@ -2814,6 +2822,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 179425096}
     m_Modifications:
+    - target: {fileID: 2705018182558203370, guid: 6fb6372fbf92bbc4db39ed046210bfbd, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2705018184314489378, guid: 6fb6372fbf92bbc4db39ed046210bfbd, type: 3}
       propertyPath: m_RootOrder
       value: 2
