@@ -268,7 +268,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 949313492079698657}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.17, y: -0.953, z: 0}
+  m_LocalPosition: {x: 0.077, y: -0.953, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -453,7 +453,7 @@ MonoBehaviour:
   jumpForce: 8
   isOnFloor: 0
   pointToCheckFloor: {fileID: 949313492079698657}
-  boxCheckSize: {x: 0.5, y: 0.38}
+  boxCheckSize: {x: 0.32, y: 0.38}
   floorLayer:
     serializedVersion: 2
     m_Bits: 1024
