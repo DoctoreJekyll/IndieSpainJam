@@ -26,6 +26,7 @@ public class WaterPlayerSounds : MonoBehaviour
         _audioSource.PlayOneShot(waterAppearSong);
         particle.SetActive(true);
     }
+    
 
     public void Step()
     {
