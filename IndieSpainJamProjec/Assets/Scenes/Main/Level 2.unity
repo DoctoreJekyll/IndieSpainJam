@@ -717,8 +717,20 @@ PrefabInstance:
       value: Frost Tile (7)
       objectReference: {fileID: 0}
     - target: {fileID: 4525273880691916094, guid: 429376a815422174dbb3b03fcb1fe8fe, type: 3}
+      propertyPath: m_Size.x
+      value: 1.2172544
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525273880691916094, guid: 429376a815422174dbb3b03fcb1fe8fe, type: 3}
       propertyPath: m_Size.y
       value: 1.9078304
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525273880691916094, guid: 429376a815422174dbb3b03fcb1fe8fe, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525273880691916094, guid: 429376a815422174dbb3b03fcb1fe8fe, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.036325336
       objectReference: {fileID: 0}
     - target: {fileID: 4525273880691916094, guid: 429376a815422174dbb3b03fcb1fe8fe, type: 3}
       propertyPath: m_Offset.y
@@ -1412,11 +1424,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062680471655260597, guid: 32e95376d05fdd7498f695844dac97da, type: 3}
       propertyPath: m_Size.x
-      value: 4.868561
+      value: 5.2691
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062680471655260597, guid: 32e95376d05fdd7498f695844dac97da, type: 3}
+      propertyPath: m_Size.y
+      value: 1.364336
       objectReference: {fileID: 0}
     - target: {fileID: 8062680471655260597, guid: 32e95376d05fdd7498f695844dac97da, type: 3}
       propertyPath: m_Offset.x
-      value: 0.6658077
+      value: 0.8660774
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062680471655260597, guid: 32e95376d05fdd7498f695844dac97da, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.557168
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32e95376d05fdd7498f695844dac97da, type: 3}
