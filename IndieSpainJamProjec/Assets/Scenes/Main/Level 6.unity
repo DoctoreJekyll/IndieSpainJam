@@ -304,10 +304,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3389046918888208889, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389046918888208890, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+      propertyPath: step
+      value: 
+      objectReference: {fileID: 8300000, guid: 36ee8b5c466f64d41b1f09ef6c0869de, type: 3}
     - target: {fileID: 3389046918888208890, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
       propertyPath: deadClip
       value: 
       objectReference: {fileID: 8300000, guid: 0dc26d9855aac4842b6c9791bd8e0c02, type: 3}
+    - target: {fileID: 4659615831767648490, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.91
+      objectReference: {fileID: 0}
     - target: {fileID: 5586403619139100087, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
       propertyPath: deadClip
       value: 
@@ -336,6 +348,14 @@ PrefabInstance:
       propertyPath: stepClip.Array.data[3]
       value: 
       objectReference: {fileID: 8300000, guid: f5ab086deb2eb1c4dabaa694c175145c, type: 3}
+    - target: {fileID: 7595682499688529038, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595682499688529039, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
 --- !u!1 &55144280

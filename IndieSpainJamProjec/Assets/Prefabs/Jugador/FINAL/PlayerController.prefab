@@ -120,6 +120,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1271775158210247535}
     m_Modifications:
+    - target: {fileID: 2370180681228028608, guid: cd5e3707d616b46418498254ae4b309f, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2370180681228028611, guid: cd5e3707d616b46418498254ae4b309f, type: 3}
+      propertyPath: step
+      value: 
+      objectReference: {fileID: 8300000, guid: 36ee8b5c466f64d41b1f09ef6c0869de, type: 3}
+    - target: {fileID: 2370180681228028611, guid: cd5e3707d616b46418498254ae4b309f, type: 3}
+      propertyPath: deadClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0dc26d9855aac4842b6c9791bd8e0c02, type: 3}
     - target: {fileID: 4662295545827713998, guid: cd5e3707d616b46418498254ae4b309f, type: 3}
       propertyPath: lakituTransform
       value: 
@@ -130,7 +142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7387462563181907894, guid: cd5e3707d616b46418498254ae4b309f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.1800003
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7387462563181907894, guid: cd5e3707d616b46418498254ae4b309f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -310,12 +322,55 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3599034637235304189, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386212983090357152, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: deadClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4316c9f2a1895e341b2db811b16f2d6f, type: 3}
+    - target: {fileID: 4386212983090357152, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: _playerDeath
+      value: 
+      objectReference: {fileID: 3301626312036586405}
+    - target: {fileID: 4386212983090357152, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: stepClip.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386212983090357152, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: stepClip.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 491e217b66623ee4b8d7d2f62dac671d, type: 3}
+    - target: {fileID: 4386212983090357152, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: stepClip.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 52186bd77454d0343ac83980e1029b2c, type: 3}
+    - target: {fileID: 4386212983090357152, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: stepClip.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: c6a1a1176c323004a8940c922b1c3a66, type: 3}
+    - target: {fileID: 4386212983090357152, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: stepClip.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: f5ab086deb2eb1c4dabaa694c175145c, type: 3}
     - target: {fileID: 6668048348994776457, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
       propertyPath: lakituTransform
       value: 
       objectReference: {fileID: 6410338338433243385}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+--- !u!114 &3301626312036586405 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6668048348994776498, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+  m_PrefabInstance: {fileID: 8167296643128933911}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4659615832114142806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6404b5bc54d7e46be59c0e3c886669, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4659615832114139560 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3599034636887633855, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}

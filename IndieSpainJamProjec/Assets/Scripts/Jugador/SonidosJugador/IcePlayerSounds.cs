@@ -14,6 +14,8 @@ public class IcePlayerSounds : MonoBehaviour
     [SerializeField] private AudioClip iceImpactClip;
     [SerializeField] private AudioClip breakGroundClip;
     [SerializeField] private AudioClip deadClip;
+    [SerializeField] private AudioClip step;
+    
     
     [Header("Effects")]
     [SerializeField] private GameObject particle;
@@ -44,6 +46,13 @@ public class IcePlayerSounds : MonoBehaviour
             checkDead = true;
         }
     }
+
+    public void Step()
+    {
+        _audioSource.pitch = Random.Range(0.9f, 1f);
+        _audioSource.PlayOneShot(step);
+    }
+
 
     public void IceImpactClip()
     {
