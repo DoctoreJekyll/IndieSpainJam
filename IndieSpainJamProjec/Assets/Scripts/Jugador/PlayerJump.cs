@@ -21,17 +21,18 @@ public class PlayerJump : MonoBehaviour
     [SerializeField]private float coyoteTime;
     [SerializeField]private float timeToDoCoyote;
 
-    private AudioSource _audioSource;
+    private WaterPlayerSounds _waterPlayerSounds;
 
     private void Start()
     {
-        _audioSource = GetComponent<AudioSource>();
+        _waterPlayerSounds = GetComponent<WaterPlayerSounds>();
     }
 
     private void Update()
     {
         
         IsOnFloor();
+        FallCheck();
         
         shadow.SetActive(isOnFloor);
         
@@ -55,6 +56,7 @@ public class PlayerJump : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                _waterPlayerSounds.JumpSound();
                 rb2d.velocity = new Vector2(rb2d.velocity.x, 0);
                 rb2d.velocity += Vector2.up * jumpForce;
                 
@@ -78,13 +80,34 @@ public class PlayerJump : MonoBehaviour
         {
             coyoteTime -= Time.deltaTime;
         }
-
-
+        
     }
-    
+
+    private bool isOnAir;
+    public Vector2 soundFallCheck;
+
+    private void FallCheck()
+    {
+        if (!isOnFloor)
+        {
+            isOnAir = true;
+        }
+
+        if (isOnAir)
+        {
+            bool fallSound = Physics2D.OverlapBox(pointToCheckFloor.transform.position, soundFallCheck, 0, floorLayer);
+            if (fallSound)
+            {
+                _waterPlayerSounds.FallSound();
+                isOnAir = false;
+            }
+
+        }
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawCube(pointToCheckFloor.transform.position, boxCheckSize);
+        Gizmos.DrawCube(pointToCheckFloor.transform.position, soundFallCheck);
     }
 }

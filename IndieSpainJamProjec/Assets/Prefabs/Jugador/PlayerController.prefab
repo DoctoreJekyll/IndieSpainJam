@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.12941176, g: 0.31805083, b: 0.5568628, a: 0.5254902}
   m_FlipX: 0
@@ -156,7 +156,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.12971932, g: 0.128649, b: 0.5566038, a: 0.5254902}
   m_FlipX: 0
@@ -268,7 +268,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 949313492079698657}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.077, y: -0.953, z: 0}
+  m_LocalPosition: {x: 0.077, y: -0.731, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -361,7 +361,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 573b3b139c0b5c84c8b6a2a92d68e24e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -453,13 +453,14 @@ MonoBehaviour:
   jumpForce: 8
   isOnFloor: 0
   pointToCheckFloor: {fileID: 949313492079698657}
-  boxCheckSize: {x: 0.32, y: 0.38}
+  boxCheckSize: {x: 0.2, y: 0.23}
   floorLayer:
     serializedVersion: 2
     m_Bits: 1024
   shadow: {fileID: 1121934038}
   coyoteTime: 0
   timeToDoCoyote: 0.3
+  soundFallCheck: {x: 0.1, y: 0.2}
 --- !u!114 &949313492406139811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -529,7 +530,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -628,8 +629,8 @@ MonoBehaviour:
   _audioSource: {fileID: 1930917822}
   waterAppearSong: {fileID: 8300000, guid: 7b750994a088b914792be9147d5bdb85, type: 3}
   stepClip: []
-  jumpClip: {fileID: 0}
-  fallClip: {fileID: 0}
+  jumpClip: {fileID: 8300000, guid: 53150230d0e76264396811d1212570e1, type: 3}
+  fallClip: {fileID: 8300000, guid: 53150230d0e76264396811d1212570e1, type: 3}
   attackClip: {fileID: 0}
   deadClip: {fileID: 0}
   particle: {fileID: 1987643770284640271}
@@ -1127,7 +1128,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 7cdb72f986bdac3409926d48d445f44b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
