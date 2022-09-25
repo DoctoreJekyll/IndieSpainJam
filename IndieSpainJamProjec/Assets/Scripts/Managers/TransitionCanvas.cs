@@ -18,23 +18,28 @@ public class TransitionCanvas : MonoBehaviour
     private Vector3 initialDoorPos, targetDoorPos;
 
     public Camera auxCamera;
-
+    public bool itsMainMenu;
 
     private void Awake()
     {
-        initialDoor = GameObject.FindGameObjectWithTag("Initial Door");
-        targetDoor = GameObject.FindGameObjectWithTag("Target Door");
-        auxCamera = GameObject.FindGameObjectWithTag("Aux Camera").GetComponent<Camera>();
+        if(itsMainMenu == false)
+        {
+            initialDoor = GameObject.FindGameObjectWithTag("Initial Door");
+            targetDoor = GameObject.FindGameObjectWithTag("Target Door");
 
-        initialDoorPos = Camera.main.WorldToScreenPoint(initialDoor.transform.position);
-        targetDoorPos = auxCamera.WorldToScreenPoint(targetDoor.transform.position);
+            auxCamera = GameObject.FindGameObjectWithTag("Aux Camera").GetComponent<Camera>();
+
+            initialDoorPos = Camera.main.WorldToScreenPoint(initialDoor.transform.position);
+            targetDoorPos = auxCamera.WorldToScreenPoint(targetDoor.transform.position);
+        }
 
         CreateSingleton();
     }
 
     private void Start()
     {
-        StartCoroutine(PatchTransition());
+        if(itsMainMenu == false)
+            StartCoroutine(PatchTransition());
     }
 
     private void CreateSingleton()
