@@ -13,20 +13,12 @@ public class CinemaCLookPlayer : MonoBehaviour
     {
         _cinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
     // Update is called once per frame
     void Update()
     {
-        if (playerTransform == null)
-        {
-            playerTransform = GameObject.FindWithTag("Player").transform;
-            _cinemachineVirtualCamera.Follow = playerTransform;
-        }
+        playerTransform = GameObject.FindWithTag("Player").transform;
+        _cinemachineVirtualCamera.Follow = playerTransform;
     }
 }

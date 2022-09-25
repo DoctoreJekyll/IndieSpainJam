@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 5899931589886827076}
   - component: {fileID: 5899931589886827075}
   - component: {fileID: 5899931589886827077}
-  m_Layer: 0
+  - component: {fileID: 1456002502}
+  m_Layer: 12
   m_Name: CM vcam1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5899931589886827074}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.6466713, y: -8.729528, z: -0.12361908}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -84,6 +85,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40dd00681254c2a43b6022a67336654b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1456002502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5899931589886827074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4655ab6607a4bf04e8f950ce3e4f22dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5899931590320430163
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +108,8 @@ GameObject:
   - component: {fileID: 5899931590320430164}
   - component: {fileID: 5899931590320430166}
   - component: {fileID: 5899931590320430165}
-  m_Layer: 0
+  - component: {fileID: 1889539031}
+  m_Layer: 12
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,6 +186,23 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
+--- !u!114 &1889539031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5899931590320430163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 4
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &7823053784419104843
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,7 +218,7 @@ GameObject:
   - component: {fileID: 7823053784419104846}
   - component: {fileID: 7823053784419104882}
   - component: {fileID: 7823053784419104883}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Main CameraChine
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -284,7 +315,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0

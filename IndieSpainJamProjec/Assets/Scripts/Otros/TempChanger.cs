@@ -39,16 +39,18 @@ public class TempChanger : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
-
             _audioSource.volume = 0.2f;
             isPlayerOn = true;
             if (temperatura > 0)
             {
                 _audioSource.PlayOneShot(_audioClipHot);
+                PostProcessController.instance.VignetterCoroutine(Color.red);
+                
             }
             else if (temperatura < 0)
             {
                 _audioSource.PlayOneShot(_audioClipFrost);  
+                PostProcessController.instance.VignetterCoroutine(Color.blue);
             }
         }
     }
@@ -59,6 +61,7 @@ public class TempChanger : MonoBehaviour
         {
             isPlayerOn = false;
             StartCoroutine(FadeOutVolumeCoroutine());
+            PostProcessController.instance.NoVignetteCoroutine();
         }
     }
     
