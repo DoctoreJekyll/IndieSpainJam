@@ -46,14 +46,14 @@ public class TransitionCanvas : MonoBehaviour
 
     public void Play_LevelTransition_In()
     {
-        keyMask.transform.position = testCamera.WorldToScreenPoint(targetDoor.transform.position);
+        keyMask.transform.position = Camera.main.WorldToScreenPoint(targetDoor.transform.position);
         levelTransition_Animator.Play("TRANSITION IN");
     }
 
     public void Play_LevelTransition_Out()
     {
         keyTransition.SetActive(true);
-        keyMask.transform.position = testCamera.WorldToScreenPoint(initialDoor.transform.position);
+        keyMask.transform.position = Camera.main.WorldToScreenPoint(initialDoor.transform.position);
         levelTransition_Animator.Play("TRANSITION OUT");
     }
 
