@@ -71,7 +71,7 @@ public class AirController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D col)
     {
         
-        if (col.gameObject.layer == 10 && isOnAirAndPush)
+        if ((col.gameObject.layer == 10 || col.gameObject.layer == 9) && isOnAirAndPush)
         {
             if (timeToPush > 0 && timeToPush < 0.5f)
             {
