@@ -1530,7 +1530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7823053784419104843, guid: 8f98c4686c568984c891692eb68cf87a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7823053784419104844, guid: 8f98c4686c568984c891692eb68cf87a, type: 3}
       propertyPath: m_RootOrder
@@ -12528,13 +12528,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 881499071, guid: dd4e1d080d8b3ba4a9d3f5ac479b5c25, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 17.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 881499071, guid: dd4e1d080d8b3ba4a9d3f5ac479b5c25, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -10.63
+      objectReference: {fileID: 0}
     - target: {fileID: 4427554594513337994, guid: dd4e1d080d8b3ba4a9d3f5ac479b5c25, type: 3}
       propertyPath: m_Name
       value: Shake Camera
       objectReference: {fileID: 0}
     - target: {fileID: 4427554594513337994, guid: dd4e1d080d8b3ba4a9d3f5ac479b5c25, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4427554594513337997, guid: dd4e1d080d8b3ba4a9d3f5ac479b5c25, type: 3}
       propertyPath: m_RootOrder
@@ -12542,7 +12550,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4427554594513337997, guid: dd4e1d080d8b3ba4a9d3f5ac479b5c25, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.1
+      value: -7.28
       objectReference: {fileID: 0}
     - target: {fileID: 4427554594513337997, guid: dd4e1d080d8b3ba4a9d3f5ac479b5c25, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12579,6 +12587,14 @@ PrefabInstance:
     - target: {fileID: 4427554594513337997, guid: dd4e1d080d8b3ba4a9d3f5ac479b5c25, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427554595163555140, guid: dd4e1d080d8b3ba4a9d3f5ac479b5c25, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427554595163555140, guid: dd4e1d080d8b3ba4a9d3f5ac479b5c25, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.69
       objectReference: {fileID: 0}
     - target: {fileID: 4427554595163555195, guid: dd4e1d080d8b3ba4a9d3f5ac479b5c25, type: 3}
       propertyPath: temptext

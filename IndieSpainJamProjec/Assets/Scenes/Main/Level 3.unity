@@ -1577,6 +1577,10 @@ PrefabInstance:
       value: Lever (1)
       objectReference: {fileID: 0}
     - target: {fileID: 9088026595214566339, guid: 58b9f027a4e3b3a4581800a4846b2f79, type: 3}
+      propertyPath: leverClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d0aa2737e959e1440b7120c5ccc4cdd1, type: 3}
+    - target: {fileID: 9088026595214566339, guid: 58b9f027a4e3b3a4581800a4846b2f79, type: 3}
       propertyPath: myEvent.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -1732,6 +1736,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lever
       objectReference: {fileID: 0}
+    - target: {fileID: 9088026595214566339, guid: 58b9f027a4e3b3a4581800a4846b2f79, type: 3}
+      propertyPath: leverClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d0aa2737e959e1440b7120c5ccc4cdd1, type: 3}
     - target: {fileID: 9088026595214566339, guid: 58b9f027a4e3b3a4581800a4846b2f79, type: 3}
       propertyPath: myEvent.m_PersistentCalls.m_Calls.Array.size
       value: 2
