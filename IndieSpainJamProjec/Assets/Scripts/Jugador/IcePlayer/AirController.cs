@@ -73,15 +73,15 @@ public class AirController : MonoBehaviour
         {
             if (timeToPush > 0 && timeToPush < 0.5f)
             {
-                //CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
-                CinemachineNoise.instance.ShakeCamera(1f,0.25f);
+                CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
+                //CinemachineNoise.instance.ShakeCamera(1f,0.25f);
                 _icePlayerSounds.IceImpactClip();
                 Debug.Log("small shake");
             }
             else if (timeToPush > 0.5f)
             {
-                //CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.MEDIUM);
-                CinemachineNoise.instance.ShakeCamera(1.25f,0.5f);
+                CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.MEDIUM);
+                //CinemachineNoise.instance.ShakeCamera(1.25f,0.5f);
                 _icePlayerSounds.IceImpactClip();
                 Debug.Log("medium shake");
             }
