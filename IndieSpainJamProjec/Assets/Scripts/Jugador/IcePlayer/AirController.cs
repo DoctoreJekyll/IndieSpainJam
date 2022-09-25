@@ -18,10 +18,12 @@ public class AirController : MonoBehaviour
     [SerializeField] private GameObject shadow;
 
     private IcePlayerSounds _icePlayerSounds;
+    private Animator _animator;
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
         _icePlayerSounds = GetComponent<IcePlayerSounds>();
+        _animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -60,8 +62,13 @@ public class AirController : MonoBehaviour
     {
         if (!isOnFloor)
         {
+            _animator.SetBool("isFall", true);
             timeToPush += Time.deltaTime;
             isOnAirAndPush = true;
+        }
+        else
+        {
+            _animator.SetBool("isFall", false);
         }
     }
 

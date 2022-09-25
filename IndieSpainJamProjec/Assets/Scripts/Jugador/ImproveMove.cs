@@ -15,10 +15,13 @@ public class ImproveMove : MonoBehaviour
 	public float runDecceleration; //Time (approx.) we want it to take for the player to accelerate from runMaxSpeed to 0.
 	public float velPower;
 
+	private Animator _animation;
+	
 	private void Awake()
 	{
 		rb2d = GetComponent<Rigidbody2D>();
 		_spriteRenderer = GetComponent<SpriteRenderer>();
+		_animation = GetComponent<Animator>();
 	}
 
 	private void Update()
@@ -64,22 +67,18 @@ public class ImproveMove : MonoBehaviour
     {
 	    if (_moveInput > 0)
 	    {
-		    /*
-		    spriteRenderer.flipX = false;
-		    isFacingRigth = true;
-		    isFacingLeft = false;*/
-
 		    transform.localScale = new Vector3(1f, 1f, 1f);
+		    _animation.SetBool("isMoving", true);
 
 	    }
 	    else if (_moveInput < 0)
 	    {
-		    /*
-		    spriteRenderer.flipX = true;
-		    isFacingLeft = true;
-		    isFacingRigth = false;*/
-            
 		    transform.localScale = new Vector3(-1f, 1f, 1f);
+		    _animation.SetBool("isMoving", true);
+	    }
+	    else
+	    {
+		    _animation.SetBool("isMoving", false);
 	    }
     }
     
