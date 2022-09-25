@@ -13,10 +13,13 @@ public class PostProcessController : MonoBehaviour
     
     [SerializeField] private Volume _volume;
     [SerializeField] private Vignette _vignette;
+    
+    private IEnumerator viggnete;
 
     private void Awake()
     {
         CreateSingleton();
+        viggnete = NoScaleVignette();
     }
 
     private void Start()
@@ -45,6 +48,7 @@ public class PostProcessController : MonoBehaviour
 
     private IEnumerator ScaleVignette(Color color)
     {
+        StopCoroutine(viggnete);
         _vignette.color.overrideState = true;
         _vignette.color.Override(color);
         float maxValue = 0.25f;
