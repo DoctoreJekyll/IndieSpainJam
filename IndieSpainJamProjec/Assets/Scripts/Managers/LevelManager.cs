@@ -62,6 +62,9 @@ public class LevelManager : MonoBehaviour
     public void LevelCompleted()
     {
         GameStateManager.instance.SetGameState(GameStateManager.GameState.EVENT);
+        player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<Animator>().enabled = false;
+
         StartCoroutine(Coroutine_NextLevel());
 
         IEnumerator Coroutine_NextLevel()
