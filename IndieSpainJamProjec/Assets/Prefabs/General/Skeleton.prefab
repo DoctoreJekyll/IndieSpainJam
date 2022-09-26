@@ -264,6 +264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objToActivate: {fileID: 4246303647924660958}
   skeletonAnimator: {fileID: 1467272117323007797}
+  playOnlyOnce: 0
 --- !u!1 &4246303646765453903
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,7 +367,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: a
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cacb87d2a2ff3954aa41b51b76301e98, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a29b94361105d324a82031ac2507e5d6, type: 2}
   m_sharedMaterial: {fileID: -2823896662064898378, guid: cacb87d2a2ff3954aa41b51b76301e98, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -391,13 +392,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 4
-  m_fontSizeBase: 4
+  m_fontSize: 2.75
+  m_fontSizeBase: 2.75
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -433,7 +434,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 4246303646765453890}
   m_maskType: 0
 --- !u!1 &4246303647924660958
