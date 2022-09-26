@@ -28,14 +28,10 @@ public class WaterPlayerSounds : MonoBehaviour
     
     private void OnEnable()
     {
+        CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.MEDIUM);
         _audioSource.PlayOneShot(waterAppearSong);
         particle.SetActive(true);
         checkDead = false;
-    }
-
-    private void Start()
-    {
-        CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
     }
 
     private void Update()
