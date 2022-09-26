@@ -274,9 +274,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1271775158210247535}
     m_Modifications:
+    - target: {fileID: 3599034636887629888, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1838793560, guid: 3a9b18309063cf24694c6fff54384c21, type: 3}
     - target: {fileID: 3599034636887629889, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
       propertyPath: m_Name
       value: WaterPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599034636887633853, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2.5601401
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599034636887633853, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.5600002
       objectReference: {fileID: 0}
     - target: {fileID: 3599034636887633855, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
       propertyPath: m_RootOrder
@@ -354,6 +366,22 @@ PrefabInstance:
       propertyPath: stepClip.Array.data[3]
       value: 
       objectReference: {fileID: 8300000, guid: f5ab086deb2eb1c4dabaa694c175145c, type: 3}
+    - target: {fileID: 4386212983916105416, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.96748596
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386212983916105416, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.32925293
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386212983916105416, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.023
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386212983916105416, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.18
+      objectReference: {fileID: 0}
     - target: {fileID: 6668048348994776457, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
       propertyPath: lakituTransform
       value: 
