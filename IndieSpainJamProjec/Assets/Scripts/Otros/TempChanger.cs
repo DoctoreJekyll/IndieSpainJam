@@ -39,7 +39,7 @@ public class TempChanger : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            _audioSource.volume = 0.2f;
+            _audioSource.volume = 0.5f;
             isPlayerOn = true;
             if (temperatura > 0)
             {
