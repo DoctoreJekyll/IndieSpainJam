@@ -16,6 +16,15 @@ public class BreakableGameObject : MonoBehaviour
 
     public Collider2D collider;
 
+    private AudioSource _audioSource;
+    private bool notBreak;
+
+    private void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+        notBreak = true;
+    }
+
     //TE RECORDAREMOS CON ODIO E IRA
     // private void OnTriggerEnter2D(Collider2D col)
     // {
@@ -54,6 +63,11 @@ public class BreakableGameObject : MonoBehaviour
     
         if (CheckIfIcePlayerIsOn())
         {
+            if (notBreak)
+            {
+                _audioSource.PlayOneShot(_audioSource.clip);
+                notBreak = false;
+            }
             //CinemachineNoise.instance.ShakeCamera(1f,0.25f);
             CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
             breakableSpriteRenderLeft.sprite = breakSpriteLeft;
