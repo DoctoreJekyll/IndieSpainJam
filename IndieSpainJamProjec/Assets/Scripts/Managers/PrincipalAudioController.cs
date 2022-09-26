@@ -17,12 +17,18 @@ public class PrincipalAudioController : MonoBehaviour
         CreateSingleton();
     }
 
+
     private void Update()
     {
         if (SceneManager.GetActiveScene().name == "Main Menu")
         {
             audioS.Stop();
+        }else if (SceneManager.GetActiveScene().name != "Main Menu" && !audioS.isPlaying)
+        {
+            audioS.Play();
         }
+        
+
     }
 
     private void CreateSingleton()
