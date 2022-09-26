@@ -15,6 +15,7 @@ public class LevelManager : MonoBehaviour
 
     [Header("[Configuration]")]
     public KeyCode resetKey;
+    public string currentLevel;
     public string nextLevelScene;
 
 
@@ -64,6 +65,7 @@ public class LevelManager : MonoBehaviour
         GameStateManager.instance.SetGameState(GameStateManager.GameState.EVENT);
         player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<Animator>().enabled = false;
+        PlayerPrefs.SetInt(currentLevel, 1);
 
         StartCoroutine(Coroutine_NextLevel());
 
