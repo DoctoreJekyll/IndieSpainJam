@@ -122,20 +122,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2370180681228028608, guid: cd5e3707d616b46418498254ae4b309f, type: 3}
       propertyPath: m_Volume
-      value: 0.5
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 2370180681228028611, guid: cd5e3707d616b46418498254ae4b309f, type: 3}
       propertyPath: step
       value: 
-      objectReference: {fileID: 8300000, guid: 36ee8b5c466f64d41b1f09ef6c0869de, type: 3}
+      objectReference: {fileID: 8300000, guid: bf5ec84a67ffc704d873f3788a85f4ba, type: 3}
     - target: {fileID: 2370180681228028611, guid: cd5e3707d616b46418498254ae4b309f, type: 3}
       propertyPath: deadClip
       value: 
       objectReference: {fileID: 8300000, guid: 0dc26d9855aac4842b6c9791bd8e0c02, type: 3}
     - target: {fileID: 2370180681228028611, guid: cd5e3707d616b46418498254ae4b309f, type: 3}
+      propertyPath: iceAppearSong
+      value: 
+      objectReference: {fileID: 8300000, guid: bf5ec84a67ffc704d873f3788a85f4ba, type: 3}
+    - target: {fileID: 2370180681228028611, guid: cd5e3707d616b46418498254ae4b309f, type: 3}
       propertyPath: breakGroundClip
       value: 
-      objectReference: {fileID: 8300000, guid: 36ee8b5c466f64d41b1f09ef6c0869de, type: 3}
+      objectReference: {fileID: 8300000, guid: 6f33da0512881d94ba790a9cc81edf41, type: 3}
     - target: {fileID: 4662295545827713998, guid: cd5e3707d616b46418498254ae4b309f, type: 3}
       propertyPath: lakituTransform
       value: 
@@ -286,6 +290,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Gas
       objectReference: {fileID: 0}
+    - target: {fileID: 7190336087771760003, guid: 1217ddb4bc59e9b44b6e979cd32354f9, type: 3}
+      propertyPath: m_Volume
+      value: 0.45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1217ddb4bc59e9b44b6e979cd32354f9, type: 3}
 --- !u!1 &7586850917745214626 stripped
@@ -401,6 +409,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: a38cc3c1e8e354b4cb47a374a00ee718, type: 3}
     - target: {fileID: 4386212983090357152, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: fallClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e13c71d2f39e90142a90b829494224ed, type: 3}
+    - target: {fileID: 4386212983090357152, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: jumpClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5f41f641a147b2848a0c5c896490b518, type: 3}
+    - target: {fileID: 4386212983090357152, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
       propertyPath: _playerDeath
       value: 
       objectReference: {fileID: 3301626312036586405}
@@ -428,6 +444,10 @@ PrefabInstance:
       propertyPath: stepClip.Array.data[3]
       value: 
       objectReference: {fileID: 8300000, guid: f5ab086deb2eb1c4dabaa694c175145c, type: 3}
+    - target: {fileID: 4386212983090357153, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: m_Volume
+      value: 0.45
+      objectReference: {fileID: 0}
     - target: {fileID: 4386212983916105416, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.96748596
@@ -497,4 +517,4 @@ MonoBehaviour:
   - {x: 1.2800703, y: -1.28, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -57100
+  m_InstanceId: -607144
