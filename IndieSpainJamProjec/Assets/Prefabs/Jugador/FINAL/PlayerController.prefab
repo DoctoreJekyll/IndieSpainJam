@@ -132,6 +132,10 @@ PrefabInstance:
       propertyPath: deadClip
       value: 
       objectReference: {fileID: 8300000, guid: 0dc26d9855aac4842b6c9791bd8e0c02, type: 3}
+    - target: {fileID: 2370180681228028611, guid: cd5e3707d616b46418498254ae4b309f, type: 3}
+      propertyPath: breakGroundClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 36ee8b5c466f64d41b1f09ef6c0869de, type: 3}
     - target: {fileID: 4662295545827713998, guid: cd5e3707d616b46418498254ae4b309f, type: 3}
       propertyPath: lakituTransform
       value: 
@@ -296,11 +300,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3599034636887633855, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 3599034636887633855, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: 3599034636887633855, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -346,6 +350,10 @@ PrefabInstance:
       propertyPath: _playerDeath
       value: 
       objectReference: {fileID: 3301626312036586405}
+    - target: {fileID: 4386212983090357152, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: waterAppearSong
+      value: 
+      objectReference: {fileID: 8300000, guid: 4974ddb29b3c7c64ead97f8f742ef625, type: 3}
     - target: {fileID: 4386212983090357152, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
       propertyPath: stepClip.Array.size
       value: 4
