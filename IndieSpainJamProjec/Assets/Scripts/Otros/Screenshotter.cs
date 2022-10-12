@@ -15,7 +15,9 @@ public class Screenshotter : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.K))
         {
-            ScreenCapture.CaptureScreenshot("Test.png", 2);
+            string nombre = "Test " + System.DateTime.Now.ToString("dd.MM.yyyy-HH.mm") + ".png";
+            Debug.Log(nombre);
+            ScreenCapture.CaptureScreenshot(nombre, 2);
         }
     }
 }
