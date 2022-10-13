@@ -106,7 +106,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -9915,7 +9915,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1271775158210247535
 Transform:
   m_ObjectHideFlags: 0
@@ -10580,6 +10580,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaterPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 3599034636887633851, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: fallCheck.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599034636887633851, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: fallCheck.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599034636887633851, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: fallParticle
+      value: 
+      objectReference: {fileID: 111983157}
+    - target: {fileID: 3599034636887633851, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: boxCheckSize.y
+      value: 0.35
+      objectReference: {fileID: 0}
     - target: {fileID: 3599034636887633853, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 2.5601401
@@ -10648,6 +10664,10 @@ PrefabInstance:
       propertyPath: jumpClip
       value: 
       objectReference: {fileID: 8300000, guid: 5f41f641a147b2848a0c5c896490b518, type: 3}
+    - target: {fileID: 4386212983090357152, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: playerDeath
+      value: 
+      objectReference: {fileID: 3301626312036586405}
     - target: {fileID: 4386212983090357152, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
       propertyPath: _playerDeath
       value: 
