@@ -9915,7 +9915,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1271775158210247535
 Transform:
   m_ObjectHideFlags: 0
@@ -10596,6 +10596,10 @@ PrefabInstance:
       propertyPath: boxCheckSize.y
       value: 0.35
       objectReference: {fileID: 0}
+    - target: {fileID: 3599034636887633851, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: timeToDoCoyote
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 3599034636887633853, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 2.5601401
@@ -10785,4 +10789,4 @@ MonoBehaviour:
   - {x: 0.2031269, y: -0.62614167, z: 0}
   m_ShapePathHash: -1832149345
   m_Mesh: {fileID: 0}
-  m_InstanceId: -25102
+  m_InstanceId: -1726
