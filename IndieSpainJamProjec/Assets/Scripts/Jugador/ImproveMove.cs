@@ -29,7 +29,7 @@ public class ImproveMove : MonoBehaviour
 	    _moveInput = Input.GetAxisRaw("Horizontal");
 	    if (GameStateManager.instance.currentGameState == GameStateManager.GameState.GAMEPLAY)
 	    {
-		    Flip();
+		    FlipAndAnimation();
 	    } 
 
     }
@@ -60,10 +60,7 @@ public class ImproveMove : MonoBehaviour
 	    rb2d.AddForce(movement * Vector2.right);
     }
     
-    //Estos bools creo que ya no se usan más por el nuevo sistema que he implementado pero los dejo por ahora por si acaso
-    [HideInInspector] public bool isFacingRigth;
-    [HideInInspector] public bool isFacingLeft;
-    private void Flip()
+    private void FlipAndAnimation()
     {
 	    if (_moveInput > 0)
 	    {

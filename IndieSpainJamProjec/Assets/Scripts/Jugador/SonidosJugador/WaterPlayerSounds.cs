@@ -23,12 +23,14 @@ public class WaterPlayerSounds : MonoBehaviour
     /// <summary>
     /// ///Control de daños
     /// </summary>
-    public PlayerDeath _playerDeath;
+    public PlayerDeath playerDeath;
     private bool checkDead;
     
     private void OnEnable()
     {
-        CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.MEDIUM);
+        _audioSource.GetComponent<AudioSource>();
+        
+        //CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.MEDIUM);//Esto da fallos la primera vez porque este enable entra antes que la instancia de la camara, hay que hacer apaños
         _audioSource.PlayOneShot(waterAppearSong);
         particle.SetActive(true);
         checkDead = false;
@@ -37,14 +39,14 @@ public class WaterPlayerSounds : MonoBehaviour
     private void Update()
     {
         
-        if (_playerDeath.dead == true && checkDead == false)
+        if (playerDeath.dead == true && checkDead == false)
         {
             DeadSound();
             checkDead = true;
         }
     }
 
-    public void Step()
+    public void Step()//Este metodo se está usando en el animator
     {
         AudioClip clip = GetRandomClip();
         _audioSource.PlayOneShot(clip);
@@ -55,7 +57,7 @@ public class WaterPlayerSounds : MonoBehaviour
         int index = Random.Range(0, stepClip.Length - 1);
         return stepClip[index];
     }
-
+    
     public void JumpSound()
     {
         _audioSource.pitch = Random.Range(0.85f, 1f);

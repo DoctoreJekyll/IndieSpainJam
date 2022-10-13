@@ -103,7 +103,6 @@ public class PlayerJump : MonoBehaviour
 
         if (isOnAir)
         {
-            Debug.Log("test sound");
             bool fallCheck = Physics2D.OverlapBox(pointToCheckFloor.transform.position, this.fallCheck, 0, floorLayer);
             if (fallCheck)
             {
@@ -121,19 +120,19 @@ public class PlayerJump : MonoBehaviour
         {
             if(rb2d.velocity.y  > 0)
             {
-                waterAnimator.SetBool("FALLING", false);
                 waterAnimator.SetBool("JUMPING", true);
+                waterAnimator.SetBool("FALLING", false);
                 waterAnimator.SetBool("RUNNING", false);
                 waterAnimator.SetBool("IDLE", false);
             }
-            else
+            else if (coyoteTime < 0)
             {
                 waterAnimator.SetBool("FALLING", true);
                 waterAnimator.SetBool("JUMPING", false);
                 waterAnimator.SetBool("RUNNING", false);
                 waterAnimator.SetBool("IDLE", false);
             }
-                
+
         }
         else
         {
