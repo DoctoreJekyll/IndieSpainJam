@@ -58,6 +58,14 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$USER_HOME$/Desktop/BuildsHidro/v4_Hidro\HydroMorpher.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\Jekyll\Desktop\BuildsHidro\v4_Hidro" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.5f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath D:\Unity\IndieSpainJam\IndieSpainJamProjec -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
@@ -105,6 +113,7 @@
       <workItem from="1664055775110" duration="10501000" />
       <workItem from="1664104980799" duration="5288000" />
       <workItem from="1664146830509" duration="4431000" />
+      <workItem from="1665659330645" duration="3112000" />
     </task>
     <servers />
   </component>
