@@ -6,17 +6,25 @@ using UnityEngine;
 public class BreakableGameObject : MonoBehaviour
 {
 
+    [Header("Layer")]
     [SerializeField] private LayerMask layerWhoBrokeTheObj;
+    
+    [Header("Ray Range")]
     [SerializeField] private float range;
+    [SerializeField] private float distanceRay1;
+    [SerializeField] private float distanceRay2;
 
+    [Header("Sprites Stuffs")]
     [SerializeField] private SpriteRenderer breakableSpriteRenderLeft;
     [SerializeField] private SpriteRenderer breakableSpriteRenderRigth;
     [SerializeField] private Sprite breakSpriteLeft;
     [SerializeField] private Sprite breakSpriteRigth;
 
-    public Collider2D collider;
+    [Header("Collider")]
+    [SerializeField] private Collider2D collider;
 
-    private AudioSource _audioSource;
+    //Other stuffs
+    private AudioSource _audioSource;//Generar aqui el sonido no me convence 
     private bool notBreak;
 
     private void Awake()
@@ -25,59 +33,14 @@ public class BreakableGameObject : MonoBehaviour
         notBreak = true;
     }
 
-    //TE RECORDAREMOS CON ODIO E IRA
-    // private void OnTriggerEnter2D(Collider2D col)
-    // {
-    //     if (col.gameObject.CompareTag("Player"))
-    //     {
-    //         Debug.Log("player noeke");
-    //         if (col.GetComponent<AirController>())
-    //         {
-    //             Debug.Log("encuentra el air controller");
-    //         }
-    //         airController = col.GetComponent<AirController>();
-    //         if (!airController.IsOnAir())
-    //         {
-    //             Debug.Log("test aire");
-    //             this.gameObject.SetActive(false);
-    //         }
-    //     }
-    // }
-    
-    // private void OnTriggerEnter2D(Collider2D col)
-    // {
-    //     if (col.gameObject.CompareTag("Player") && col.gameObject.layer == 7)
-    //     {
-    //
-    //         if (col.gameObject.GetComponent<Rigidbody2D>().velocity.y < 0)
-    //         {
-    //             this.gameObject.SetActive(false);
-    //         }
-    //         
-    //     }
-    // }
+    //TE RECORDAREMOS CON ODIO E IRA: Aquí había un script al que recordaremos con odio e ira, dejemos este comentario como memorándum
 
     private void Update()
     {
         CheckIfIcePlayerIsOn();
-    
-        if (CheckIfIcePlayerIsOn())
-        {
-            if (notBreak)
-            {
-                _audioSource.PlayOneShot(_audioSource.clip);
-                notBreak = false;
-            }
-            //CinemachineNoise.instance.ShakeCamera(1f,0.25f);
-            CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
-            breakableSpriteRenderLeft.sprite = breakSpriteLeft;
-            breakableSpriteRenderRigth.sprite = breakSpriteRigth;
-            collider.enabled = false;
-        }
+        BreakGround();
     }
 
-    public float distanceRay1;
-    public float distanceRay2;
     
     private bool CheckIfIcePlayerIsOn()
     {
@@ -101,6 +64,21 @@ public class BreakableGameObject : MonoBehaviour
         Debug.DrawRay(rayOriginRigth, rayDir * range, rayColor);
         return false;
     }
-    
+
+    private void BreakGround() //Si el jugador está en el suelo y el suelo no esta roto hacemos cositas
+    {
+        if (CheckIfIcePlayerIsOn())
+        {
+            if (notBreak)
+            {
+                _audioSource.PlayOneShot(_audioSource.clip);
+                notBreak = false;
+            }
+            CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
+            breakableSpriteRenderLeft.sprite = breakSpriteLeft;
+            breakableSpriteRenderRigth.sprite = breakSpriteRigth;
+            collider.enabled = false;
+        }
+    }
     
 }

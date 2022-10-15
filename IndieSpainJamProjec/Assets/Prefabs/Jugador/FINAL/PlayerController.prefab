@@ -9952,7 +9952,6 @@ MonoBehaviour:
   gasPlayer: {fileID: 7586850917745214626}
   maxTemperature: 75
   minTemperature: 25
-  _tempManager: {fileID: 0}
   playerState: 0
 --- !u!114 &1271775158210247539
 MonoBehaviour:
@@ -19940,6 +19939,14 @@ PrefabInstance:
       propertyPath: m_ReceiveShadows
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3640846015073978257, guid: cd5e3707d616b46418498254ae4b309f, type: 3}
+      propertyPath: m_Size.y
+      value: 1.6714529
+      objectReference: {fileID: 0}
+    - target: {fileID: 3640846015073978257, guid: cd5e3707d616b46418498254ae4b309f, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.06912309
+      objectReference: {fileID: 0}
     - target: {fileID: 4662295545827713998, guid: cd5e3707d616b46418498254ae4b309f, type: 3}
       propertyPath: lakituTransform
       value: 
@@ -20647,6 +20654,14 @@ PrefabInstance:
       value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 7755372610518196384, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: m_Size.y
+      value: 1.666097
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755372610518196384, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.06644517
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755372610518196384, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 2.5601401
       objectReference: {fileID: 0}
@@ -20707,4 +20722,4 @@ MonoBehaviour:
   - {x: 0.2031269, y: -0.62614167, z: 0}
   m_ShapePathHash: -1832149345
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1902
+  m_InstanceId: -149764

@@ -25,13 +25,7 @@ public class ButtonSmashed : MonoBehaviour
 
     private void Update()
     {
-        if (!buttonIsUsed && CheckIfIcePlayerIsOn())
-        {
-            Debug.Log("Call the action");
-            _audioSource.PlayOneShot(_audioSource.clip);
-            buttonEvent.Invoke();
-            buttonIsUsed = true;
-        }
+        ActivateButton();
     }
 
     private bool CheckIfIcePlayerIsOn()
@@ -54,4 +48,17 @@ public class ButtonSmashed : MonoBehaviour
         Debug.DrawRay(rayOriginRigth, rayDir * raycastRange, rayColor);
         return false;
     }
+
+    private void ActivateButton()
+    {
+        if (!buttonIsUsed && CheckIfIcePlayerIsOn())
+        {
+            Debug.Log("Call the action");
+            _audioSource.PlayOneShot(_audioSource.clip);
+            buttonEvent.Invoke();
+            buttonIsUsed = true;
+        }
+    }
+    
+    
 }
