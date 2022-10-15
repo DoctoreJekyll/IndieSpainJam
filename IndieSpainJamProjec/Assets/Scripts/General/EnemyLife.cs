@@ -1,11 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyLife : MonoBehaviour, IActivable
 {
 
+    //Esto seria para matar enemigos de un toque
     [SerializeField] private int life;
 
     private void Start()
@@ -28,7 +26,6 @@ public class EnemyLife : MonoBehaviour, IActivable
 
     public void DoActivate()
     {
-        Debug.Log("perder vida noeke");
         LoseLife(1);
     }
 }

@@ -1,9 +1,6 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
-using Random = System.Random;
 
 public class ChatBubble : MonoBehaviour
 {

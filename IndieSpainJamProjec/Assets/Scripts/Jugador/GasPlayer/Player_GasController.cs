@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 //Clase que se encarga del movimiento del jugador en el estado gaseoso,
