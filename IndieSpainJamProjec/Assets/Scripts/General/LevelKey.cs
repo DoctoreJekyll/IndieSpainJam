@@ -17,7 +17,7 @@ public class LevelKey : MonoBehaviour
     public bool followingPlayer;
     private Transform lastPosition;
     public List<Transform> playerPositionList;
-    public bool playerHasKey;
+    public bool playerHasKey;//?
 
     private AudioSource _audioSource;
 

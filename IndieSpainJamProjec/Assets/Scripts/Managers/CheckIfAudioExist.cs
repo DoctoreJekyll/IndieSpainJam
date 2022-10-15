@@ -8,6 +8,7 @@ public class CheckIfAudioExist : MonoBehaviour
 
     [SerializeField] private GameObject audioGO;
 
+    //Si el objeto del audio no está, instanciamos el objeto para el audio
     private void Start()
     {
         if (audioGO.scene.IsValid())

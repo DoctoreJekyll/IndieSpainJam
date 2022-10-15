@@ -22,6 +22,12 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        CameraFollowPlayer();
+    }
+
+
+    private void CameraFollowPlayer()
+    {
         targetPos = new Vector3(target.transform.position.x, target.transform.position.y, -10f);
 
         if (target.transform.localScale.x == 1)
@@ -34,7 +40,7 @@ public class CameraFollow : MonoBehaviour
             targetPos = new Vector3(targetPos.x - offsetX, targetPos.y + offsetY, -10f);
         }
 
-        transform.position = Vector3.Lerp(transform.position, targetPos, smooth * Time.deltaTime);
-
+        transform.position = Vector3.Lerp(transform.position, targetPos, smooth * Time.deltaTime);//Sigue al jugador
     }
+    
 }

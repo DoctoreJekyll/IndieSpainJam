@@ -5,9 +5,7 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    //Esto es otra opción pero no me acaba de convencer.
-    //TODO cosa de activar cosas
-
+    
     [SerializeField] private LayerMask interactableLayers;
     [SerializeField] private float range;
     public PlayerJump playerJump;
