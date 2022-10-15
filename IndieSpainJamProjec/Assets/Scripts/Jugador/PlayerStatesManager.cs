@@ -14,13 +14,7 @@ public class PlayerStatesManager : MonoBehaviour
     [SerializeField] private float minTemperature;
     
     [Header("Controller")]
-    [SerializeField] private TempManager _tempManager;
-
-
-    private void Awake()
-    {
-        _tempManager = FindObjectOfType<TempManager>();
-    }
+    private TempManager _tempManager;
 
     public enum  PlayerStates
     {
@@ -31,6 +25,11 @@ public class PlayerStatesManager : MonoBehaviour
 
     public PlayerStates playerState = PlayerStates.WATER;
 
+    private void Awake()
+    {
+        _tempManager = FindObjectOfType<TempManager>();
+    }
+
     private void Update()
     {
         ChangePlayersWithTemp();
@@ -38,7 +37,6 @@ public class PlayerStatesManager : MonoBehaviour
 
     }
     
-
     private void ChangePlayersWithTemp()
     {
         if (_tempManager.currentTemp <= 1)
@@ -60,8 +58,7 @@ public class PlayerStatesManager : MonoBehaviour
         {
             playerState = PlayerStates.WATER;
         }
-
-
+        
     }
 
     private void SwitchBetweenPlayers()
@@ -91,7 +88,5 @@ public class PlayerStatesManager : MonoBehaviour
 
         }
     }
-    
-    
     
 }

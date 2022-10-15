@@ -36,7 +36,7 @@ public class AirController : MonoBehaviour
 
     }
 
-    private void StopMovementController()
+    private void StopMovementController()//Cuando estamos en el aire impedimos al jugador moverse, ponemos su velocidad en X a 0 y aceleramos la fuerza de gravedad para que caiga a mayor velocidad
     {
         playerMoveScript.enabled = isOnFloor;
 
@@ -51,14 +51,13 @@ public class AirController : MonoBehaviour
         }
     }
     
-    private void IsOnFloorCheck()
+    private void IsOnFloorCheck()//Comprobamos si está tocando el suelo
     {
         isOnFloor = Physics2D.OverlapBox(pointToCheckFloor.transform.position, boxCheckSize, 0, floorLayer);
     }
 
     
-    
-    private void CheckIfPlayerIsOnAir()
+    private void CheckIfPlayerIsOnAir()//Comprobamos si no está en el suelo
     {
         if (!isOnFloor)
         {
@@ -75,24 +74,19 @@ public class AirController : MonoBehaviour
     private bool isOnAirAndPush;
     private float timeToPush;
     
-    private void OnCollisionEnter2D(Collision2D col)
+    private void OnCollisionEnter2D(Collision2D col)//Si está en el aire, según la distancia recorrida el screenshake es mayor o menor
     {
-        
         if ((col.gameObject.layer == 10 || col.gameObject.layer == 9) && isOnAirAndPush)
         {
             if (timeToPush > 0 && timeToPush < 0.5f)
             {
                 CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
-                //CinemachineNoise.instance.ShakeCamera(1f,0.25f);
                 _icePlayerSounds.IceImpactClip();
-                Debug.Log("small shake");
             }
             else if (timeToPush > 0.5f)
             {
                 CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.MEDIUM);
-                //CinemachineNoise.instance.ShakeCamera(1.25f,0.5f);
                 _icePlayerSounds.IceImpactClip();
-                Debug.Log("medium shake");
             }
             
             isOnAirAndPush = false;
@@ -101,12 +95,7 @@ public class AirController : MonoBehaviour
 
     }
 
-    public bool IsOnAir()
-    {
-        return isOnFloor;
-    }
-    
-    private void OnDrawGizmos()
+    private void OnDrawGizmos()//Dibujamos gizmos para ver el comprobador del suelo
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawCube(pointToCheckFloor.transform.position, boxCheckSize);

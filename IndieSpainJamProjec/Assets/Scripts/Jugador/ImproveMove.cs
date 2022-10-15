@@ -36,14 +36,7 @@ public class ImproveMove : MonoBehaviour
 	
     private void FixedUpdate()
     {
-	    if (GameStateManager.instance.currentGameState == GameStateManager.GameState.GAMEPLAY)
-	    {
-		    Run();
-	    }    
-	    else
-	    {
-		    rb2d.velocity = new Vector2(0f, rb2d.velocity.y);//Ñapa temporal
-	    }
+	    PlayerCanRun();
     }
 
     private void Run()
@@ -58,6 +51,18 @@ public class ImproveMove : MonoBehaviour
 	    float movement = (float)(Math.Pow(Math.Abs(sppedDif) * accelRate, velPower) * Math.Sign(sppedDif));
 	    
 	    rb2d.AddForce(movement * Vector2.right);
+    }
+
+    private void PlayerCanRun()
+    {
+	    if (GameStateManager.instance.currentGameState == GameStateManager.GameState.GAMEPLAY)
+	    {
+		    Run();
+	    }    
+	    else
+	    {
+		    rb2d.velocity = new Vector2(0f, rb2d.velocity.y);//Ñapa temporal
+	    }
     }
     
     private void FlipAndAnimation()

@@ -20,15 +20,7 @@ public class PrincipalAudioController : MonoBehaviour
 
     private void Update()
     {
-        if (SceneManager.GetActiveScene().name == "Main Menu")
-        {
-            audioS.Stop();
-        }else if (SceneManager.GetActiveScene().name != "Main Menu" && !audioS.isPlaying)
-        {
-            audioS.Play();
-        }
-        
-
+        SetAudio();
     }
 
     private void CreateSingleton()
@@ -40,6 +32,19 @@ public class PrincipalAudioController : MonoBehaviour
         
         DontDestroyOnLoad(this.gameObject);
     }
+
+    private void SetAudio()//Generamos una pista de audio u otro según en que escena esté
+    {
+        if (SceneManager.GetActiveScene().name == "Main Menu")
+        {
+            audioS.Stop();
+        }
+        else if (SceneManager.GetActiveScene().name != "Main Menu" && !audioS.isPlaying)
+        {
+            audioS.Play();
+        }
+    }
+    
     
     
 }

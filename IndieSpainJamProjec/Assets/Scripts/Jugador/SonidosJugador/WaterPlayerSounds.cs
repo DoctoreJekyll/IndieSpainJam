@@ -23,6 +23,7 @@ public class WaterPlayerSounds : MonoBehaviour
     /// <summary>
     /// ///Control de daños
     /// </summary>
+    [Header("Components")]
     public PlayerDeath playerDeath;
     private bool checkDead;
     
@@ -38,7 +39,6 @@ public class WaterPlayerSounds : MonoBehaviour
 
     private void Update()
     {
-        
         if (playerDeath.dead == true && checkDead == false)
         {
             DeadSound();

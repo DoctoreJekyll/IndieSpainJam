@@ -20,13 +20,12 @@ public class IcePlayerSounds : MonoBehaviour
     [Header("Effects")]
     [SerializeField] private GameObject particle;
 
-    
+    //Dead stuffs
     private bool checkDead;
     private PlayerDeath _playerDeath;
     
     private void OnEnable()
     {
-        //CinemachineNoise.instance.ShakeCamera(1f,0.25f);
         CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.MEDIUM);
         _audioSource.PlayOneShot(iceAppearSong);
         particle.SetActive(true);
@@ -47,7 +46,7 @@ public class IcePlayerSounds : MonoBehaviour
         }
     }
 
-    public void Step()
+    public void Step()//Este metodo se llama en el animator para que reproduzca sus pasos
     {
         _audioSource.pitch = Random.Range(0.9f, 1f);
         _audioSource.PlayOneShot(step);
@@ -60,7 +59,7 @@ public class IcePlayerSounds : MonoBehaviour
         _audioSource.PlayOneShot(iceImpactClip);
     }
 
-    public void BreakGround()
+    public void BreakGroundClip()
     {
         _audioSource.PlayOneShot(breakGroundClip);
     }

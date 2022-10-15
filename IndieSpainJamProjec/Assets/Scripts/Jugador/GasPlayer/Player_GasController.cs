@@ -47,7 +47,5 @@ public class Player_GasController : MonoBehaviour
         {
             _spriteRenderer.flipX = true;
         }
-
-        
     }
 }
