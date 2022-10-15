@@ -4881,7 +4881,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3599034636887633855}
   - component: {fileID: 3599034636887629888}
-  - component: {fileID: 3599034636887633853}
+  - component: {fileID: 7755372610518196384}
+  - component: {fileID: 6668048350506650257}
   - component: {fileID: 3599034636887633854}
   - component: {fileID: 6668048350506650258}
   - component: {fileID: 3599034636887633850}
@@ -4889,7 +4890,6 @@ GameObject:
   - component: {fileID: 3599034636887633852}
   - component: {fileID: 6668048348994776457}
   - component: {fileID: 6668048348994776498}
-  - component: {fileID: 6668048350506650257}
   - component: {fileID: 4386212983090357153}
   - component: {fileID: 4386212983090357152}
   m_Layer: 4
@@ -4970,8 +4970,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &3599034636887633853
+--- !u!61 &7755372610518196384
 BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3599034636887629889}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: c5e875dc74c592b43ad19960f7a6b3e6, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.04783392, y: -0.18963301}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 2.56}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4250021, y: 1.9124727}
+  m_EdgeRadius: 0
+--- !u!70 &6668048350506650257
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4983,19 +5009,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.07905269, y: -0.06587744}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.56, y: 2.56}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.8418946, y: 1.5533686}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0.07, y: -0.064531684}
+  m_Size: {x: 0.52127177, y: 1.4015315}
+  m_Direction: 0
 --- !u!50 &3599034636887633854
 Rigidbody2D:
   serializedVersion: 4
@@ -5054,8 +5070,6 @@ MonoBehaviour:
   moveSpeed: 6
   maxMoveSpeed: 6
   moveSpeedWhenSpikes: 3
-  isFacingRigth: 0
-  isFacingLeft: 0
 --- !u!114 &3599034636887633851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5068,19 +5082,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ac964d49b5272841acb6f6e05eb6eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb2d: {fileID: 3599034636887633854}
   jumpForce: 8
-  isOnFloor: 0
   pointToCheckFloor: {fileID: 3599034637235304190}
   boxCheckSize: {x: 0.2, y: 0.38}
   floorLayer:
     serializedVersion: 2
     m_Bits: 1024
   shadow: {fileID: 4386212983916105417}
+  isOnFloor: 0
+  isOnAir: 0
+  fallCheck: {x: 0, y: 0}
   coyoteTime: 0
   timeToDoCoyote: 0.3
-  waterAnimator: {fileID: 6668048350506650258}
-  soundFallCheck: {x: 0.1, y: 0.2}
+  fallParticle: {fileID: 0}
 --- !u!114 &3599034636887633852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5122,22 +5136,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 0}
   dead: 0
---- !u!70 &6668048350506650257
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3599034636887629889}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: c5e875dc74c592b43ad19960f7a6b3e6, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.07, y: -0.064531684}
-  m_Size: {x: 0.52127177, y: 1.4015315}
-  m_Direction: 0
 --- !u!82 &4386212983090357153
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5254,6 +5252,7 @@ MonoBehaviour:
   attackClip: {fileID: 0}
   deadClip: {fileID: 0}
   particle: {fileID: 2831482144160504848}
+  playerDeath: {fileID: 0}
 --- !u!1 &3599034637235304190
 GameObject:
   m_ObjectHideFlags: 0

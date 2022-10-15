@@ -4995,7 +4995,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7387462563181907894}
   - component: {fileID: 7387462563181907902}
-  - component: {fileID: 7387462563181907903}
+  - component: {fileID: 3640846015073978257}
+  - component: {fileID: 936630611365083765}
   - component: {fileID: 7387462563181907888}
   - component: {fileID: 7387462563181907900}
   - component: {fileID: 7387462563181907901}
@@ -5003,7 +5004,6 @@ GameObject:
   - component: {fileID: 4662295545827713984}
   - component: {fileID: 2370180681228028608}
   - component: {fileID: 2370180681228028611}
-  - component: {fileID: 936630611365083765}
   - component: {fileID: 7387462563181907892}
   m_Layer: 7
   m_Name: IcePlayer
@@ -5082,8 +5082,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7387462563181907903
+--- !u!61 &3640846015073978257
 BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7387462563181907895}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: c5e875dc74c592b43ad19960f7a6b3e6, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.04783392, y: -0.18963301}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.560142, y: 2.56}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4250021, y: 1.9124727}
+  m_EdgeRadius: 0
+--- !u!70 &936630611365083765
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5095,19 +5121,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03331089, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.560142, y: 2.56}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.2807178, y: 1}
-  m_EdgeRadius: 0
+  m_Offset: {x: -0.05910015, y: -0.16005498}
+  m_Size: {x: 0.84750175, y: 1.592578}
+  m_Direction: 0
 --- !u!50 &7387462563181907888
 Rigidbody2D:
   serializedVersion: 4
@@ -5145,8 +5161,6 @@ MonoBehaviour:
   runAcceleration: 3
   runDecceleration: 4
   velPower: 0.5
-  isFacingRigth: 0
-  isFacingLeft: 0
 --- !u!114 &7387462563181907901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5308,23 +5322,8 @@ MonoBehaviour:
   iceImpactClip: {fileID: 8300000, guid: 9e31ed95dc835b6498f34257169a77df, type: 3}
   breakGroundClip: {fileID: 0}
   deadClip: {fileID: 0}
+  step: {fileID: 0}
   particle: {fileID: 411114643904464237}
---- !u!70 &936630611365083765
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7387462563181907895}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: c5e875dc74c592b43ad19960f7a6b3e6, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.05910015, y: -0.16005498}
-  m_Size: {x: 0.84750175, y: 1.592578}
-  m_Direction: 0
 --- !u!95 &7387462563181907892
 Animator:
   serializedVersion: 4
