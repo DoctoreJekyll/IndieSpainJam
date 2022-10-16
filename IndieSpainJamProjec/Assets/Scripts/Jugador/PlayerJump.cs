@@ -14,6 +14,7 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] private Vector2 boxCheckSize;
     [SerializeField] private LayerMask floorLayer;
     [SerializeField] private GameObject shadow;
+    [SerializeField] private TrailRenderer trail;
     private bool canJump;
     public bool isOnFloor;
     
@@ -36,6 +37,7 @@ public class PlayerJump : MonoBehaviour
         waterAnimator = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
         _waterPlayerSounds = GetComponent<WaterPlayerSounds>();
+        if(trail) { trail.gameObject.SetActive(false); }
     }
 
     private void Update()
@@ -118,6 +120,7 @@ public class PlayerJump : MonoBehaviour
     {
         if(isOnFloor == false)
         {
+            trail.gameObject.SetActive(true);
             if(rb2d.velocity.y  > 0)
             {
                 waterAnimator.SetBool("JUMPING", true);
@@ -136,6 +139,7 @@ public class PlayerJump : MonoBehaviour
         }
         else
         {
+            if (trail) { trail.gameObject.SetActive(false); }
             waterAnimator.SetBool("FALLING", false);
             waterAnimator.SetBool("JUMPING", false);
         }
