@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,16 @@ public class Player_MatterManager : MonoBehaviour
     public float currentMatterAmmount;
     private bool canConsume;
 
+    [Header("Input System")] 
+    private HydroMorpher playerInputs;
+
+
+    private void Awake()
+    {
+        //playerInputs = new HydroMorpher();
+
+        //playerInputs.PlayerInputs.Materia.performed += x => ConsumeMatter();
+    }
 
     //Obtenemos lo componentes necesarios y establecemos una cantidad de materia inicial en el jugador
     private void Start()
@@ -34,11 +45,17 @@ public class Player_MatterManager : MonoBehaviour
     private void Update()
     {
         if (canConsume && currentMatterAmmount > 0)
+        {
             ConsumeMatter();
+        }
+            
 
         //(DEBUG)
         if (Input.GetKey(KeyCode.M) && currentMatterAmmount < 100)
+        {
             ObtainMatter(obtainMatterRatio);
+        }
+            
     }
 
     public void UseMateriaAction(InputAction.CallbackContext context)
