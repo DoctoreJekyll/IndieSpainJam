@@ -27,14 +27,26 @@ public class WaterPlayerSounds : MonoBehaviour
     public PlayerDeath playerDeath;
     private bool checkDead;
     
+    //Control de daños part 2
+    private bool isAlreadyEnable;
+    
     private void OnEnable()
     {
         _audioSource.GetComponent<AudioSource>();
-        
-        //CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.MEDIUM);//Esto da fallos la primera vez porque este enable entra antes que la instancia de la camara, hay que hacer apaños
-        _audioSource.PlayOneShot(waterAppearSong);
-        particle.SetActive(true);
+
+        if (isAlreadyEnable)
+        {
+            CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.MEDIUM);//Esto da fallos la primera vez porque este enable entra antes que la instancia de la camara, hay que hacer apaños
+            _audioSource.PlayOneShot(waterAppearSong);
+            particle.SetActive(true);
+        }
+
         checkDead = false;
+    }
+
+    private void Start()
+    {
+        isAlreadyEnable = true;
     }
 
     private void Update()
