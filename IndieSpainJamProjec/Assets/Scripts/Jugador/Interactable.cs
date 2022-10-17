@@ -10,7 +10,7 @@ public class Interactable : MonoBehaviour
     public Animator waterAnimator;
     
     
-    public void InteractAction(InputAction.CallbackContext context)
+    public void InteractAction(InputAction.CallbackContext context)//Se llama en el input system
     {
         if (context.performed && playerJump.isOnFloor)
         {

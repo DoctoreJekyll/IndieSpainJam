@@ -17,6 +17,7 @@ public class Player_MatterManager : MonoBehaviour
 
     [Header("[Values]")]
     public float currentMatterAmmount;
+    private bool canConsume;
 
 
     //Obtenemos lo componentes necesarios y establecemos una cantidad de materia inicial en el jugador
@@ -27,11 +28,12 @@ public class Player_MatterManager : MonoBehaviour
         currentMatterAmmount = initialMatterAmmount;
         matterCanvas.Refresh_MatterCanvas(currentMatterAmmount);
     }
-
-
+    
+    
+    //TODO buscar alternativa para el new input system
     private void Update()
     {
-        if (Input.GetKey(matterKey) && currentMatterAmmount > 0)
+        if (canConsume && currentMatterAmmount > 0)
             ConsumeMatter();
 
         //(DEBUG)
@@ -43,7 +45,11 @@ public class Player_MatterManager : MonoBehaviour
     {
         if (context.performed && currentMatterAmmount > 0)
         {
-            ConsumeMatter();
+            canConsume = true;
+        }
+        else if (context.canceled)
+        {
+            canConsume = false;
         }
     }
 

@@ -2012,10 +2012,58 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 729118658, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 729118658, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 951100927}
+    - target: {fileID: 729118658, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UseMateriaAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 729118658, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player_MatterManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 729118658, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1198880280, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 115366639}
+    - target: {fileID: 1872840832, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1872840832, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1872840832, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 951100927}
+    - target: {fileID: 1872840832, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1872840832, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UseMateriaAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 1872840832, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player_MatterManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1872840832, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 542109543304249515, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -2068,10 +2116,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5238274336596255364, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
-      propertyPath: m_NotificationBehavior
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6471103978720693977, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -2082,6 +2126,17 @@ PrefabInstance:
       objectReference: {fileID: 1697421705}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+--- !u!114 &951100927 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7475539678085402590, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+  m_PrefabInstance: {fileID: 951100923}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0fe31c59472f6a429c2a707344f3b47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &958066236
 GameObject:
   m_ObjectHideFlags: 0
