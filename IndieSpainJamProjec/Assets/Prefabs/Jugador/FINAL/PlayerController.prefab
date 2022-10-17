@@ -9908,6 +9908,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1271775158210247535}
   - component: {fileID: 1271775158210247532}
+  - component: {fileID: 7475539678085402590}
   - component: {fileID: 1271775158210247539}
   m_Layer: 0
   m_Name: PlayerController
@@ -9953,6 +9954,24 @@ MonoBehaviour:
   maxTemperature: 75
   minTemperature: 25
   playerState: 0
+--- !u!114 &7475539678085402590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271775158210247534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0fe31c59472f6a429c2a707344f3b47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  matterCanvas: {fileID: 0}
+  initialMatterAmmount: 0
+  obtainMatterRatio: 30
+  consumeMatterRatio: 30
+  matterKey: 306
+  currentMatterAmmount: 0
 --- !u!114 &1271775158210247539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20590,4 +20609,4 @@ MonoBehaviour:
   - {x: 0.2031269, y: -0.62614167, z: 0}
   m_ShapePathHash: -1832149345
   m_Mesh: {fileID: 0}
-  m_InstanceId: -2004
+  m_InstanceId: 71186

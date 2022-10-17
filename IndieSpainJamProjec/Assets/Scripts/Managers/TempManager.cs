@@ -23,9 +23,9 @@ public class TempManager : MonoBehaviour
     //Establecemos la temperatura inicial
     void Start()
     {
-        currentTemp = initialTemp;
-
         tempCanvas = GameObject.FindGameObjectWithTag("Temp Canvas").GetComponent<UI_TemperatureCanvas>();
+
+        currentTemp = initialTemp;
         tempCanvas.Refresh_TemperatureCanvas(currentTemp);
     }
 
