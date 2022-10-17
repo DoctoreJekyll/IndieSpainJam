@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 //Clase que se encarga de producir un shake a la cámara
@@ -9,12 +8,12 @@ public class CameraShake : MonoBehaviour
     public static CameraShake instance;
 
     [Header("[References]")]
-    public Vector3 originalPos;
+    [SerializeField] private Vector3 originalPos;
 
     [Header("[Configuration]")]
-    public float shakeDuration;
-    public float smallMagnitude;
-    public float normalMagnitude, bigMagnitude, hugeMagnitude;
+    [SerializeField] private float shakeDuration;
+    [SerializeField] private float smallMagnitude;
+    [SerializeField] private float normalMagnitude, bigMagnitude, hugeMagnitude;
 
     private void Awake()
     {
@@ -73,7 +72,6 @@ public class CameraShake : MonoBehaviour
             currentTime += Time.unscaledDeltaTime;
             yield return null;
         }
-
-        //gameObject.transform.localPosition = originalPos;
+        
     }
 }

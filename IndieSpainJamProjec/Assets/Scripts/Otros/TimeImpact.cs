@@ -10,13 +10,14 @@ public class TimeImpact : MonoBehaviour
     public static TimeImpact instance;
 
     [Header("[Configuration]")]
-    public float smallMagnitude = 0.25f;
-    public float normalMagnitude = 0.5f;
-    public float bigMagnitude = 0.75f;
+    [SerializeField] private float smallMagnitude = 0.25f;
+    [SerializeField] private float normalMagnitude = 0.5f;
+    [SerializeField] private float bigMagnitude = 0.75f;
 
+    //Comento el singleton mientras no usemos la clase para no quemar de singleton el proyecto
     private void Awake()
     {
-        CreateSingleton();
+        //CreateSingleton();
     }
     private void CreateSingleton()
     {

@@ -10,13 +10,13 @@ public class LevelManager : MonoBehaviour
     public static LevelManager instance;
 
     [Header("[References]")]
-    public GameObject player;
-    public GameObject initialDoor;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject initialDoor;
 
     [Header("[Configuration]")]
-    public KeyCode resetKey;
-    public string currentLevel;
-    public string nextLevelScene;
+    [SerializeField] private KeyCode resetKey;
+    [SerializeField] private string currentLevel;
+    [SerializeField] private string nextLevelScene;
 
 
     private void Awake()

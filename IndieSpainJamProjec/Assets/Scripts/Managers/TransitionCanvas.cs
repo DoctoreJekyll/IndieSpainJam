@@ -9,30 +9,20 @@ public class TransitionCanvas : MonoBehaviour
     public static TransitionCanvas instance;
 
     [Header("[References]")]
-    public Animator screenTransition_Animator;
-    public Animator levelTransition_Animator;
-    public Image keyMask;
-    public GameObject screenTransition, keyTransition;
+    [SerializeField] private Animator screenTransition_Animator;
+    [SerializeField] private Animator levelTransition_Animator;
+    [SerializeField] private Image keyMask;
+    [SerializeField] private GameObject screenTransition, keyTransition;
     private GameObject initialDoor, targetDoor;
 
     private Vector3 initialDoorPos, targetDoorPos;
 
-    public Camera auxCamera;
-    public bool itsMainMenu;
+    [SerializeField] private Camera auxCamera;
+    [SerializeField] private bool itsMainMenu;
 
     private void Awake()
     {
-        if(itsMainMenu == false)
-        {
-            initialDoor = GameObject.FindGameObjectWithTag("Initial Door");
-            targetDoor = GameObject.FindGameObjectWithTag("Target Door");
-
-            auxCamera = GameObject.FindGameObjectWithTag("Aux Camera").GetComponent<Camera>();
-
-            initialDoorPos = Camera.main.WorldToScreenPoint(initialDoor.transform.position);
-            targetDoorPos = auxCamera.WorldToScreenPoint(targetDoor.transform.position);
-        }
-
+        GetReferences();
         CreateSingleton();
     }
 
@@ -48,9 +38,21 @@ public class TransitionCanvas : MonoBehaviour
             Destroy(this.gameObject);
         else
             instance = this;
-    }   
+    }
 
+    private void GetReferences()
+    {
+        if(itsMainMenu == false)
+        {
+            initialDoor = GameObject.FindGameObjectWithTag("Initial Door");
+            targetDoor = GameObject.FindGameObjectWithTag("Target Door");
 
+            auxCamera = GameObject.FindGameObjectWithTag("Aux Camera").GetComponent<Camera>();
+
+            initialDoorPos = Camera.main.WorldToScreenPoint(initialDoor.transform.position);
+            targetDoorPos = auxCamera.WorldToScreenPoint(targetDoor.transform.position);
+        }
+    }
 
     public void Play_ScreenTransition_In()
     {
