@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class BetterJump : MonoBehaviour
 {
@@ -11,15 +13,23 @@ public class BetterJump : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    private void Update()
     {
+        BetterJumpPerformed();
+    }
+
+    private void BetterJumpPerformed()
+    {
+
         if (rb.velocity.y < 0)
         {
             rb.velocity += Vector2.up * (Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime);
         }
-        else if (rb.velocity.y > 0 && !Input.GetButton("Jump"))
+        else if (rb.velocity.y > 0 && !Keyboard.current.spaceKey.isPressed && !Gamepad.current.buttonSouth.isPressed)
         {
             rb.velocity += Vector2.up * (Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime);
         }
     }
+    
+    
 }

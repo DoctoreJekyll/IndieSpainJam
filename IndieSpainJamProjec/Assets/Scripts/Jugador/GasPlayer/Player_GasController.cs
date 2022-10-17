@@ -11,15 +11,21 @@ public class Player_GasController : MonoBehaviour
     public float elevationForce;
     public float moveSpeed;
     private SpriteRenderer _spriteRenderer;
-
-    [Header("Sounds")] 
-    private GasPlayerSound _gasPlayerSound;
-
+    
+    [Header("Input Controller")]
+    private HydroMorpher playerInputsActions;
+    private Vector2 direction;
 
     private void Awake()
     {
-        _gasPlayerSound = GetComponent<GasPlayerSound>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        SetNewPlayerInput();
+    }
+    
+    private void SetNewPlayerInput()
+    {
+        playerInputsActions = new HydroMorpher();
+        playerInputsActions.Enable();
     }
 
     private void FixedUpdate()
@@ -33,7 +39,8 @@ public class Player_GasController : MonoBehaviour
 
     private void PlayerMovement()
     {
-        float inputMovement = Input.GetAxisRaw("Horizontal");
+        direction = playerInputsActions.PlayerInputs.Move.ReadValue<Vector2>();
+        float inputMovement = direction.x;
         rb.velocity = new Vector2(inputMovement * moveSpeed, rb.velocity.y);
 
         if (inputMovement > 0)

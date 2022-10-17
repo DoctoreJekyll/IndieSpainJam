@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 //Clase que se encarga de gestionar la cantidad de materia que tiene el jugador
 public class Player_MatterManager : MonoBehaviour
@@ -38,6 +39,13 @@ public class Player_MatterManager : MonoBehaviour
             ObtainMatter(obtainMatterRatio);
     }
 
+    public void UseMateriaAction(InputAction.CallbackContext context)
+    {
+        if (context.performed && currentMatterAmmount > 0)
+        {
+            ConsumeMatter();
+        }
+    }
 
     //Obtiene materia
     public void ObtainMatter(float matterAmmount)

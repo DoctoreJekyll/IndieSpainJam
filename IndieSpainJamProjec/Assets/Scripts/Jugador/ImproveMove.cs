@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class ImproveMove : MonoBehaviour
 {
+	private Vector2 direction;
 	private float _moveInput;
 	private Rigidbody2D rb2d;
 	private SpriteRenderer _spriteRenderer;
@@ -12,6 +13,9 @@ public class ImproveMove : MonoBehaviour
 	public float runAcceleration; //Time (approx.) time we want it to take for the player to accelerate from 0 to the runMaxSpeed.
 	public float runDecceleration; //Time (approx.) we want it to take for the player to accelerate from runMaxSpeed to 0.
 	public float velPower;
+	
+	[Header("Input Controller")]
+	private HydroMorpher playerInputsActions;
 
 	private Animator _animation;
 	
@@ -20,11 +24,21 @@ public class ImproveMove : MonoBehaviour
 		rb2d = GetComponent<Rigidbody2D>();
 		_spriteRenderer = GetComponent<SpriteRenderer>();
 		_animation = GetComponent<Animator>();
+		
+		SetNewPlayerInput();
 	}
 
+	private void SetNewPlayerInput()
+	{
+		playerInputsActions = new HydroMorpher();
+		playerInputsActions.Enable();
+
+	}
+	
 	private void Update()
-    {
-	    _moveInput = Input.GetAxisRaw("Horizontal");
+	{
+		direction = playerInputsActions.PlayerInputs.Move.ReadValue<Vector2>();
+		_moveInput = direction.x;
 	    if (GameStateManager.instance.currentGameState == GameStateManager.GameState.GAMEPLAY)
 	    {
 		    FlipAndAnimation();

@@ -47,8 +47,9 @@ public class PlayerJump : MonoBehaviour
         IsOnFloor();
         FallCheck();
         CoyoteTimeImprove();
-        
+
         shadow.SetActive(isOnFloor);
+        
     }
 
     private void IsOnFloor()
@@ -57,34 +58,26 @@ public class PlayerJump : MonoBehaviour
         JumpControllerAnim();
     }
     
-    private void JumpWithCoyote()
-    {
-        
-        if (coyoteTime > 0f)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                _waterPlayerSounds.JumpSound();
-                rb2d.velocity = new Vector2(rb2d.velocity.x, 0);
-                rb2d.velocity += Vector2.up * jumpForce;
-                
-            }
+    public float fallMultiplier = 2.5f;//Cae más rápido después del salto
+    public float lowJumpMultiplier = 2f;//"Flota" más en el aire o se mantiene un poco mas
 
-            if (Input.GetKeyUp((KeyCode.Space)))
-            {
-                coyoteTime = 0f;
-            }
-        }
-
-    }
-
-    public void JumpAction(InputAction.CallbackContext context)
+    public void JumpAction(InputAction.CallbackContext context)//Llamamos a este metodo dentro del componente input action del playermanager 
     {
         if (GameStateManager.instance.currentGameState == GameStateManager.GameState.GAMEPLAY)
         {
             if (context.performed)
             {
-                JumpWithCoyote();
+                if (coyoteTime > 0f)
+                {
+                    _waterPlayerSounds.JumpSound();
+                    rb2d.velocity = new Vector2(rb2d.velocity.x, 0);
+                    rb2d.velocity += Vector2.up * jumpForce;
+
+                    if (context.canceled)
+                    {
+                        coyoteTime = 0f;
+                    }
+                }
             }
             
         }

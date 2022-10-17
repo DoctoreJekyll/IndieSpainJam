@@ -16,7 +16,6 @@ public class PlayerMove : MonoBehaviour
     public float moveSpeedWhenSpikes;
     
     [Header("Input Controller")]
-    [SerializeField] private PlayerInput playerInput;
     private HydroMorpher playerInputsActions;
     
     private void Awake()
@@ -30,7 +29,6 @@ public class PlayerMove : MonoBehaviour
     {
         playerInputsActions = new HydroMorpher();
         playerInputsActions.Enable();
-
     }
 
     private void Update()

@@ -1,7 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Interactable : MonoBehaviour
 {
@@ -10,19 +8,19 @@ public class Interactable : MonoBehaviour
     [SerializeField] private float range;
     public PlayerJump playerJump;
     public Animator waterAnimator;
-    public KeyCode attackKey;
-
-    private void Update()
+    
+    
+    public void InteractAction(InputAction.CallbackContext context)
     {
-        if (Input.GetKeyDown(attackKey) && playerJump.isOnFloor == true)//TODO hay que meter todo esta funcionalidad dentro del animation
+        if (context.performed && playerJump.isOnFloor)
         {
             waterAnimator.Play("IDLE");
             waterAnimator.Play("INTERACTING");
 
             DetectStuffs();
         }
+        
     }
-
     
     private void DetectStuffs()//Podemos llamar también esto al atacar y generará un bool si colisiona con un enemigo
     {
