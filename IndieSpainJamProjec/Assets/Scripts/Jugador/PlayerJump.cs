@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerJump : MonoBehaviour
 {
@@ -45,15 +46,9 @@ public class PlayerJump : MonoBehaviour
         
         IsOnFloor();
         FallCheck();
+        CoyoteTimeImprove();
         
         shadow.SetActive(isOnFloor);
-        
-        if (GameStateManager.instance.currentGameState == GameStateManager.GameState.GAMEPLAY)
-        {
-            CoyoteTimeImprove();
-            JumpWithCoyote();
-        }
-
     }
 
     private void IsOnFloor()
@@ -81,6 +76,18 @@ public class PlayerJump : MonoBehaviour
             }
         }
 
+    }
+
+    public void JumpAction(InputAction.CallbackContext context)
+    {
+        if (GameStateManager.instance.currentGameState == GameStateManager.GameState.GAMEPLAY)
+        {
+            if (context.performed)
+            {
+                JumpWithCoyote();
+            }
+            
+        }
     }
 
     private void CoyoteTimeImprove()//Control del tiempo para generar el efecto coyote

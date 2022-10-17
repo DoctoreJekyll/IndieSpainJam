@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 //Clase que se encarga de verificar si el jugador ha obtenido la llave del nivel

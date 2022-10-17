@@ -24,7 +24,6 @@ public class LeverEvents : MonoBehaviour, IActivable
         if (isNotActivate)
         {
             _audioSource.PlayOneShot(leverClip);
-            Debug.Log("Palanca");
             CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
             myEvent.Invoke();
             isNotActivate = false;
