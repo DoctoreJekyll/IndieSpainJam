@@ -3,44 +3,42 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Clase que se encarga de modificar la temperatura del jugador al entrar en contacto
 public class TempChanger : MonoBehaviour
 {
-    public int temperatura;
-    public int intensidad;
     TempManager tempManager;
 
-    [Header("Sounds")] 
+    [Header("[Configuration]")]
+    public int temperatura;
+    public int intensidad;
+    public bool distanceModifier;
+
+    [Header("[Sounds]")] 
     [SerializeField] private AudioClip _audioClipHot;
     [SerializeField] private AudioClip _audioClipFrost;
     private AudioSource _audioSource;
     private PlayerStatesManager _playerStatesManager;
     
+    [Header("[Values]")]
+    public bool isPlayerOn;
 
 
-    // Start is called before the first frame update
+    //Obtenemos los componentes que necesitamos
     void Start()
     {
-        tempManager = GameObject.FindGameObjectWithTag("Temp Manager").GetComponent<TempManager>();
+        tempManager = GameObject.FindObjectOfType<TempManager>();
         _audioSource = GetComponent<AudioSource>();
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if(collision.tag == "Player")
-        {
-            float potencia = 1 / Vector3.Distance(this.transform.position, collision.transform.position);
-            tempManager.ModifyTemperature(temperatura, (intensidad + (potencia * 0.5f)));
 
-        }
-    }
-
-    public bool isPlayerOn;
+    //Si el jugador entra en contacto reproducimos sonidos de cambio de temperatura y efectos de Postprocessing
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            _audioSource.volume = 0.5f;
             isPlayerOn = true;
+            _audioSource.volume = 0.5f;
+
             if (temperatura > 0)
             {
                 _audioSource.PlayOneShot(_audioClipHot);
@@ -55,6 +53,26 @@ public class TempChanger : MonoBehaviour
         }
     }
 
+
+    //Si el jugador se queda dentro, modificamos su temperatura
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            if (distanceModifier) //Intensificamos el cambio de temperatura teniendo en cuenta la distancia del jugador hacia este GameObject
+            {
+                float potencia = 1 / Vector3.Distance(this.transform.position, collision.transform.position);
+                tempManager.ModifyTemperature(temperatura, (intensidad + (potencia * 0.5f)));
+            }
+            else
+            {
+                tempManager.ModifyTemperature(temperatura, intensidad);
+            }
+        }
+    }
+
+
+    //Si el jugador pierde el contacto dejamos de reproducir sonidos y efectos de Postprocessing
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -65,6 +83,7 @@ public class TempChanger : MonoBehaviour
         }
     }
     
+    //Baja el volumen del audiosource poco a poco
     private IEnumerator FadeOutVolumeCoroutine()
     {
         yield return new WaitForSeconds(0.1f);
@@ -75,9 +94,7 @@ public class TempChanger : MonoBehaviour
             {
                 _audioSource.volume -= startVolume * Time.deltaTime / 0.5f;
                 yield return new WaitForFixedUpdate();
-
             }
-            //_audioSource.Stop();
         }
     }
     

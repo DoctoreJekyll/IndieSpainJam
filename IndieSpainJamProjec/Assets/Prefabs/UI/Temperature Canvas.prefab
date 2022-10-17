@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 4745777285628231440}
   - component: {fileID: 7752338568313005550}
   m_Layer: 5
-  m_Name: Term Filler
+  m_Name: Temp Filler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -455,11 +455,11 @@ GameObject:
   - component: {fileID: 3953252926326175528}
   - component: {fileID: 3953252926326175531}
   - component: {fileID: 3953252926326175530}
-  - component: {fileID: 2427449238832312951}
+  - component: {fileID: 2094519220029031104}
   - component: {fileID: 3536442390800355146}
   m_Layer: 5
   m_Name: Temperature Canvas
-  m_TagString: Temp Manager
+  m_TagString: Temp Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -547,7 +547,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2427449238832312951
+--- !u!114 &2094519220029031104
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -556,13 +556,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3953252926326175541}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1eed64e6920c7d148a1cad75a4654a50, type: 3}
+  m_Script: {fileID: 11500000, guid: abe65fa5bcae17d4792caccaabf27b14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tempFiller: {fileID: 7752338568313005550}
-  temptext: {fileID: 4636147611793588477}
-  termAnimator: {fileID: 3536442390800355146}
-  initialTemp: 50
+  degreesText: {fileID: 4636147611793588477}
+  thermometerAnimator: {fileID: 3536442390800355146}
   currentTemp: 0
 --- !u!95 &3536442390800355146
 Animator:
