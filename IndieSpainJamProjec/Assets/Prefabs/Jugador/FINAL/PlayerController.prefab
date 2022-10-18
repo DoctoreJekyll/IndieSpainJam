@@ -9954,7 +9954,7 @@ MonoBehaviour:
   gasPlayer: {fileID: 7586850917745214626}
   maxTemperature: 75
   minTemperature: 25
-  playerState: 1
+  currentPlayerState: 0
 --- !u!114 &7475539678085402590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20659,6 +20659,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.01
       objectReference: {fileID: 0}
+    - target: {fileID: 3599034638720572425, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4386212983090357152, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
       propertyPath: deadClip
       value: 
@@ -20830,7 +20834,7 @@ MonoBehaviour:
   - {x: 0.2031269, y: -0.62614167, z: 0}
   m_ShapePathHash: -1832149345
   m_Mesh: {fileID: 0}
-  m_InstanceId: 77134
+  m_InstanceId: 123008
 --- !u!114 &1872840832
 MonoBehaviour:
   m_ObjectHideFlags: 0
