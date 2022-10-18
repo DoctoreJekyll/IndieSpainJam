@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Localization;
 using TMPro;
 
 public class ChatBubble : MonoBehaviour
@@ -8,10 +9,11 @@ public class ChatBubble : MonoBehaviour
     [Header("Components")]
     [SerializeField] private SpriteRenderer backgroundSpriteRenderer;
     [SerializeField] private TMP_Text textMeshPro;
+    [SerializeField] private LocalizedString localString;
 
     [Header("Text")]
     [TextArea(3,6)]
-    [SerializeField] private string textToSpeech;
+    public string textToSpeech;
     
     [Header("Padding Box Values")]
     [SerializeField] private float paddingX;
@@ -31,12 +33,16 @@ public class ChatBubble : MonoBehaviour
 
     private void OnEnable()
     {
+
+        localString.StringChanged += SetText;
+        
         _audioSource.PlayOneShot(dialogueOnClip);
         StartCoroutine(ShowText());
     }
 
     private void OnDisable()
     {
+        localString.StringChanged -= SetText;
         _audioSource.PlayOneShot(dialogueOffClip);
     }
 
@@ -57,6 +63,11 @@ public class ChatBubble : MonoBehaviour
         //Vector3 offset = new Vector3(-3f, 0f);
         backgroundSpriteRenderer.transform.localPosition = new Vector3(backgroundSpriteRenderer.size.x / 2f, 0f);
 
+    }
+
+    public void SetText(string s)
+    {
+        textToSpeech = s;
     }
     
     private IEnumerator ShowText()
