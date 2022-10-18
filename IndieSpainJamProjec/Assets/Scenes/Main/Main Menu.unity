@@ -1105,7 +1105,7 @@ GameObject:
   - component: {fileID: 424933744}
   - component: {fileID: 424933743}
   m_Layer: 5
-  m_Name: "Espa\xF1ol (1)"
+  m_Name: Ingles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1175,7 +1175,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 424933744}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1186765454}
+        m_TargetAssemblyTypeName: LocaleSelector, Assembly-CSharp
+        m_MethodName: ChangeLocale
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &424933744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1364,9 +1376,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_StringReference:
     m_TableReference:
-      m_TableCollectionName: GUID:73ae42f4ae9309447815b377d8985c1f
+      m_TableCollectionName: GUID:f8ca8cd5d82e9a74ebb49a948a02475c
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 85587804160
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -2705,7 +2717,7 @@ MonoBehaviour:
   m_UpdateString:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 471754207}
+      - m_Target: {fileID: 886584510}
         m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
         m_MethodName: set_text
         m_Mode: 0
@@ -3234,6 +3246,7 @@ GameObject:
   - component: {fileID: 1186765451}
   - component: {fileID: 1186765453}
   - component: {fileID: 1186765452}
+  - component: {fileID: 1186765454}
   m_Layer: 5
   m_Name: Lenguage
   m_TagString: Untagged
@@ -3301,6 +3314,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1186765450}
   m_CullTransparentMesh: 1
+--- !u!114 &1186765454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186765450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf3d4e62a46c6d4eb02ef57cd575d33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1338521431
 GameObject:
   m_ObjectHideFlags: 0
@@ -4007,9 +4032,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_StringReference:
     m_TableReference:
-      m_TableCollectionName: GUID:73ae42f4ae9309447815b377d8985c1f
+      m_TableCollectionName: GUID:f8ca8cd5d82e9a74ebb49a948a02475c
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 77023035392
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -4018,7 +4043,7 @@ MonoBehaviour:
   m_UpdateString:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 471754207}
+      - m_Target: {fileID: 1514275915}
         m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
         m_MethodName: set_text
         m_Mode: 0
@@ -4116,7 +4141,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1595106771}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1186765454}
+        m_TargetAssemblyTypeName: LocaleSelector, Assembly-CSharp
+        m_MethodName: ChangeLocale
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1595106771
 MonoBehaviour:
   m_ObjectHideFlags: 0
