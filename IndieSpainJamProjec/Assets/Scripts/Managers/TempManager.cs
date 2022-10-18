@@ -54,6 +54,14 @@ public class TempManager : MonoBehaviour
     }
 
 
+    //Establece automaticamente una nueva temperatura
+    public void SetTemperature(float newTemp)
+    {
+        currentTemp = newTemp;
+        tempCanvas.Refresh_TemperatureCanvas(currentTemp);
+    }
+
+
     //Modifica la temperatura de forma constante hasta llegar a la temperatura ambiente
     private void ModifyAmbientTemperature()
     {

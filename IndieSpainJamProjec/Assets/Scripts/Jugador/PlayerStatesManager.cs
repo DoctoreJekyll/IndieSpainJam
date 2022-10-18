@@ -1,90 +1,87 @@
 using UnityEngine;
 
+//Clase que se encarga de cambiar el estado del jugador
 public class PlayerStatesManager : MonoBehaviour
 {
+    public enum PlayerState { SOLID, LIQUID, GAS }
 
-    [Header("Players")]
+    [Header("[Players]")]
     [SerializeField] private GameObject waterPlayer;
     [SerializeField] private GameObject icePlayer;
     [SerializeField] private GameObject gasPlayer;
 
-    [Header("Temperature")] 
+    [Header("[Temperature]")] 
     [SerializeField] private float maxTemperature;
     [SerializeField] private float minTemperature;
     
-    [Header("Controller")]
+    [Header("[Controller]")]
     private TempManager _tempManager;
 
-    public enum  PlayerStates
-    {
-        WATER,
-        ICE,
-        GAS
-    }
+    [Header("[Values]")]
+    public PlayerState currentPlayerState;
 
-    public PlayerStates playerState = PlayerStates.WATER;
 
     private void Awake()
     {
         _tempManager = FindObjectOfType<TempManager>();
+        currentPlayerState = PlayerState.LIQUID;
     }
 
     private void Update()
     {
         ChangePlayersWithTemp();
-        SwitchBetweenPlayers();
-
     }
     
+
+    //Comprueba la temperatura del jugador y cambia el estado del jugador si es necesario
     private void ChangePlayersWithTemp()
     {
-        if (_tempManager.currentTemp <= 1)
+        //Si la temperatura es 0º, se convierte en hielo
+        if (_tempManager.currentTemp <= 0)
         {
-            playerState = PlayerStates.ICE;
+            currentPlayerState = PlayerState.SOLID;
+            SwitchBetweenPlayers(PlayerState.SOLID);
         }
 
+        //Si la temperatura es 100º, se convierte en gas
         if (_tempManager.currentTemp >= 100)
         {
-            playerState = PlayerStates.GAS;
+            currentPlayerState = PlayerState.GAS;
+            SwitchBetweenPlayers(PlayerState.GAS);
         }
 
-        if (playerState == PlayerStates.ICE && _tempManager.currentTemp >= minTemperature)
+        //Si el jugador es hielo o gas y su temperatura se normaliza, se convierte en agua
+        if ((currentPlayerState == PlayerState.SOLID && _tempManager.currentTemp >= minTemperature) || (currentPlayerState == PlayerState.GAS && _tempManager.currentTemp <= maxTemperature))
         {
-            playerState = PlayerStates.WATER;
+            currentPlayerState = PlayerState.LIQUID;
+            SwitchBetweenPlayers(PlayerState.LIQUID);
         }
 
-        if (playerState == PlayerStates.GAS && _tempManager.currentTemp <= maxTemperature)
-        {
-            playerState = PlayerStates.WATER;
-        }
-        
     }
 
-    private void SwitchBetweenPlayers()
+
+    //Cambia el elemental con el que juega el jugador
+    public void SwitchBetweenPlayers(PlayerState newPlayerState)
     {
-        switch (playerState)
+        switch (newPlayerState)
         {
-            case PlayerStates.WATER:
-                waterPlayer.gameObject.SetActive(true);
-                icePlayer.gameObject.SetActive(false);
-                gasPlayer.gameObject.SetActive(false);
-                break;
-                
-            case  PlayerStates.ICE:
+            case PlayerState.SOLID:
                 icePlayer.gameObject.SetActive(true);
                 waterPlayer.gameObject.SetActive(false);
                 gasPlayer.gameObject.SetActive(false);
                 break;
+
+            case PlayerState.LIQUID:
+                waterPlayer.gameObject.SetActive(true);
+                icePlayer.gameObject.SetActive(false);
+                gasPlayer.gameObject.SetActive(false);
+                break;
             
-            case  PlayerStates.GAS:
+            case PlayerState.GAS:
                 gasPlayer.gameObject.SetActive(true);
                 icePlayer.gameObject.SetActive(false);
                 waterPlayer.gameObject.SetActive(false);
                 break;
-            
-            default:
-                break;
-
         }
     }
     

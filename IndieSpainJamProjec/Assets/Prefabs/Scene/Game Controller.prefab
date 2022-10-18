@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 855730805157280876}
   m_Layer: 0
   m_Name: Game Controller
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,8 +76,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eed64e6920c7d148a1cad75a4654a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tempFiller: {fileID: 0}
-  temptext: {fileID: 0}
-  thermometerAnimator: {fileID: 0}
+  tempCanvas: {fileID: 0}
   initialTemp: 50
+  ambientTemp: 0
+  ambientTemp_Intensity: 0
+  forceAmbientTemperature: 0
   currentTemp: 0

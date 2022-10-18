@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2988477547818057710}
   - component: {fileID: 2988477547818057713}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wizard Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.18431371, g: 0.7468018, b: 0.9137255, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.8862746, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 2988477547872627606}
   - component: {fileID: 2988477547872627607}
   - component: {fileID: 2988477547872627605}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ice Wizard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,10 +179,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e8ef611ba8e7df46be523e465c6dd1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  fireBallPrefab: {fileID: 7766088078818758570, guid: e1cf5910853c4684aa59917272440a9c, type: 3}
   iceBallPrefab: {fileID: 6918570381191342398, guid: 83b654b08cfaaf0428ef66971144e608, type: 3}
-  wizardType: 1
+  waterBallPrefab: {fileID: 6918570381191342398, guid: 216a6968563cb0748bf49c6f2a60ffa8, type: 3}
+  fireBallPrefab: {fileID: 7766088078818758570, guid: e1cf5910853c4684aa59917272440a9c, type: 3}
+  wizardType: 0
   fireRate: 2
   projectileSpeed: 5
   looksAtPlayer: 0
@@ -196,7 +196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2988477548290842048}
   - component: {fileID: 2988477548290842051}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
