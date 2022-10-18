@@ -18,17 +18,34 @@ public class BetterJump : MonoBehaviour
         BetterJumpPerformed();
     }
 
-    private void BetterJumpPerformed()
+    private void BetterJumpPerformed()//Hay 
     {
 
-        if (rb.velocity.y < 0)
+        if (Gamepad.all.Count > 0)
         {
-            rb.velocity += Vector2.up * (Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime);
+            Debug.Log("Hay gamepad");
+            if (rb.velocity.y < 0)
+            {
+                rb.velocity += Vector2.up * (Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime);
+            }
+            else if (rb.velocity.y > 0 && !Gamepad.current.buttonSouth.isPressed && !Keyboard.current.spaceKey.isPressed)
+            {
+                rb.velocity += Vector2.up * (Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime);
+            }
         }
-        else if (rb.velocity.y > 0 && !Keyboard.current.spaceKey.isPressed && !Gamepad.current.buttonSouth.isPressed)
+        else
         {
-            rb.velocity += Vector2.up * (Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime);
+            Debug.Log("No hay gamepad");
+            if (rb.velocity.y < 0)
+            {
+                rb.velocity += Vector2.up * (Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime);
+            }
+            else if (rb.velocity.y > 0 && !Keyboard.current.spaceKey.isPressed)
+            {
+                rb.velocity += Vector2.up * (Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime);
+            }
         }
+
     }
     
     

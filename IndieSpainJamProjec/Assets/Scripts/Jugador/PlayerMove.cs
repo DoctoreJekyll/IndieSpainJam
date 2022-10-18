@@ -38,6 +38,8 @@ public class PlayerMove : MonoBehaviour
             Flip();
         }
         
+        inputMoveVector = playerInputsActions.PlayerInputs.Move.ReadValue<Vector2>().normalized;
+        
     }
 
     private void FixedUpdate()
@@ -47,8 +49,9 @@ public class PlayerMove : MonoBehaviour
 
     private void PlayerMovementPerformed()
     {
-        inputMoveVector = playerInputsActions.PlayerInputs.Move.ReadValue<Vector2>();
         rb2d.velocity = new Vector2(inputMoveVector.x * moveSpeed, rb2d.velocity.y);
+        
+        Debug.Log(inputMoveVector);
         
         AnimationMovement(inputMoveVector.x);//Metodo para controlar las animaciones del movimiento
 
