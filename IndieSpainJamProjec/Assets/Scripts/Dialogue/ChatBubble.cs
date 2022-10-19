@@ -12,8 +12,7 @@ public class ChatBubble : MonoBehaviour
     [SerializeField] private LocalizedString localString;
 
     [Header("Text")]
-    [TextArea(3,6)]
-    public string textToSpeech;
+    private string textToSpeech;
     
     [Header("Padding Box Values")]
     [SerializeField] private float paddingX;
