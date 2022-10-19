@@ -8,9 +8,12 @@ public class PlayerJump : MonoBehaviour
 {
 
     private Rigidbody2D rb2d;
+    private float gravityScale;
     
     [Header("Jump Stuffs")]
     [SerializeField] private float jumpForce;
+    [SerializeField] private float jumpCutMultiplier;
+    [SerializeField] private float fallGravityMultiply;
     [SerializeField] private GameObject pointToCheckFloor;
     [SerializeField] private Vector2 boxCheckSize;
     [SerializeField] private LayerMask floorLayer;
@@ -18,6 +21,9 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] private TrailRenderer trail;
     private bool canJump;
     public bool isOnFloor;
+
+    private bool isJumping;
+    private bool jumpInputReleased;
     
     [Header("Fall Suffs")]
     [SerializeField] private bool isOnAir;
@@ -39,6 +45,8 @@ public class PlayerJump : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         _waterPlayerSounds = GetComponent<WaterPlayerSounds>();
         if(trail) { trail.gameObject.SetActive(false); }
+
+        gravityScale = rb2d.gravityScale;
     }
 
     private void Update()
@@ -49,7 +57,12 @@ public class PlayerJump : MonoBehaviour
         CoyoteTimeImprove();
 
         shadow.SetActive(isOnFloor);
-        
+    }
+
+    private void FixedUpdate()
+    {
+        //OnJumpUp();
+        //JumpGravity();
     }
 
     private void IsOnFloor()
@@ -57,9 +70,6 @@ public class PlayerJump : MonoBehaviour
         isOnFloor = Physics2D.OverlapBox(pointToCheckFloor.transform.position, boxCheckSize, 0, floorLayer);
         JumpControllerAnim();
     }
-    
-    public float fallMultiplier = 2.5f;//Cae más rápido después del salto
-    public float lowJumpMultiplier = 2f;//"Flota" más en el aire o se mantiene un poco mas
 
     public void JumpAction(InputAction.CallbackContext context)//Llamamos a este metodo dentro del componente input action del playermanager 
     {
@@ -69,9 +79,8 @@ public class PlayerJump : MonoBehaviour
             {
                 if (coyoteTime > 0f)
                 {
-                    _waterPlayerSounds.JumpSound();
-                    rb2d.velocity = new Vector2(rb2d.velocity.x, 0);
-                    rb2d.velocity += Vector2.up * jumpForce;
+                   
+                    JumpMethod();
 
                     if (context.canceled)
                     {
@@ -81,6 +90,13 @@ public class PlayerJump : MonoBehaviour
             }
             
         }
+    }
+
+    private void JumpMethod()
+    {
+        rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        isJumping = true;
+        jumpInputReleased = false;
     }
 
     private void CoyoteTimeImprove()//Control del tiempo para generar el efecto coyote
@@ -149,5 +165,12 @@ public class PlayerJump : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawCube(pointToCheckFloor.transform.position, fallCheck);
+    }
+    
+    private void OldJumpMethod()
+    {
+        _waterPlayerSounds.JumpSound();
+        rb2d.velocity = new Vector2(rb2d.velocity.x, 0);
+        rb2d.velocity += Vector2.up * jumpForce;
     }
 }

@@ -64,6 +64,7 @@ public class ImproveMove : MonoBehaviour
 	    
 	    rb2d.AddForce(movement * Vector2.right);
     }
+    
 
     private void PlayerCanRun()
     {

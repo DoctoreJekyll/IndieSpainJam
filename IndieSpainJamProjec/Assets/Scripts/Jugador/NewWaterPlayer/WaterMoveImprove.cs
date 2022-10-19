@@ -19,7 +19,8 @@ public class WaterMoveImprove : MonoBehaviour
     [SerializeField] private float runDecceleration; //Time (approx.) we want it to take for the player to accelerate from runMaxSpeed to 0.
     [SerializeField] private float velPower;
     [SerializeField] private float lerpAmount;
-    [SerializeField] public float moveSpeedWhenSpikes;
+    [SerializeField] private float moveSpeedWhenSpikes;
+    [SerializeField] private float fricctionAmount;
     private float maxMoveSpeed;
 
     private void Awake()
@@ -73,12 +74,23 @@ public class WaterMoveImprove : MonoBehaviour
 	    
         rb2d.AddForce(movement * Vector2.right);
     }
+
+    private void Friction()
+    {
+        if (playerJump.isOnFloor && Mathf.Abs(moveInput) < 0.01f)
+        {
+            float amount = Mathf.Min(Mathf.Abs(rb2d.velocity.x), Mathf.Abs(fricctionAmount));
+            amount *= Mathf.Sign(rb2d.velocity.x);
+            rb2d.AddForce(Vector2.right * -amount, ForceMode2D.Impulse);
+        }
+    }
     
     private void PlayerCanRun()
     {
         if (GameStateManager.instance.currentGameState == GameStateManager.GameState.GAMEPLAY)
         {
             Run();
+            Friction();
         }    
         else
         {
