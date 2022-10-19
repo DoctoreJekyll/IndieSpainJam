@@ -60,7 +60,7 @@ public class Wizard : MonoBehaviour
         }
 
         newProjectile.GetComponent<Wizard_Projectile>().horizontalDirection = (int)gameObject.transform.localScale.x;
-        newProjectile.GetComponent<Wizard_Projectile>().speed = projectileSpeed;
+        newProjectile.GetComponent<Wizard_Projectile>().movementSpeed = projectileSpeed;
     }
 
 }

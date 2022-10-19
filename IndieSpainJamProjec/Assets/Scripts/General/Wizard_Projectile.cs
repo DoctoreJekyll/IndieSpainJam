@@ -11,14 +11,14 @@ public class Wizard_Projectile : MonoBehaviour
     [Header("[References]")]
     private TempManager tempManager;
     private PlayerStatesManager playerState;
-    private GameObject player;
-    public Rigidbody2D rb;
+    public Rigidbody2D rb, playerRb;
 
     [Header("[Configuration]")]
     public ProjectileElement projectileElement;
+    public float pushForce, elevationForce;
 
     [Header("[Values]")]
-    public float speed;
+    public float movementSpeed;
     public int horizontalDirection;
 
 
@@ -27,15 +27,15 @@ public class Wizard_Projectile : MonoBehaviour
     {
         tempManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<TempManager>();
         playerState = GameObject.FindGameObjectWithTag("Player Controller").GetComponent<PlayerStatesManager>();
-        player = GameObject.FindGameObjectWithTag("Player");
 
         gameObject.transform.localScale = new Vector2(horizontalDirection, 1);
     }
 
+
     //Movemos el proyectil de forma constante
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(speed * horizontalDirection, 0);
+        rb.velocity = new Vector2(movementSpeed * horizontalDirection, 0);
     }
 
 
@@ -44,7 +44,7 @@ public class Wizard_Projectile : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            ImpactPlayer();
+            ImpactPlayer(collision.gameObject.GetComponent<Rigidbody2D>());
             DestroyProjectile();
         }
         else
@@ -55,11 +55,11 @@ public class Wizard_Projectile : MonoBehaviour
 
 
     //Al impactar al jugador le aplicamos temperatura o lo empujamos
-    private void ImpactPlayer()
+    private void ImpactPlayer(Rigidbody2D playerRb)
     {
         //Si el elemento del proyectil y el jugador son el mismo, empuja al jugador
         if((int) projectileElement == (int) playerState.currentPlayerState)
-            PushPlayer();
+            PushPlayer(playerRb);
 
         else //Si son elementos distintos, le cambia al siguiente estado
             SwapPlayerState();
@@ -67,9 +67,10 @@ public class Wizard_Projectile : MonoBehaviour
 
 
     //El proyectil empuja al jugador
-    private void PushPlayer()
+    private void PushPlayer(Rigidbody2D playerRb)
     {
-        //Codigo de empujar al jugador en la direccion a la que iba el proyectil
+        Debug.Log("Empujo al jugador");
+        playerRb.AddForce(new Vector2(horizontalDirection * pushForce, elevationForce), ForceMode2D.Impulse);
     }
 
 

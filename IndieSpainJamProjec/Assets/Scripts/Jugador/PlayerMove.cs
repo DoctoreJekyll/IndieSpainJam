@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMove : MonoBehaviour
 {
-    private Rigidbody2D rb2d;
+    private Rigidbody2D playerRb;
     private Vector2 inputMoveVector;
 
     public PlayerJump playerJump;
@@ -18,10 +18,10 @@ public class PlayerMove : MonoBehaviour
     [Header("Input Controller")]
     private HydroMorpher playerInputsActions;
     
+
     private void Awake()
     {
-        rb2d = GetComponent<Rigidbody2D>();
-
+        playerRb = GetComponent<Rigidbody2D>();
         SetNewPlayerInput();
     }
 
@@ -30,6 +30,7 @@ public class PlayerMove : MonoBehaviour
         playerInputsActions = new HydroMorpher();
         playerInputsActions.Enable();
     }
+
 
     private void Update()
     {
@@ -49,8 +50,8 @@ public class PlayerMove : MonoBehaviour
 
     private void PlayerMovementPerformed()
     {
-        rb2d.velocity = new Vector2(inputMoveVector.x * moveSpeed, rb2d.velocity.y);
-        
+        playerRb.velocity = new Vector2(inputMoveVector.x * moveSpeed, playerRb.velocity.y);
+
         Debug.Log(inputMoveVector);
         
         AnimationMovement(inputMoveVector.x);//Metodo para controlar las animaciones del movimiento
@@ -65,7 +66,7 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-            rb2d.velocity = new Vector2(0f, rb2d.velocity.y);//Ñapa porque a veces si saltas encima del teleport e igual para otros eventos el pj sigue con su velocidad, esto lo soluciona por ahora
+            playerRb.velocity = new Vector2(0f, playerRb.velocity.y);//Ñapa porque a veces si saltas encima del teleport e igual para otros eventos el pj sigue con su velocidad, esto lo soluciona por ahora
         }
     }
     

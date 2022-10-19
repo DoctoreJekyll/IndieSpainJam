@@ -96,8 +96,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6918570381191342394}
+  playerRb: {fileID: 0}
   projectileElement: 1
-  speed: 0
+  pushForce: 10
+  elevationForce: 10
+  movementSpeed: 0
   horizontalDirection: 0
 --- !u!1 &6918570381422252678
 GameObject:
