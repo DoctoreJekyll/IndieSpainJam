@@ -25,7 +25,7 @@ public class BetterJump : MonoBehaviour
 
         if (Gamepad.all.Count > 0)
         {
-            Debug.Log("Hay gamepad");
+            
             if (rb.velocity.y < 0)
             {
                 //rb.velocity += Vector2.up * (Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime);
@@ -43,7 +43,7 @@ public class BetterJump : MonoBehaviour
         }
         else
         {
-            Debug.Log("No hay gamepad");
+            
             if (rb.velocity.y < 0)
             {
                 rb.gravityScale = gravityScale * fallMultiplier;
