@@ -57,9 +57,6 @@ public class PlayerJump : MonoBehaviour
         isOnFloor = Physics2D.OverlapBox(pointToCheckFloor.transform.position, boxCheckSize, 0, floorLayer);
         JumpControllerAnim();
     }
-    
-    public float fallMultiplier = 2.5f;//Cae más rápido después del salto
-    public float lowJumpMultiplier = 2f;//"Flota" más en el aire o se mantiene un poco mas
 
     public void JumpAction(InputAction.CallbackContext context)//Llamamos a este metodo dentro del componente input action del playermanager 
     {
