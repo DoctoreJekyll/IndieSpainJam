@@ -18,7 +18,7 @@ public class BetterJump : MonoBehaviour
         BetterJumpPerformed();
     }
 
-    private void BetterJumpPerformed()//Hay 
+    private void BetterJumpPerformed()
     {
 
         if (Gamepad.all.Count > 0)
