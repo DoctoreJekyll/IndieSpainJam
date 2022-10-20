@@ -425,6 +425,23 @@ Transform:
   m_Father: {fileID: 1188735891}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &185917811 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7595682499688529038, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+  m_PrefabInstance: {fileID: 951100923}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &185917826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185917811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f292773ed5bdcb4992d4a4645125970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &201476285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1311,6 +1328,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82a79545e182c434c8095dc452635c15, type: 3}
+--- !u!1 &742009271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7586850917745214626, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+  m_PrefabInstance: {fileID: 951100923}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &742009285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742009271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f292773ed5bdcb4992d4a4645125970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &803748560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1852,13 +1886,9 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2132930926}
-    - target: {fileID: 1198880280, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
-      propertyPath: m_InstanceId
-      value: -1758
-      objectReference: {fileID: 0}
-    - target: {fileID: 1872840832, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
-      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.size
-      value: 0
+    - target: {fileID: 2021107919, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
+      propertyPath: moveSpeed
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 542109543304249515, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
       propertyPath: m_Mesh
@@ -1910,26 +1940,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1271775158210247535, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4659615832114139564, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
-      propertyPath: jumpForce
-      value: 7.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4659615832114139564, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
-      propertyPath: timeToDoCoyote
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4659615832114139564, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
-      propertyPath: jumpCutMultiplier
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4659615832114139564, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
-      propertyPath: fallGravityMultiply
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4659615832114139565, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6471103978720693977, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
@@ -4025,7 +4035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1114492953423239857, guid: ff566fd651abb304583cc3123e836b1d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.775
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1114492953423239857, guid: ff566fd651abb304583cc3123e836b1d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4712,7 +4722,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4659615832114142806, guid: 071e311e3bb1e3a41b68463c49424aca, type: 3}
   m_PrefabInstance: {fileID: 951100923}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2021107919
+--- !u!114 &2021107935
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4721,16 +4731,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2021107903}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 790e5745ffcc2e04f9df87d06c1e1ab6, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f292773ed5bdcb4992d4a4645125970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  runAcceleration: 8
-  runDecceleration: 15
-  velPower: 0.95
-  lerpAmount: 1
-  moveSpeedWhenSpikes: 4.5
-  fricctionAmount: 0.5
 --- !u!1001 &2042150606
 PrefabInstance:
   m_ObjectHideFlags: 0

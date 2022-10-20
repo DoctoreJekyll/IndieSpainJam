@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class LakituTest : MonoBehaviour
 {
+    private HydroMorpher playerInputsActions;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        SetNewPlayerInput();
+    }
+    
+    private void SetNewPlayerInput()
+    {
+        playerInputsActions = new HydroMorpher();
+        playerInputsActions.Enable();
     }
 
     // Update is called once per frame
@@ -20,16 +28,17 @@ public class LakituTest : MonoBehaviour
             transform.position = playerTransform.position;
         }
 
-
-        float inputForCameraTest = Input.GetAxis("Horizontal");
-        if (inputForCameraTest > 0)
+        
+        Vector2 inputMoveVector = playerInputsActions.PlayerInputs.Move.ReadValue<Vector2>().normalized;
+        
+        if (inputMoveVector.x > 0)
         {
-            transform.localScale = Vector2.right;
+            transform.localScale = new Vector3(1f, 1f, 1f);
         }
 
-        if (inputForCameraTest < 0)
+        if (inputMoveVector.x < 0)
         {
-            transform.localScale = Vector2.left;
+            transform.localScale = new Vector3(-1f, 1f, 1f);
         }
 
     }
