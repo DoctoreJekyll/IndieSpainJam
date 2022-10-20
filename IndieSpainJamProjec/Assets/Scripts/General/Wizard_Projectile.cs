@@ -18,8 +18,8 @@ public class Wizard_Projectile : MonoBehaviour
     public float pushForce, elevationForce;
 
     [Header("[Values]")]
-    public float movementSpeed;
-    public int horizontalDirection;
+    [HideInInspector] public float movementSpeed;
+    [HideInInspector] public int horizontalDirection;
 
 
     //Obtenemos los componentes necesarios y cambiamos la escala en X al proyectil  hacia la dirección a la que va

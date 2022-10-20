@@ -264,6 +264,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 7766088078818758574}
+  playerRb: {fileID: 0}
   projectileElement: 2
-  speed: 0
+  pushForce: 30
+  elevationForce: 0
+  movementSpeed: 0
   horizontalDirection: 0

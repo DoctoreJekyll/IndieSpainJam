@@ -153,9 +153,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19b787abd5a731c48b88d16e370aa521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 2704565585288548306}
-  elevationForce: 2.5
+  playerRb: {fileID: 2704565585288548306}
+  elevationForce: 50
+  elevationMaxSpeed: 1.75
   moveSpeed: 2.5
+  runAcceleration: 0
+  runDecceleration: 0
+  velPower: 0
+  lerpAmount: 0
 --- !u!114 &260763812756210834
 MonoBehaviour:
   m_ObjectHideFlags: 0
