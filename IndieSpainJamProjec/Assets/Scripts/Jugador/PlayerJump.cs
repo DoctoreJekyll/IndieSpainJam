@@ -22,9 +22,6 @@ public class PlayerJump : MonoBehaviour
     private bool canJump;
     public bool isOnFloor;
 
-    private bool isJumping;
-    private bool jumpInputReleased;
-    
     [Header("Fall Suffs")]
     [SerializeField] private bool isOnAir;
     public Vector2 fallCheck;
@@ -59,12 +56,6 @@ public class PlayerJump : MonoBehaviour
         shadow.SetActive(isOnFloor);
     }
 
-    private void FixedUpdate()
-    {
-        //OnJumpUp();
-        //JumpGravity();
-    }
-
     private void IsOnFloor()
     {
         isOnFloor = Physics2D.OverlapBox(pointToCheckFloor.transform.position, boxCheckSize, 0, floorLayer);
@@ -97,14 +88,10 @@ public class PlayerJump : MonoBehaviour
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x,0f);
             rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            isJumping = true;
-            jumpInputReleased = false;
         }
         else
         {
             rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            isJumping = true;
-            jumpInputReleased = false;
         }
 
     }

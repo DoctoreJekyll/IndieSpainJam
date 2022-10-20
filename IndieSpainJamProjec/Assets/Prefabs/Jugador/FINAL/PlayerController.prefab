@@ -9910,7 +9910,6 @@ GameObject:
   - component: {fileID: 1271775158210247532}
   - component: {fileID: 7475539678085402590}
   - component: {fileID: 1271775158210247539}
-  - component: {fileID: 951100925}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Player Controller
@@ -9986,88 +9985,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasKey: 0
---- !u!114 &951100925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1271775158210247534}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: da72273addee71c45b5836fd05e13525, type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4659615832114142806}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 350518b7-48e9-49e2-9418-859d8db87d20
-    m_ActionName: PlayerInputs/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4659615832114139564}
-        m_TargetAssemblyTypeName: PlayerJump, Assembly-CSharp
-        m_MethodName: JumpAction
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: b1edbaa4-cab1-48c0-9712-0b21ac0a8d68
-    m_ActionName: PlayerInputs/Jump[/Keyboard/space,/XInputControllerWindows/buttonSouth]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4659615831120192031}
-        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
-        m_MethodName: InteractAction
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 49a610ba-a258-4c15-8d94-bb7b4582450e
-    m_ActionName: PlayerInputs/Interact[/Keyboard/z,/XInputControllerWindows/buttonWest,/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 7663092b-e761-4470-9d85-11263d2319f6
-    m_ActionName: PlayerInputs/Materia[/Mouse/rightButton,/XInputControllerWindows/rightTrigger]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: PlayerInputs
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1 &5168022918241379224
 GameObject:
   m_ObjectHideFlags: 0
@@ -20576,6 +20493,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 520850479}
     - target: {fileID: 3599034636887633851, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: jumpForce
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599034636887633851, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
       propertyPath: fallCheck.x
       value: 0.3
       objectReference: {fileID: 0}
@@ -20597,7 +20518,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3599034636887633851, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
       propertyPath: timeToDoCoyote
-      value: 0.1
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599034636887633851, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: jumpCutMultiplier
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599034636887633851, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+      propertyPath: fallGravityMultiply
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3599034636887633853, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -20761,6 +20690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3599034636887633853, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
+    - {fileID: 3599034636887633850, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 342e34d52dada2a469ffed1ddb25ed2c, type: 3}
 --- !u!114 &3301626312036586405 stripped
 MonoBehaviour:
@@ -20834,7 +20764,7 @@ MonoBehaviour:
   - {x: 0.2031269, y: -0.62614167, z: 0}
   m_ShapePathHash: -1832149345
   m_Mesh: {fileID: 0}
-  m_InstanceId: 123008
+  m_InstanceId: -1758
 --- !u!114 &1872840832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20861,19 +20791,7 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4659615832114142806}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 350518b7-48e9-49e2-9418-859d8db87d20
     m_ActionName: PlayerInputs/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right]
   - m_PersistentCalls:
@@ -20929,3 +20847,22 @@ MonoBehaviour:
   m_DefaultActionMap: PlayerInputs
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &2021107919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4659615832114142806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790e5745ffcc2e04f9df87d06c1e1ab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  runAcceleration: 8
+  runDecceleration: 15
+  velPower: 0.95
+  lerpAmount: 1
+  moveSpeedWhenSpikes: 4.5
+  fricctionAmount: 0.5
