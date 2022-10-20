@@ -8,6 +8,10 @@ public class SceneTempModifier : MonoBehaviour
     public float modifier, instensity;
 
 
+    private void Start()
+    {
+        tempManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<TempManager>();
+    }
 
     private void Update()
     {
