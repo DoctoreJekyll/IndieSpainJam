@@ -28,36 +28,36 @@ public class BetterJump : MonoBehaviour
             
             if (rb.velocity.y < 0)
             {
-                //rb.velocity += Vector2.up * (Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime);
-                rb.gravityScale = gravityScale * fallMultiplier;
+                rb.velocity += Vector2.up * (Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime);
+                //rb.gravityScale = gravityScale * fallMultiplier;
             }
             else if (rb.velocity.y > 0 && !Gamepad.current.buttonSouth.isPressed && !Keyboard.current.spaceKey.isPressed)
             {
                 rb.velocity += Vector2.up * (Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime);
                 //rb.gravityScale = gravityScale * fallMultiplier;
             }
-            else
-            {
-                rb.gravityScale = gravityScale;
-            }
+            // else
+            // {
+            //     rb.gravityScale = gravityScale;
+            // }
         }
         else
         {
             
             if (rb.velocity.y < 0)
             {
-                rb.gravityScale = gravityScale * fallMultiplier;
-                //rb.velocity += Vector2.up * (Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime);
+                //rb.gravityScale = gravityScale * fallMultiplier;
+                rb.velocity += Vector2.up * (Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime);
             }
             else if (rb.velocity.y > 0 && !Keyboard.current.spaceKey.isPressed)
             {
                 rb.velocity += Vector2.up * (Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime);
                 //rb.gravityScale = gravityScale * fallMultiplier;
             }
-            else
-            {
-                rb.gravityScale = gravityScale;
-            }
+            // else
+            // {
+            //     rb.gravityScale = gravityScale;
+            // }
         }
 
     }

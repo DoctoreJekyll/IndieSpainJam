@@ -10,7 +10,7 @@
                     "type": "Value",
                     "id": "350518b7-48e9-49e2-9418-859d8db87d20",
                     "expectedControlType": "Vector2",
-                    "processors": "",
+                    "processors": "StickDeadzone",
                     "interactions": "",
                     "initialStateCheck": true
                 },
@@ -253,15 +253,59 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "e56f478e-5c4f-476d-982e-a3e3e316c547",
-                    "path": "<XInputController>/leftStick",
+                    "name": "2D Vector",
+                    "id": "be1f4e1a-c761-47a4-a351-0f1d1fe2c2e8",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "StickDeadzone",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Up",
+                    "id": "7d2dda84-0997-4e9c-81c1-52acef471513",
+                    "path": "",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Move",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Down",
+                    "id": "210be5c9-be25-4ae7-afaf-52debdc103d0",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Left",
+                    "id": "fd678c67-cae8-4937-af9d-d31a15d6f064",
+                    "path": "<XInputController>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Right",
+                    "id": "c7aa0182-360d-47f1-97af-0be62429db3d",
+                    "path": "<XInputController>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 },
                 {
                     "name": "",

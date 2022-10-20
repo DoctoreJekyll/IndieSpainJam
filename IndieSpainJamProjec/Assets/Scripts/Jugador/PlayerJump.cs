@@ -79,7 +79,6 @@ public class PlayerJump : MonoBehaviour
             {
                 if (coyoteTime > 0f)
                 {
-                   
                     JumpMethod();
 
                     if (context.canceled)
@@ -94,9 +93,20 @@ public class PlayerJump : MonoBehaviour
 
     private void JumpMethod()
     {
-        rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        isJumping = true;
-        jumpInputReleased = false;
+        if (!isOnFloor)
+        {
+            rb2d.velocity = new Vector2(rb2d.velocity.x,0f);
+            rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            isJumping = true;
+            jumpInputReleased = false;
+        }
+        else
+        {
+            rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            isJumping = true;
+            jumpInputReleased = false;
+        }
+
     }
 
     private void CoyoteTimeImprove()//Control del tiempo para generar el efecto coyote

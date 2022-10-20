@@ -44,7 +44,7 @@ public class WaterMoveImprove : MonoBehaviour
 
     private void Update()
     {
-        direction = playerInputsActions.PlayerInputs.Move.ReadValue<Vector2>();
+        direction = playerInputsActions.PlayerInputs.Move.ReadValue<Vector2>().normalized;
         moveInput = direction.x;
         
         if (GameStateManager.instance.currentGameState == GameStateManager.GameState.GAMEPLAY)
