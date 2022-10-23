@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class WaterMoveImprove : MonoBehaviour
 {
@@ -40,11 +41,24 @@ public class WaterMoveImprove : MonoBehaviour
     {
         playerInputsActions = new HydroMorpher();
         playerInputsActions.Enable();
+
+        //TODO Si esto soluciona el bug hay que cambiarlo en los demas jugadores
+        playerInputsActions.PlayerInputs.Move.performed += ctx => direction = ctx.ReadValue<Vector2>();
+        playerInputsActions.PlayerInputs.Move.canceled += ctx => direction = Vector2.zero;
+
+        //direction = playerInputsActions.PlayerInputs.Move.ReadValue<Vector2>().normalized;
+    }
+    
+    //Segunda solucion
+    public void MoveSolution(InputAction.CallbackContext context)
+    {
+        //Comprobar si esto se soluciona como un float
+        direction = context.ReadValue<Vector2>();
     }
 
     private void Update()
     {
-        direction = playerInputsActions.PlayerInputs.Move.ReadValue<Vector2>().normalized;
+        Debug.Log(" Device Model" + SystemInfo.deviceModel + " Device Name" +  SystemInfo.deviceName +" Device Type" + SystemInfo.deviceType);
         moveInput = direction.x;
         
         if (GameStateManager.instance.currentGameState == GameStateManager.GameState.GAMEPLAY)
