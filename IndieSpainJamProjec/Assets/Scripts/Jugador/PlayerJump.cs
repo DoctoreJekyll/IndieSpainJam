@@ -8,12 +8,11 @@ public class PlayerJump : MonoBehaviour
 {
 
     private Rigidbody2D rb2d;
-    private float gravityScale;
-    
+    private WaterPlayerSounds _waterPlayerSounds;
+    private Animator waterAnimator;
+
     [Header("Jump Stuffs")]
     [SerializeField] private float jumpForce;
-    [SerializeField] private float jumpCutMultiplier;
-    [SerializeField] private float fallGravityMultiply;
     [SerializeField] private GameObject pointToCheckFloor;
     [SerializeField] private Vector2 boxCheckSize;
     [SerializeField] private LayerMask floorLayer;
@@ -29,9 +28,6 @@ public class PlayerJump : MonoBehaviour
     [SerializeField]private float coyoteTime;
     [SerializeField]private float timeToDoCoyote;
 
-    private WaterPlayerSounds _waterPlayerSounds;
-    private Animator waterAnimator;
-
     [Header("Particles")]
     [SerializeField] private ParticleSystem fallParticle;
 
@@ -40,16 +36,15 @@ public class PlayerJump : MonoBehaviour
         waterAnimator = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
         _waterPlayerSounds = GetComponent<WaterPlayerSounds>();
-
-        gravityScale = rb2d.gravityScale;
+        
     }
 
     private void Update()
     {
-        
         IsOnFloor();
         FallCheck();
         CoyoteTimeImprove();
+        JumpControllerAnim();
 
         shadow.SetActive(isOnFloor);
     }
@@ -57,7 +52,6 @@ public class PlayerJump : MonoBehaviour
     private void IsOnFloor()
     {
         isOnFloor = Physics2D.OverlapBox(pointToCheckFloor.transform.position, boxCheckSize, 0, floorLayer);
-        JumpControllerAnim();
     }
 
     public void JumpAction(InputAction.CallbackContext context)//Llamamos a este metodo dentro del componente input action del playermanager 
@@ -160,10 +154,4 @@ public class PlayerJump : MonoBehaviour
         Gizmos.DrawCube(pointToCheckFloor.transform.position, fallCheck);
     }
     
-    private void OldJumpMethod()
-    {
-        _waterPlayerSounds.JumpSound();
-        rb2d.velocity = new Vector2(rb2d.velocity.x, 0);
-        rb2d.velocity += Vector2.up * jumpForce;
-    }
 }

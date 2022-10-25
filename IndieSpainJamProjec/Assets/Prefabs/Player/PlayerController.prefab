@@ -35672,7 +35672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 790e5745ffcc2e04f9df87d06c1e1ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
+  moveSpeed: 8
   runAcceleration: 8
   runDecceleration: 15
   velPower: 0.95
@@ -35691,9 +35691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ac964d49b5272841acb6f6e05eb6eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 7.5
-  jumpCutMultiplier: 0.4
-  fallGravityMultiply: 2
+  jumpForce: 7.75
   pointToCheckFloor: {fileID: 7833960658696073597}
   boxCheckSize: {x: 0.3, y: 0.2}
   floorLayer:
@@ -35801,7 +35799,7 @@ MonoBehaviour:
   - {x: 0.2031269, y: -0.62614167, z: 0}
   m_ShapePathHash: -1832149345
   m_Mesh: {fileID: 0}
-  m_InstanceId: -11306
+  m_InstanceId: -1978
 --- !u!114 &3178862249843183947
 MonoBehaviour:
   m_ObjectHideFlags: 0

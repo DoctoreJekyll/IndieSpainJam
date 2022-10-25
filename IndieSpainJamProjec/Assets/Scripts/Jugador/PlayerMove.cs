@@ -6,9 +6,8 @@ public class PlayerMove : MonoBehaviour
 {
     private Rigidbody2D playerRb;
     private Vector2 inputMoveVector;
-
-    public PlayerJump playerJump;
-    public Animator waterAnimator;
+    private PlayerJump playerJump;
+    private Animator waterAnimator;
 
     [Header("Movement Stuff")]
     public float moveSpeed;
@@ -22,6 +21,9 @@ public class PlayerMove : MonoBehaviour
     private void Awake()
     {
         playerRb = GetComponent<Rigidbody2D>();
+        playerJump = GetComponent<PlayerJump>();
+        waterAnimator = GetComponent<Animator>();
+        
         SetNewPlayerInput();
     }
 
@@ -37,6 +39,7 @@ public class PlayerMove : MonoBehaviour
         if (GameStateManager.instance.currentGameState == GameStateManager.GameState.GAMEPLAY)//Controlamos que no puedas hacer flip en estados que no sean gameplay
         {
             Flip();
+            MoveOnJump();
         }
         
         inputMoveVector = playerInputsActions.PlayerInputs.Move.ReadValue<Vector2>().normalized;
@@ -67,6 +70,19 @@ public class PlayerMove : MonoBehaviour
         else
         {
             playerRb.velocity = new Vector2(0f, playerRb.velocity.y);//Ñapa porque a veces si saltas encima del teleport e igual para otros eventos el pj sigue con su velocidad, esto lo soluciona por ahora
+        }
+    }
+
+    private void MoveOnJump()
+    {
+        if (!playerJump.isOnFloor)
+        {
+            Debug.Log("No esta en el suelo");
+            moveSpeed -= 1f;
+        }
+        else
+        {
+            moveSpeed = maxMoveSpeed;
         }
     }
     

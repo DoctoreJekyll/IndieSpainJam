@@ -21,6 +21,7 @@ public class WaterMoveImprove : MonoBehaviour
     [SerializeField] private float velPower;
     [SerializeField] private float lerpAmount;
     [SerializeField] private float moveSpeedWhenSpikes;
+    [SerializeField] private float moveSpeedOnAir;
     [SerializeField] private float fricctionAmount;
     private float maxMoveSpeed;
 
@@ -58,13 +59,13 @@ public class WaterMoveImprove : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(" Device Model" + SystemInfo.deviceModel + " Device Name" +  SystemInfo.deviceName +" Device Type" + SystemInfo.deviceType);
         moveInput = direction.x;
         
         if (GameStateManager.instance.currentGameState == GameStateManager.GameState.GAMEPLAY)
         {
             AnimationMovement(moveInput);
             Flip();
+            MoveOnJump();
         } 
     }
 
@@ -87,6 +88,19 @@ public class WaterMoveImprove : MonoBehaviour
         //float movement = sppedDif * accelRate;
 	    
         rb2d.AddForce(movement * Vector2.right);
+    }
+    
+    private void MoveOnJump()
+    {
+        if (!playerJump.isOnFloor)
+        {
+            Debug.Log("No esta en el suelo");
+            moveSpeed = moveSpeedOnAir;
+        }
+        else
+        {
+            moveSpeed = maxMoveSpeed;
+        }
     }
 
     private void Friction()
