@@ -2564,8 +2564,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1547374899}
     - target: {fileID: 3178862249843183963, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
-      propertyPath: moveSpeedOnAir
-      value: 7.5
+      propertyPath: momentum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3178862249843183963, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
+      propertyPath: runAcceleration
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3178862249843183963, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
+      propertyPath: runDecceleration
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4448385019860435706, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
       propertyPath: m_Name
@@ -3814,7 +3822,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1114492953423239857, guid: ff566fd651abb304583cc3123e836b1d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1
+      value: 10.55
       objectReference: {fileID: 0}
     - target: {fileID: 1114492953423239857, guid: ff566fd651abb304583cc3123e836b1d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6075,7 +6083,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4246303647924660956, guid: 798069f8786a00841b805cee8f0a4f1c, type: 3}
       propertyPath: localString.m_TableEntryReference.m_KeyId
-      value: 0
+      value: 1348358520832
       objectReference: {fileID: 0}
     - target: {fileID: 4246303647924660956, guid: 798069f8786a00841b805cee8f0a4f1c, type: 3}
       propertyPath: localString.m_TableReference.m_TableCollectionName

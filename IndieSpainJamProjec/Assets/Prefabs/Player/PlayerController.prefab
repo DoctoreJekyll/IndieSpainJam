@@ -35673,12 +35673,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
-  runAcceleration: 8
-  runDecceleration: 15
-  velPower: 0.95
-  lerpAmount: 1
+  runAcceleration: 6
+  runDecceleration: 7
+  velPower: 1.2
+  lerpAmount: 0.9
   moveSpeedWhenSpikes: 4.5
-  fricctionAmount: 0.5
+  moveSpeedOnAir: 7.25
+  fricctionAmount: 0.2
+  momentum: 1
 --- !u!114 &7833960658886060088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35716,8 +35718,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f7f175bcfc35a54d810195c8df68fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallMultiplier: 4.5
-  lowJumpMultiplier: 2.5
+  fallMultiplier: 6
+  lowJumpMultiplier: 3.5
 --- !u!114 &129529052221205002
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -74,6 +74,8 @@ public class WaterMoveImprove : MonoBehaviour
         PlayerCanRun();
     }
 
+    public bool momentum;
+
     private void Run()
     {
         //Calcula la direccion y la velocidad
@@ -82,11 +84,32 @@ public class WaterMoveImprove : MonoBehaviour
         //Diferencia entre vel actual y la deseada
         float sppedDif = targetSpeed - rb2d.velocity.x;
         //Cambia el ratio de acelerar segun estamos acelerando o decelerando(creo que esta segunda palabra me la he inventado)
-        float accelRate = (Math.Abs(targetSpeed) > 0.01f) ? runAcceleration : runDecceleration;
+        float accelRate;
+
+        #region Momentun Test
+        //Test Momentun
+        if (momentum)
+        {
+            if (Mathf.Abs(rb2d.velocity.x) > Mathf.Abs(targetSpeed) && Mathf.Sign(rb2d.velocity.x) == Mathf.Sign(targetSpeed) && Mathf.Abs(targetSpeed) > 0.01f && !playerJump.isOnFloor)
+            {
+                accelRate = 0;
+            }
+            else
+            {
+                accelRate = (Math.Abs(targetSpeed) > 0.01f) ? runAcceleration : runDecceleration;
+            }
+        }
+        else
+        {
+            accelRate = (Math.Abs(targetSpeed) > 0.01f) ? runAcceleration : runDecceleration;
+        }
+        //end
+        #endregion
+        
         //Aplica aceleracion a la speedDif en resumen
-        float movement = (float)(Math.Pow(Math.Abs(sppedDif) * accelRate, velPower) * Math.Sign(sppedDif));
-        //float movement = sppedDif * accelRate;
-	    
+        //float movement = (float)(Math.Pow(Math.Abs(sppedDif) * accelRate, velPower) * Math.Sign(sppedDif));
+        float movement = sppedDif * accelRate;
+
         rb2d.AddForce(movement * Vector2.right);
     }
     
@@ -94,7 +117,6 @@ public class WaterMoveImprove : MonoBehaviour
     {
         if (!playerJump.isOnFloor)
         {
-            Debug.Log("No esta en el suelo");
             moveSpeed = moveSpeedOnAir;
         }
         else
@@ -176,6 +198,5 @@ public class WaterMoveImprove : MonoBehaviour
             moveSpeed = maxMoveSpeed;
         }
     }
-    
-    
+
 }

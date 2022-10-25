@@ -6,7 +6,7 @@ public class BetterJump : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float fallMultiplier = 2.5f;//Cae más rápido después del salto
-    public float lowJumpMultiplier = 2f;//"Flota" más en el aire o se mantiene un poco mas
+    public float lowJumpMultiplier = 2f;//Salto minimo
     private float gravityScale;
 
     void Start()
