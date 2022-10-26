@@ -78,8 +78,8 @@ public partial class @HydroMorpher : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""b8c9e845-4619-4f65-91a8-e774b66f62cd"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""id"": ""df4f7f72-f786-489f-b368-63d927054a40"",
+                    ""path"": ""<XInputController>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -89,8 +89,8 @@ public partial class @HydroMorpher : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""df4f7f72-f786-489f-b368-63d927054a40"",
-                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""id"": ""0624379b-d950-4b68-a34b-473b72a77755"",
+                    ""path"": ""<SwitchProControllerHID>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -111,6 +111,17 @@ public partial class @HydroMorpher : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""c2bafcad-902d-4066-9d0e-e2d1c392037c"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""697752b1-03cf-457e-bc92-1b43dad93c5c"",
                     ""path"": ""<XInputController>/buttonWest"",
                     ""interactions"": """",
@@ -122,22 +133,11 @@ public partial class @HydroMorpher : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""5ad43897-2295-4af4-abb2-97106c44d8be"",
-                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""id"": ""5f2847ea-0a77-4383-bd3c-d631dabb52d8"",
+                    ""path"": ""<SwitchProControllerHID>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""Interact"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c2bafcad-902d-4066-9d0e-e2d1c392037c"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -308,61 +308,6 @@ public partial class @HydroMorpher : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""2D Vector PS"",
-                    ""id"": ""376a11e2-9288-4f8d-9519-0ff83df3542c"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": ""StickDeadzone"",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""Up"",
-                    ""id"": ""cc657a60-11cc-4061-b7b4-5f2262a9d703"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Down"",
-                    ""id"": ""a3f74879-7111-47e0-a448-21f0e62b9ae9"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Left"",
-                    ""id"": ""b73e7c96-bd50-41ae-b8a5-d2f0e995373f"",
-                    ""path"": ""<DualShockGamepad>/leftStick/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Right"",
-                    ""id"": ""af9d1167-7a99-4cc6-acea-d03b9f69a273"",
-                    ""path"": ""<DualShockGamepad>/leftStick/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": ""2D Vector Switch"",
                     ""id"": ""df0f9482-73e1-4f9b-b351-25341469924c"",
                     ""path"": ""2DVector"",
@@ -418,6 +363,61 @@ public partial class @HydroMorpher : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""2D Vector Gamepad Test"",
+                    ""id"": ""179013b6-2e48-4576-b80e-4d2d51c10fb3"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": ""StickDeadzone"",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Up"",
+                    ""id"": ""6982fdeb-f8b7-4285-a82b-08361b4ce0ac"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Down"",
+                    ""id"": ""0c21fa40-0e34-4405-b48b-2cf8f02b6137"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Left"",
+                    ""id"": ""98edde8b-1e91-4639-9d2e-847e53cfcd53"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Right"",
+                    ""id"": ""78637202-0a37-485f-8590-23f9611b3255"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""086ea24e-a19e-4815-8bf8-e6984c59b127"",
                     ""path"": ""<Mouse>/rightButton"",
@@ -441,12 +441,45 @@ public partial class @HydroMorpher : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""399c6145-b380-4879-ab28-7185146dd708"",
+                    ""path"": ""<SwitchProControllerHID>/rightTrigger"",
+                    ""interactions"": ""Hold(duration=0.1,pressPoint=0.1)"",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Materia"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""0dc05655-def7-478f-84b0-7c52cc693536"",
                     ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": ""Hold(duration=0.1,pressPoint=0.1)"",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Materia"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b8c9e845-4619-4f65-91a8-e774b66f62cd"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5ad43897-2295-4af4-abb2-97106c44d8be"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
