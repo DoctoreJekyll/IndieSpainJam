@@ -13,6 +13,7 @@ public class WaterMoveImprove : MonoBehaviour
     private float moveInput;
     private Animator waterAnimator;
     private PlayerJump playerJump;
+    private bool isFacinRigth;
     
     [Header("Configuration Values")]
     [SerializeField] private float moveSpeed;
@@ -64,14 +65,18 @@ public class WaterMoveImprove : MonoBehaviour
         if (GameStateManager.instance.currentGameState == GameStateManager.GameState.GAMEPLAY)
         {
             AnimationMovement(moveInput);
-            Flip();
             MoveOnJump();
         } 
     }
 
     private void FixedUpdate()
     {
-        PlayerCanRun();
+        if (GameStateManager.instance.currentGameState == GameStateManager.GameState.GAMEPLAY)
+        {
+            PlayerCanRun();
+            Flip();
+        }
+
     }
 
     public bool momentum;
@@ -150,15 +155,25 @@ public class WaterMoveImprove : MonoBehaviour
     
     private void Flip()
     {
-        if (direction.x > 0)
+        if (direction.x > 0 && isFacinRigth)
         {
-            transform.localScale = new Vector3(1f, 1f, 1f);
+            FlipFunction();
 
         }
-        else if (direction.x < 0)
+        
+        if (direction.x < 0 && !isFacinRigth)
         {
-            transform.localScale = new Vector3(-1f, 1f, 1f);
+            FlipFunction();
         }
+    }
+
+    private void FlipFunction()
+    {
+        Vector3 currentScale = gameObject.transform.localScale;
+        currentScale.x *= -1;
+        gameObject.transform.localScale = currentScale;
+
+        isFacinRigth = !isFacinRigth;
     }
     
     private void AnimationMovement(float movement)
