@@ -6,6 +6,7 @@ public class Player_SolidController : MonoBehaviour
 	private Vector2 direction;
 	private Rigidbody2D playerRb;
 	private SpriteRenderer _spriteRenderer;
+	private bool isFacinRigth;
 
 	[Header("[Movement]")] 
 	public float moveSpeed;
@@ -75,12 +76,21 @@ public class Player_SolidController : MonoBehaviour
 	//Modificamos el sprite del jugador cuando se mueva en otra dirección
 	private void FlipSprite(float inputMovement)
     {
-		if(inputMovement > 0)
-			transform.localScale = new Vector3(1f, 1f, 1f);
+		if(inputMovement > 0 && isFacinRigth)
+			FlipFunction();
 
-		else if(inputMovement < 0)
-			transform.localScale = new Vector3(-1f, 1f, 1f);
+		else if(inputMovement < 0 && !isFacinRigth)
+			FlipFunction();
     }
+	
+	private void FlipFunction()
+	{
+		Vector3 currentScale = gameObject.transform.localScale;
+		currentScale.x *= -1;
+		gameObject.transform.localScale = currentScale;
+
+		isFacinRigth = !isFacinRigth;
+	}
 
     
 	//Reproducimos la animación de moverse o no según el input del jugador

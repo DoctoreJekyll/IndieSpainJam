@@ -71,7 +71,8 @@ public class BreakableGameObject : MonoBehaviour
                 _audioSource.PlayOneShot(_audioSource.clip);
                 notBreak = false;
             }
-            CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
+            //CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.SMALL);
+            CinemachineNoise.instance.ShakeCamera(1f,0.25f);
             breakableSpriteRenderLeft.sprite = breakSpriteLeft;
             breakableSpriteRenderRigth.sprite = breakSpriteRigth;
             collider.enabled = false;
