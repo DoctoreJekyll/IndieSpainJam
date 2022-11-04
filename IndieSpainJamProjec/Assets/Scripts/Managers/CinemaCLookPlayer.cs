@@ -21,5 +21,6 @@ public class CinemaCLookPlayer : MonoBehaviour
     {
         playerTransform = GameObject.FindWithTag("Player").transform;
         _cinemachineVirtualCamera.Follow = playerTransform;
+        _cinemachineVirtualCamera.LookAt = playerTransform;
     }
 }

@@ -6,6 +6,7 @@ public class Player_SolidController : MonoBehaviour
 	private Vector2 direction;
 	private Rigidbody2D playerRb;
 	private SpriteRenderer _spriteRenderer;
+	private bool isFacinRigth;
 
 	[Header("[Movement]")] 
 	public float moveSpeed;
@@ -78,9 +79,17 @@ public class Player_SolidController : MonoBehaviour
 		if(inputMovement > 0)
 			transform.localScale = new Vector3(1f, 1f, 1f);
 
-		else if(inputMovement < 0)
-			transform.localScale = new Vector3(-1f, 1f, 1f);
+	    if(inputMovement < 0)
+		    transform.localScale = new Vector3(-1f, 1f, 1f);
     }
+	
+	private void FlipFunction()//En caso de hacer lo de los tamaños podemos encesitar esto
+	{
+		Vector3 currentScale = gameObject.transform.localScale;
+		currentScale.x *= -1;
+		gameObject.transform.localScale = currentScale;
+		
+	}
 
     
 	//Reproducimos la animación de moverse o no según el input del jugador

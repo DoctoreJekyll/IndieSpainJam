@@ -155,15 +155,15 @@ public class WaterMoveImprove : MonoBehaviour
     
     private void Flip()
     {
-        if (direction.x > 0 && isFacinRigth)
+        if (direction.x > 0)
         {
-            FlipFunction();
+            transform.localScale = new Vector3(1f, 1f, 1f);
 
         }
         
-        if (direction.x < 0 && !isFacinRigth)
+        if (direction.x < 0)
         {
-            FlipFunction();
+            transform.localScale = new Vector3(-1f, 1f, 1f);
         }
     }
 
@@ -172,8 +172,7 @@ public class WaterMoveImprove : MonoBehaviour
         Vector3 currentScale = gameObject.transform.localScale;
         currentScale.x *= -1;
         gameObject.transform.localScale = currentScale;
-
-        isFacinRigth = !isFacinRigth;
+        
     }
     
     private void AnimationMovement(float movement)

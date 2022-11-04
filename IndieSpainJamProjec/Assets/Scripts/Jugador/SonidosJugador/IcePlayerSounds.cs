@@ -23,7 +23,8 @@ public class IcePlayerSounds : MonoBehaviour
     
     private void OnEnable()
     {
-        CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.MEDIUM);
+        //CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.MEDIUM);
+        CinemachineNoise.instance.ShakeCamera(1f, 0.25f);
         _audioSource.PlayOneShot(iceAppearSong);
         particle.SetActive(true);
         checkDead = false;

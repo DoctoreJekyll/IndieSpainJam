@@ -36,7 +36,8 @@ public class WaterPlayerSounds : MonoBehaviour
 
         if (isAlreadyEnable)
         {
-            CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.MEDIUM);//Esto da fallos la primera vez porque este enable entra antes que la instancia de la camara, hay que hacer apaños
+            //CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.MEDIUM);
+            CinemachineNoise.instance.ShakeCamera(1f, 0.25f);
             _audioSource.PlayOneShot(waterAppearSong);
             particle.SetActive(true);
         }

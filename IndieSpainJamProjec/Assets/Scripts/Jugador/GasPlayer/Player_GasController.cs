@@ -10,6 +10,7 @@ public class Player_GasController : MonoBehaviour
     [Header("[References]")]
     private SpriteRenderer _spriteRenderer;
     public Rigidbody2D playerRb;
+    private bool isFacinRigth;
 
     [Header("[Configuration]")]
     public float elevationForce;
@@ -83,14 +84,24 @@ public class Player_GasController : MonoBehaviour
         FlipSprite(inputMovement);
     }
 
+    
+    private void FlipFunction()
+    {
+        Vector3 currentScale = gameObject.transform.localScale;
+        currentScale.x *= -1;
+        gameObject.transform.localScale = currentScale;
+
+        isFacinRigth = !isFacinRigth;
+    }
+    
 
     //Modificamos el sprite del jugador cuando se mueva en otra dirección
     private void FlipSprite(float inputMovement)
     {
         if (inputMovement > 0)
-            _spriteRenderer.flipX = false;
+            transform.localScale = new Vector3(1f, 1f, 1f);
 
         else if (inputMovement < 0)
-            _spriteRenderer.flipX = true;
+            transform.localScale = new Vector3(-1f, 1f, 1f);
     }
 }
