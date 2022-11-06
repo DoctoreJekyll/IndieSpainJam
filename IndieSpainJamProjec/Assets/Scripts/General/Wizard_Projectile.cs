@@ -71,6 +71,7 @@ public class Wizard_Projectile : MonoBehaviour
     {
         Debug.Log("Empujo al jugador");
         playerRb.AddForce(new Vector2(horizontalDirection * pushForce, elevationForce), ForceMode2D.Impulse);
+        CinemachineNoise.instance.ShakeCamera(1f, 0.25f);
     }
 
 
