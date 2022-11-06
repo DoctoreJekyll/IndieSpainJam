@@ -14,6 +14,7 @@ public class WaterMoveImprove : MonoBehaviour
     private Animator waterAnimator;
     private PlayerJump playerJump;
     private bool isFacinRigth;
+    private bool isOnSpikes;
     
     [Header("Configuration Values")]
     [SerializeField] private float moveSpeed;
@@ -65,7 +66,7 @@ public class WaterMoveImprove : MonoBehaviour
         if (GameStateManager.instance.currentGameState == GameStateManager.GameState.GAMEPLAY)
         {
             AnimationMovement(moveInput);
-            MoveOnJump();
+            MoveRelantizedByStuffs();
         } 
     }
 
@@ -118,15 +119,19 @@ public class WaterMoveImprove : MonoBehaviour
         rb2d.AddForce(movement * Vector2.right);
     }
     
-    private void MoveOnJump()
+    private void MoveRelantizedByStuffs()
     {
         if (!playerJump.isOnFloor)
         {
             moveSpeed = moveSpeedOnAir;
         }
+        else if (isOnSpikes)
+        {
+            moveSpeed = moveSpeedWhenSpikes;
+        }
         else
         {
-            moveSpeed = maxMoveSpeed;
+          moveSpeed = maxMoveSpeed;   
         }
     }
 
@@ -201,7 +206,7 @@ public class WaterMoveImprove : MonoBehaviour
     {
         if (other.gameObject.layer == 3)
         {
-            moveSpeed = moveSpeedWhenSpikes;
+            isOnSpikes = true;
         }
     }
 
@@ -209,7 +214,7 @@ public class WaterMoveImprove : MonoBehaviour
     {
         if (other.gameObject.layer == 3)
         {
-            moveSpeed = maxMoveSpeed;
+            isOnSpikes = false;
         }
     }
 

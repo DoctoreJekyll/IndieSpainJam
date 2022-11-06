@@ -79,7 +79,7 @@ public class PlayerJump : MonoBehaviour
         if (!isOnFloor)
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x,0f);
-            rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            rb2d.AddRelativeForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
         else
         {
