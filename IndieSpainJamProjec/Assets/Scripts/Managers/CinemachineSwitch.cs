@@ -8,6 +8,8 @@ public class CinemachineSwitch : MonoBehaviour
     private Vector2 directionValue;
     private float value;
 
+    public bool canLookAround;//TODO Este bool podemos usarlo para generar zonas donde no puedas hacer el look around
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -30,9 +32,6 @@ public class CinemachineSwitch : MonoBehaviour
     private void Update()
     {
         value = directionValue.y;
-        
-        Debug.Log(value);
-        
         SwitchesBetweenCameras();
     }
 
@@ -41,17 +40,14 @@ public class CinemachineSwitch : MonoBehaviour
         if (value > 0.9f && directionValue.x == 0)
         {
             animator.Play("TOPCamera");
-            Debug.Log("Camara top");
         }
         else if (value < -0.9f && directionValue.x == 0)
         {
             animator.Play("BOTCamera");
-            Debug.Log("Camara bot");
         }
         else
         {
             animator.Play("MainCamera");
-            Debug.Log("Pon la camra normal dfsf");
         }
     }
     
