@@ -8,9 +8,9 @@ public class CinemachineNoise : MonoBehaviour
 {
 
     private CinemachineVirtualCamera _cinemachineVirtualCamera;
+    private float shakeTimer;
 
     public static CinemachineNoise instance;
-    public enum ShakeMagnitude { NULL, SMALL, MEDIUM, BIG, HUGE }
 
     private void Awake()
     {
@@ -42,8 +42,6 @@ public class CinemachineNoise : MonoBehaviour
         }
     }
 
-    private float shakeTimer;
-    
     public void ShakeCamera(float intensity, float time)
     {
         CinemachineBasicMultiChannelPerlin channelPerlin =
