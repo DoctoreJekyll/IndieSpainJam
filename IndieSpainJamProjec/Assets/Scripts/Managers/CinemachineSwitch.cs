@@ -38,12 +38,12 @@ public class CinemachineSwitch : MonoBehaviour
 
     private void SwitchesBetweenCameras()
     {
-        if (value > 0.1f)
+        if (value > 0.9f && directionValue.x == 0)
         {
             animator.Play("TOPCamera");
             Debug.Log("Camara top");
         }
-        else if (value < -0.1f)
+        else if (value < -0.9f && directionValue.x == 0)
         {
             animator.Play("BOTCamera");
             Debug.Log("Camara bot");
