@@ -1,52 +1,59 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class CinemachineSwitch : MonoBehaviour
 {
-    [SerializeField] private InputAction action;
+    private HydroMorpher playerInputsActions;
+    
     private Animator animator;
     private Vector2 directionValue;
     private float value;
+    private Rigidbody2D playerRb2D;
 
     public bool canLookAround;//TODO Este bool podemos usarlo para generar zonas donde no puedas hacer el look around
+    public bool playerIsInGas;//TODO alomejor no queremos que el player modo gas pueda mirar arriba o abajo
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
         
-        action.Enable();
-        action.performed += ctx => directionValue = ctx.ReadValue<Vector2>();
-        action.canceled += ctx => directionValue = Vector2.zero;
+        SetNewPlayerInput();
+    }
+
+    private void SetNewPlayerInput()
+    {
+        playerInputsActions = new HydroMorpher();
+        playerInputsActions.Enable();
     }
 
     private void OnDisable()
     {
-        action.Disable();
+        playerInputsActions.Disable();
     }
 
     private void Update()
     {
-        value = directionValue.y;
-        Debug.Log(directionValue.x);
-        Debug.Log(directionValue.y);
+        directionValue = playerInputsActions.PlayerInputs.Move.ReadValue<Vector2>();
         SwitchesBetweenCameras();
     }
-
-    //TODO Ahora mismo a pesar de que la X no sea 0, reproduce la animacion de cambio de cámara
-    //La X vale 0 cuando no deberia, probar a generar los inputs en el input system y no en un action dentro de un script
+    
     private void SwitchesBetweenCameras()
     {
-        if (value > 0.9f && directionValue.x == 0)
+        if (directionValue.y > 0.9f && directionValue.x == 0)
         {
-            animator.Play("TOPCamera");
+            animator.SetBool("canTop", true);
+        } 
+        else
+        {
+            animator.SetBool("canTop", false);
         }
-        else if (value < -0.9f && directionValue.x == 0)
+        
+        if (directionValue.y < -0.9f && directionValue.x == 0)
         {
-            animator.Play("BOTCamera");
+            animator.SetBool("canBot", true);
         }
         else
         {
-            animator.Play("MainCamera");
+            animator.SetBool("canBot", false);
         }
     }
     
