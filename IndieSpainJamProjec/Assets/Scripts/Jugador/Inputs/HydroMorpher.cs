@@ -266,7 +266,7 @@ public partial class @HydroMorpher : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Up"",
                     ""id"": ""7d2dda84-0997-4e9c-81c1-52acef471513"",
-                    ""path"": """",
+                    ""path"": ""<XInputController>/leftStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -277,7 +277,7 @@ public partial class @HydroMorpher : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Down"",
                     ""id"": ""210be5c9-be25-4ae7-afaf-52debdc103d0"",
-                    ""path"": """",
+                    ""path"": ""<XInputController>/leftStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -321,7 +321,7 @@ public partial class @HydroMorpher : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Up"",
                     ""id"": ""661071ea-a370-4809-b1ca-13f2c18a4cbb"",
-                    ""path"": """",
+                    ""path"": ""<SwitchProControllerHID>/leftStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -332,7 +332,7 @@ public partial class @HydroMorpher : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Down"",
                     ""id"": ""f9471a43-7c81-4858-bb48-1fc03da397ea"",
-                    ""path"": """",
+                    ""path"": ""<SwitchProControllerHID>/leftStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -376,7 +376,7 @@ public partial class @HydroMorpher : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Up"",
                     ""id"": ""6982fdeb-f8b7-4285-a82b-08361b4ce0ac"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/leftStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -387,7 +387,7 @@ public partial class @HydroMorpher : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Down"",
                     ""id"": ""0c21fa40-0e34-4405-b48b-2cf8f02b6137"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/leftStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
