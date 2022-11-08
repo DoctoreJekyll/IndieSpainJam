@@ -7,6 +7,14 @@ using UnityEngine;
 public class TempChanger : MonoBehaviour
 {
     TempManager tempManager;
+    
+    private enum ChangerType
+    {
+        NORMAL,
+        WEAK,
+    }
+
+    [SerializeField] private ChangerType type;
 
     [Header("[Configuration]")]
     public int temperatura;
@@ -57,16 +65,37 @@ public class TempChanger : MonoBehaviour
     //Si el jugador se queda dentro, modificamos su temperatura
     private void OnTriggerStay2D(Collider2D collision)
     {
+
         if (collision.tag == "Player")
         {
-            if (distanceModifier) //Intensificamos el cambio de temperatura teniendo en cuenta la distancia del jugador hacia este GameObject
+            switch (type)
             {
-                float potencia = 1 / Vector3.Distance(this.transform.position, collision.transform.position);
-                tempManager.ModifyTemperature(temperatura, (intensidad + (potencia * 0.5f)));
-            }
-            else
-            {
-                tempManager.ModifyTemperature(temperatura, intensidad);
+                case ChangerType.NORMAL:
+                    if (distanceModifier) //Intensificamos el cambio de temperatura teniendo en cuenta la distancia del jugador hacia este GameObject
+                    {
+                        float potencia = 1 / Vector3.Distance(this.transform.position, collision.transform.position);
+                        tempManager.ModifyTemperature(temperatura, (intensidad + (potencia * 0.5f)));
+                    }
+                    else
+                    {
+                        tempManager.ModifyTemperature(temperatura, intensidad);
+                    }
+                    break;
+            
+                case ChangerType.WEAK:
+                    if (distanceModifier) //Intensificamos el cambio de temperatura teniendo en cuenta la distancia del jugador hacia este GameObject
+                    {
+                        float potencia = 1 / Vector3.Distance(this.transform.position, collision.transform.position);
+                        tempManager.ModifyTemperatureWithClamp(temperatura, (intensidad + (potencia * 0.5f)));
+                    }
+                    else
+                    {
+                        tempManager.ModifyTemperatureWithClamp(temperatura, intensidad);
+                    }
+                    break;
+
+                default:
+                    break;
             }
         }
     }
