@@ -17,7 +17,7 @@ public class ButtonSmashed : MonoBehaviour
     private void Start()
     {
         buttonIsUsed = false;
-        _audioSource.GetComponent<AudioSource>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -28,8 +28,8 @@ public class ButtonSmashed : MonoBehaviour
     private bool CheckIfIcePlayerIsOn()
     {
         Vector2 rayDir = new Vector2(0, 0.5f);
-        Vector2 rayOriginLeft = new Vector2(transform.position.x - 0.2f, transform.position.y);
-        Vector2 rayOriginRigth = new Vector2(transform.position.x + 0.2f, transform.position.y);
+        Vector2 rayOriginLeft = new Vector2(transform.position.x - 0.25f, transform.position.y);
+        Vector2 rayOriginRigth = new Vector2(transform.position.x + 0.25f, transform.position.y);
         
         
         RaycastHit2D hitInfoLeft = Physics2D.Raycast(rayOriginLeft, rayDir, raycastRange, layerWhoActivate);
