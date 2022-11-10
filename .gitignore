@@ -42,6 +42,11 @@ ExportedObj/
 *.mdb
 *.opendb
 *.VC.db
+*.idea/
+*.idea
+*.idea/*
+*.workspace.xml
+*.xml
 
 # Unity3D generated meta files
 *.pidb.meta
@@ -58,6 +63,10 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# Temporary auto-generated Android Assets
+/[Aa]ssets/[Ss]treamingAssets/aa.meta
+/[Aa]ssets/[Ss]treamingAssets/aa/*
+
 IndieSpainJamProjec/UserSettings/EditorUserSettings.asset
 IndieSpainJamProjec/UserSettings/Layouts/default-2021.dwlt
 IndieSpainJamProjec/UserSettings/EditorUserSettings.asset
@@ -69,3 +78,6 @@ IndieSpainJamProjec/UserSettings/Layouts/default-2021.dwlt
 IndieSpainJamProjec/UserSettings/Layouts/CurrentMaximizeLayout.dwlt
 IndieSpainJamProjec/UserSettings/EditorUserSettings.asset
 IndieSpainJamProjec/UserSettings/EditorUserSettings.asset
+
+# User-specific stuff:
+**/.idea/workspace.xml
