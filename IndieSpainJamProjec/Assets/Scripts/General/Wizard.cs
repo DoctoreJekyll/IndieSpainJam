@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 //Clase que se encarga de lanzar proyectiles de fuego o hielo constantemente dependiendo del tipo de mago

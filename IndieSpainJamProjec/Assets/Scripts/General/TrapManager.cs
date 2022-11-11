@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TrapManager : MonoBehaviour
@@ -30,10 +27,14 @@ public class TrapManager : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
+    [SerializeField] private bool seeGizmos;
+    private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawCube(checkObject.transform.position, boxCheckSize);
+        if (seeGizmos)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawCube(checkObject.transform.position, boxCheckSize);
+        }
     }
     
     

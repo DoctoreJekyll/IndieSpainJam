@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 //Clase que se encarga de modificar la temperatura del jugador al entrar en contacto
