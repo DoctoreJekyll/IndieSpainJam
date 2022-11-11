@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -63,4 +64,12 @@ public class Wizard : MonoBehaviour
         newProjectile.GetComponent<Wizard_Projectile>().movementSpeed = projectileSpeed;
     }
 
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Player"))
+        {
+            PlayerDeath playerDeath = col.gameObject.GetComponent<PlayerDeath>();
+            playerDeath.OnDeath();
+        }
+    }
 }

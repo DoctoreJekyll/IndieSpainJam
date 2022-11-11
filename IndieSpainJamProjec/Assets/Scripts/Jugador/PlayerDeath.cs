@@ -6,7 +6,8 @@ using UnityEngine;
 //Clase que se encarga de controlar la muerte del jugador
 public class PlayerDeath : MonoBehaviour
 {
-    [Header("[References]")]
+    [Header("[References]")] 
+    private Rigidbody2D rb2d;
     public Animator playerAnimator;
 
     [Header("[Values]")]
@@ -23,6 +24,7 @@ public class PlayerDeath : MonoBehaviour
     private void Awake()
     {
         tempManager = FindObjectOfType<TempManager>();
+        rb2d = GetComponent<Rigidbody2D>();
     }
 
     //Posiciono al jugador en los valores recogidos por el trigger del checkpoint y retorno el estado y el bool
@@ -36,6 +38,7 @@ public class PlayerDeath : MonoBehaviour
         ReturnPlayerValues();
     }
 
+    //Devolvemos el estado de juego
     private void ReturnPlayerValues()
     {
         if (GameStateManager.instance.currentGameState != GameStateManager.GameState.GAMEPLAY)
@@ -43,6 +46,7 @@ public class PlayerDeath : MonoBehaviour
             GameStateManager.instance.SetGameState(GameStateManager.GameState.GAMEPLAY);
         }
 
+        rb2d.bodyType = RigidbodyType2D.Dynamic;
         dead = false;
     }
     
@@ -52,24 +56,32 @@ public class PlayerDeath : MonoBehaviour
     {
         if(dead == false)
         {
-            dead = true;
-            CinemachineNoise.instance.ShakeCamera(2f,0.5f);
-            GameStateManager.instance.SetGameState(GameStateManager.GameState.EVENT);
-            //CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.BIG);
-            //playerAnimator.Play("DEATH");
-
+            WhenDeadStuffs();
             StartCoroutine(Coroutine_OnDeath());
 
             IEnumerator Coroutine_OnDeath()
             {
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(0.25f);
                 TransitionCanvas.instance.Play_ScreenTransition_In();
 
-                yield return new WaitForSeconds(1);
+                yield return new WaitForSeconds(1.5f);
                 ReturnToLastCheckPoint();
                 TransitionCanvas.instance.Play_ScreenTransition_Out();
             }
         }
+    }
+
+    //Cosas que pasan cuando mueres noeke
+    private void WhenDeadStuffs()
+    {
+        dead = true;
+        CinemachineNoise.instance.ShakeCamera(2f,0.5f);
+        GameStateManager.instance.SetGameState(GameStateManager.GameState.EVENT);
+        rb2d.velocity = Vector2.zero;
+        rb2d.bodyType = RigidbodyType2D.Kinematic;
+        
+        //CameraShake.instance.ShakeCamera(CameraShake.ShakeMagnitude.BIG);
+        //playerAnimator.Play("DEATH");
     }
 
 }
