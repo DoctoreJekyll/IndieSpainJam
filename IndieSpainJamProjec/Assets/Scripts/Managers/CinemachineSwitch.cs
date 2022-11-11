@@ -36,6 +36,7 @@ public class CinemachineSwitch : MonoBehaviour
         SwitchesBetweenCameras();
     }
     
+    //Segun los valores recogidos por inputs la cámara actua de un modo u otro llamando a un animator
     private void SwitchesBetweenCameras()
     {
         if (directionValue.y > 0.9f && directionValue.x == 0)

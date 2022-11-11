@@ -32,7 +32,16 @@ public class Player_GasController : MonoBehaviour
         SetNewPlayerInput();
     }
     
-
+    private void OnEnable()
+    {
+        SetNewPlayerInput();
+    }
+	
+    private void OnDisable()
+    {
+        playerInputsActions.Disable();
+    }
+    
     //Establecemos el Input System
     private void SetNewPlayerInput()
     {

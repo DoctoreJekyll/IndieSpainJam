@@ -28,14 +28,25 @@ public class Player_SolidController : MonoBehaviour
 		
 		SetNewPlayerInput();
 	}
-
+	
+	//Pruebas de control para el bug del input
+	private void OnEnable()
+	{
+		SetNewPlayerInput();
+	}
+	
+	private void OnDisable()
+	{
+		playerInputsActions.Disable();
+	}
+	
 	//Establecemos el Input System
 	private void SetNewPlayerInput()
 	{
 		playerInputsActions = new HydroMorpher();
 		playerInputsActions.Enable();
 	}
-
+	
 
 	//Mientras pueda jugarse libremente, dejamos al jugador moverse
 	private void FixedUpdate()

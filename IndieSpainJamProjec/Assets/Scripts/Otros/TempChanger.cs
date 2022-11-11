@@ -82,8 +82,8 @@ public class TempChanger : MonoBehaviour
                     }
                     break;
             
-                case ChangerType.WEAK:
-                    if (distanceModifier) //Intensificamos el cambio de temperatura teniendo en cuenta la distancia del jugador hacia este GameObject
+                case ChangerType.WEAK://Si es débil se llama a otro método que clampea las temperaturas
+                    if (distanceModifier)
                     {
                         float potencia = 1 / Vector3.Distance(this.transform.position, collision.transform.position);
                         tempManager.ModifyTemperatureWithClamp(temperatura, (intensidad + (potencia * 0.5f)));
