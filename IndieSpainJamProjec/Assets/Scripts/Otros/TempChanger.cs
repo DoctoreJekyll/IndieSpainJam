@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -12,7 +13,14 @@ public class TempChanger : MonoBehaviour
         WEAK,
     }
 
+    private enum TempType
+    {
+        ICE,
+        HOT
+    }
+
     [SerializeField] private ChangerType type;
+    [SerializeField] private TempType tempType;
 
     [Header("[Configuration]")]
     public int temperatura;
@@ -63,7 +71,6 @@ public class TempChanger : MonoBehaviour
     //Si el jugador se queda dentro, modificamos su temperatura
     private void OnTriggerStay2D(Collider2D collision)
     {
-
         if (collision.tag == "Player")
         {
             switch (type)
@@ -81,14 +88,34 @@ public class TempChanger : MonoBehaviour
                     break;
             
                 case ChangerType.WEAK://Si es débil se llama a otro método que clampea las temperaturas
-                    if (distanceModifier)
+                    switch (tempType)
                     {
-                        float potencia = 1 / Vector3.Distance(this.transform.position, collision.transform.position);
-                        tempManager.ModifyTemperatureWithClamp(temperatura, (intensidad + (potencia * 0.5f)));
-                    }
-                    else
-                    {
-                        tempManager.ModifyTemperatureWithClamp(temperatura, intensidad);
+                        case TempType.ICE:
+                            if (distanceModifier)
+                            {
+                                float potencia = 1 / Vector3.Distance(this.transform.position, collision.transform.position);
+                                tempManager.ModifyTemperatureWithClampIce(temperatura, (intensidad + (potencia * 0.5f)));
+                            }
+                            else
+                            {
+                                tempManager.ModifyTemperatureWithClampIce(temperatura, intensidad);
+                            }
+                            break;
+                        
+                        case TempType.HOT:
+                            if (distanceModifier)
+                            {
+                                float potencia = 1 / Vector3.Distance(this.transform.position, collision.transform.position);
+                                tempManager.ModifyTemperatureWithClampHot(temperatura, (intensidad + (potencia * 0.5f)));
+                            }
+                            else
+                            {
+                                tempManager.ModifyTemperatureWithClampHot(temperatura, intensidad);
+                            }
+                            break;
+                        
+                        default:
+                            throw new ArgumentOutOfRangeException();
                     }
                     break;
 

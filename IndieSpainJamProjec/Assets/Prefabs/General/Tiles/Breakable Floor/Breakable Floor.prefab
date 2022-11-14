@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 34030302399466469}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.7639866, y: 6.6852493, z: 0}
-  m_LocalScale: {x: 1.0125, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8900816832398474273}
@@ -181,13 +181,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   range: 1.75
+  distanceRay0: -0.25
+  distanceRay1: 0.6
+  distanceRay2: 1.4
   breakableSpriteRenderLeft: {fileID: 34030302399466464}
   breakableSpriteRenderRigth: {fileID: 8900816832398474274}
   breakSpriteLeft: {fileID: 2019775616, guid: 422aec3ff920a8e45bf33377b9ccb92d, type: 3}
   breakSpriteRigth: {fileID: 2019775616, guid: 422aec3ff920a8e45bf33377b9ccb92d, type: 3}
   collider: {fileID: 34030302399466470}
-  distanceRay1: 0.6
-  distanceRay2: 1.31
 --- !u!82 &1903797159
 AudioSource:
   m_ObjectHideFlags: 0

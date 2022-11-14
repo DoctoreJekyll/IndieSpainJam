@@ -8,6 +8,7 @@ public class BreakableGameObject : MonoBehaviour
     
     [Header("Ray Range")]
     [SerializeField] private float range;
+    [SerializeField] private float distanceRay0;
     [SerializeField] private float distanceRay1;
     [SerializeField] private float distanceRay2;
 
@@ -41,8 +42,8 @@ public class BreakableGameObject : MonoBehaviour
     
     private bool CheckIfIcePlayerIsOn()
     {
-        Vector2 rayDir = new Vector2(0, 0.5f);
-        Vector2 rayOrigin = transform.position;
+        Vector2 rayDir = new Vector2(0, 0.5f);//Direccion de los rayos
+        Vector2 rayOrigin = new Vector2(transform.position.x + distanceRay0, transform.position.y);
         Vector2 rayOriginLeft = new Vector2(transform.position.x + distanceRay1, transform.position.y);
         Vector2 rayOriginRigth = new Vector2(transform.position.x + distanceRay2, transform.position.y);
         
@@ -56,7 +57,7 @@ public class BreakableGameObject : MonoBehaviour
             return true;
         }
     
-        Debug.DrawRay(transform.position, rayDir * range, rayColor);
+        Debug.DrawRay(rayOrigin, rayDir * range, rayColor);
         Debug.DrawRay(rayOriginLeft, rayDir * range, rayColor);
         Debug.DrawRay(rayOriginRigth, rayDir * range, rayColor);
         return false;
