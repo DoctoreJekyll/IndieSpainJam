@@ -82,4 +82,10 @@ public class PlayerDeath : MonoBehaviour
         //playerAnimator.Play("DEATH");
     }
 
+    private void DeadWithoutCheckPoint()
+    {
+        Vector3 position = GameObject.FindGameObjectWithTag("Initial Door").transform.position;
+        transform.position = position;
+    }
+
 }

@@ -132,10 +132,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerOnTrap: 0
   checkObject: {fileID: 5483221710746090877}
-  boxCheckSize: {x: 1.25, y: 1.15}
+  boxCheckSize: {x: 1, y: 1.15}
   layerToCheckPlayer:
     serializedVersion: 2
     m_Bits: 16
+  seeGizmos: 1
 --- !u!61 &5483221711430062069
 BoxCollider2D:
   m_ObjectHideFlags: 0
