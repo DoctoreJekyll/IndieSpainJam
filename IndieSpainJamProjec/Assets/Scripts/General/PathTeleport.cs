@@ -43,11 +43,17 @@ public class PathTeleport : MonoBehaviour
         }
     }
 
-    private IEnumerator MovePlayerToOterPos()
+    private IEnumerator MovePlayerToOterPos()//Me está saliendo una ulcera en el estómago :)
     {
         GameStateManager.instance.currentGameState = GameStateManager.GameState.EVENT;//Cambia el estado de juego a evento
         SpriteRenderer spTemp = playerGO.GetComponent<SpriteRenderer>();//Pillo el sprite del jugador
+        Rigidbody2D rb2d = playerGO.GetComponent<Rigidbody2D>();
+        Collider2D collider2D = playerGO.GetComponent<Collider2D>();
+        collider2D.enabled = false;
+        rb2d.bodyType = RigidbodyType2D.Kinematic;
+        rb2d.velocity = Vector2.zero;
         spTemp.enabled = false;
+        
         LevelKeyActivateDesactiva(false);
         _levelKey.gameObject.GetComponentInChildren<ParticleSystem>().Stop();
         
@@ -96,8 +102,9 @@ public class PathTeleport : MonoBehaviour
                 _levelKey.transform.position = newDestination;
             }
         }
-    
-
+        
+        collider2D.enabled = true;
+        rb2d.bodyType = RigidbodyType2D.Dynamic;
         spTemp.enabled = true;
         LevelKeyActivateDesactiva(true);
         _levelKey.gameObject.GetComponentInChildren<ParticleSystem>().Play();

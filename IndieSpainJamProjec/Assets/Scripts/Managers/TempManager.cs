@@ -53,27 +53,13 @@ public class TempManager : MonoBehaviour
         tempCanvas.Refresh_TemperatureCanvas(currentTemp);
     }
 
-    public void ModifyTemperatureWithClamp(float modificador,float intensidad)
-    {
-        if(currentTemp >= 25f && currentTemp <= 75f)
-            currentTemp = currentTemp + ((modificador * intensidad) * Time.deltaTime);
-
-        if (currentTemp > 75f)
-            currentTemp = 75f;
-
-        if (currentTemp < 25f)
-            currentTemp = 25f;
-
-        tempCanvas.Refresh_TemperatureCanvas(currentTemp);
-    }
-    
     public void ModifyTemperatureWithClampHot(float modificador,float intensidad)
     {
         if(currentTemp >= 0 && currentTemp <= 75f)
             currentTemp = currentTemp + ((modificador * intensidad) * Time.deltaTime);
 
-        if (currentTemp > 75f)
-            currentTemp = 75f;
+        //if (currentTemp > 75f)
+          //  currentTemp = 75f;
 
         tempCanvas.Refresh_TemperatureCanvas(currentTemp);
     }
@@ -83,8 +69,8 @@ public class TempManager : MonoBehaviour
         if(currentTemp >= 25f && currentTemp <= 100f)
             currentTemp = currentTemp + ((modificador * intensidad) * Time.deltaTime);
         
-        if (currentTemp < 25f)
-            currentTemp = 25f;
+        //if (currentTemp < 25f)
+          //  currentTemp = 25f;
 
         tempCanvas.Refresh_TemperatureCanvas(currentTemp);
     }
