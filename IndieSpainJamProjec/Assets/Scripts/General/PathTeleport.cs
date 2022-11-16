@@ -62,33 +62,39 @@ public class PathTeleport : MonoBehaviour
         switch (tubeExit)
         {
             case TubeExit.UP:
-                sumDestination = new Vector3(0f, 1f, 0f);
+                sumDestination = new Vector3(0f, 1.5f, 0f);
                 break;
             case TubeExit.DOWN:
-                sumDestination = new Vector3(0f, -1f, 0f);
+                sumDestination = new Vector3(0f, -1.5f, 0f);
                 break;
             case TubeExit.LEFT:
-                sumDestination = new Vector3(-1f, 0f, 0f);
+                sumDestination = new Vector3(-1.5f, 0f, 0f);
                 break;
             case TubeExit.RIGHT:
-                sumDestination = new Vector3(1f, 0, 0f);
+                sumDestination = new Vector3(1.5f, 0, 0f);
                 break;
         }
 
 
         if (_points == Points.POINTA)
         {
-            Debug.Log("izq");
+            Debug.Log(sumDestination);
             Vector3 newDestination = destination.position + sumDestination;
             playerGO.transform.position = newDestination;
-            _levelKey.transform.position = newDestination;
+            if (_levelKey.followingPlayer)
+            {
+                _levelKey.transform.position = newDestination;
+            }
 
         }else if (_points == Points.POINTB)
         {
-            Debug.Log("derecha");
+            Debug.Log(sumDestination);
             Vector3 newDestination = destination.position + sumDestination;
             playerGO.transform.position = newDestination;
-            _levelKey.transform.position = newDestination;
+            if (_levelKey.followingPlayer)
+            {
+                _levelKey.transform.position = newDestination;
+            }
         }
     
 
