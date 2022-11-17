@@ -3,13 +3,14 @@ using UnityEngine;
 //Clase que se encarga de lanzar proyectiles de fuego o hielo constantemente dependiendo del tipo de mago
 public class Wizard : MonoBehaviour
 {
-    public enum WizardElement { ICE, WATER, FIRE }
+    public enum WizardElement { ICE, WATER, FIRE, ARCHER }
 
     [Header("[References]")]
     private GameObject player;
     public GameObject iceBallPrefab;
     public GameObject waterBallPrefab;
     public GameObject fireBallPrefab;
+    public GameObject arrowPrefab;
 
     [Header("[Configuration]")]
     public WizardElement wizardType;
@@ -54,6 +55,9 @@ public class Wizard : MonoBehaviour
                 break;
             case WizardElement.FIRE:
                 newProjectile = Instantiate(fireBallPrefab, transform.position, Quaternion.identity);
+                break;
+            case WizardElement.ARCHER:
+                newProjectile = Instantiate(arrowPrefab, transform.position, Quaternion.identity);
                 break;
         }
 
