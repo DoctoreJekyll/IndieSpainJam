@@ -12,6 +12,7 @@ public class PathTeleport : MonoBehaviour
 
     [Header(("Player"))]
     private GameObject playerGO;
+    private PlayerStatesManager playerStatesManager;
 
     [Header("Sounds")] 
     [SerializeField] private AudioSource _audioSource;
@@ -31,13 +32,14 @@ public class PathTeleport : MonoBehaviour
 
     private void Awake()
     {
+        playerStatesManager = FindObjectOfType<PlayerStatesManager>();
         playerGO = GameObject.FindWithTag("Player");
         _levelKey = FindObjectOfType<LevelKey>();
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("Player"))
+        if (col.gameObject.CompareTag("Player") && playerStatesManager.currentPlayerState == PlayerStatesManager.PlayerState.LIQUID)
         {
             StartCoroutine(MovePlayerToOterPos());
         }

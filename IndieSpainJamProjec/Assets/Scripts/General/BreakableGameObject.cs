@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class BreakableGameObject : MonoBehaviour
 {
+    
+    private RaycastHit2D hitInfo;
+    private RaycastHit2D hitInfoLeft;
+    private RaycastHit2D hitInfoRight;
 
     [Header("Layer")]
     [SerializeField] private LayerMask layerWhoBrokeTheObj;
@@ -25,6 +29,11 @@ public class BreakableGameObject : MonoBehaviour
     private AudioSource _audioSource;//Generar aqui el sonido no me convence 
     private bool notBreak;
 
+    private void Start()
+    {
+        _isplayerAirControllerNull = playerAirController == null;
+    }
+
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
@@ -38,7 +47,6 @@ public class BreakableGameObject : MonoBehaviour
         CheckIfIcePlayerIsOn();
         BreakGround();
     }
-
     
     private bool CheckIfIcePlayerIsOn()
     {
@@ -47,11 +55,11 @@ public class BreakableGameObject : MonoBehaviour
         Vector2 rayOriginLeft = new Vector2(transform.position.x + distanceRay1, transform.position.y);
         Vector2 rayOriginRigth = new Vector2(transform.position.x + distanceRay2, transform.position.y);
         
-        RaycastHit2D hitInfo = Physics2D.Raycast(rayOrigin, rayDir, range, layerWhoBrokeTheObj);
-        RaycastHit2D hitInfoLeft = Physics2D.Raycast(rayOriginLeft, rayDir, range, layerWhoBrokeTheObj);
-        RaycastHit2D hitInfoRight = Physics2D.Raycast(rayOriginRigth, rayDir, range, layerWhoBrokeTheObj);
+        hitInfo = Physics2D.Raycast(rayOrigin, rayDir, range, layerWhoBrokeTheObj);
+        hitInfoLeft = Physics2D.Raycast(rayOriginLeft, rayDir, range, layerWhoBrokeTheObj);
+        hitInfoRight = Physics2D.Raycast(rayOriginRigth, rayDir, range, layerWhoBrokeTheObj);
         Color rayColor = Color.green;
-        
+
         if (hitInfo == true || hitInfoLeft == true || hitInfoRight == true)
         {
             return true;
@@ -63,9 +71,18 @@ public class BreakableGameObject : MonoBehaviour
         return false;
     }
 
+
+    private AirController playerAirController;
+    private bool _isplayerAirControllerNull;
+
     private void BreakGround() //Si el jugador está en el suelo y el suelo no esta roto hacemos cositas
     {
-        if (CheckIfIcePlayerIsOn())
+        if (_isplayerAirControllerNull)
+        {
+            playerAirController = FindObjectOfType<AirController>();
+        }
+        
+        if (CheckIfIcePlayerIsOn() && playerAirController.isOnAirAndPush)
         {
             if (notBreak)
             {

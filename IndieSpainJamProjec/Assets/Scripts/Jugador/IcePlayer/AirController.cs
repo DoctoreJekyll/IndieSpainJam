@@ -71,7 +71,7 @@ public class AirController : MonoBehaviour
         }
     }
 
-    private bool isOnAirAndPush;
+    public bool isOnAirAndPush;
     private float timeToPush;
     
     private void OnCollisionEnter2D(Collision2D col)//Si está en el aire, según la distancia recorrida el screenshake es mayor o menor

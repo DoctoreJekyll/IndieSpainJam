@@ -13,7 +13,8 @@ public class MoveSpikes : MonoBehaviour
     
     [Header("Times and curves")]
     [SerializeField] private float timeToFinishTheAnimation;
-    [SerializeField] private float ratio;
+    [SerializeField] private float ratioInside;
+    [SerializeField] private float ratioOutside;
     [SerializeField] private AnimationCurve curve;
     
     [Header("Can hide")]
@@ -33,14 +34,18 @@ public class MoveSpikes : MonoBehaviour
     {
         while (spikesCanMove)
         {
+            yield return new WaitForSeconds(ratioInside);
             StartCoroutine(ObjectTransformAnim());
-            yield return new WaitForSeconds(ratio);
+            yield return new WaitForSeconds(ratioOutside);
+            StartCoroutine(ObjectTransformAnimOut());
+            
         }
     }
 
     //Lerp entre una posicion y otra, esto nos sirve tanto para pinchos como para plataformas móviles o elevadores que no dejen de moverse
     IEnumerator ObjectTransformAnim()
     {
+        Debug.Log("Anim");
         float timing = 0f;
         while (timing < timeToFinishTheAnimation)
         {
@@ -50,7 +55,22 @@ public class MoveSpikes : MonoBehaviour
         }
 
         transform.position = targetPosition;
-        SwitchBetweenPositions();
+        //SwitchBetweenPositions();
+    }
+    
+    IEnumerator ObjectTransformAnimOut()
+    {
+        Debug.Log("Anim");
+        float timing = 0f;
+        while (timing < timeToFinishTheAnimation)
+        {
+            transform.position = Vector3.Lerp(targetPosition, startPosition, curve.Evaluate(timing / timeToFinishTheAnimation));
+            timing += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = startPosition;
+        //SwitchBetweenPositions();
     }
 
 
