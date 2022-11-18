@@ -20180,6 +20180,7 @@ GameObject:
   - component: {fileID: 222301909569781870}
   - component: {fileID: 3178862250059241494}
   - component: {fileID: 8489404694663886669}
+  - component: {fileID: 537661540}
   m_Layer: 7
   m_Name: Player_Solid
   m_TagString: Player
@@ -20441,7 +20442,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5004869876153517338}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 6200000, guid: c5e875dc74c592b43ad19960f7a6b3e6, type: 2}
   m_IsTrigger: 0
@@ -20459,7 +20460,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.4250021, y: 1.9905342}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.001
 --- !u!50 &5004869876153517341
 Rigidbody2D:
   serializedVersion: 4
@@ -20605,7 +20606,23 @@ MonoBehaviour:
   - {x: 0.2031269, y: -0.62614167, z: 0}
   m_ShapePathHash: -1832149345
   m_Mesh: {fileID: 0}
-  m_InstanceId: -35302
+  m_InstanceId: -140802
+--- !u!70 &537661540
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5004869876153517338}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: c5e875dc74c592b43ad19960f7a6b3e6, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.014564514, y: -0.29597175}
+  m_Size: {x: 0.5793686, y: 1.9681985}
+  m_Direction: 0
 --- !u!1 &5372361226013131056
 GameObject:
   m_ObjectHideFlags: 0
@@ -35351,7 +35368,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7833960658696073597}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.035, y: -1.299, z: 0}
+  m_LocalPosition: {x: -0.035, y: -1.257, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -35381,6 +35398,7 @@ GameObject:
   - component: {fileID: 7033340731628774435}
   - component: {fileID: 3178862249054801804}
   - component: {fileID: 3178862249843183947}
+  - component: {fileID: 539642161}
   m_Layer: 4
   m_Name: Player_Water
   m_TagString: Player
@@ -35672,7 +35690,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04783392, y: -0.2553748}
+  m_Offset: {x: -0.04783392, y: -0.22825205}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -35683,7 +35701,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4250021, y: 2.0439565}
+  m_Size: {x: 0.4250021, y: 1.989711}
   m_EdgeRadius: 0
 --- !u!50 &7833960658886060093
 Rigidbody2D:
@@ -35847,7 +35865,7 @@ MonoBehaviour:
   - {x: 0.2031269, y: -0.62614167, z: 0}
   m_ShapePathHash: -1832149345
   m_Mesh: {fileID: 0}
-  m_InstanceId: -282584
+  m_InstanceId: -292594
 --- !u!114 &3178862249843183947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35860,6 +35878,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f292773ed5bdcb4992d4a4645125970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &539642161
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7833960658886059970}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: c5e875dc74c592b43ad19960f7a6b3e6, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.04, y: -1.05}
+  serializedVersion: 2
+  m_Radius: 0.2
 --- !u!1 &7833960660408884111
 GameObject:
   m_ObjectHideFlags: 0
