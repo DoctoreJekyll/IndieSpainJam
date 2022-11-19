@@ -5018,7 +5018,7 @@ AudioSource:
   m_GameObject: {fileID: 1750311274098807084}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4444549984986485508, guid: ce26837842bbf4e42a46f50a9e99da74, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.45
@@ -5324,7 +5324,9 @@ MonoBehaviour:
   velPower: 0.95
   lerpAmount: 1
   moveSpeedWhenSpikes: 4.5
+  moveSpeedOnAir: 0
   fricctionAmount: 0.5
+  momentum: 0
 --- !u!114 &1750311274098810582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5338,15 +5340,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 7.5
-  jumpCutMultiplier: 0.4
-  fallGravityMultiply: 2
   pointToCheckFloor: {fileID: 1750311274446210963}
   boxCheckSize: {x: 0.3, y: 0.2}
   floorLayer:
     serializedVersion: 2
     m_Bits: 1024
   shadow: {fileID: 1542193991775190948}
-  trail: {fileID: 4468193772069389583}
   isOnFloor: 0
   isOnAir: 0
   fallCheck: {x: 0.3, y: 0.2}
@@ -5448,7 +5447,7 @@ MonoBehaviour:
   - {x: 0.2031269, y: -0.62614167, z: 0}
   m_ShapePathHash: -1832149345
   m_Mesh: {fileID: 0}
-  m_InstanceId: -35372
+  m_InstanceId: 36728
 --- !u!114 &6404150820862027685
 MonoBehaviour:
   m_ObjectHideFlags: 0
