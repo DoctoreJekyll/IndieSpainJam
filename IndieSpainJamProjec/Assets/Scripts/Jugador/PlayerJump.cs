@@ -141,7 +141,7 @@ public class PlayerJump : MonoBehaviour
             }
 
         }
-        else
+        else if(isOnFloor && rb2d.velocity.normalized.y < 0.1f)
         {
             waterAnimator.SetBool("FALLING", false);
             waterAnimator.SetBool("JUMPING", false);

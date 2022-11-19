@@ -6,7 +6,7 @@ using UnityEngine;
 //si ha impactado con algo y actuar en consecuencia
 public class Wizard_Projectile : MonoBehaviour
 {
-    public enum ProjectileElement { ICE, WATER, FIRE }
+    public enum ProjectileElement { ICE, WATER, FIRE, ARROW }
 
     [Header("[References]")]
     private TempManager tempManager;
@@ -121,6 +121,15 @@ public class Wizard_Projectile : MonoBehaviour
                 {
                     playerState.SwitchBetweenPlayers(PlayerStatesManager.PlayerState.GAS);
                     tempManager.SetTemperature(100);
+                }
+                break;
+
+
+            case ProjectileElement.ARROW:
+                if (playerState.currentPlayerState == PlayerStatesManager.PlayerState.SOLID)
+                {
+                    PlayerDeath playerDeath = playerState.GetComponentInChildren<PlayerDeath>();
+                    playerDeath.OnDeath();
                 }
                 break;
         }
