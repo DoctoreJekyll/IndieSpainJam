@@ -19,7 +19,12 @@ public class TargetDoor : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
+        {
             CheckPlayerKey();
+            Rigidbody2D rb2d = collision.gameObject.GetComponent<Rigidbody2D>();
+            rb2d.velocity = Vector2.zero;
+        }
+            
     }
 
     private void CheckPlayerKey()
