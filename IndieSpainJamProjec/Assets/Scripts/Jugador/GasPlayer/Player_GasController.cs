@@ -86,6 +86,7 @@ public class Player_GasController : MonoBehaviour
         float movement = (float)(Math.Pow(Math.Abs(sppedDif) * accelRate, velPower) * Math.Sign(sppedDif));
         //float movement = sppedDif * accelRate;
 
+        Debug.Log(movement);
         playerRb.AddForce(movement * Vector2.right);
 
         FlipSprite(inputMovement);
