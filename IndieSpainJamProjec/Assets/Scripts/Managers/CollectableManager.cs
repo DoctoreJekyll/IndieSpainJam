@@ -12,23 +12,23 @@ public class CollectableManager : MonoBehaviour
 
     [SerializeField] private float totalCollectable;
     [SerializeField] private float actualCollectable;
-
+    
 
     private void Start()
     {
         CollectableObject[] collects = FindObjectsOfType<CollectableObject>();
         totalCollectable = collects.Length;
+        
+        totalCollectableText.text = totalCollectable.ToString();
     }
 
     private void Update()
     {
-        SetTxt();
         ClampCollectables();
     }
 
-    private void SetTxt()
+    private void UpdateUI()
     {
-        totalCollectableText.text = totalCollectable.ToString();
         actualCollectableText.text = actualCollectable.ToString();
     }
 
@@ -43,5 +43,9 @@ public class CollectableManager : MonoBehaviour
     public void AddCollectable()
     {
         actualCollectable += 1;
+        GameData._instance.totalCollectables += 1;
+        SaveManager.SaveData();
+        
+        UpdateUI();
     }
 }

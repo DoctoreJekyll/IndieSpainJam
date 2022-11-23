@@ -23,6 +23,18 @@ public class PlayerCheckPointValues : MonoBehaviour
     {
         playerCheckPoinPositionValue = collider2D.gameObject.transform.position;
         checkPointTemperatureValue = tempManager.currentTemp;
+        
+        SaveValuesOnCheck(collider2D);//Cuando continuamos partida, continuamos en el ultimo check
+    }
+
+    private void SaveValuesOnCheck(Collider2D col2D)
+    {
+        Vector3 position = col2D.gameObject.transform.position;
+        GameData._instance.position[0] = position.x;
+        GameData._instance.position[1] = position.y;
+        GameData._instance.position[2] = position.z;
+        
+        SaveManager.SaveData();
     }
 
 
