@@ -43,8 +43,6 @@ public class CollectableManager : MonoBehaviour
     public void AddCollectable()
     {
         actualCollectable += 1;
-        GameData._instance.totalCollectables += 1;
-        SaveManager.SaveData();
         
         UpdateUI();
     }

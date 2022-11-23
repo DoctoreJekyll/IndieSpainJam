@@ -22,8 +22,6 @@ public class MainMenuCanvasManager : MonoBehaviour
     private void Awake()
     {
         Time.timeScale = 1;
-
-        SaveManager.LoadData();
     }
 
     private void Start()
@@ -48,9 +46,6 @@ public class MainMenuCanvasManager : MonoBehaviour
     {
         _audioSource.PlayOneShot(positiveMenuSound);
         PlayLevel(levelName);
-        GameData._instance.hasPlayed = true;
-        
-        SaveManager.SaveData();
     }
 
     public void OnClick_Levels()

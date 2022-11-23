@@ -30,11 +30,6 @@ public class PlayerCheckPointValues : MonoBehaviour
     private void SaveValuesOnCheck(Collider2D col2D)
     {
         Vector3 position = col2D.gameObject.transform.position;
-        GameData._instance.position[0] = position.x;
-        GameData._instance.position[1] = position.y;
-        GameData._instance.position[2] = position.z;
-        
-        SaveManager.SaveData();
     }
 
 

@@ -7,6 +7,7 @@ public class MainMenuContinueButton : MonoBehaviour
 {
     [SerializeField] private GameObject continueButton;
 
+    //TODO No se si acabaré manteniendo esta func
     private void Start()
     {
         if (GameData._instance.hasPlayed)

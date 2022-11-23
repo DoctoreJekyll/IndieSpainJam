@@ -21,10 +21,12 @@ public static class SaveManager
     
     public static void SaveData()
     {
-        GameData gameData = new GameData();
+        BinaryFormatter formatter = GetBinaryFormatter();
         string dataPath = GetDataPath();
         FileStream fileStream = new FileStream(dataPath, FileMode.Create);
-        BinaryFormatter formatter = GetBinaryFormatter();
+        
+        GameData gameData = new GameData();
+        
         formatter.Serialize(fileStream,gameData);
         fileStream.Close();
     }
@@ -35,8 +37,8 @@ public static class SaveManager
 
         if (File.Exists(dataPath))
         {
-            FileStream fileStream = new FileStream(dataPath, FileMode.Open);
             BinaryFormatter formatter = GetBinaryFormatter();
+            FileStream fileStream = new FileStream(dataPath, FileMode.Open);
             GameData gameData = (GameData)formatter.Deserialize(fileStream);
             fileStream.Close();
             return gameData;
