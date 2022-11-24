@@ -5,15 +5,16 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class CollectableManager : MonoBehaviour
+public class CollectableManager : MonoBehaviour, IDataPersistance
 {
     private CollectableObject[] collects;
 
     [SerializeField] private TMP_Text totalCollectableText;
     [SerializeField] private TMP_Text actualCollectableText;
 
-    [SerializeField] private float totalCollectable;
-    [SerializeField] private float actualCollectable;
+    [SerializeField] private int totalCollectable;
+    [SerializeField] private int actualCollectable;
+    private int totalPlayerCollectables;
     
 
     private void Awake()
@@ -49,9 +50,19 @@ public class CollectableManager : MonoBehaviour
     public void AddCollectable()
     {
         actualCollectable += 1;
+        totalPlayerCollectables += 1;
 
         UpdateUI();
     }
-    
 
+
+    public void LoadData(GameData data)
+    {
+        this.totalPlayerCollectables = data.totalCollectablesTakenByPlayer;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.totalCollectablesTakenByPlayer = this.totalPlayerCollectables;
+    }
 }
