@@ -8,11 +8,9 @@ public class MainMenuContinueButton : MonoBehaviour
     [SerializeField] private GameObject continueButton;
 
     //TODO No se si acabaré manteniendo esta func
+    //TODO Deprecated por ahora
     private void Start()
     {
-        if (GameDataDeprecated._instance.hasPlayed)
-        {
-            continueButton.SetActive(true);
-        }
+
     }
 }
