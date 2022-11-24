@@ -1,17 +1,17 @@
 ﻿using UnityEngine;
 
 [System.Serializable]
-public class GameData
+public class GameDataDeprecated
 {
 
-    public static GameData _instance = new GameData();
+    public static GameDataDeprecated _instance = new GameDataDeprecated();
     
     public int totalCollectables;//Para los coleccionables
     public float[] position = new float[3];//Para la posicion en caso de mapas grandes
     public bool hasPlayed;//Si ha jugado aparece boton continuar
     public int levelIndexToLoad;
 
-    public GameData()
+    public GameDataDeprecated()
     {
         totalCollectables = 0;
         

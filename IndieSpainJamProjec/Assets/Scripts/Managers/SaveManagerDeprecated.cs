@@ -3,7 +3,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
 
-public static class SaveManager
+public static class SaveManagerDeprecated
 {
     private static BinaryFormatter GetBinaryFormatter()
     {
@@ -19,19 +19,19 @@ public static class SaveManager
         return dataPath;
     }
     
-    public static void SaveData()
+    public static void BinarySaveData()
     {
         BinaryFormatter formatter = GetBinaryFormatter();
         string dataPath = GetDataPath();
         FileStream fileStream = new FileStream(dataPath, FileMode.Create);
         
-        GameData gameData = new GameData();
+        GameDataDeprecated gameDataDeprecated = new GameDataDeprecated();
         
-        formatter.Serialize(fileStream,gameData);
+        formatter.Serialize(fileStream,gameDataDeprecated);
         fileStream.Close();
     }
 
-    public static GameData LoadData()
+    public static GameDataDeprecated BinaryLoadData()
     {
         string dataPath = GetDataPath();
 
@@ -39,9 +39,9 @@ public static class SaveManager
         {
             BinaryFormatter formatter = GetBinaryFormatter();
             FileStream fileStream = new FileStream(dataPath, FileMode.Open);
-            GameData gameData = (GameData)formatter.Deserialize(fileStream);
+            GameDataDeprecated gameDataDeprecated = (GameDataDeprecated)formatter.Deserialize(fileStream);
             fileStream.Close();
-            return gameData;
+            return gameDataDeprecated;
         }
         else
         {
@@ -50,7 +50,7 @@ public static class SaveManager
         }
     }
 
-    public static void DeleteAll()//Borrar todo
+    public static void BinaryDeleteAll()//Borrar todoFi
     {
         string dataPath = GetDataPath();
 

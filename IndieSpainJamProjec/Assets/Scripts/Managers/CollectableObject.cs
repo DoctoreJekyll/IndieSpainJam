@@ -5,12 +5,19 @@ using UnityEngine;
 
 public class CollectableObject : MonoBehaviour
 {
+    private bool isCollectableEnable;
+    private void Start()
+    {
+        isCollectableEnable = true;
+    }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
             AddCollectable();
-            this.gameObject.SetActive(false);
+            isCollectableEnable = false;
+            this.gameObject.SetActive(isCollectableEnable);
         }
     }
 
@@ -19,4 +26,5 @@ public class CollectableObject : MonoBehaviour
         CollectableManager collectableManager = FindObjectOfType<CollectableManager>();
         collectableManager.AddCollectable();
     }
+    
 }

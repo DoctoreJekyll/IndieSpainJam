@@ -10,7 +10,7 @@ public class MainMenuContinueButton : MonoBehaviour
     //TODO No se si acabaré manteniendo esta func
     private void Start()
     {
-        if (GameData._instance.hasPlayed)
+        if (GameDataDeprecated._instance.hasPlayed)
         {
             continueButton.SetActive(true);
         }
