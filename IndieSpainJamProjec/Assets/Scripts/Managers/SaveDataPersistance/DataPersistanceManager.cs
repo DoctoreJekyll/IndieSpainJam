@@ -33,9 +33,18 @@ public class DataPersistanceManager : MonoBehaviour
         LoadGame();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            dataHandler.Delete(this.gameData);
+        }
+    }
+
     private void NewGame()
     {
         //Instanciamos un constructor con valores default
+        //Tambien podemos usar esto para borrar todos los datos con el .Delete
         this.gameData = new GameData();
     }
 

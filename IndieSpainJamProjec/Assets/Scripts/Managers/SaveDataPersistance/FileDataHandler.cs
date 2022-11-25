@@ -75,4 +75,15 @@ public class FileDataHandler : MonoBehaviour
             Debug.LogError("Error ocurred when try to save datas: " + fullPath + "\n" + e);
         }
     }
+
+    //Borra TODOS los datos, cuidado.
+    public void Delete(GameData data)
+    {
+        string fullPath = Path.Combine(dataDirPath, dataFileName);
+        
+        if (File.Exists(fullPath))
+        {
+            File.Delete(fullPath);
+        }
+    }
 }
