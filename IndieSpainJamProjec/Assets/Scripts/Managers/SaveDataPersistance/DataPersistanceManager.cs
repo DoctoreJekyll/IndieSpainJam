@@ -56,6 +56,7 @@ public class DataPersistanceManager : MonoBehaviour
         if (this.gameData == null)
         {
             Debug.Log("No data found. Iniciando data default");
+            NewGame();
             return;
         }
 
@@ -66,6 +67,7 @@ public class DataPersistanceManager : MonoBehaviour
         }
         
         Debug.Log("Load collectables" + gameData.scenePlayed);
+        Debug.Log("Load collectables" + gameData.totalCollectablesTakenByPlayer);
     }
 
     public void SaveGame()
@@ -73,6 +75,7 @@ public class DataPersistanceManager : MonoBehaviour
         //Si no tenemos savedata, error
         if (this.gameData == null)
         {
+            NewGame();
             Debug.LogWarning("No data to save");
             return;
         }
@@ -85,6 +88,7 @@ public class DataPersistanceManager : MonoBehaviour
         dataHandler.Save(gameData);
         
         Debug.Log("Save collectables" + gameData.scenePlayed);
+        Debug.Log("Save collectables" + gameData.totalCollectablesTakenByPlayer);
     }
 
     private void OnEnable()

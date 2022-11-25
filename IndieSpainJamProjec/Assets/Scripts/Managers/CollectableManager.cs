@@ -8,6 +8,7 @@ using UnityEngine;
 public class CollectableManager : MonoBehaviour, IDataPersistance
 {
     private CollectableObject[] collects;
+    public GameObject[] allCollectables;
 
     [SerializeField] private TMP_Text totalCollectableText;
     [SerializeField] private TMP_Text actualCollectableText;
@@ -20,6 +21,7 @@ public class CollectableManager : MonoBehaviour, IDataPersistance
     private void Awake()
     {
         collects = FindObjectsOfType<CollectableObject>();
+        allCollectables = GameObject.FindGameObjectsWithTag("Collectable");
     }
 
     private void Start()
@@ -27,6 +29,8 @@ public class CollectableManager : MonoBehaviour, IDataPersistance
         totalCollectable = collects.Length;
         
         totalCollectableText.text = totalCollectable.ToString();
+        
+        Test();
     }
 
     private void Update()
@@ -34,6 +38,19 @@ public class CollectableManager : MonoBehaviour, IDataPersistance
         ClampCollectables();
     }
 
+    private void Test()
+    {
+        for (int i = 0; i < allCollectables.Length; i++)
+        {
+            if (!allCollectables[i].activeInHierarchy)
+            {
+                Debug.Log("suma");
+                actualCollectable += 1;
+                UpdateUI();
+            }
+        }
+    }
+    
     private void UpdateUI()
     {
         actualCollectableText.text = actualCollectable.ToString();

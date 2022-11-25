@@ -7,6 +7,9 @@ public class CollectableObject : MonoBehaviour, IDataPersistance
 {
     [SerializeField] private string id;
 
+    private SpriteRenderer spriteRenderer;
+    private Collider2D collectableCol2D;
+
     [ContextMenu("Generate guid for id")]
     private void GenerateGuid()
     {
@@ -16,12 +19,20 @@ public class CollectableObject : MonoBehaviour, IDataPersistance
     
     private bool isCollected;
 
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        collectableCol2D = GetComponent<Collider2D>();
+    }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
             AddCollectable();
             isCollected = true;
+            //spriteRenderer.enabled = false;
+            //collectableCol2D.enabled = false;
             this.gameObject.SetActive(false);
         }
     }
@@ -37,6 +48,8 @@ public class CollectableObject : MonoBehaviour, IDataPersistance
         data.starsCollected.TryGetValue(id, out isCollected);
         if (isCollected)
         {
+            //spriteRenderer.enabled = false;
+            //collectableCol2D.enabled = false;
             this.gameObject.SetActive(false);
         }
     }
