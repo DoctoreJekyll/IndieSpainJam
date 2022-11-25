@@ -51,7 +51,7 @@ public class MainMenuCanvasManager : MonoBehaviour
             TransitionCanvas.instance.Play_ScreenTransition_In();
             yield return new WaitForSeconds(1);
 
-            SceneManager.LoadSceneAsync(levelScene);
+            SceneManager.LoadScene(levelScene);
         }
     }
 
@@ -63,11 +63,16 @@ public class MainMenuCanvasManager : MonoBehaviour
         PlayLevel(levelName);
     }
 
-    public void OnClick_Continue(string levelName)
+    public void OnClick_Continue()
     {
         DisableCotinueButton();
         _audioSource.PlayOneShot(positiveMenuSound);
-        PlayLevel(levelName);
+        ContinueButtonLoad(DataPersistanceManager.Instance.gameData);
+    }
+
+    private void ContinueButtonLoad(GameData data)
+    {
+        SceneManager.LoadScene(data.scenePlayed);
     }
 
     public void OnClick_Levels()

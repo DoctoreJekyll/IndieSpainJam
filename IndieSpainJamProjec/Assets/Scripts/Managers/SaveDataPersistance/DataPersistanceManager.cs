@@ -11,7 +11,7 @@ public class DataPersistanceManager : MonoBehaviour
     [SerializeField] private string fileName;
     [SerializeField] private bool useEncryp;
 
-    private GameData gameData;
+    public GameData gameData;
 
     private List<IDataPersistance> dataPersistancesObjs;
     private FileDataHandler dataHandler;
@@ -65,7 +65,7 @@ public class DataPersistanceManager : MonoBehaviour
             dataPersistance.LoadData(gameData);
         }
         
-        Debug.Log("Load collectables" + gameData.totalCollectablesTakenByPlayer);
+        Debug.Log("Load collectables" + gameData.scenePlayed);
     }
 
     public void SaveGame()
@@ -84,7 +84,7 @@ public class DataPersistanceManager : MonoBehaviour
         
         dataHandler.Save(gameData);
         
-        Debug.Log("Save collectables" + gameData.totalCollectablesTakenByPlayer);
+        Debug.Log("Save collectables" + gameData.scenePlayed);
     }
 
     private void OnEnable()

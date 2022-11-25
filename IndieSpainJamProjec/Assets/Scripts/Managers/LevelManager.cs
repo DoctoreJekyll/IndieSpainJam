@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 //Clase que se encarga de preparar todo lo necesario en el nivel y de actuar en el
 //momento en el que el jugador muere o completa el nivel para cargar el siguiente
-public class LevelManager : MonoBehaviour
+public class LevelManager : MonoBehaviour, IDataPersistance
 {
     public static LevelManager instance;
 
@@ -18,11 +18,15 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private string currentLevel;
     [SerializeField] private string nextLevelScene;
 
+    public int levelPlaying;
+
 
     private void Awake()
     {
         CreateSingleton();
         player = GameObject.FindGameObjectWithTag("Player");
+
+        
     }
     private void CreateSingleton()
     {
@@ -41,6 +45,8 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
+        levelPlaying = SceneManager.GetActiveScene().buildIndex;
+        
         if (Input.GetKeyDown(resetKey))
         {
             PlayerDeath player = GameObject.FindObjectOfType<PlayerDeath>();
@@ -75,5 +81,15 @@ public class LevelManager : MonoBehaviour
             yield return new WaitForSeconds(4);
             SceneManager.LoadScene(nextLevelScene);
         }
+    }
+
+    public void LoadData(GameData data)
+    {
+        levelPlaying = data.scenePlayed;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.scenePlayed = levelPlaying;
     }
 }
