@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class DataPersistanceManager : MonoBehaviour
 {
     [Header("File Storage Config")]
     [SerializeField] private string fileName;
+    [SerializeField] private bool useEncryp;
 
     private GameData gameData;
 
@@ -20,35 +22,33 @@ public class DataPersistanceManager : MonoBehaviour
         if (Instance != null)
         {
             Debug.LogError("More than one datapersistance on scene");
+            Destroy(this.gameObject);
+            return;
         }
 
         Instance = this;
-    }
-
-    private void Start()
-    {
-        this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
-        //Cargamos siempre al iniciar, si no existen valores, carga default, si existen, carga el normal.
-        this.dataPersistancesObjs = FindAllDataPersistanceObjs();
-        LoadGame();
+        DontDestroyOnLoad(this);
+        
+        this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, useEncryp);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.N))
         {
+            NewGame();
             dataHandler.Delete(this.gameData);
         }
     }
 
-    private void NewGame()
+    public void NewGame()
     {
         //Instanciamos un constructor con valores default
         //Tambien podemos usar esto para borrar todos los datos con el .Delete
         this.gameData = new GameData();
     }
 
-    private void LoadGame()
+    public void LoadGame()
     {
         //Load save data
         this.gameData = dataHandler.Load();
@@ -56,7 +56,7 @@ public class DataPersistanceManager : MonoBehaviour
         if (this.gameData == null)
         {
             Debug.Log("No data found. Iniciando data default");
-            NewGame();
+            return;
         }
 
         //Buscamos todos los datos cargados y cargamos
@@ -68,8 +68,15 @@ public class DataPersistanceManager : MonoBehaviour
         Debug.Log("Load collectables" + gameData.totalCollectablesTakenByPlayer);
     }
 
-    private void SaveGame()
+    public void SaveGame()
     {
+        //Si no tenemos savedata, error
+        if (this.gameData == null)
+        {
+            Debug.LogWarning("No data to save");
+            return;
+        }
+        
         foreach (IDataPersistance dataPersistance in dataPersistancesObjs)
         {
             dataPersistance.SaveData(ref gameData);
@@ -80,7 +87,31 @@ public class DataPersistanceManager : MonoBehaviour
         Debug.Log("Save collectables" + gameData.totalCollectablesTakenByPlayer);
     }
 
-    //De base guardamos cuando se cierre la aplicación TODO- Ver si mantenemos esto o no.
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.sceneUnloaded += OnSceneUnLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneUnloaded -= OnSceneUnLoaded;
+    }
+
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        //Cargamos siempre al iniciar, si no existen valores, carga default, si existen, carga el normal.
+        this.dataPersistancesObjs = FindAllDataPersistanceObjs();
+        LoadGame();
+    }
+
+    public void OnSceneUnLoaded(Scene scene)
+    {
+        SaveGame();
+    }
+
+    //De base guardamos cuando se cierre la aplicación TODO- Ver si mantenemos esto o no.(Probablemente si)
     private void OnApplicationQuit()
     {
         SaveGame();
@@ -93,5 +124,10 @@ public class DataPersistanceManager : MonoBehaviour
             FindObjectsOfType<MonoBehaviour>().OfType<IDataPersistance>();
 
         return new List<IDataPersistance>(persistancesObjs);
+    }
+
+    public bool HasGameData()
+    {
+        return gameData != null;
     }
 }

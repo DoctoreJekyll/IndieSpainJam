@@ -9,12 +9,15 @@ public class FileDataHandler : MonoBehaviour
 
     private string dataDirPath = "";
     private string dataFileName = "";
+    private bool useEncryption = false;
+    private readonly string encryptionCodeWord = "Capibara";
 
     //Constrcr para crear namedatas
-    public FileDataHandler(string dataDirPath, string dataFileName)
+    public FileDataHandler(string dataDirPath, string dataFileName, bool useEncryption)
     {
         this.dataDirPath = dataDirPath;
         this.dataFileName = dataFileName;
+        this.useEncryption = useEncryption;
     }
 
     public GameData Load()
@@ -26,12 +29,17 @@ public class FileDataHandler : MonoBehaviour
             try
             {
                 string dataToLoad = "";
-                using (FileStream stream = new FileStream(fullPath, FileMode.Open))
+                using (FileStream stream = new FileStream(fullPath, FileMode.Open))//Buscamos la ruta del archivo y lo abrimos
                 {
-                    using (StreamReader reader = new StreamReader(stream))
+                    using (StreamReader reader = new StreamReader(stream))//Leemos datos
                     {
                         dataToLoad = reader.ReadToEnd();
                     }
+                }
+
+                if (useEncryption)
+                {
+                    dataToLoad = EncryptionDecryption(dataToLoad);
                 }
                 
                 //Deserializar el JSON
@@ -44,7 +52,7 @@ public class FileDataHandler : MonoBehaviour
             }
         }
 
-        return loadedData;
+        return loadedData;//devolemos los datos
     }
 
     
@@ -59,6 +67,12 @@ public class FileDataHandler : MonoBehaviour
 
             //Serializamos(pasar del archivo C# a JSON)
             string dataToStore = JsonUtility.ToJson(data, true);
+
+            //encriptamos datos si queremos
+            if (useEncryption)
+            {
+                dataToStore = EncryptionDecryption(dataToStore);
+            }
 
             //Escribimos el serializado del contenido del JSON, la sintaxis es rara de cojones pero viene asi en la documentacion
             using (FileStream stream = new FileStream(fullPath, FileMode.Create))
@@ -76,6 +90,18 @@ public class FileDataHandler : MonoBehaviour
         }
     }
 
+    //Elevamos cada valor de los datos al valor de la palabra que pasamos por código. EJ: el valor del valor de los collectables por "Capibara".
+    private string EncryptionDecryption(string data)
+    {
+        string modifiedData = "";
+        for (int i = 0; i < data.Length; i++)
+        {
+            modifiedData += (char)(data[i] ^ encryptionCodeWord[i % encryptionCodeWord.Length]);
+        }
+
+        return modifiedData;
+    }
+
     //Borra TODOS los datos, cuidado.
     public void Delete(GameData data)
     {
@@ -83,6 +109,7 @@ public class FileDataHandler : MonoBehaviour
         
         if (File.Exists(fullPath))
         {
+            Debug.Log("Delete" + fullPath);
             File.Delete(fullPath);
         }
     }

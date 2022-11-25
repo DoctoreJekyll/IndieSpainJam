@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 //Clase que se encarga de las acciones que toma el jugador en el menú principal
 public class MainMenuCanvasManager : MonoBehaviour
@@ -14,10 +15,17 @@ public class MainMenuCanvasManager : MonoBehaviour
     public bool levelsPanelOpen;
     public bool creditsPanelOpen;
 
+    [Header("Buttons")] 
+    [SerializeField] private Button playButton;
+    [SerializeField] private Button continueButton;
+    [SerializeField] private bool continueButtonIsOn;
+
     [Header("Sounds")] 
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip positiveMenuSound;
     [SerializeField] private AudioClip negativeMenuSound;
+    
+    
 
     private void Awake()
     {
@@ -27,6 +35,11 @@ public class MainMenuCanvasManager : MonoBehaviour
     private void Start()
     {
         TransitionCanvas.instance.Play_ScreenTransition_Out();
+
+        if (!DataPersistanceManager.Instance.HasGameData())
+        {
+            continueButton.interactable = false;
+        }
     }
 
     public void PlayLevel(string levelScene)
@@ -38,12 +51,21 @@ public class MainMenuCanvasManager : MonoBehaviour
             TransitionCanvas.instance.Play_ScreenTransition_In();
             yield return new WaitForSeconds(1);
 
-            SceneManager.LoadScene(levelScene);
+            SceneManager.LoadSceneAsync(levelScene);
         }
     }
 
     public void OnClick_Play(string levelName)
     {
+        DissableForSecurityButtons();
+        _audioSource.PlayOneShot(positiveMenuSound);
+        DataPersistanceManager.Instance.NewGame();
+        PlayLevel(levelName);
+    }
+
+    public void OnClick_Continue(string levelName)
+    {
+        DisableCotinueButton();
         _audioSource.PlayOneShot(positiveMenuSound);
         PlayLevel(levelName);
     }
@@ -95,7 +117,17 @@ public class MainMenuCanvasManager : MonoBehaviour
         Application.Quit();
     }
 
-
+    private void DissableForSecurityButtons()
+    {
+        playButton.interactable = false;
+        continueButton.interactable = false;
+    }
+    
+    //TODO - Si no tenemos archivos de guardado habrá que desactivar este boton la primera vez.
+    public void DisableCotinueButton()
+    {
+        continueButton.enabled = continueButtonIsOn;
+    }
 
 
 }

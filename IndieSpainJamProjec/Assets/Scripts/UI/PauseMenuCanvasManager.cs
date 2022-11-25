@@ -51,7 +51,7 @@ public class PauseMenuCanvasManager : MonoBehaviour
     {
         //Esto probablemente no suene ahora mismo porque carga del tiron
         _audioSource.PlayOneShot(negativeSound);
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadSceneAsync("Main Menu");
         
         //Propuesta
         //StartCoroutine(LoadSceneAfterSound());
