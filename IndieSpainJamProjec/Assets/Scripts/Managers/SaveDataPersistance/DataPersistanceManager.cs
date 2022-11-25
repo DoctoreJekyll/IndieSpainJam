@@ -30,6 +30,10 @@ public class DataPersistanceManager : MonoBehaviour
         DontDestroyOnLoad(this);
         
         this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, useEncryp);
+        //this.dataHandler = gameObject.AddComponent<FileDataHandler>();
+        //this.dataHandler.ConstructorFileData(Application.persistentDataPath, fileName, useEncryp);
+        //TODO Ver si esto da algun problema
+        this.dataPersistancesObjs = FindAllDataPersistanceObjs();
     }
 
     private void Update()

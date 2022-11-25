@@ -20,6 +20,13 @@ public class FileDataHandler : MonoBehaviour
         this.useEncryption = useEncryption;
     }
 
+    public void ConstructorFileData(string dataDirPath, string dataFileName, bool useEncryption)
+    {
+        this.dataDirPath = dataDirPath;
+        this.dataFileName = dataFileName;
+        this.useEncryption = useEncryption;
+    }
+
     public GameData Load()
     {
         string fullPath = Path.Combine(dataDirPath, dataFileName);
