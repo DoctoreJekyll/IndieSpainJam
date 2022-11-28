@@ -44,5 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 164876a5313130147ac0dc5902860a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initializeData: 1
   fileName: data.game
-  useEncryp: 1
+  useEncryp: 0
+  gameData:
+    totalCollectablesTakenByPlayer: 0
+    playerPositionCheckPoint: {x: 0, y: 0, z: 0}
+    starsCollected:
+      keys: []
+      values: 
+    scenePlayed: 1

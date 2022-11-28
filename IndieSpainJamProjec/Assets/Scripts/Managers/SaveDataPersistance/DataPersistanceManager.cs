@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class DataPersistanceManager : MonoBehaviour
 {
+    [Header("Debugging")] 
+    [SerializeField] private bool initializeData = false;
+    
     [Header("File Storage Config")]
     [SerializeField] private string fileName;
     [SerializeField] private bool useEncryp;
@@ -56,11 +59,17 @@ public class DataPersistanceManager : MonoBehaviour
     {
         //Load save data
         this.gameData = dataHandler.Load();
+
+        //Solo debug, si no hay datos pero queremos probar escenas, crea un nuevo archivo.
+        if (this.gameData == null && initializeData)
+        {
+            NewGame();
+        }
         
         if (this.gameData == null)
         {
             Debug.Log("No data found. Iniciando data default");
-            NewGame();
+            //NewGame();//Si no tenemos un archivo de guardado no hacemos nada.
             return;
         }
 
@@ -79,7 +88,7 @@ public class DataPersistanceManager : MonoBehaviour
         //Si no tenemos savedata, error
         if (this.gameData == null)
         {
-            NewGame();
+            //NewGame();Si no tenemos datos que guardar. Error, esto puede cambiar en base a generar seguridad para la version final
             Debug.LogWarning("No data to save");
             return;
         }
@@ -107,6 +116,7 @@ public class DataPersistanceManager : MonoBehaviour
         SceneManager.sceneUnloaded -= OnSceneUnLoaded;
     }
 
+    //TODO- Tener en cuenta que ahora mismo cargamos datos cuando una escena es cargada y guardamos al descargar una escena.
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         //Cargamos siempre al iniciar, si no existen valores, carga default, si existen, carga el normal.
