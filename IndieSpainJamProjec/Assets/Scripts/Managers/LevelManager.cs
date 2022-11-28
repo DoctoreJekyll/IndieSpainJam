@@ -88,7 +88,7 @@ public class LevelManager : MonoBehaviour, IDataPersistance
         levelPlaying = data.scenePlayed;
     }
 
-    public void SaveData(ref GameData data)
+    public void SaveData(GameData data)
     {
         data.scenePlayed = levelPlaying;
     }

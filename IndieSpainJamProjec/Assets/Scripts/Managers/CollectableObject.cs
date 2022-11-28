@@ -54,7 +54,7 @@ public class CollectableObject : MonoBehaviour, IDataPersistance
         }
     }
 
-    public void SaveData(ref GameData data)
+    public void SaveData(GameData data)
     {
         if (data.starsCollected.ContainsKey(id))
         {

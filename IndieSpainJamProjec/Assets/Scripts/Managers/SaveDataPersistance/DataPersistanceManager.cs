@@ -14,6 +14,10 @@ public class DataPersistanceManager : MonoBehaviour
     [SerializeField] private string fileName;
     [SerializeField] private bool useEncryp;
 
+    [Header("Auto Save Config")] 
+    [SerializeField] private float autoSaveTimeSeconds = 120f;
+    private Coroutine autoSaveCoroutine;
+
     public GameData gameData;
 
     private List<IDataPersistance> dataPersistancesObjs;
@@ -37,15 +41,6 @@ public class DataPersistanceManager : MonoBehaviour
         //this.dataHandler.ConstructorFileData(Application.persistentDataPath, fileName, useEncryp);
         //TODO Ver si esto da algun problema
         this.dataPersistancesObjs = FindAllDataPersistanceObjs();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            NewGame();
-            dataHandler.Delete(this.gameData);
-        }
     }
 
     public void NewGame()
@@ -78,9 +73,6 @@ public class DataPersistanceManager : MonoBehaviour
         {
             dataPersistance.LoadData(gameData);
         }
-        
-        Debug.Log("Load collectables" + gameData.scenePlayed);
-        Debug.Log("Load collectables" + gameData.totalCollectablesTakenByPlayer);
     }
 
     public void SaveGame()
@@ -95,13 +87,10 @@ public class DataPersistanceManager : MonoBehaviour
         
         foreach (IDataPersistance dataPersistance in dataPersistancesObjs)
         {
-            dataPersistance.SaveData(ref gameData);
+            dataPersistance.SaveData(gameData);
         }
         
         dataHandler.Save(gameData);
-        
-        Debug.Log("Save collectables" + gameData.scenePlayed);
-        Debug.Log("Save collectables" + gameData.totalCollectablesTakenByPlayer);
     }
 
     private void OnEnable()
@@ -122,8 +111,16 @@ public class DataPersistanceManager : MonoBehaviour
         //Cargamos siempre al iniciar, si no existen valores, carga default, si existen, carga el normal.
         this.dataPersistancesObjs = FindAllDataPersistanceObjs();
         LoadGame();
+
+        if (autoSaveCoroutine != null)
+        {
+            StopCoroutine(AutoSave());
+        }
+        autoSaveCoroutine = StartCoroutine(AutoSave());
     }
 
+    //TODO- Ver donde generamos el guardar partida.
+    //Creo que esto no funciona bien, hay que ver donde generamos el guardar.
     public void OnSceneUnLoaded(Scene scene)
     {
         SaveGame();
@@ -139,7 +136,7 @@ public class DataPersistanceManager : MonoBehaviour
     {
         //Buscamos todos los objetos que usen la interface
         IEnumerable<IDataPersistance> persistancesObjs =
-            FindObjectsOfType<MonoBehaviour>().OfType<IDataPersistance>();
+            FindObjectsOfType<MonoBehaviour>(true).OfType<IDataPersistance>();
 
         return new List<IDataPersistance>(persistancesObjs);
     }
@@ -148,4 +145,15 @@ public class DataPersistanceManager : MonoBehaviour
     {
         return gameData != null;
     }
+
+    //TODO- Ver si usamos o no autosave
+    private IEnumerator AutoSave()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(autoSaveTimeSeconds);
+            SaveGame();
+        }
+    }
+    
 }

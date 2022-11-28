@@ -38,13 +38,13 @@ public class CollectableManager : MonoBehaviour, IDataPersistance
         ClampCollectables();
     }
 
+    //Esto es un triple que me he tirado para tener en cuenta los coleccionables desactivados y así nos de esa informacion
     private void Test()
     {
         for (int i = 0; i < allCollectables.Length; i++)
         {
             if (!allCollectables[i].activeInHierarchy)
             {
-                Debug.Log("suma");
                 actualCollectable += 1;
                 UpdateUI();
             }
@@ -78,7 +78,7 @@ public class CollectableManager : MonoBehaviour, IDataPersistance
         this.totalPlayerCollectables = data.totalCollectablesTakenByPlayer;
     }
 
-    public void SaveData(ref GameData data)
+    public void SaveData(GameData data)
     {
         data.totalCollectablesTakenByPlayer = this.totalPlayerCollectables;
     }
