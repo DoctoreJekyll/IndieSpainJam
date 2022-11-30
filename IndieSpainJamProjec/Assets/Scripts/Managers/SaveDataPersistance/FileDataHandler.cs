@@ -4,9 +4,9 @@ using UnityEngine;
 using System;
 using System.IO;
 
-public class FileDataHandler : MonoBehaviour
+public class FileDataHandler
 {
-
+    
     private string dataDirPath = "";
     private string dataFileName = "";
     private bool useEncryption = false;

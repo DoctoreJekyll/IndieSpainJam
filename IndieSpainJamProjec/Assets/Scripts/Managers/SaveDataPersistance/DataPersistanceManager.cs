@@ -28,7 +28,7 @@ public class DataPersistanceManager : MonoBehaviour
     {
         if (Instance != null)
         {
-            Debug.LogError("More than one datapersistance on scene");
+            Debug.LogAssertion("More than one datapersistance on scene");
             Destroy(this.gameObject);
             return;
         }
