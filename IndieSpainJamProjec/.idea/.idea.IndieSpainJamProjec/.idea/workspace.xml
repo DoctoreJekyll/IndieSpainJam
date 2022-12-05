@@ -7,10 +7,10 @@
     <list default="true" id="aa232c36-5b7b-4f53-9f94-81bd7bbbf153" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.IndieSpainJamProjec/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.IndieSpainJamProjec/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/Level 1-1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Level 1-1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Jugador/BetterJump.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Jugador/BetterJump.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Jugador/PlayerJump.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Jugador/PlayerJump.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IActivable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IActivable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IDamageable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IDamageable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Jugador/NewWaterPlayer/WaterDropCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Jugador/NewWaterPlayer/WaterDropCollision.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/LeverEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/LeverEvents.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +31,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/General/PlayerCheckPointValues.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/General/TempChangerZone.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/IActivable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interfaces/IAffectedByWaterDrop.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Jugador/IcePlayer/AirController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Jugador/Interactable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Jugador/PlayerDeath.cs" root0="FORCE_HIGHLIGHTING" />
@@ -48,6 +49,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Otros/LakituPatch.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Otros/LakituTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Otros/TestGameState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Test/WaterTouchingTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SerializableDictionary.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -165,7 +167,7 @@
       <workItem from="1669737455211" duration="574000" />
       <workItem from="1669738802013" duration="3691000" />
       <workItem from="1669808915208" duration="527000" />
-      <workItem from="1670228631898" duration="362000" />
+      <workItem from="1670228631898" duration="6818000" />
     </task>
     <servers />
   </component>

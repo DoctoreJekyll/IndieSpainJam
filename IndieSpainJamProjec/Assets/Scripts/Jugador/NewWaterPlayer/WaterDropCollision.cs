@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WaterDropCollision : MonoBehaviour
@@ -8,9 +5,14 @@ public class WaterDropCollision : MonoBehaviour
     
     private void OnParticleCollision(GameObject other)
     {
-        if (other.GetComponent<Rigidbody2D>() != null)
+        if (other.gameObject.CompareTag("Activable"))
         {
-            other.GetComponent<Rigidbody2D>().AddForce(transform.right * 100);
+            if (other.GetComponent<IAffectedByWaterDrop>() != null)
+            {
+                IAffectedByWaterDrop iAffectedByWaterDrop = other.GetComponent<IAffectedByWaterDrop>();
+                iAffectedByWaterDrop.DoStuffsWhenWaterTouch();
+            }
+
         }
     }
 }
