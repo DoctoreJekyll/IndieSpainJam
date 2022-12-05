@@ -35716,10 +35716,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.9
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1.1
+  m_GravityScale: 1.4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 0
@@ -35737,13 +35737,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 790e5745ffcc2e04f9df87d06c1e1ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
-  runAcceleration: 6
+  moveSpeed: 10
+  runAcceleration: 7
   runDecceleration: 7
-  velPower: 1.2
+  velPower: 0.9
   lerpAmount: 0.9
   moveSpeedWhenSpikes: 4.5
-  moveSpeedOnAir: 7
+  moveSpeedOnAir: 7.5
   fricctionAmount: 0.2
   momentum: 1
 --- !u!114 &7833960658886060088
@@ -35758,7 +35758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ac964d49b5272841acb6f6e05eb6eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 10
+  jumpForce: 13
   pointToCheckFloor: {fileID: 7833960658696073597}
   boxCheckSize: {x: 0.3, y: 0.2}
   floorLayer:
@@ -35785,6 +35785,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallMultiplier: 6
   lowJumpMultiplier: 3.5
+  gravityScale: 0
+  upGravity: 2.75
+  downGravity: 2.5
 --- !u!114 &129529052221205002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35866,7 +35869,7 @@ MonoBehaviour:
   - {x: 0.2031269, y: -0.62614167, z: 0}
   m_ShapePathHash: -1832149345
   m_Mesh: {fileID: 0}
-  m_InstanceId: 36906
+  m_InstanceId: -1716
 --- !u!114 &3178862249843183947
 MonoBehaviour:
   m_ObjectHideFlags: 0
