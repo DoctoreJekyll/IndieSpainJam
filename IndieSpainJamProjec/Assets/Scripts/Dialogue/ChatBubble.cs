@@ -9,7 +9,7 @@ public class ChatBubble : MonoBehaviour
     [Header("Components")]
     [SerializeField] private SpriteRenderer backgroundSpriteRenderer;
     [SerializeField] private TMP_Text textMeshPro;
-    [SerializeField] private LocalizedString localString;
+     public LocalizedString localString;
 
     [Header("Text")]
     private string textToSpeech;
