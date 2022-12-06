@@ -20,19 +20,19 @@ public class TargetDoor : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            CheckPlayerKey();
-            Rigidbody2D rb2d = collision.gameObject.GetComponent<Rigidbody2D>();
-            rb2d.velocity = Vector2.zero;
+            CheckPlayerKey(collision);
         }
             
     }
 
-    private void CheckPlayerKey()
+    private void CheckPlayerKey(Collider2D col)
     {
         if (keyChecker.Check_PlayerHasKey() == true)
         {
             LevelManager.instance.LevelCompleted();
             _audioSource.PlayOneShot(_audioSource.clip);
+            Rigidbody2D rb2d = col.gameObject.GetComponent<Rigidbody2D>();
+            rb2d.velocity = Vector2.zero;
         }
             
     }

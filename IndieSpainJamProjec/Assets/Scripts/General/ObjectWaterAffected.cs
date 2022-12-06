@@ -4,15 +4,16 @@ using UnityEngine;
 public class ObjectWaterAffected : MonoBehaviour, IAffectedByWaterDrop
 {
 
-    [SerializeField] private bool isAffectedByParticle;
+    private bool isAffectedByParticle;
     private bool isUsed;
 
     [Header("Config")]
-    [SerializeField] private Vector3 actualPosition;
+    private Vector3 actualPosition;
+    private Vector3 targetPosition;
     [SerializeField] private Vector3 addedPosition;
     [SerializeField] private AnimationCurve curve;
     [SerializeField] private float timeToFinishGrowUp;
-    private Vector3 targetPosition;
+
     
     
     // Start is called before the first frame update
