@@ -78,7 +78,7 @@ public class LevelManager : MonoBehaviour, IDataPersistance
         IEnumerator Coroutine_NextLevel()
         {
             TransitionCanvas.instance.Play_LevelTransition_In();
-            yield return new WaitForSeconds(4);
+            yield return new WaitForSeconds(2.5f);
             SceneManager.LoadScene(nextLevelScene);
         }
     }

@@ -84,5 +84,4 @@ public class TransitionCanvas : MonoBehaviour
         yield return new WaitForEndOfFrame();
         auxCamera.enabled = false;
     }
-
 }
