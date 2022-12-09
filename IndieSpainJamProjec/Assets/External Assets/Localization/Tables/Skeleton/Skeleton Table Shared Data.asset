@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Skeleton Table Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Skeleton Table
+  m_TableCollectionNameGuidString: 8bc0f45ae17a19b4181877c216736464
+  m_Entries:
+  - m_Id: 20504788992
+    m_Key: 'Level 1 VoiceReaction_Skeleton1 '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59289518080
+    m_Key: Level 1 VoiceReaction_Skeleton2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63307661312
+    m_Key: Level 3 VoiceReaction_Skeleton3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 67678126080
+    m_Key: Level 4 VoiceReaction_Skeleton4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 71654326272
+    m_Key: Level 5 VoiceReaction_Skeleton5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76184174592
+    m_Key: Level 6 VoiceReaction_Skeleton6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 79942270976
+    m_Key: Level 7 VoiceReaction_Skeleton7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 86036594688
+    m_Key: Level 7 VoiceReaction_Skeleton8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88486068224
+    m_Key: Level 8 VoiceReaction_Skeleton9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 90579025920
+    m_Key: Level 10 VoiceReaction_Skeleton_10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 233273442304
+    m_Key: Level 11 VoiceReaction_Skeleton_11
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 1240281217300955136
+  references:
+    version: 2
+    RefIds:
+    - rid: 1240281217300955136
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1670587828908
