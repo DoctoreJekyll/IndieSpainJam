@@ -91,7 +91,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: tile baldosa base 1
+  - name: textura piedras base
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -99,7 +99,637 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 472
+      y: 4
+      width: 514
+      height: 513
+    spriteID: f7be2e4d30a882e42a29d1c939038fca
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -48, y: -1036}
+  - name: pinchos 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 635
+      y: 1282
+      width: 69
+      height: 132
+    spriteID: 85521e46e559b964abf5dffd963cc658
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -360, y: -1009}
+  - name: pinchos 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 269
+      y: 1576
+      width: 137
+      height: 120
+    spriteID: aee22477a6fdb4547af0d91a886776fb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -559, y: -717}
+  - name: pinchos 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1883
+      width: 274
+      height: 125
+    spriteID: f9224617c412260408e6492f09f797d9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -551, y: -242}
+  - name: pinchos 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 423
+      y: 942
+      width: 85
+      height: 170
+    spriteID: e451b3d0c9a5cc449986f572c37b497e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -294, y: -1326}
+  - name: pinchos 6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 635
+      y: 1422
+      width: 57
+      height: 147
+    spriteID: 3bfacf801ae4b8f49aaab89d7093f422
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 46, y: -855}
+  - name: pinchos 7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 1743
+      width: 163
+      height: 129
+    spriteID: e53cd021b9afa3542b8c6cb5991880cf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -576, y: -393}
+  - name: pinchos 8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 635
+      y: 958
+      width: 107
+      height: 129
+    spriteID: 0528bc0c14bd95b409c3d4d881b429aa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -259, y: -735}
+  - name: pinchos 9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 942
+      width: 260
+      height: 240
+    spriteID: abdfd698d0c90bf4fba5cbf461d7664e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -551, y: -737}
+  - name: pinchos 10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 457
+      y: 1743
+      width: 54
+      height: 91
+    spriteID: 8bdfb582c9572de49bc53f3016509082
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -542, y: -208}
+  - name: pinchos 11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1385
+      width: 269
+      height: 183
+    spriteID: 007990c1e42bcfe49a4ad6a4986069ac
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -681, y: -547}
+  - name: pinchos 12
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 960
+      y: 4
+      width: 54
+      height: 72
+    spriteID: 13b8533ebcc4d1040bd566803fa58774
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 391, y: -1955}
+  - name: piedra grupo 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1190
+      width: 320
+      height: 187
+    spriteID: 8c0632ec4b4001f4da276853cf916eea
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1342, y: -905}
+  - name: piedra grupo 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 526
+      y: 4
+      width: 252
+      height: 130
+    spriteID: 1db36a54b98c64f4d889bec09c1c4bc8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -776, y: -2290}
+  - name: piedra grupo 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 526
+      y: 427
+      width: 86
+      height: 72
+    spriteID: 3b0b6681225055440b79669064f59d71
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -627, y: -1906}
+  - name: piedra grupo 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 942
+      width: 143
+      height: 206
+    spriteID: 1c1a6420476181241a7a232156976c60
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -868, y: -1128}
+  - name: piedra grupo 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1743
+      width: 274
+      height: 132
+    spriteID: 932732daf554c4149b738b218e632784
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1137, y: -173}
+  - name: piedra grupo 6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 281
+      y: 1385
+      width: 147
+      height: 137
+    spriteID: b9179f5320274ee48aea586ca67ec736
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1135, y: -557}
+  - name: piedra grupo 7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 525
+      width: 471
+      height: 409
+    spriteID: c5e3f1859d62d8d49a0519867fa63918
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1143, y: -1207}
+  - name: piedra suelta 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 526
+      y: 142
+      width: 101
+      height: 192
+    spriteID: e1aeebd214ebbdf42b32c74b02d7027b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1602, y: -2111}
+  - name: piedra suelta 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 635
+      y: 1204
+      width: 131
+      height: 70
+    spriteID: 2bfb0acc670fe1c46907991a3bac0566
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1290, y: -1080}
+  - name: piedra suelta 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 286
+      y: 1883
+      width: 197
+      height: 150
+    spriteID: 4fa6ae0fe980af449818a8833f43920a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1390, y: -362}
+  - name: piedra suelta 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 436
+      y: 1385
+      width: 68
+      height: 143
+    spriteID: dd6295b8cbd9b9f499d3d27ace507d95
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1704, y: -682}
+  - name: piedra suelta 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 786
+      y: 102
+      width: 153
+      height: 55
+    spriteID: 4a706b116570a654da26e73c489cfcbd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1114, y: -2011}
+  - name: piedra suelta 6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 786
+      y: 4
+      width: 166
+      height: 90
+    spriteID: f959188fea3c7d5408d95064c924b144
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -923, y: -2105}
+  - name: piedra suelta 7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1576
+      width: 257
+      height: 159
+    spriteID: e252aa02ab048ce42ab70fa5957dd59b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1945, y: -301}
+  - name: piedra suelta 8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 635
+      y: 1095
+      width: 115
+      height: 101
+    spriteID: 5231d9fc18867014eb25fd4e6fdc4c96
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1468, y: -586}
+  - name: piedra suelta 9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 526
+      y: 342
+      width: 93
+      height: 77
+    spriteID: 25f6cecfaa019dd4db743dc2f3c101b2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1377, y: -1355}
+  - name: piedra suelta 10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 332
+      y: 1190
+      width: 153
+      height: 147
+    spriteID: db2ae21062dedba46abb14fe51952271
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1387, y: -680}
+  - name: piedra suelta 11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 414
+      y: 1576
+      width: 102
+      height: 102
+    spriteID: 9531197285dc635488990e1bec733ae7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1447, y: -155}
+  - name: tile baldosa base 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 269
+      y: 1704
       width: 128
       height: 29
     spriteID: d99079a65f78f364e83dcbeebd0964be
@@ -111,7 +741,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -95, y: -1441}
+    uvTransform: {x: 24, y: -358}
   - name: tile pared der
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -119,8 +749,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 4
+      x: 635
+      y: 142
       width: 128
       height: 128
     spriteID: 269409f8de071aa469665fafe360b4ad
@@ -132,7 +762,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -95, y: -2274}
+    uvTransform: {x: 536, y: -2136}
   - name: tile suelo piedra base1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -140,8 +770,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 140
+      x: 635
+      y: 278
       width: 128
       height: 128
     spriteID: 2c215438b84a96f448404dfb2ad6f94b
@@ -153,7 +783,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -236, y: -2139}
+    uvTransform: {x: 395, y: -2001}
   - name: tile pared izq
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -161,8 +791,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 276
+      x: 635
+      y: 414
       width: 128
       height: 128
     spriteID: 0c80cace7b46b354abf279433b62efca
@@ -174,7 +804,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -374, y: -2002}
+    uvTransform: {x: 257, y: -1864}
   - name: tilke techo base 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -182,8 +812,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 140
-      y: 4
+      x: 635
+      y: 550
       width: 128
       height: 128
     spriteID: fce750d41b887dd4db6015b9b9461e97
@@ -195,7 +825,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -100, y: -2134}
+    uvTransform: {x: 395, y: -1588}
   - name: tile techo pincho 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -203,8 +833,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 140
-      y: 140
+      x: 635
+      y: 686
       width: 128
       height: 128
     spriteID: 4d0bf226ff0b34943b71cd1e137289e7
@@ -216,7 +846,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -237, y: -1997}
+    uvTransform: {x: 258, y: -1451}
   - name: pile pincho base 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -224,8 +854,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 412
+      x: 786
+      y: 165
       width: 122
       height: 52
     spriteID: c7030d9cb207e46439416b54a2fb0eae
@@ -237,7 +867,28 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -100, y: -1650}
+    uvTransform: {x: 682, y: -1897}
+  - name: tile arena base 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 635
+      y: 822
+      width: 128
+      height: 128
+    spriteID: 598b146cef54cfc4a94ef92046d95420
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 537, y: -1023}
   characterData:
     bones: []
     parts: []
@@ -268,13 +919,353 @@ ScriptedImporter:
   resliceFromLayer: 0
   mosaicPSDLayers: []
   rigPSDLayers:
+  - name: piedras
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 82
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: textura piedras base
+    spriteName: textura piedras base
+    isGroup: 0
+    parentIndex: 0
+    spriteID: f7be2e4d30a882e42a29d1c939038fca
+    layerID: 81
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: pinchos piedra
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 00000000000000000000000000000000
+    layerID: 80
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: pinchos 1
+    spriteName: pinchos 1
+    isGroup: 0
+    parentIndex: 2
+    spriteID: 85521e46e559b964abf5dffd963cc658
+    layerID: 79
+    mosaicPosition: {x: 635, y: 1282}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: pinchos 2
+    spriteName: pinchos 2
+    isGroup: 0
+    parentIndex: 2
+    spriteID: aee22477a6fdb4547af0d91a886776fb
+    layerID: 78
+    mosaicPosition: {x: 269, y: 1576}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: pinchos 4
+    spriteName: pinchos 4
+    isGroup: 0
+    parentIndex: 2
+    spriteID: f9224617c412260408e6492f09f797d9
+    layerID: 77
+    mosaicPosition: {x: 4, y: 1883}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: pinchos 5
+    spriteName: pinchos 5
+    isGroup: 0
+    parentIndex: 2
+    spriteID: e451b3d0c9a5cc449986f572c37b497e
+    layerID: 76
+    mosaicPosition: {x: 423, y: 942}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: pinchos 6
+    spriteName: pinchos 6
+    isGroup: 0
+    parentIndex: 2
+    spriteID: 3bfacf801ae4b8f49aaab89d7093f422
+    layerID: 75
+    mosaicPosition: {x: 635, y: 1422}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: pinchos 7
+    spriteName: pinchos 7
+    isGroup: 0
+    parentIndex: 2
+    spriteID: e53cd021b9afa3542b8c6cb5991880cf
+    layerID: 74
+    mosaicPosition: {x: 286, y: 1743}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: pinchos 8
+    spriteName: pinchos 8
+    isGroup: 0
+    parentIndex: 2
+    spriteID: 0528bc0c14bd95b409c3d4d881b429aa
+    layerID: 73
+    mosaicPosition: {x: 635, y: 958}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: pinchos 9
+    spriteName: pinchos 9
+    isGroup: 0
+    parentIndex: 2
+    spriteID: abdfd698d0c90bf4fba5cbf461d7664e
+    layerID: 72
+    mosaicPosition: {x: 4, y: 942}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: pinchos 10
+    spriteName: pinchos 10
+    isGroup: 0
+    parentIndex: 2
+    spriteID: 8bdfb582c9572de49bc53f3016509082
+    layerID: 71
+    mosaicPosition: {x: 457, y: 1743}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: pinchos 11
+    spriteName: pinchos 11
+    isGroup: 0
+    parentIndex: 2
+    spriteID: 007990c1e42bcfe49a4ad6a4986069ac
+    layerID: 70
+    mosaicPosition: {x: 4, y: 1385}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: pinchos 12
+    spriteName: pinchos 12
+    isGroup: 0
+    parentIndex: 2
+    spriteID: 13b8533ebcc4d1040bd566803fa58774
+    layerID: 69
+    mosaicPosition: {x: 960, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: grupo piedras
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 00000000000000000000000000000000
+    layerID: 67
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: piedra grupo 1
+    spriteName: piedra grupo 1
+    isGroup: 0
+    parentIndex: 14
+    spriteID: 8c0632ec4b4001f4da276853cf916eea
+    layerID: 66
+    mosaicPosition: {x: 4, y: 1190}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: piedra grupo 2
+    spriteName: piedra grupo 2
+    isGroup: 0
+    parentIndex: 14
+    spriteID: 1db36a54b98c64f4d889bec09c1c4bc8
+    layerID: 65
+    mosaicPosition: {x: 526, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: piedra grupo 3
+    spriteName: piedra grupo 3
+    isGroup: 0
+    parentIndex: 14
+    spriteID: 3b0b6681225055440b79669064f59d71
+    layerID: 64
+    mosaicPosition: {x: 526, y: 427}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: piedra grupo 4
+    spriteName: piedra grupo 4
+    isGroup: 0
+    parentIndex: 14
+    spriteID: 1c1a6420476181241a7a232156976c60
+    layerID: 63
+    mosaicPosition: {x: 272, y: 942}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: piedra grupo 5
+    spriteName: piedra grupo 5
+    isGroup: 0
+    parentIndex: 14
+    spriteID: 932732daf554c4149b738b218e632784
+    layerID: 62
+    mosaicPosition: {x: 4, y: 1743}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: piedra grupo 6
+    spriteName: piedra grupo 6
+    isGroup: 0
+    parentIndex: 14
+    spriteID: b9179f5320274ee48aea586ca67ec736
+    layerID: 61
+    mosaicPosition: {x: 281, y: 1385}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: piedra grupo 7
+    spriteName: piedra grupo 7
+    isGroup: 0
+    parentIndex: 14
+    spriteID: c5e3f1859d62d8d49a0519867fa63918
+    layerID: 60
+    mosaicPosition: {x: 4, y: 525}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: 'piedra suelta '
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 00000000000000000000000000000000
+    layerID: 58
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: piedra suelta 1
+    spriteName: piedra suelta 1
+    isGroup: 0
+    parentIndex: 22
+    spriteID: e1aeebd214ebbdf42b32c74b02d7027b
+    layerID: 83
+    mosaicPosition: {x: 526, y: 142}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: piedra suelta 2
+    spriteName: piedra suelta 2
+    isGroup: 0
+    parentIndex: 22
+    spriteID: 2bfb0acc670fe1c46907991a3bac0566
+    layerID: 84
+    mosaicPosition: {x: 635, y: 1204}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: piedra suelta 3
+    spriteName: piedra suelta 3
+    isGroup: 0
+    parentIndex: 22
+    spriteID: 4fa6ae0fe980af449818a8833f43920a
+    layerID: 85
+    mosaicPosition: {x: 286, y: 1883}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: piedra suelta 4
+    spriteName: piedra suelta 4
+    isGroup: 0
+    parentIndex: 22
+    spriteID: dd6295b8cbd9b9f499d3d27ace507d95
+    layerID: 86
+    mosaicPosition: {x: 436, y: 1385}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: piedra suelta 5
+    spriteName: piedra suelta 5
+    isGroup: 0
+    parentIndex: 22
+    spriteID: 4a706b116570a654da26e73c489cfcbd
+    layerID: 87
+    mosaicPosition: {x: 786, y: 102}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: piedra suelta 6
+    spriteName: piedra suelta 6
+    isGroup: 0
+    parentIndex: 22
+    spriteID: f959188fea3c7d5408d95064c924b144
+    layerID: 88
+    mosaicPosition: {x: 786, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: piedra suelta 7
+    spriteName: piedra suelta 7
+    isGroup: 0
+    parentIndex: 22
+    spriteID: e252aa02ab048ce42ab70fa5957dd59b
+    layerID: 89
+    mosaicPosition: {x: 4, y: 1576}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: piedra suelta 8
+    spriteName: piedra suelta 8
+    isGroup: 0
+    parentIndex: 22
+    spriteID: 5231d9fc18867014eb25fd4e6fdc4c96
+    layerID: 90
+    mosaicPosition: {x: 635, y: 1095}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: piedra suelta 9
+    spriteName: piedra suelta 9
+    isGroup: 0
+    parentIndex: 22
+    spriteID: 25f6cecfaa019dd4db743dc2f3c101b2
+    layerID: 91
+    mosaicPosition: {x: 526, y: 342}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: piedra suelta 10
+    spriteName: piedra suelta 10
+    isGroup: 0
+    parentIndex: 22
+    spriteID: db2ae21062dedba46abb14fe51952271
+    layerID: 92
+    mosaicPosition: {x: 332, y: 1190}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: piedra suelta 11
+    spriteName: piedra suelta 11
+    isGroup: 0
+    parentIndex: 22
+    spriteID: 9531197285dc635488990e1bec733ae7
+    layerID: 93
+    mosaicPosition: {x: 414, y: 1576}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: tile baldosa base 1
     spriteName: tile baldosa base 1
     isGroup: 0
     parentIndex: -1
     spriteID: d99079a65f78f364e83dcbeebd0964be
     layerID: 34
-    mosaicPosition: {x: 4, y: 472}
+    mosaicPosition: {x: 269, y: 1704}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -284,7 +1275,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 269409f8de071aa469665fafe360b4ad
     layerID: 36
-    mosaicPosition: {x: 4, y: 4}
+    mosaicPosition: {x: 635, y: 142}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -294,7 +1285,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 2c215438b84a96f448404dfb2ad6f94b
     layerID: 29
-    mosaicPosition: {x: 4, y: 140}
+    mosaicPosition: {x: 635, y: 278}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -304,7 +1295,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 0c80cace7b46b354abf279433b62efca
     layerID: 35
-    mosaicPosition: {x: 4, y: 276}
+    mosaicPosition: {x: 635, y: 414}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -314,7 +1305,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: fce750d41b887dd4db6015b9b9461e97
     layerID: 33
-    mosaicPosition: {x: 140, y: 4}
+    mosaicPosition: {x: 635, y: 550}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -324,7 +1315,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 4d0bf226ff0b34943b71cd1e137289e7
     layerID: 32
-    mosaicPosition: {x: 140, y: 140}
+    mosaicPosition: {x: 635, y: 686}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -334,20 +1325,20 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: c7030d9cb207e46439416b54a2fb0eae
     layerID: 31
-    mosaicPosition: {x: 4, y: 412}
+    mosaicPosition: {x: 786, y: 165}
     flatten: 0
     isImported: 1
     isVisible: 1
   - name: tile arena base 1
-    spriteName: 
+    spriteName: tile arena base 1
     isGroup: 0
     parentIndex: -1
     spriteID: 598b146cef54cfc4a94ef92046d95420
     layerID: 30
-    mosaicPosition: {x: 0, y: 0}
+    mosaicPosition: {x: 635, y: 822}
     flatten: 0
-    isImported: 0
-    isVisible: 0
+    isImported: 1
+    isVisible: 1
   - name: Papel
     spriteName: 
     isGroup: 0
