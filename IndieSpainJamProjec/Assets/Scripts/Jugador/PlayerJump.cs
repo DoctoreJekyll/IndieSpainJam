@@ -17,7 +17,7 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] private Vector2 boxCheckSize;
     [SerializeField] private LayerMask floorLayer;
     [SerializeField] private GameObject shadow;
-    private bool canJump;
+    private bool isJumping;
     public bool isOnFloor;
 
     [Header("Fall Suffs")]
@@ -31,12 +31,17 @@ public class PlayerJump : MonoBehaviour
     [Header("Particles")]
     [SerializeField] private ParticleSystem fallParticle;
 
+    [Header("Improve Jump")] 
+    private ImproveJump improveJump;
+    [SerializeField] private float gravity = 1f;
+    [SerializeField] private float fallMultiply = 5f;
+
     private void Start()
     {
         waterAnimator = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
         _waterPlayerSounds = GetComponent<WaterPlayerSounds>();
-        
+        improveJump = GetComponent<ImproveJump>();
     }
 
     private void Update()
@@ -47,6 +52,11 @@ public class PlayerJump : MonoBehaviour
         JumpControllerAnim();
 
         shadow.SetActive(isOnFloor);
+    }
+
+    private void FixedUpdate()
+    {
+        improveJump.ModifyGravity(isOnFloor, rb2d);
     }
 
     private void IsOnFloor()
@@ -60,30 +70,34 @@ public class PlayerJump : MonoBehaviour
         {
             if (context.performed)
             {
+                Debug.Log(Time.deltaTime);
                 if (coyoteTime > 0f)
                 {
                     JumpMethod();
-
-                    if (context.canceled)
-                    {
-                        coyoteTime = 0f;
-                    }
                 }
+            }
+            
+            if (context.canceled)
+            {
+                Debug.Log("Suelto boton");
+                coyoteTime = 0f;
             }
             
         }
     }
 
-    private void JumpMethod()
+    private void JumpMethod()//En el primer if detecto si no está en el suelo para saltar pero por el coyote time, aunque no ests en el suelo tienes una ventana para saltar
     {
-        if (!isOnFloor)
+        if (!isOnFloor && !isJumping)
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x,0f);
             rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            isJumping = true;
         }
         else
         {
             rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            isJumping = true;
         }
 
     }
@@ -116,6 +130,8 @@ public class PlayerJump : MonoBehaviour
                 _waterPlayerSounds.FallSound();
                 fallParticle.Play();
                 isOnAir = false;
+                isJumping = false;
+                //betterJump.enabled = true;
             }
 
         }

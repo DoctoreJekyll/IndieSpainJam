@@ -4,29 +4,33 @@ using UnityEngine.InputSystem;
 
 public class BetterJump : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    public float fallMultiplier = 2.5f;//Cae más rápido después del salto
-    public float lowJumpMultiplier = 2f;//Salto minimo
-    public float gravityScale;
+    public Rigidbody2D rb;
+    [SerializeField] private float fallMultiplier = 2.5f;//Cae más rápido después del salto
+    [SerializeField] private float lowJumpMultiplier = 2f;//Salto minimo
+    [SerializeField] private float gravityScale;
 
-    public float upGravity = 2.5f;
-    public float downGravity = 2.5f;
+    [SerializeField] private float upGravity = 2.5f;
+    [SerializeField] private float downGravity = 2.5f;
 
+    private PlayerJump playerJump;
+    public bool isOnWindArea;
+    
     void Start()
     {
+        playerJump = GetComponent<PlayerJump>();
         rb = GetComponent<Rigidbody2D>();
         gravityScale = rb.gravityScale;
-    }
-
-    private void Update()
-    {
-         //BetterJumpPerformed();
+        isOnWindArea = false;
     }
 
     private void FixedUpdate()
     {
-        BetterJumpPerformed();
-        JumpGravity();
+        if (!isOnWindArea)
+        {
+            BetterJumpPerformed();
+            //JumpGravity();
+        }
+
     }
 
     private void BetterJumpPerformed()
@@ -34,41 +38,32 @@ public class BetterJump : MonoBehaviour
 
         if (Gamepad.all.Count > 0)
         {
-            
             if (rb.velocity.y < 0)
             {
-                rb.velocity += Vector2.up * ((Physics2D.gravity.y * downGravity) * (fallMultiplier - 1) * Time.deltaTime);
+                //rb.velocity += Vector2.up * ((Physics2D.gravity.y * downGravity) * (fallMultiplier - 1) * Time.deltaTime);
+                rb.AddForce(Vector2.up * ((Physics2D.gravity.y * downGravity) * (fallMultiplier - 1) * Time.deltaTime));
                 OnJumpUp();
-                //rb.gravityScale = gravityScale * fallMultiplier;
             }
             else if (rb.velocity.y > 0 && !Gamepad.current.buttonSouth.isPressed && !Keyboard.current.spaceKey.isPressed)
             {
-                rb.velocity += Vector2.up * ((Physics2D.gravity.y * upGravity) * (lowJumpMultiplier - 1) * Time.deltaTime);
-                //rb.gravityScale = gravityScale * fallMultiplier;
+                //rb.velocity += Vector2.up * ((Physics2D.gravity.y * upGravity) * (lowJumpMultiplier - 1) * Time.deltaTime);
+                rb.AddForce(Vector2.up * ((Physics2D.gravity.y * upGravity) * (lowJumpMultiplier - 1) * Time.deltaTime));
             }
-            // else
-            // {
-            //     rb.gravityScale = gravityScale;
-            // }
         }
         else
         {
             
             if (rb.velocity.y < 0)
             {
-                //rb.gravityScale = gravityScale * fallMultiplier;
-                rb.velocity += Vector2.up * ((Physics2D.gravity.y * downGravity) * (fallMultiplier - 1) * Time.deltaTime);
+                //rb.velocity += Vector2.up * ((Physics2D.gravity.y * downGravity) * (fallMultiplier - 1) * Time.deltaTime);
+                rb.AddForce(Vector2.up * ((Physics2D.gravity.y * downGravity) * (fallMultiplier - 1) * Time.deltaTime));
                 OnJumpUp();
             }
             else if (rb.velocity.y > 0 && !Keyboard.current.spaceKey.isPressed)
             {
-                rb.velocity += Vector2.up * ((Physics2D.gravity.y * upGravity) * (lowJumpMultiplier - 1) * Time.deltaTime);
-                //rb.gravityScale = gravityScale * fallMultiplier;
+                //rb.velocity += Vector2.up * ((Physics2D.gravity.y * upGravity) * (lowJumpMultiplier - 1) * Time.deltaTime);
+                rb.AddForce(Vector2.up * ((Physics2D.gravity.y * upGravity) * (lowJumpMultiplier - 1) * Time.deltaTime));
             }
-            // else
-            // {
-            //     rb.gravityScale = gravityScale;
-            // }
         }
 
     }
@@ -92,6 +87,5 @@ public class BetterJump : MonoBehaviour
             rb.gravityScale = gravityScale;
         }
     }
-    
     
 }

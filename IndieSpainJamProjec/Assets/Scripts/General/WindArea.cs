@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Clase que se encarga de configurar la dirección y fuerza del viento
+//Clase que se encarga de configurar la direcciï¿½n y fuerza del viento
 public class WindArea : MonoBehaviour
 {
     public enum WindDirection { UP, RIGHT, DOWN, LEFT }
@@ -20,7 +21,7 @@ public class WindArea : MonoBehaviour
         SetWindConfiguration();
     }
 
-    //Establece la configuración del viento según los parámetros del editor
+    //Establece la configuraciï¿½n del viento segï¿½n los parï¿½metros del editor
     private void SetWindConfiguration()
     {
         areaEffector.forceMagnitude = windForce;
@@ -41,4 +42,26 @@ public class WindArea : MonoBehaviour
                 break;
         }
     }
+
+    public float testforce;
+    
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Player"))
+        {
+            BetterJump betterJump = col.GetComponent<BetterJump>();
+            //betterJump.rb.AddForce(Vector2.up * testforce);
+            //betterJump.enabled = false;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            BetterJump betterJump = other.GetComponent<BetterJump>();
+            //betterJump.enabled = true;
+        }
+    }
+    
 }
