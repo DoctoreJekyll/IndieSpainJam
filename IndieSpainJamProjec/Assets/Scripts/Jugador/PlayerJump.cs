@@ -31,17 +31,15 @@ public class PlayerJump : MonoBehaviour
     [Header("Particles")]
     [SerializeField] private ParticleSystem fallParticle;
 
-    [Header("Improve Jump")] 
-    private ImproveJump improveJump;
-    [SerializeField] private float gravity = 1f;
-    [SerializeField] private float fallMultiply = 5f;
+    [Header("Improve Jump")]
+    [SerializeField] private float jumpDelay;
+    private float jumpTimer;
 
     private void Start()
     {
         waterAnimator = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
         _waterPlayerSounds = GetComponent<WaterPlayerSounds>();
-        improveJump = GetComponent<ImproveJump>();
     }
 
     private void Update()
@@ -65,10 +63,9 @@ public class PlayerJump : MonoBehaviour
         {
             if (context.performed)
             {
-                Debug.Log(Time.deltaTime);
                 if (coyoteTime > 0f)
                 {
-                    JumpMethod();
+                    jumpTimer = Time.time + jumpDelay;
                 }
             }
             
@@ -81,6 +78,14 @@ public class PlayerJump : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        if (jumpTimer > Time.time && isOnFloor)
+        {
+            JumpMethod();
+        }
+    }
+
     private void JumpMethod()//En el primer if detecto si no está en el suelo para saltar pero por el coyote time, aunque no ests en el suelo tienes una ventana para saltar
     {
         if (!isOnFloor && !isJumping)
@@ -88,11 +93,13 @@ public class PlayerJump : MonoBehaviour
             rb2d.velocity = new Vector2(rb2d.velocity.x,0f);
             rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             isJumping = true;
+            jumpTimer = 0f;
         }
         else
         {
             rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             isJumping = true;
+            jumpTimer = 0f;
         }
 
     }

@@ -6007,10 +6007,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 453553806}
-    - target: {fileID: 3178862249054801804, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
-      propertyPath: m_InstanceId
-      value: -1714
-      objectReference: {fileID: 0}
     - target: {fileID: 4448385019860435706, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
       propertyPath: m_Name
       value: PlayerController
@@ -6067,41 +6063,9 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 7833960658886060088, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
-      propertyPath: jumpForce
-      value: 12.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7833960658886060088, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
-      propertyPath: fallCheck.y
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 7833960658886060093, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
-      propertyPath: m_Interpolate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7833960658886060093, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
-      propertyPath: m_GravityScale
-      value: 1.25
-      objectReference: {fileID: 0}
     - target: {fileID: 7833960658886060095, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
       propertyPath: gravity
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7833960658886060095, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7833960658886060095, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
-      propertyPath: upGravity
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 7833960658886060095, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
-      propertyPath: downGravity
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 7833960658886060095, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
-      propertyPath: fallMultiplier
-      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8741770205100608620, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
       propertyPath: m_RootOrder
@@ -6138,11 +6102,6 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5270052920138362038, guid: e0247bfcec2c61c4698f80fa9b74ff77, type: 3}
   m_PrefabInstance: {fileID: 5270052919567939124}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &652680643 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7833960658886059970, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
-  m_PrefabInstance: {fileID: 539642159}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &693752780
 PrefabInstance:
@@ -8102,22 +8061,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7833960658886060092, guid: 27ea6c64f28aa1140b147f20dc94373d, type: 3}
   m_PrefabInstance: {fileID: 539642159}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1750125538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 652680643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd470b326fb3a2345a75b512a037160f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallMultiplier: 15
-  lowJumpDivide: 2
-  gravity: 1
-  isOnWindArea: 0
 --- !u!1001 &1752350630
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8798,7 +8741,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5814169050615072180, guid: c482a31311ff2d948963687f90791607, type: 3}
       propertyPath: m_Drag
-      value: 2.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5814169050615072181, guid: c482a31311ff2d948963687f90791607, type: 3}
       propertyPath: m_Size.y
