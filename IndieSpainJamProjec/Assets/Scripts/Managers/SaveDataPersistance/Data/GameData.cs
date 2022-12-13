@@ -11,6 +11,7 @@ public class GameData
     public Vector3 playerPositionCheckPoint;
     public SerializableDictionarys<string, bool> starsCollected;
     public int scenePlayed;
+    public bool waterPowerIsUnlock;
 
 
     //Inicialmente usaremos este constructor para generar valores default para el new game
@@ -20,6 +21,7 @@ public class GameData
         playerPositionCheckPoint = Vector3.zero;
         starsCollected = new SerializableDictionarys<string, bool>();
         scenePlayed = 1;
+        waterPowerIsUnlock = false;
     }
 
 }

@@ -16,16 +16,20 @@ public class WaterDropCollision : MonoBehaviour
 
     public void LaunchWater(InputAction.CallbackContext context)//Llamamos a este metodo dentro del componente input action del playermanager 
     {
-        if (context.performed)
+        if (this.gameObject.activeInHierarchy)
         {
-            particleSystem.Play();
-            Debug.Log("PlayParticle");
+            if (context.performed)
+            {
+                particleSystem.Play();
+                Debug.Log("PlayParticle");
+            }
+            else if (context.canceled)
+            {
+                particleSystem.Stop();
+                Debug.Log("stopParticle");
+            }
         }
-        else if (context.canceled)
-        {
-            particleSystem.Stop();
-            Debug.Log("stopParticle");
-        }
+
     }
 
     private void OnParticleCollision(GameObject other)
