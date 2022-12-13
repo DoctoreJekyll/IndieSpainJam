@@ -4,34 +4,66 @@ using UnityEngine.InputSystem;
 
 public class ImproveJump : MonoBehaviour
 {
-
+    [Header("References")]
+    private Rigidbody2D rb;
+    private PlayerJump playerJump;
+    
+    [Header("Configuration")]
+    [SerializeField] private float fallMultiplier = 2.5f;//Cae más rápido después del salto
+    [SerializeField] private float lowJumpDivide = 2f;
     [SerializeField] private float gravity;
-    [SerializeField] private float fallMultiply;
-
-    private void Start()
+    
+    public bool isOnWindArea;
+    
+    void Start()
     {
-        Debug.Log("test");
+        playerJump = GetComponent<PlayerJump>();
+        rb = GetComponent<Rigidbody2D>();
+        isOnWindArea = false;
     }
 
-    public void ModifyGravity(bool isOnFloor, Rigidbody2D rb2d)
+    private void FixedUpdate()
     {
-        if (isOnFloor)
+        BetterJumpPerformed();
+    }
+
+    private void BetterJumpPerformed()
+    {
+        if (playerJump.isOnFloor || isOnWindArea)
         {
-            rb2d.gravityScale = 0;
+            rb.gravityScale = 1;
+            rb.drag = 0;
         }
         else
         {
-            rb2d.gravityScale = gravity;
-            if (rb2d.velocity.y < 0)
+            rb.gravityScale = gravity;
+            rb.drag = 0.25f;
+            if (GamepadIsConnected())
             {
-                rb2d.gravityScale = gravity * fallMultiply;
+                if (rb.velocity.y < 0)
+                {
+                    rb.gravityScale = gravity * fallMultiplier;
+                }
+                else if (rb.velocity.y > 0 && !GamepadButtonSouthIsPush() && !KeyBoardButtonSpaceIsPush())
+                {
+                    rb.gravityScale = gravity * (fallMultiplier / lowJumpDivide);
+                }
             }
-            else if (rb2d.velocity.y > 0 && !Input.GetKeyDown(KeyCode.Space))//Añadir si no esta pulsando ningun boton
+            else
             {
-                rb2d.gravityScale = gravity * (fallMultiply / 2);
+                if (rb.velocity.y < 0)
+                {
+                    rb.gravityScale = gravity * fallMultiplier;
+                }
+                else if (rb.velocity.y > 0 && !KeyBoardButtonSpaceIsPush())
+                {
+                    rb.gravityScale = gravity * (fallMultiplier / lowJumpDivide);
+                }
             }
         }
     }
     
     private bool GamepadIsConnected() => Gamepad.all.Count > 0;
+    private bool GamepadButtonSouthIsPush() => Gamepad.current.buttonSouth.isPressed;
+    private bool KeyBoardButtonSpaceIsPush() => Keyboard.current.spaceKey.isPressed;
 }

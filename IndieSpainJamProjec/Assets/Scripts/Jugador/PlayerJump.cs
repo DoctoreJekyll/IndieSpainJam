@@ -54,11 +54,6 @@ public class PlayerJump : MonoBehaviour
         shadow.SetActive(isOnFloor);
     }
 
-    private void FixedUpdate()
-    {
-        improveJump.ModifyGravity(isOnFloor, rb2d);
-    }
-
     private void IsOnFloor()
     {
         isOnFloor = Physics2D.OverlapBox(pointToCheckFloor.transform.position, boxCheckSize, 0, floorLayer);

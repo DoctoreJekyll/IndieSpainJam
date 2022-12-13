@@ -49,9 +49,8 @@ public class WindArea : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            BetterJump betterJump = col.GetComponent<BetterJump>();
-            //betterJump.rb.AddForce(Vector2.up * testforce);
-            //betterJump.enabled = false;
+            ImproveJump improveJump = col.GetComponent<ImproveJump>();
+            improveJump.isOnWindArea = true;
         }
     }
 
@@ -59,8 +58,8 @@ public class WindArea : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            BetterJump betterJump = other.GetComponent<BetterJump>();
-            //betterJump.enabled = true;
+            ImproveJump improveJump = other.GetComponent<ImproveJump>();
+            improveJump.isOnWindArea = false;
         }
     }
     
