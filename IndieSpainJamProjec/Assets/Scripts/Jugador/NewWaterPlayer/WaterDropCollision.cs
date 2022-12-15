@@ -8,7 +8,7 @@ public class WaterDropCollision : MonoBehaviour
 
     private ParticleSystem particleSystem;
 
-    private void Awake()
+    private void OnEnable()
     {
         particleSystem = GetComponent<ParticleSystem>();
         particleSystem.Stop();
