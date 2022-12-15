@@ -19,7 +19,7 @@ public class HiddenArea : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("Player"))
+        if (col.gameObject.CompareTag("Lakitu"))
         {
             StartCoroutine(SetHiddenAlphaToZero());
         }
@@ -27,7 +27,7 @@ public class HiddenArea : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Lakitu"))
         {
             StartCoroutine(SetHiddenAlphaToOne());
         }
