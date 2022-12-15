@@ -21111,11 +21111,11 @@ GameObject:
   - component: {fileID: 493393209703313791}
   m_Layer: 4
   m_Name: WaterLauncher
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8741770205100608620
 Transform:
   m_ObjectHideFlags: 0
@@ -24891,12 +24891,12 @@ ParticleSystem:
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 2
-    inside: 1
-    outside: 0
-    enter: 0
-    exit: 0
+    inside: 2
+    outside: 2
+    enter: 2
+    exit: 2
     colliderQueryMode: 0
     radiusScale: 1
     primitives: []
@@ -40699,6 +40699,7 @@ GameObject:
   - component: {fileID: 3178862249843183947}
   - component: {fileID: 539642161}
   - component: {fileID: 6496757433143304918}
+  - component: {fileID: 1387725614}
   m_Layer: 4
   m_Name: Player_Water
   m_TagString: Player
@@ -41172,7 +41173,7 @@ MonoBehaviour:
   - {x: 0.2031269, y: -0.62614167, z: 0}
   m_ShapePathHash: -1832149345
   m_Mesh: {fileID: 0}
-  m_InstanceId: -152558
+  m_InstanceId: -1722
 --- !u!114 &3178862249843183947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41217,6 +41218,20 @@ MonoBehaviour:
   lowJumpDivide: 2
   gravity: 1
   isOnWindArea: 0
+--- !u!114 &1387725614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7833960658886059970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93a5186b207fea4e952f448926f3e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterPowerObj: {fileID: 5257672138569732345}
+  waterPowerUnlock: 0
 --- !u!1 &7833960660408884111
 GameObject:
   m_ObjectHideFlags: 0
