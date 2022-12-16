@@ -54,8 +54,8 @@ public class Pipeline : MonoBehaviour
     private void LockPlayer()
     {
         GameStateManager.instance.currentGameState = GameStateManager.GameState.EVENT;
-        playerRb.bodyType = RigidbodyType2D.Static;
         playerRb.velocity = Vector2.zero;
+        playerRb.bodyType = RigidbodyType2D.Static;
         playerCollider.enabled = false;
         playerSprite.enabled = false;
     }

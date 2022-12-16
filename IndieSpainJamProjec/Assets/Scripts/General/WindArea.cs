@@ -50,7 +50,11 @@ public class WindArea : MonoBehaviour
         if (col.gameObject.CompareTag("Player"))
         {
             ImproveJump improveJump = col.GetComponent<ImproveJump>();
-            improveJump.isOnWindArea = true;
+            if (improveJump != null)
+            {
+                improveJump.isOnWindArea = true;
+            }
+            
         }
     }
 
@@ -59,7 +63,10 @@ public class WindArea : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             ImproveJump improveJump = other.GetComponent<ImproveJump>();
-            improveJump.isOnWindArea = false;
+            if (improveJump != null)
+            {
+                improveJump.isOnWindArea = false;
+            }
         }
     }
     
