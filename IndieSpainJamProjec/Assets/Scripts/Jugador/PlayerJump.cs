@@ -21,7 +21,7 @@ public class PlayerJump : MonoBehaviour
     public bool isOnFloor;
 
     [Header("Fall Suffs")]
-    [SerializeField] private bool isOnAir;
+    public bool isOnAir;
     public Vector2 fallCheck;
 
     [Header("Coyote Bro")]

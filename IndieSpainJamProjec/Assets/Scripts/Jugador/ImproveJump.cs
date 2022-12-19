@@ -15,6 +15,7 @@ public class ImproveJump : MonoBehaviour
     [SerializeField] private float gravity;
     
     public bool isOnWindArea;
+    public bool isInEspecialTile;
     
     void Start()
     {
@@ -63,7 +64,15 @@ public class ImproveJump : MonoBehaviour
             }
         }
     }
-    
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Hot") || other.gameObject.CompareTag("Frost"))
+        {
+            isInEspecialTile = true;
+        }
+    }
+
     private bool GamepadIsConnected() => Gamepad.all.Count > 0;
     private bool GamepadButtonSouthIsPush() => Gamepad.current.buttonSouth.isPressed;
     private bool KeyBoardButtonSpaceIsPush() => Keyboard.current.spaceKey.isPressed;
