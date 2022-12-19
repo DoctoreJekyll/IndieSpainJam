@@ -7,7 +7,7 @@ public class PlayerDeath : MonoBehaviour
 {
     [Header("[References]")] 
     private Rigidbody2D rb2d;
-    private Collider2D playerCollider2D;
+    [SerializeField] private Collider2D[] playerCollider2D;
     public Animator playerAnimator;
 
     [Header("[Values]")]
@@ -33,7 +33,8 @@ public class PlayerDeath : MonoBehaviour
     {
         tempManager = FindObjectOfType<TempManager>();
         rb2d = GetComponent<Rigidbody2D>();
-        playerCollider2D = GetComponent<Collider2D>();
+
+        playerCollider2D = GetComponents<Collider2D>();
     }
 
     //Posiciono al jugador en los valores recogidos por el trigger del checkpoint y retorno el estado y el bool
@@ -56,7 +57,11 @@ public class PlayerDeath : MonoBehaviour
         }
 
         Debug.Log("Devolviendo valores al jugador");
-        playerCollider2D.enabled = true;
+        //playerCollider2D.enabled = true;
+        foreach (Collider2D colliders in playerCollider2D)
+        {
+            colliders.enabled = true;
+        }
         rb2d.bodyType = RigidbodyType2D.Dynamic;
         dead = false;
     }
@@ -88,7 +93,11 @@ public class PlayerDeath : MonoBehaviour
         dead = true;
         CinemachineNoise.instance.ShakeCamera(2f,0.5f);
         GameStateManager.instance.SetGameState(GameStateManager.GameState.EVENT);
-        playerCollider2D.enabled = false;
+        //playerCollider2D.enabled = false;
+        foreach (Collider2D colliders in playerCollider2D)
+        {
+            colliders.enabled = false;
+        }
         rb2d.velocity = Vector2.zero;
         rb2d.bodyType = RigidbodyType2D.Kinematic;
         
