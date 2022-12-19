@@ -20408,8 +20408,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.059372663, y: -0.03780079}
-  m_Size: {x: 0.31428194, y: 1.54}
+  m_Offset: {x: 0.059372663, y: -0.19655824}
+  m_Size: {x: 0.31428194, y: 1.8575149}
   m_Direction: 0
 --- !u!114 &4995757428868267325
 MonoBehaviour:
@@ -20456,6 +20456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6404b5bc54d7e46be59c0e3c886669, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCollider2D: []
   playerAnimator: {fileID: 0}
   dead: 0
 --- !u!114 &222301910129325921
@@ -20934,6 +20935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6404b5bc54d7e46be59c0e3c886669, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCollider2D: []
   playerAnimator: {fileID: 0}
   dead: 0
 --- !u!114 &222301909569781870
@@ -41117,6 +41119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6404b5bc54d7e46be59c0e3c886669, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCollider2D: []
   playerAnimator: {fileID: 0}
   dead: 0
 --- !u!114 &7033340731628774435
@@ -41218,6 +41221,7 @@ MonoBehaviour:
   lowJumpDivide: 2
   gravity: 1
   isOnWindArea: 0
+  isInEspecialTile: 0
 --- !u!114 &1387725614
 MonoBehaviour:
   m_ObjectHideFlags: 0
