@@ -35,7 +35,7 @@ public class WindArea : MonoBehaviour
                 areaEffector.forceAngle = 0;
                 break;
             case WindDirection.DOWN:
-                areaEffector.forceAngle = 360;
+                areaEffector.forceAngle = 270;
                 break;
             case WindDirection.LEFT:
                 areaEffector.forceAngle = 180;
