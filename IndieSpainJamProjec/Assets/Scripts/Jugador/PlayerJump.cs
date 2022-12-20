@@ -63,6 +63,7 @@ public class PlayerJump : MonoBehaviour
         {
             if (context.performed)
             {
+                Debug.Log("Estoy pulsando el salto?");
                 if (coyoteTime > 0f)
                 {
                     jumpTimer = Time.time + jumpDelay;

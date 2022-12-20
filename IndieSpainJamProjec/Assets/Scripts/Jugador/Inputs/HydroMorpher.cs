@@ -82,7 +82,7 @@ public partial class @HydroMorpher : IInputActionCollection2, IDisposable
                     ""path"": ""<XInputController>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Gamepad"",
+                    ""groups"": """",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -93,7 +93,7 @@ public partial class @HydroMorpher : IInputActionCollection2, IDisposable
                     ""path"": ""<SwitchProControllerHID>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Gamepad"",
+                    ""groups"": """",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false

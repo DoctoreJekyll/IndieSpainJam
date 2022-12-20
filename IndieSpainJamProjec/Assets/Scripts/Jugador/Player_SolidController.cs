@@ -17,8 +17,6 @@ public class Player_SolidController : MonoBehaviour
 	[Header("Input Controller")]
 	private HydroMorpher playerInputsActions;
 	private Animator _animation;
-	
-
 
 	private void Awake()
 	{
@@ -34,19 +32,13 @@ public class Player_SolidController : MonoBehaviour
 	{
 		SetNewPlayerInput();
 	}
-	
-	private void OnDisable()
-	{
-		playerInputsActions.Disable();
-	}
-	
+
 	//Establecemos el Input System
 	private void SetNewPlayerInput()
 	{
 		playerInputsActions = new HydroMorpher();
 		playerInputsActions.Enable();
 	}
-	
 
 	//Mientras pueda jugarse libremente, dejamos al jugador moverse
 	private void FixedUpdate()

@@ -38,11 +38,6 @@ public class WaterMoveImprove : MonoBehaviour
         SetNewPlayerInput();
     }
 
-    private void OnDisable()
-    {
-        playerInputsActions.Disable();
-    }
-
     private void Start()
     {
         maxMoveSpeed = moveSpeed;

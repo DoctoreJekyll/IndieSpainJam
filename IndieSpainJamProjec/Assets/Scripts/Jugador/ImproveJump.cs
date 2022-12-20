@@ -24,6 +24,12 @@ public class ImproveJump : MonoBehaviour
         isOnWindArea = false;
     }
 
+    private void Update()
+    {
+        Debug.Log(GamepadButtonSouthIsPush());
+        Debug.Log("El mando esta: " + GamepadIsConnected());
+    }
+
     private void FixedUpdate()
     {
         BetterJumpPerformed();
@@ -73,7 +79,7 @@ public class ImproveJump : MonoBehaviour
         }
     }
 
-    private bool GamepadIsConnected() => Gamepad.all.Count > 0;
-    private bool GamepadButtonSouthIsPush() => Gamepad.current.buttonSouth.isPressed;
+    private bool GamepadIsConnected() => XInputController.all.Count > 0;
+    private bool GamepadButtonSouthIsPush() => XInputController.current.buttonSouth.isPressed;
     private bool KeyBoardButtonSpaceIsPush() => Keyboard.current.spaceKey.isPressed;
 }

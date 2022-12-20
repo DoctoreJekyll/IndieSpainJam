@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 //Clase que se encarga de cambiar el estado del jugador
 public class PlayerStatesManager : MonoBehaviour
@@ -9,6 +10,9 @@ public class PlayerStatesManager : MonoBehaviour
     [SerializeField] private GameObject waterPlayer;
     [SerializeField] private GameObject icePlayer;
     [SerializeField] private GameObject gasPlayer;
+
+    [Header("[Input Actions]")] 
+    [SerializeField] private PlayerInput[] playersInputsComponent;
 
     [Header("[Temperature]")] 
     [SerializeField] private float maxTemperature;
@@ -66,23 +70,49 @@ public class PlayerStatesManager : MonoBehaviour
         switch (newPlayerState)
         {
             case PlayerState.SOLID:
-                icePlayer.gameObject.SetActive(true);
-                waterPlayer.gameObject.SetActive(false);
-                gasPlayer.gameObject.SetActive(false);
+                PlayerIceActivateStuffs();
                 break;
 
             case PlayerState.LIQUID:
-                waterPlayer.gameObject.SetActive(true);
-                icePlayer.gameObject.SetActive(false);
-                gasPlayer.gameObject.SetActive(false);
+                PlayerWaterActivateStuffs();
                 break;
             
             case PlayerState.GAS:
-                gasPlayer.gameObject.SetActive(true);
-                icePlayer.gameObject.SetActive(false);
-                waterPlayer.gameObject.SetActive(false);
+                PlayerGasActivateStuffs();
                 break;
         }
     }
+
+    private void PlayerIceActivateStuffs()
+    {
+        icePlayer.gameObject.SetActive(true);
+        waterPlayer.gameObject.SetActive(false);
+        gasPlayer.gameObject.SetActive(false);
+
+        playersInputsComponent[1].enabled = true;
+        playersInputsComponent[0].enabled = false;
+        playersInputsComponent[2].enabled = false;
+    }
     
+    private void PlayerWaterActivateStuffs()
+    {
+        waterPlayer.gameObject.SetActive(true);
+        icePlayer.gameObject.SetActive(false);
+        gasPlayer.gameObject.SetActive(false);
+        
+        playersInputsComponent[1].enabled = false;
+        playersInputsComponent[0].enabled = true;
+        playersInputsComponent[2].enabled = false;
+    }
+    
+    private void PlayerGasActivateStuffs()
+    {
+        gasPlayer.gameObject.SetActive(true);
+        icePlayer.gameObject.SetActive(false);
+        waterPlayer.gameObject.SetActive(false);
+        
+        playersInputsComponent[1].enabled = false;
+        playersInputsComponent[0].enabled = false;
+        playersInputsComponent[2].enabled = true;
+    }
 }
