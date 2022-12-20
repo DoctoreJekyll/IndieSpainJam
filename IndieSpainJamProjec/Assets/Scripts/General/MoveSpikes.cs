@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -45,7 +44,6 @@ public class MoveSpikes : MonoBehaviour
     //Lerp entre una posicion y otra, esto nos sirve tanto para pinchos como para plataformas móviles o elevadores que no dejen de moverse
     IEnumerator ObjectTransformAnim()
     {
-        Debug.Log("Anim");
         float timing = 0f;
         while (timing < timeToFinishTheAnimation)
         {
@@ -60,7 +58,6 @@ public class MoveSpikes : MonoBehaviour
     
     IEnumerator ObjectTransformAnimOut()
     {
-        Debug.Log("Anim");
         float timing = 0f;
         while (timing < timeToFinishTheAnimation)
         {

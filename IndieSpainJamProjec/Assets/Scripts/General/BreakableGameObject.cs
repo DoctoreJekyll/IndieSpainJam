@@ -23,7 +23,7 @@ public class BreakableGameObject : MonoBehaviour
     [SerializeField] private Sprite breakSpriteRigth;
 
     [Header("Collider")]
-    [SerializeField] private Collider2D collider;
+    [SerializeField] private Collider2D brakCollider;
 
     //Other stuffs
     private AudioSource _audioSource;//Generar aqui el sonido no me convence 
@@ -93,7 +93,7 @@ public class BreakableGameObject : MonoBehaviour
             CinemachineNoise.instance.ShakeCamera(1f,0.25f);
             breakableSpriteRenderLeft.sprite = breakSpriteLeft;
             breakableSpriteRenderRigth.sprite = breakSpriteRigth;
-            collider.enabled = false;
+            brakCollider.enabled = false;
         }
     }
     

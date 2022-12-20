@@ -6,12 +6,12 @@ using UnityEngine.InputSystem;
 public class WaterDropCollision : MonoBehaviour
 {
 
-    private ParticleSystem particleSystem;
+    private ParticleSystem waterParticleSystem;
 
     private void OnEnable()
     {
-        particleSystem = GetComponent<ParticleSystem>();
-        particleSystem.Stop();
+        waterParticleSystem = GetComponent<ParticleSystem>();
+        waterParticleSystem.Stop();
     }
 
     public void LaunchWater(InputAction.CallbackContext context)//Llamamos a este metodo dentro del componente input action del playermanager 
@@ -20,12 +20,12 @@ public class WaterDropCollision : MonoBehaviour
         {
             if (context.performed)
             {
-                particleSystem.Play();
+                waterParticleSystem.Play();
                 Debug.Log("PlayParticle");
             }
             else if (context.canceled)
             {
-                particleSystem.Stop();
+                waterParticleSystem.Stop();
                 Debug.Log("stopParticle");
             }
         }
