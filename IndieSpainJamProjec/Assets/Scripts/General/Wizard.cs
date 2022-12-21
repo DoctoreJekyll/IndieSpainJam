@@ -61,8 +61,12 @@ public class Wizard : MonoBehaviour
                 break;
         }
 
-        newProjectile.GetComponent<Wizard_Projectile>().horizontalDirection = (int)gameObject.transform.localScale.x;
-        newProjectile.GetComponent<Wizard_Projectile>().movementSpeed = projectileSpeed;
+        if (newProjectile != null)
+        {
+            newProjectile.GetComponent<Wizard_Projectile>().horizontalDirection =
+                (int)gameObject.transform.localScale.x;
+            newProjectile.GetComponent<Wizard_Projectile>().movementSpeed = projectileSpeed;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D col)

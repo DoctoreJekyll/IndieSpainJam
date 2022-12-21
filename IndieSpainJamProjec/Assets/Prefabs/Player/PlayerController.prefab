@@ -19881,6 +19881,10 @@ MonoBehaviour:
   waterPlayer: {fileID: 7833960658886059970}
   icePlayer: {fileID: 5004869876153517338}
   gasPlayer: {fileID: 4995757428868267318}
+  playersInputsComponent:
+  - {fileID: 3178862249445667092}
+  - {fileID: 1909021489969666513}
+  - {fileID: 3178862250598305366}
   maxTemperature: 75
   minTemperature: 25
   currentPlayerState: 0
@@ -20251,7 +20255,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4995757428868267318}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
@@ -20702,7 +20706,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5004869876153517338}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
@@ -41046,7 +41050,7 @@ MonoBehaviour:
   velPower: 0.9
   lerpAmount: 0.9
   moveSpeedWhenSpikes: 4.5
-  moveSpeedOnAir: 7.5
+  moveSpeedOnAir: 8.5
   fricctionAmount: 0.2
   momentum: 1
 --- !u!114 &7833960658886060088
@@ -41176,7 +41180,7 @@ MonoBehaviour:
   - {x: 0.2031269, y: -0.62614167, z: 0}
   m_ShapePathHash: -1832149345
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1722
+  m_InstanceId: -15982
 --- !u!114 &3178862249843183947
 MonoBehaviour:
   m_ObjectHideFlags: 0
