@@ -25,11 +25,14 @@ public class ButtonSmashed : MonoBehaviour
         ActivateButton();
     }
 
+    [SerializeField] private float extraLeftRaidcast = 0.5f;
+    [SerializeField] private float extraRightRaidcast = 0.5f;
+    
     private bool CheckIfIcePlayerIsOn()
     {
         Vector2 rayDir = new Vector2(0, 0.5f);
-        Vector2 rayOriginLeft = new Vector2(transform.position.x - 0.25f, transform.position.y);
-        Vector2 rayOriginRigth = new Vector2(transform.position.x + 0.25f, transform.position.y);
+        Vector2 rayOriginLeft = new Vector2(transform.position.x - extraLeftRaidcast, transform.position.y);
+        Vector2 rayOriginRigth = new Vector2(transform.position.x + extraRightRaidcast, transform.position.y);
         
         
         RaycastHit2D hitInfoLeft = Physics2D.Raycast(rayOriginLeft, rayDir, raycastRange, layerWhoActivate);
