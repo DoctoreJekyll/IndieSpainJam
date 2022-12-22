@@ -180,10 +180,10 @@ MonoBehaviour:
   layerWhoBrokeTheObj:
     serializedVersion: 2
     m_Bits: 128
-  range: 1.75
-  distanceRay0: -0.25
+  range: 2
+  distanceRay0: -0.3
   distanceRay1: 0.6
-  distanceRay2: 1.4
+  distanceRay2: 1.5
   breakableSpriteRenderLeft: {fileID: 34030302399466464}
   breakableSpriteRenderRigth: {fileID: 8900816832398474274}
   breakSpriteLeft: {fileID: 2019775616, guid: 422aec3ff920a8e45bf33377b9ccb92d, type: 3}
@@ -200,7 +200,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 76da8fa5d14ee8049b3fab9bdf757898, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
   Loop: 0

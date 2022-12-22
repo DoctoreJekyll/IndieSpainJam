@@ -64,6 +64,7 @@ public class PlayerJump : MonoBehaviour
             if (context.performed)
             {
                 Debug.Log("Estoy pulsando el salto?");
+                _waterPlayerSounds.JumpSound();
                 if (coyoteTime > 0f)
                 {
                     jumpTimer = Time.time + jumpDelay;
@@ -130,13 +131,20 @@ public class PlayerJump : MonoBehaviour
             bool fallCheck = Physics2D.OverlapBox(pointToCheckFloor.transform.position, this.fallCheck, 0, floorLayer);
             if (fallCheck)
             {
-                _waterPlayerSounds.FallSound();
+                FallSoundFunc();
                 fallParticle.Play();
                 isOnAir = false;
                 isJumping = false;
-                //betterJump.enabled = true;
             }
 
+        }
+    }
+
+    private void FallSoundFunc()
+    {
+        if (rb2d.velocity.y <= 0.1f)
+        {
+            _waterPlayerSounds.FallSound();
         }
     }
 
